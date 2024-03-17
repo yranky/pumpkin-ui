@@ -1,2 +1,2 @@
-export * from './props'
-export * from './utils'
+export * from './src/props'
+export * from './src/utils'
