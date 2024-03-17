@@ -4,11 +4,12 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:mobile_docs":"pnpm -C docs/mobile run build",
+    "dev:mobile_docs":"pnpm -C docs/mobile run dev"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@pk-ui/mobile": "workspace:^",
     "@pk-ui/mobile_docs": "workspace:^",

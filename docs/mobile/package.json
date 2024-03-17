@@ -3,8 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev":"vitepress dev . --open"
+    "dev":"vitepress dev . --open",
+    "build":"vitepress build ."
   },
   "devDependencies": {
     "vitepress": "^1.0.0-rc.45"
