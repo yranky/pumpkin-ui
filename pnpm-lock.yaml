@@ -14,6 +14,9 @@ importers:
       '@pk-ui/mobile_docs':
         specifier: workspace:^
         version: link:docs/mobile
+      '@pk-ui/use':
+        specifier: workspace:^
+        version: link:packages/use
       '@pk-ui/utils':
         specifier: workspace:^
         version: link:packages/utils
@@ -42,6 +45,12 @@ importers:
       vue-tsc:
         specifier: ^1.8.27
         version: 1.8.27(typescript@5.4.2)
+
+  packages/use:
+    dependencies:
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.21(typescript@5.4.2)
 
   packages/utils:
     dependencies:

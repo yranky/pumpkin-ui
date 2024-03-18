@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build:mobile_docs":"pnpm -C docs/mobile run build",
-    "dev:mobile_docs":"pnpm -C docs/mobile run dev"
+    "build:mobile_docs": "pnpm -C docs/mobile run build",
+    "dev:mobile_docs": "pnpm -C docs/mobile run dev"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@pk-ui/mobile": "workspace:^",
     "@pk-ui/mobile_docs": "workspace:^",
+    "@pk-ui/use": "workspace:^",
     "@pk-ui/utils": "workspace:^"
   }
 }
