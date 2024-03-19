@@ -5,4 +5,5 @@ page: true
 ---
 
 ## button
-<pkButton></pkButton>
+<pkButton text="测试"></pkButton>
+<pkButton type="hazy" text="测试"></pkButton>
