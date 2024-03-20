@@ -1,7 +1,11 @@
 <template>
     <component :is="tag" :class="[
         bem.b(),
-        bem.m(type)
+        bem.m(type),
+        bem.m(size),
+        bem.eqm('round', round),
+        bem.eqm('squre', squre),
+        bem.eqm('block', block)
     ]" :type="nativeType">
         <span :class="[
         bem.e('text')

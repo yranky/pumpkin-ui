@@ -4,6 +4,7 @@ import { ButtonHTMLAttributes, Component } from 'vue'
 
 export const buttonTypes = ['primary', 'hazy', 'outline', 'ghost', 'link'] as const
 export const buttonNativeTypes = ['button', 'submit', 'reset'] as const
+export const buttonSizeTypes = ['xl', 'l', 'm', 's', 'xs'] as const
 
 
 export const buttonProps = extend({}, {
@@ -24,5 +25,22 @@ export const buttonProps = extend({}, {
     text: {
         type: String,
         default: ''
+    },
+    size: {
+        type: String,
+        values: buttonSizeTypes,
+        default: 'm'
+    },
+    round: {
+        type: Boolean,
+        default: false
+    },
+    squre: {
+        type: Boolean,
+        default: false
+    },
+    block: {
+        type: Boolean,
+        default: false
     }
 })

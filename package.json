@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build:mobile_docs": "pnpm -C docs/mobile run build",
-    "dev:mobile_docs": "pnpm -C docs/mobile run dev"
+    "dev:mobile_docs": "pnpm -C docs/mobile run dev",
+    "dev:demo_mobile":"pnpm -C demo/mobile run dev"
   },
   "keywords": [],
   "author": "",

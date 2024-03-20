@@ -31,6 +31,8 @@ export const useBem = (block: string) => {
     // namespace-block-blockSuffix__element--modifier
     const bem = (blockSuffix: string, element: string, modifier: string) => blockSuffix && element && modifier ? _bem(defaultNamespace, block, blockSuffix, element, modifier) : ''
 
+    //条件modifiler
+    const eqm = (modifier: string, ...args: boolean[]) => modifier && args.length > 0 ? args.some(item => item === false) ? '' : _bem(defaultNamespace, block, '', '', modifier) : ''
     return {
         b,
         e,
@@ -38,6 +40,7 @@ export const useBem = (block: string) => {
         be,
         bm,
         em,
-        bem
+        bem,
+        eqm
     }
 }
