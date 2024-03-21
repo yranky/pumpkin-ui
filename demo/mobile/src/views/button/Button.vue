@@ -74,6 +74,37 @@
             <pk-button type="ghost" text="ghost 幽灵按钮" block sub-text="副标题"></pk-button>
             <pk-button type="link" text="link 链接按钮" block sub-text="副标题"></pk-button>
         </div>
+
+
+        <div>危险按钮</div>
+        <pk-button text="primary 主按钮" danger></pk-button>
+        <pk-button type="hazy" text="hazy 朦胧按钮" danger></pk-button>
+        <pk-button type="outline" text="outline 边框按钮" danger></pk-button>
+        <pk-button type="ghost" text="ghost 幽灵按钮" danger></pk-button>
+        <pk-button type="link" text="link 链接按钮" danger></pk-button>
+        <div style="display: flex;flex-direction: column;align-items: center;">
+            <pk-button text="primary 主按钮" block danger></pk-button>
+            <pk-button type="hazy" text="hazy 朦胧按钮" block danger></pk-button>
+            <pk-button type="outline" text="outline 边框按钮" block danger></pk-button>
+            <pk-button type="ghost" text="ghost 幽灵按钮" block danger></pk-button>
+            <pk-button type="link" text="link 链接按钮" block danger></pk-button>
+        </div>
+
+
+
+        <div>警告按钮</div>
+        <pk-button text="primary 主按钮" warning></pk-button>
+        <pk-button type="hazy" text="hazy 朦胧按钮" warning></pk-button>
+        <pk-button type="outline" text="outline 边框按钮" warning></pk-button>
+        <pk-button type="ghost" text="ghost 幽灵按钮" warning></pk-button>
+        <pk-button type="link" text="link 链接按钮" warning></pk-button>
+        <div style="display: flex;flex-direction: column;align-items: center;">
+            <pk-button text="primary 主按钮" block warning></pk-button>
+            <pk-button type="hazy" text="hazy 朦胧按钮" block warning></pk-button>
+            <pk-button type="outline" text="outline 边框按钮" block warning></pk-button>
+            <pk-button type="ghost" text="ghost 幽灵按钮" block warning></pk-button>
+            <pk-button type="link" text="link 链接按钮" block warning></pk-button>
+        </div>
     </div>
 </template>
 <script lang="ts" setup>

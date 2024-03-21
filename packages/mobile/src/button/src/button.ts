@@ -28,7 +28,7 @@ export const buttonProps = extend({}, {
     },
     subText: {
         type: String,
-        default:''
+        default: ''
     },
     size: {
         type: String,
@@ -48,6 +48,14 @@ export const buttonProps = extend({}, {
         default: false
     },
     disabled: {
+        type: Boolean,
+        default: false
+    },
+    danger: {
+        type: Boolean,
+        default: false
+    },
+    warning: {
         type: Boolean,
         default: false
     }

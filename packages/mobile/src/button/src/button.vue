@@ -6,7 +6,9 @@
         bem.eqm('round', round),
         bem.eqm('square', square),
         bem.eqm('block', block),
-        bem.eqm('disabled', disabled)
+        bem.eqm('disabled', disabled),
+        bem.eqm('danger', danger),
+        bem.eqm('warning', warning)
     ]" :type="nativeType">
         <div :class="[
         bem.e('text')
