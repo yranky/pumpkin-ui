@@ -56,6 +56,24 @@
         <pk-button type="hazy" text="hazy 朦胧按钮" square disabled></pk-button>
         <pk-button type="outline" text="outline 边框按钮" disabled></pk-button>
         <pk-button type="ghost" text="ghost 幽灵按钮" round disabled></pk-button>
+
+
+
+        <div>副标题</div>
+        <pk-button text="primary 主按钮" sub-text="副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题"></pk-button>
+        <pk-button type="hazy" text="hazy 朦胧按钮" sub-text="副标题"></pk-button>
+        <pk-button type="outline" text="outline 边框按钮" sub-text="副标题"></pk-button>
+        <pk-button type="ghost" text="ghost 幽灵按钮" sub-text="副标题"></pk-button>
+        <pk-button type="link" text="link 链接按钮" sub-text="副标题"></pk-button>
+        <div style="display: flex;flex-direction: column;align-items: center;">
+            <pk-button text="primary 主按钮" block sub-text="副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题"></pk-button>
+            <pk-button text="primary 主按钮" block sub-text="副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题" round></pk-button>
+            <pk-button text="primary 主按钮" block sub-text="副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题" square></pk-button>
+            <pk-button type="hazy" text="hazy 朦胧按钮" block sub-text="副标题"></pk-button>
+            <pk-button type="outline" text="outline 边框按钮" block sub-text="副标题"></pk-button>
+            <pk-button type="ghost" text="ghost 幽灵按钮" block sub-text="副标题"></pk-button>
+            <pk-button type="link" text="link 链接按钮" block sub-text="副标题"></pk-button>
+        </div>
     </div>
 </template>
 <script lang="ts" setup>

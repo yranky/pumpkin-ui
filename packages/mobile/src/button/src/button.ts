@@ -26,6 +26,10 @@ export const buttonProps = extend({}, {
         type: String,
         default: ''
     },
+    subText: {
+        type: String,
+        default:''
+    },
     size: {
         type: String,
         values: buttonSizeTypes,

@@ -5,6 +5,7 @@
     --pk-button-line-height-m:1.7;
     --pk-button-line-height-l:2;
     --pk-button-line-height-xl:2.5;
+    --pk-button-line-height-sub:1.53;
 
     --pk-button-z-index-text:var(--pk-z-index-min);
     --pk-button-z-index-mask:var(--pk-z-index-min-2);
@@ -134,6 +135,12 @@
     &__text{
         position: relative;
         z-index: var(--pk-button-z-index-text);
+    }
+
+    &-sub__text{
+        font-size: var(--pk-font-size-xs);
+        line-height: var(--pk-button-line-height-sub);
+        opacity: .6;
     }
     
 }

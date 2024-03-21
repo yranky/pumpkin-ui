@@ -8,9 +8,14 @@
         bem.eqm('block', block),
         bem.eqm('disabled', disabled)
     ]" :type="nativeType">
-        <span :class="[
+        <div :class="[
         bem.e('text')
-    ]">{{ text }}</span>
+    ]">{{ text }}</div>
+        <div :class="[
+        bem.be('sub', 'text')
+    ]" v-if="subText">
+            {{ subText }}
+        </div>
     </component>
 </template>
 <script lang="ts" setup>
