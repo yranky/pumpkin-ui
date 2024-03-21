@@ -35,11 +35,15 @@ export const buttonProps = extend({}, {
         type: Boolean,
         default: false
     },
-    squre: {
+    square: {
         type: Boolean,
         default: false
     },
     block: {
+        type: Boolean,
+        default: false
+    },
+    disabled: {
         type: Boolean,
         default: false
     }

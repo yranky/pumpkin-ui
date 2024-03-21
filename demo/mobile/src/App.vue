@@ -3,4 +3,8 @@
 </template>
 <script setup lang="ts">
 </script>
-<style scoped></style>
+<style>
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+</style>

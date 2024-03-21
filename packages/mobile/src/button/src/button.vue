@@ -4,8 +4,9 @@
         bem.m(type),
         bem.m(size),
         bem.eqm('round', round),
-        bem.eqm('squre', squre),
-        bem.eqm('block', block)
+        bem.eqm('square', square),
+        bem.eqm('block', block),
+        bem.eqm('disabled', disabled)
     ]" :type="nativeType">
         <span :class="[
         bem.e('text')
@@ -13,7 +14,7 @@
     </component>
 </template>
 <script lang="ts" setup>
-import { ButtonTypes, buttonProps } from './button'
+import { buttonProps } from './button'
 import { useBem } from '@pk-ui/use'
 import './button.less'
 
