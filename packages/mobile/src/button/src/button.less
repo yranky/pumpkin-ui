@@ -20,7 +20,7 @@
     cursor: pointer;
     border-radius: var(--pk-radius-m);
     box-shadow: none;
-    color: var(--pk-text-color);
+    color: var(--pk-text-color-invert);
 
     &::after {
         position: absolute;
@@ -29,16 +29,16 @@
         width: 100%;
         height: 100%;
         transform: translate(-50%,-50%);
-        background: var(--pk-bg-invert);
+        background: var(--pk-bg-color);
         border: inherit;
-        border-color: var(--pk-bg-invert);
+        border-color: var(--pk-bg-color);
         border-radius: inherit; 
         opacity: 0;
         content: ' ';
         z-index: var(--pk-button-z-index-mask);
     }
 
-    &:active::after {
+    &:active::before {
         opacity: .3;
     }
 

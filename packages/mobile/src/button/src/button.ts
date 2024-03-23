@@ -84,7 +84,7 @@ export const useButtonStyle = (props: ExtractPropTypes<typeof buttonProps>) => {
             color['--pk-button-primary-background'] = bgColor
             if (bgColor.indexOf('gradient') > -1) {
                 color['--pk-button-primary-border-color'] = "transparent"
-                color['--pk-button-primary-text-color'] = type === "primary" ? "#fff" : "#000000"
+                color['--pk-button-primary-text-color'] = type === "primary" ? "var(--pk-text-color-invert)" : "var(--pk-text-color)"
             }
         }
         if (borderColor || bgColor.indexOf('gradient') === -1) {

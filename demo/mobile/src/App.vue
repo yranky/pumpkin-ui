@@ -4,7 +4,10 @@
 <script setup lang="ts">
 </script>
 <style>
-html {
+html,
+body {
     -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 </style>

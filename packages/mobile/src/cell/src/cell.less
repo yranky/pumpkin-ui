@@ -1,0 +1,86 @@
+:root,
+:host {
+    --pk-cell-padding:var(--pk-padding-l);
+
+    --pk-cell-title-font-size:var(--pk-font-size-m);
+    --pk-cell-value-font-size:var(--pk-font-size-m);
+    --pk-cell-bottom-font-size:var(--pk-font-size-s);
+
+    --pk-cell-title-line-height:1.375;
+    --pk-cell-value-line-height:1.375;
+    --pk-cell-bottom-line-height:1.5;
+}
+
+
+.pk-cell{
+    padding: var(--pk-cell-padding);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &:active::before {
+        position: absolute;
+        content: ' ';
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%,-50%);
+        background: var(--pk-bg-invert);
+        border: inherit;
+        border-color: var(--pk-bg-invert);
+        border-radius: inherit; 
+        opacity: 0.05;
+        z-index: var(--pk-button-z-index-mask);
+    }
+
+    &--border::after{
+        content: ' ';
+        position: absolute;
+        left:var(--pk-cell-padding);
+        right: var(--pk-cell-padding);
+        bottom: 0;
+        border-bottom: var(--pk-border-width-m) solid var(--pk-border-color);
+        transform: scaleY(0.5);
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    .pk-cell__top{
+        display: flex;
+        align-items: center;
+
+        .pk-cell__title{
+            font-size: var(--pk-cell-title-font-size);
+            line-height: var(--pk-cell-title-line-height);
+            flex: 1;
+            color: var(--pk-text-color);
+        }
+    
+        .pk-cell__value{
+            font-size: var(--pk-cell-value-font-size);
+            line-height: var(--pk-cell-value-line-height);
+            flex: 1;
+            color: var(--pk-text-color-secondary);
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 0 var(--pk-padding-m);
+        }
+    
+    
+        .pk-cell__right{
+            display: flex;
+            align-items: center;
+            color: var(--pk-text-color-secondary);
+            font-size: calc(var(--pk-cell-value-font-size) - 3px);
+        }
+    }
+
+    .pk-cell__bottom{
+        color: var(--pk-text-color-secondary);
+        font-size: var(--pk-cell-bottom-font-size);
+        line-height: var(--pk-cell-bottom-line-height);
+    }
+}
