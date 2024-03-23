@@ -104,12 +104,50 @@
             <pk-button type="outline" text="outline 边框按钮" block warning></pk-button>
             <pk-button type="ghost" text="ghost 幽灵按钮" block warning></pk-button>
             <pk-button type="link" text="link 链接按钮" block warning></pk-button>
+            <pk-button type="link" text="点击事件" block warning @click="onClick"></pk-button>
+            <pk-button type="link" text="点击事件 禁用" disabled block warning @click="onClick"></pk-button>
         </div>
+
+
+        <div>自定义颜色</div>
+        <pk-button text="primary 主按钮" warning color="#22a4f1"></pk-button>
+        <pk-button type="hazy" text="hazy 朦胧按钮" warning color="#22a4f1"></pk-button>
+        <pk-button type="outline" text="outline 边框按钮" warning color="#22a4f1"></pk-button>
+        <pk-button type="ghost" text="ghost 幽灵按钮" warning color="#22a4f1"></pk-button>
+        <pk-button type="link" text="link 链接按钮" warning color="#22a4f1"></pk-button>
+
+        <pk-button text="primary 主按钮" warning :color="computedColor" @click="onClick"></pk-button>
+        <pk-button type="hazy" text="hazy 朦胧按钮" warning :color="computedColor" @click="onClick"></pk-button>
+        <pk-button type="outline" text="outline 边框按钮" warning :color="computedColor" @click="onClick"></pk-button>
+        <pk-button type="ghost" text="ghost 幽灵按钮" warning :color="computedColor" @click="onClick"></pk-button>
+        <pk-button type="link" text="link 链接按钮" warning :color="computedColor" @click="onClick"></pk-button>
+        <pk-button text="primary 主按钮" warning :color="computedColor" @click="onClick" block></pk-button>
+        <pk-button type="hazy" text="hazy 朦胧按钮" warning :color="computedColor" @click="onClick" block></pk-button>
     </div>
 </template>
 <script lang="ts" setup>
 import { PkButton } from '@pk-ui/mobile'
+import { computed, ref } from 'vue';
 
+const buttonColorList = [
+    '#22a4f1',
+    'linear-gradient( 135deg, #FEB692 10%, #EA5455 100%)',
+    'linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%)',
+    'linear-gradient( 135deg, #FAD7A1 10%, #E96D71 100%)',
+    'linear-gradient( 135deg, #F1CA74 10%, #A64DB6 100%)'
+]
+
+const currentColor = ref(0)
+
+const computedColor = computed(() => {
+    return buttonColorList[currentColor.value % buttonColorList.length]
+})
+
+const onClick = () => {
+    console.log('点击事件')
+
+    currentColor.value++;
+}
 
 </script>
 <style lang="less" scoped>
