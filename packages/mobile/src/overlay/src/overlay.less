@@ -1,0 +1,16 @@
+:root,
+:host {
+    --pk-overlay-background:var(--pk-overlay-bg-color);
+    --pk-overlay-z-index:var( --pk-z-index-max);
+}
+
+
+.pk-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--pk-overlay-background);
+    z-index: var(--pk-overlay-z-index);
+}

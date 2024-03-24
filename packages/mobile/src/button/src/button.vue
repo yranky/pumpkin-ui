@@ -12,11 +12,14 @@
     ]" :type="nativeType" @click="onClick" :style="buttonStyle">
         <div :class="[
         bem.e('text')
-    ]">{{ text }}</div>
+    ]">{{ text }}
+            <slot></slot>
+        </div>
         <div :class="[
         bem.be('sub', 'text')
     ]" v-if="subText">
             {{ subText }}
+            <slot name="sub"></slot>
         </div>
     </component>
 </template>
