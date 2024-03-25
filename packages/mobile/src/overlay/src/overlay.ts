@@ -7,5 +7,9 @@ export const overlayProps = extend({}, {
     modelValue: {
         type: Boolean,
         default: false
+    },
+    backgroundColor: {
+        type: String,
+        default: ''
     }
 })

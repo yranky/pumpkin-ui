@@ -1,10 +1,14 @@
 <template>
-    <div :class="[
+    <teleport to="body" :disabled="!appendToBody">
+        <transition :name="position === 'center' ? transitionFadeName.b() : transitionSlideName.b(position)" appear>
+            <div :class="[
         bem.b()
-    ]">
-
-    </div>
-    <pk-overlay v-model="show" />
+    ]" v-show="show">
+                <slot></slot>
+            </div>
+        </transition>
+        <pk-overlay v-model="show" />
+    </teleport>
 </template>
 <script setup lang="ts">
 import { useBem } from '@pk-ui/use';
@@ -21,6 +25,8 @@ const props = defineProps(popupProps)
 const emits = defineEmits(popupEmits)
 
 const bem = useBem('popup')
+const transitionSlideName = useBem('slide')
+const transitionFadeName = useBem('fade')
 
 const show = computed<boolean>({
     get() {
