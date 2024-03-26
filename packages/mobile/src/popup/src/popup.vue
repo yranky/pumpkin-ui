@@ -2,7 +2,8 @@
     <teleport to="body" :disabled="!appendToBody">
         <transition :name="position === 'center' ? transitionFadeName.b() : transitionSlideName.b(position)" appear>
             <div :class="[
-        bem.b()
+        bem.b(),
+        bem.m(position)
     ]" v-show="show">
                 <slot></slot>
             </div>
@@ -15,6 +16,7 @@ import { useBem } from '@pk-ui/use';
 import PkOverlay from '../../overlay/src/overlay.vue'
 import { popupProps, popupEmits } from './popup'
 import { computed } from 'vue';
+import "./popup.less"
 
 defineOptions({
     name: 'PkPopup',
