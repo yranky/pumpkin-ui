@@ -9,13 +9,25 @@ export const toastProps = extend({}, {
         type: Boolean,
         default: false
     },
+    text: {
+        type: String,
+        default: ''
+    },
+    overlay: {
+        type: Boolean,
+        default: false
+    },
+    overlayBackgroundColor:{
+        type: String,
+        default:'transparent'
+    },
     position: {
         type: String,
         values: positionTypes,
         default: 'center'
     },
-    appendToBody: {
-        type: Boolean,
-        default: true
+    duration: {
+        type: Number,
+        default: 2000
     }
 })

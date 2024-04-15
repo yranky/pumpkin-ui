@@ -11,5 +11,9 @@ export const overlayProps = extend({}, {
     backgroundColor: {
         type: String,
         default: ''
+    },
+    closeOnPress: {
+        type: Boolean,
+        default: true
     }
 })

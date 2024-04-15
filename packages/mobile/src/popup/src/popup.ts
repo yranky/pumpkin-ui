@@ -17,5 +17,21 @@ export const popupProps = extend({}, {
     appendToBody: {
         type: Boolean,
         default: true
+    },
+    overlay: {
+        type: Boolean,
+        default: true
+    },
+    overlayBackgroundColor: {
+        type: String,
+        default:''
+    },
+    fade: {
+        type: Boolean,
+        default: true
+    },
+    backgroundColor: {
+        type: String,
+        default: ''
     }
 })

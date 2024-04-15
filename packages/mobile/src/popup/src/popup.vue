@@ -1,14 +1,17 @@
 <template>
     <teleport to="body" :disabled="!appendToBody">
-        <transition :name="position === 'center' ? transitionFadeName.b() : transitionSlideName.b(position)" appear>
+        <transition :name="position === 'center' || fade ? transitionFadeName.b() : transitionSlideName.b(position)"
+            appear>
             <div :class="[
-        bem.b(),
-        bem.m(position)
-    ]" v-show="show">
+                bem.b(),
+                bem.m(position)
+            ]" v-show="show" :style="{
+                background: backgroundColor
+            }">
                 <slot></slot>
             </div>
         </transition>
-        <pk-overlay v-model="show" />
+        <pk-overlay v-if="overlay" v-model="show" v-bind="$attrs" :backgroundColor="overlayBackgroundColor" />
     </teleport>
 </template>
 <script setup lang="ts">

@@ -1,10 +1,10 @@
 <template>
     <transition :name="transitionName.b()" appear>
         <div :class="[
-        bem.b()
-    ]" v-show="show" @click="show = false" :style="{
-        backgroundColor
-    }">
+            bem.b()
+        ]" v-show="show" @click="closeOnPress ? show = false : ''" :style="{
+            backgroundColor
+        }">
             <slot></slot>
         </div>
     </transition>
