@@ -1,0 +1,51 @@
+:root,
+:host {
+    --pk-loading-size: 30px;
+    --pk-loading-text-color: var(--pk-text-color-disabled);
+    --pk-loading-color: var(--pk-text-color);
+}
+
+
+.pk-loading {
+    position: relative;
+    color: var(--pk-loading-text-color);
+    font-size: 0;
+    vertical-align: middle;
+
+    &__spinner {
+        position: relative;
+        display: inline-block;
+        width: var(--pk-loading-size);
+        height: var(--pk-loading-size);
+        vertical-align: middle;
+        animation: pk-rotate var(--pk-animation-duration) linear infinite;
+    }
+
+    &__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &::before {
+            content: ' ';
+            background-color: var(--pk-loading-color);
+            display: block;
+            width: 2px;
+            height: 30%;
+            margin: 0 auto;
+        }
+    }
+
+    .generate-spinner(@n, @i: 1) when (@i =< @n) {
+        .pk-loading__line--@{i} {
+            transform: rotate(@i * 45deg);
+            opacity: (0.125 * @i);
+        }
+
+        .generate-spinner(@n, (@i + 1));
+    }
+
+    .generate-spinner(12);
+}
