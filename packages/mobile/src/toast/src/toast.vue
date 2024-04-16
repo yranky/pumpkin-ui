@@ -1,6 +1,6 @@
 <template>
     <popup v-model="show" fade :close-on-press="false" :overlayBackgroundColor="overlayBackgroundColor"
-        backgroundColor="transparent" :position="position">
+        backgroundColor="transparent" :position="position" overflowY="visible">
         <div :class="[
             bem.b(),
             bem.m(position)

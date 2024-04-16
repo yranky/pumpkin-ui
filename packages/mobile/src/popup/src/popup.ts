@@ -33,5 +33,9 @@ export const popupProps = extend({}, {
     backgroundColor: {
         type: String,
         default: ''
+    },
+    overflowY: {
+        type: String,
+        default:'auto'
     }
 })

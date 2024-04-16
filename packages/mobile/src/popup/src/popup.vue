@@ -6,7 +6,8 @@
                 bem.b(),
                 bem.m(position)
             ]" v-show="show" :style="{
-                background: backgroundColor
+                background: backgroundColor,
+                overflowY
             }">
                 <slot></slot>
             </div>

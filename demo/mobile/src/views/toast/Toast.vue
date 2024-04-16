@@ -1,8 +1,8 @@
 <template>
     <div class="toast-container">
         <pk-button block @click="show = !show">显示toast</pk-button>
-        <pk-button block @click="show = !showTop">显示toast top</pk-button>
-        <pk-button block @click="show = !showBottom">显示toast bottom</pk-button>
+        <pk-button block @click="showTop = !showTop">显示toast top</pk-button>
+        <pk-button block @click="showBottom = !showBottom">显示toast bottom</pk-button>
     </div>
     <pk-toast v-model="show" text="测试" position="center" />
     <pk-toast v-model="showBottom" text="测试" position="bottom" />
