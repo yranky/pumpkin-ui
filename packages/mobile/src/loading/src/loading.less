@@ -2,7 +2,7 @@
 :host {
     --pk-loading-size: 30px;
     --pk-loading-text-color: var(--pk-text-color-disabled);
-    --pk-loading-color: var(--pk-text-color);
+    --pk-loading-color: var(--pk-text-color-secondary);
 }
 
 
@@ -36,16 +36,72 @@
             height: 30%;
             margin: 0 auto;
         }
-    }
 
-    .generate-spinner(@n, @i: 1) when (@i =< @n) {
-        .pk-loading__line--@{i} {
-            transform: rotate(@i * 45deg);
-            opacity: (0.125 * @i);
+        .generate-spinner(@n, @i: 1) when (@i =< @n) {
+            &--@{i} {
+                transform: rotate(@i * 45deg);
+                opacity: (0.125 * @i);
+            }
+
+            .generate-spinner(@n, (@i + 1));
         }
 
-        .generate-spinner(@n, (@i + 1));
+        .generate-spinner(12);
     }
 
-    .generate-spinner(12);
+    &__circle {
+        width: var(--pk-loading-size);
+        height: var(--pk-loading-size);
+        animation: pk-rotate var(--pk-animation-duration) ease-in-out infinite;
+    }
+
+    &__circle1 {
+        stroke-width: 3;
+        animation: circle1 calc(var(--pk-animation-duration)* 1.5) ease-in-out infinite;
+        transform: rotate(-90deg);
+        transform-origin: bottom right;
+        stroke: var(--pk-loading-color);
+
+        @keyframes circle1 {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -40;
+            }
+
+            100% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -120;
+            }
+        }
+    }
+
+    &__circle2 {
+        stroke-width: 3;
+        transform: rotate(-90deg);
+        transform-origin: bottom right;
+        animation: circle2 calc(var(--pk-animation-duration)* 2.5) linear infinite;
+        stroke: var(--pk-loading-color);
+
+        @keyframes circle2 {
+            0% {
+                stroke-dasharray: 1, 100;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 45, 75;
+                stroke-dashoffset: -20;
+            }
+
+            100% {
+                stroke-dasharray: 45, 75;
+                stroke-dashoffset: -60;
+            }
+        }
+    }
 }

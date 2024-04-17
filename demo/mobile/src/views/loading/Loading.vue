@@ -1,6 +1,9 @@
 <template>
     <div class="loading-container">
-        <pk-loading />
+        <pk-loading type="circular" />
+        <pk-loading type="spinner" />
+        <pk-loading type="spinner" color="red" />
+        <pk-loading type="circular" color="red" />
     </div>
 </template>
 <script lang="ts" setup>
