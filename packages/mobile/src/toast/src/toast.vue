@@ -3,12 +3,15 @@
         backgroundColor="transparent" :position="position" overflowY="visible">
         <div :class="[
             bem.b(),
-            bem.m(position)
+            bem.m(position),
+            bem.m(type)
         ]">
             <div :class="[
                 bem.e('icon')
-            ]">
-                <slot name="icon"></slot>
+            ]" v-if="type === 'icon' || type === 'loading'">
+                <slot name="icon">
+                    <loading v-if="type === 'loading'" type="circular" color="currentColor" />
+                </slot>
             </div>
             <div :class="[
                 bem.e('text')
@@ -26,6 +29,7 @@ import { toastProps, toastEmits } from './toast'
 import { computed, watch } from 'vue'
 import "./toast.less"
 import Popup from '../../popup'
+import Loading from '../../loading'
 
 defineOptions({
     name: 'PkToast',

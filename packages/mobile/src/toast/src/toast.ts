@@ -3,8 +3,14 @@ import { extend } from "@pk-ui/utils";
 
 export const toastEmits = ['update:modelValue']
 export const positionTypes = ['top', 'bottom', 'center'] as const
+export const types = ['text', 'loading', 'success', 'fail', 'icon'] as const
 
 export const toastProps = extend({}, {
+    type: {
+        type: String,
+        values: types,
+        default: 'text'
+    },
     modelValue: {
         type: Boolean,
         default: false
@@ -17,9 +23,9 @@ export const toastProps = extend({}, {
         type: Boolean,
         default: false
     },
-    overlayBackgroundColor:{
+    overlayBackgroundColor: {
         type: String,
-        default:'transparent'
+        default: 'transparent'
     },
     position: {
         type: String,

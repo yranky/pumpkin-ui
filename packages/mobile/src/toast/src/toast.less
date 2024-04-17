@@ -18,12 +18,22 @@
     border-radius: var(--pk-toast-border-radius);
     left: 50%;
     transform: translateX(-50%);
+    max-width: 70vw;
 
-    &__icon {}
+    &--loading {
+        padding: var(--pk-toast-padding-l) calc(var(--pk-toast-padding-l) * 3);
+    }
+
+    &__icon {
+        padding: var(--pk-padding-s);
+        display: flex;
+        justify-content: center;
+    }
 
     &__text {
         color: var(--pk-toast-text-color);
         font-size: var(--pk-toast-font-size);
+        text-align: center;
     }
 
 
@@ -37,5 +47,7 @@
 
     &--center {
         width: max-content;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
