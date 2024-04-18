@@ -28,7 +28,7 @@ export const popupProps = extend({}, {
     },
     fade: {
         type: Boolean,
-        default: true
+        default: false
     },
     backgroundColor: {
         type: String,

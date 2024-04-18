@@ -1,0 +1,84 @@
+:root,
+:host {
+    --pk-action-sheet-color: var(--pk-text-color);
+    --pk-action-sheet-footer-gap: 8px;
+    --pk-action-sheet-item-padding: 16px;
+}
+
+
+.pk-action-sheet {
+    color: var(--pk-action-sheet-color);
+
+    &__header {
+        padding: var(--pk-padding-l);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--pk-border-color);
+            content: '';
+            width: 100%;
+            transform: scaleY(0.5);
+        }
+    }
+
+    &__title {
+        font-size: var(--pk-font-size-m);
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        font-size: var(--pk-font-size-s);
+        color: var(--pk-text-color-secondary);
+        padding: var(--pk-padding-s) 0 0 0;
+    }
+
+    &__content {}
+
+    &__item {
+        position: relative;
+        padding: var(--pk-action-sheet-item-padding);
+        display: flex;
+        justify-content: center;
+        font-size: var(--pk-font-size-m);
+
+        &:active::before {
+            position: absolute;
+            content: ' ';
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            background: var(--pk-bg-invert);
+            border: inherit;
+            border-color: var(--pk-bg-invert);
+            border-radius: inherit;
+            opacity: 0.05;
+            z-index: var(--pk-button-z-index-mask);
+        }
+    }
+
+    &__footer {
+        position: relative;
+        padding-top: var(--pk-action-sheet-footer-gap);
+
+        &::before {
+            content: '';
+            position: absolute;
+            background: var(--pk-border-color);
+            height: var(--pk-action-sheet-footer-gap);
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: .5;
+        }
+    }
+}

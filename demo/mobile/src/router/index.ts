@@ -6,7 +6,8 @@ const routes = [
     { path: '/overlay', component: ()=>import("../views/overlay/Overlay.vue") },
     { path: '/popup', component: ()=>import("../views/popup/Popup.vue") },
     { path: '/toast', component: ()=>import("../views/toast/Toast.vue") },
-    { path: '/loading', component: ()=>import('../views/loading/Loading.vue') }
+    { path: '/loading', component: () => import('../views/loading/Loading.vue') },
+    { path: '/action-sheet', component: ()=>import('../views/action-sheet/ActionSheet.vue') }
 ]
 
 
