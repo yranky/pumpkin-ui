@@ -3,11 +3,15 @@
     --pk-action-sheet-color: var(--pk-text-color);
     --pk-action-sheet-footer-gap: 8px;
     --pk-action-sheet-item-padding: 16px;
+    --pk-action-sheet-item-icon: 24px;
+    --pk-action-sheet-disabled-text-color: var(--pk-text-color-disabled);
 }
 
 
 .pk-action-sheet {
     color: var(--pk-action-sheet-color);
+    background: var(--pk-bg-color);
+    border-radius: var(--pk-radius-l);
 
     &__header {
         padding: var(--pk-padding-l);
@@ -48,6 +52,7 @@
         display: flex;
         justify-content: center;
         font-size: var(--pk-font-size-m);
+        align-items: center;
 
         &:active::before {
             position: absolute;
@@ -64,6 +69,33 @@
             opacity: 0.05;
             z-index: var(--pk-button-z-index-mask);
         }
+    }
+
+    &--loading {
+        color: var(--pk-action-sheet-disabled-text-color);
+
+        &:active::before {
+            display: none;
+        }
+    }
+
+    &--disabled {
+        color: var(--pk-action-sheet-disabled-text-color);
+
+        &:active::before {
+            display: none;
+        }
+    }
+
+    &__item-icon {
+        &>div {
+            width: var(--pk-action-sheet-item-icon);
+            height: var(--pk-action-sheet-item-icon);
+        }
+    }
+
+    &__text {
+        margin: 0 2px;
     }
 
     &__footer {

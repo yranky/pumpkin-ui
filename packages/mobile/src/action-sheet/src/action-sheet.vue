@@ -1,20 +1,20 @@
 <template>
-    <popup v-model="show" position="bottom">
+    <popup v-model="show" position="bottom" backgroundColor="transparent">
         <div :class="[
             bem.b()
         ]">
             <div :class="[
                 bem.e('header')
-            ]">
+            ]" v-if="!!title || !!subtitle">
                 <div :class="[
                     bem.e('title')
-                ]">
-                    标题
+                ]" v-if="!!title">
+                    {{ title }}
                 </div>
                 <div :class="[
                     bem.e('subtitle')
-                ]">
-                    这是一段描述信息
+                ]" v-if="!!subtitle">
+                    {{ subtitle }}
                 </div>
             </div>
 
@@ -22,25 +22,29 @@
                 bem.e('content')
             ]">
                 <div :class="[
-                    bem.e('item')
-                ]">
-                    选项一
-                </div>
-                <div :class="[
-                    bem.e('item')
-                ]">
-                    选项二
+                    bem.e('item'),
+                    bem.eqm('loading', !!item.loading),
+                    bem.eqm('disabled', !!item.disabled)
+                ]" v-for="(item, index) in actions" :key="item.name">
+                    <loading :class="[
+                        bem.e('item-icon')
+                    ]" color="currentColor" v-if="item.loading" />
+                    <span :class="[
+                        bem.e('text')
+                    ]">
+                        {{ item.name }}
+                    </span>
                 </div>
             </div>
 
 
             <div :class="[
                 bem.e('footer')
-            ]">
+            ]" v-if="cancel">
                 <div :class="[
                     bem.e('item')
                 ]">
-                    取消
+                    {{ cancelText }}
                 </div>
             </div>
         </div>

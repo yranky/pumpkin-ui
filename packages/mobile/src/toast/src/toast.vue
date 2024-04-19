@@ -10,7 +10,7 @@
                 bem.e('icon')
             ]" v-if="type === 'icon' || type === 'loading'">
                 <slot name="icon">
-                    <loading v-if="type === 'loading'" type="circular" color="currentColor" />
+                    <loading v-if="type === 'loading'" color="currentColor" />
                 </slot>
             </div>
             <div :class="[

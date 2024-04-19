@@ -7,7 +7,7 @@ export const loadingProps = extend({}, {
     type: {
         type: String,
         values:loadingTypes,
-        default: 'spinner'
+        default: 'circular'
     },
     color: {
         type: String,
