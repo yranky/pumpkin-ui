@@ -1,7 +1,7 @@
 <template>
-    <div class="action-sheet-container">
+    <div class="picker-container">
         <pk-button @click="show = !show">显示actionSheet</pk-button>
-        <pk-action-sheet :actions="[
+        <pk-picker :actions="[
             {
                 name: '选项一'
             },
@@ -29,14 +29,16 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkActionSheet, PkButton } from "@pk-ui/mobile"
+import { PkOverlay, PkButton, PkLoading, PkPicker } from "@pk-ui/mobile"
 import { ref } from 'vue'
+
+
 
 const show = ref<boolean>(true)
 
 </script>
 <style lang="less" scoped>
-.action-sheet-container {
+.picker-container {
     padding: 10px 0;
 }
 </style>
