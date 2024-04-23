@@ -7,14 +7,18 @@ export interface PickerItem{
     children?: PickerItem[]
 }
 
-export const pickerEmits = ['update:modelValue']
-export const pickerProps = extend({}, {
-    modelValue: {
-        type: Boolean,
-        default: false
-    },
+export const pickerViewEmits = []
+export const pickerViewProps = extend({}, {
     items: {
         type: Array as () => PickerItem[],
         default: () => []
+    },
+    visibleItemCount: {
+        type: Number,
+        default:5
+    },
+    itemHeight: {
+        type: Number,
+        default:50
     }
 })

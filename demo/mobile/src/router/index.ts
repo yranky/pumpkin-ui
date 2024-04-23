@@ -8,7 +8,8 @@ const routes = [
     { path: '/toast', component: ()=>import("../views/toast/Toast.vue") },
     { path: '/loading', component: () => import('../views/loading/Loading.vue') },
     { path: '/action-sheet', component: ()=>import('../views/action-sheet/ActionSheet.vue') },
-    { path: '/picker', component: ()=>import('../views/picker/Picker.vue') }
+    { path: '/picker', component: ()=>import('../views/picker/Picker.vue') },
+    { path: '/picker-view', component: ()=>import('../views/picker-view/PickerView.vue') }
 ]
 
 

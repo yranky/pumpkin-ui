@@ -1,29 +1,26 @@
 <template>
     <div class="picker-container">
-        <pk-button @click="show = !show">显示actionSheet</pk-button>
-        <pk-picker :actions="[
+        <pk-button @click="show = !show">显示picker</pk-button>
+        <pk-picker :items="[
             {
-                name: '选项一'
+                label: '选项一'
             },
             {
-                name: '选项二',
-                color: 'red'
+                label: '选项二'
             }, {
-                name: '选项三',
-                loading: true
+                label: '选项三'
             }, {
-                name: '选项四',
-                disabled: true
+                label: '选项四'
             }, {
-                name: '选项五'
+                label: '选项五'
             }, {
-                name: '选项6'
+                label: '选项6'
             }, {
-                name: '选项7'
+                label: '选项7'
             }, {
-                name: '选项8'
+                label: '选项8'
             }, {
-                name: '选项9'
+                label: '选项9'
             }
         ]" v-model="show" title="测试" />
     </div>

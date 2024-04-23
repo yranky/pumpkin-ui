@@ -1,6 +1,10 @@
 <template>
     <popup v-model="show" backgroundColor="transparent" position="bottom" overflowY="visible">
+        <div :class="[
+            bem.b()
+        ]">
 
+        </div>
     </popup>
 </template>
 <script lang="ts" setup>
