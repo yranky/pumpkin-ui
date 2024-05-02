@@ -6,14 +6,15 @@
   "scripts": {
     "build:mobile_docs": "pnpm -C docs/mobile run build",
     "dev:mobile_docs": "pnpm -C docs/mobile run dev",
-    "dev:demo_mobile":"pnpm -C demo/mobile run dev"
+    "dev:demo_mobile":"pnpm -C demo/mobile run dev",
+    "dev:uni-vue3:h5":"pnpm -C packages/uni-vue3 run dev:h5",
+    "dev:uni-vue3:mp-weixin":"pnpm -C packages/uni-vue3 run dev:mp-weixin"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@pk-ui/mobile": "workspace:^",
-    "@pk-ui/mobile_docs": "workspace:^",
     "@pk-ui/use": "workspace:^",
     "@pk-ui/utils": "workspace:^"
   }

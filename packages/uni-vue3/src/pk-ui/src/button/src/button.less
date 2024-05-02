@@ -1,0 +1,156 @@
+page {
+    --pk-button-line-height-xs: 1.1;
+    --pk-button-line-height-s: 1.2;
+    --pk-button-line-height-m: 1.7;
+    --pk-button-line-height-l: 2;
+    --pk-button-line-height-xl: 2.5;
+    --pk-button-line-height-sub: 1.53;
+
+    --pk-button-z-index-text: var(--pk-z-index-min);
+    --pk-button-z-index-mask: var(--pk-z-index-min-2);
+
+    --pk-button-primary-background: var(--pk-primary-color);
+    --pk-button-primary-border-color: var(--pk-primary-color);
+    --pk-button-primary-text-color: var(--pk-primary-color);
+}
+
+.pk-button {
+    position: relative;
+    cursor: pointer;
+    border-radius: var(--pk-radius-m);
+    box-shadow: none;
+    color: var(--pk-text-color-invert);
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        background: var(--pk-bg-color);
+        border: inherit;
+        border-color: var(--pk-bg-color);
+        border-radius: inherit;
+        opacity: 0;
+        content: ' ';
+        z-index: var(--pk-button-z-index-mask);
+        box-sizing: content-box;
+    }
+
+    &:active::after {
+        opacity: .3;
+    }
+
+    &--danger {
+        --pk-button-primary-background: var(--pk-error-color);
+        --pk-button-primary-border-color: var(--pk-error-color);
+        --pk-button-primary-text-color: var(--pk-error-color);
+    }
+
+    &--warning {
+        --pk-button-primary-background: var(--pk-warning-color);
+        --pk-button-primary-border-color: var(--pk-warning-color);
+        --pk-button-primary-text-color: var(--pk-warning-color);
+    }
+
+    &--primary {
+        background: var(--pk-button-primary-background);
+        border: var(--pk-border-width-s) solid var(--pk-button-primary-border-color);
+    }
+
+    &--hazy {
+        border: var(--pk-border-width-s) solid var(--pk-button-primary-border-color);
+        color: var(--pk-button-primary-text-color);
+        background: inherit;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--pk-button-primary-background);
+            opacity: 0.2;
+            top: 0;
+            left: 0;
+            border-radius: inherit;
+        }
+    }
+
+    &--outline {
+        border: var(--pk-border-width-s) solid var(--pk-border-color);
+        color: var(--pk-button-primary-text-color);
+        background: inherit;
+    }
+
+    &--ghost {
+        border: var(--pk-border-width-s) solid var(--pk-button-primary-border-color);
+        color: var(--pk-button-primary-text-color);
+        background: inherit;
+    }
+
+    &--link {
+        background: inherit;
+        border: var(--pk-border-width-s) solid transparent;
+        color: var(--pk-button-primary-text-color);
+    }
+
+
+    &--xs {
+        padding: var(--pk-padding-s);
+        font-size: var(--pk-font-size-s);
+        line-height: var(--pk-button-line-height-xs);
+    }
+
+    &--s {
+        padding: var(--pk-padding-s);
+        font-size: var(--pk-font-size-s);
+        line-height: var(--pk-button-line-height-s);
+    }
+
+    &--m {
+        padding: var(--pk-padding-m);
+        font-size: var(--pk-font-size-m);
+        line-height: var(--pk-button-line-height-m);
+    }
+
+    &--l {
+        padding: var(--pk-padding-m);
+        font-size: var(--pk-font-size-m);
+        line-height: var(--pk-button-line-height-l);
+    }
+
+    &--xl {
+        padding: var(--pk-padding-m);
+        font-size: var(--pk-font-size-l);
+        line-height: var(--pk-button-line-height-xl);
+    }
+
+    &--round {
+        border-radius: var(--pk-radius-max);
+    }
+
+    &--square {
+        border-radius: 0;
+    }
+
+    &--disabled {
+        opacity: var(--pk-disabled-opacity);
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: var(--pk-button-z-index-text);
+    }
+
+    &-sub__text {
+        font-size: var(--pk-font-size-xs);
+        line-height: var(--pk-button-line-height-sub);
+        opacity: .6;
+    }
+
+}
