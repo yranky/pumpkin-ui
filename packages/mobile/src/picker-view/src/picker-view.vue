@@ -5,17 +5,7 @@
         <div :class="[
             bem.e('content')
         ]">
-            <div :class="[
-                bem.e('column')
-            ]" :style="{
-                height: visibleItemCount * itemHeight + 'px'
-            }">
-                <div :class="[
-                    bem.e('item')
-                ]" :style="{
-                    height: itemHeight + 'px'
-                }" v-for="item in 10" :key="item">1212</div>
-            </div>
+            <picker-column :col-items="[]" :visible-item-count="visibleItemCount" :item-height="itemHeight" />
         </div>
         <div :class="[
             bem.e('mask'),
@@ -34,6 +24,7 @@
 <script lang="ts" setup>
 import { useBem } from '@pk-ui/use'
 import { pickerViewProps, pickerViewEmits } from './picker-view'
+import pickerColumn from './picker-column.vue'
 import './picker-view.less'
 
 defineOptions({
