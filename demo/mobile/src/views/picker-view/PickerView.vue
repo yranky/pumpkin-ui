@@ -1,6 +1,6 @@
 <template>
     <div class="picker-view-container">
-        <pk-picker-view :items="colItems"></pk-picker-view>
+        <pk-picker-view :items="colItems" :visibleItemCount="7"></pk-picker-view>
     </div>
 </template>
 <script lang="ts" setup>

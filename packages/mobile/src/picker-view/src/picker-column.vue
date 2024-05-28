@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { pickerColumnEmits, pickerColumnProps } from './picker-column';
-import './picker-view.less'
+import './picker-column.less'
 import { useBem, useTouch } from '@pk-ui/use'
 
 const props = defineProps(pickerColumnProps)
@@ -34,11 +34,11 @@ defineOptions({
     name: 'PkPickerViewColumn',
 })
 
-const bem = useBem('picker-view')
+const bem = useBem('picker-column')
 
 const translateY = ref(0)
 const baseTranslateY = computed(() => {
-    return (props.itemHeight * props.visibleItemCount) / 2
+    return (props.itemHeight * (props.visibleItemCount - 1)) / 2
 })
 const touch = useTouch()
 const duration = ref(200)

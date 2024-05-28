@@ -4,18 +4,26 @@
 
 
 .pk-picker-view {
+    position: relative;
+
     &__content {}
 
-    &__column {
-        overflow: hidden;
-        background: red;
+    &--top {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background: rgba(255, 255, 255, .8);
     }
 
-    &__wrapper {}
 
-    &__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    &--bottom {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background: rgba(255, 255, 255, .8);
     }
 }
