@@ -14,7 +14,9 @@
                 bem.e('item')
             ]" :style="{
                 height: itemHeight + 'px'
-            }" v-for="item in 10" :key="item">1212</div>
+            }" v-for="item in colItems" :key="item.value">
+                {{ item.label }}
+            </div>
         </div>
     </div>
 </template>
@@ -58,6 +60,16 @@ const onColumnTouchMove = (event: TouchEvent) => {
 const onColumnTouchEnd = (event: TouchEvent) => {
     setDuration(true)
     touch.end(event)
+    getIndexByOffset();
+}
+
+const getIndexByOffset = () => {
+    let index = Math.round(translateY.value / props.itemHeight);
+    if (index >= 0) index = 0;
+    else if (Math.abs(index) <= props.colItems.length - 1) index = Math.abs(index);
+    else index = props.colItems.length - 1;
+
+    translateY.value = -index * props.itemHeight;
 }
 
 </script>

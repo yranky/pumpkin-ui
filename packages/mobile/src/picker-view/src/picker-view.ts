@@ -2,8 +2,8 @@ import { extend } from "@pk-ui/utils"
 
 
 export interface PickerItem{
-    label: String|Number,
-    value: String | Number,
+    label: string | number,
+    value: string | number,
     children?: PickerItem[]
 }
 

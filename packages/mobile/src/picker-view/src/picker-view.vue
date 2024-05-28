@@ -5,7 +5,7 @@
         <div :class="[
             bem.e('content')
         ]">
-            <picker-column :col-items="[]" :visible-item-count="visibleItemCount" :item-height="itemHeight" />
+            <picker-column :col-items="items" :visible-item-count="visibleItemCount" :item-height="itemHeight" />
         </div>
         <div :class="[
             bem.e('mask'),
