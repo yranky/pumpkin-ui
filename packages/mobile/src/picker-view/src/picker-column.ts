@@ -1,7 +1,10 @@
 import { extend } from "@pk-ui/utils"
 import { PickerItem } from "./picker-view"
 
-export const pickerColumnEmits = []
+export type pickerColumnEmits = {
+    (event: 'change', value: PickerItem): void
+}
+
 export const pickerColumnProps = extend({}, {
     colItems: {
         type: Array as () => PickerItem[],
@@ -9,10 +12,10 @@ export const pickerColumnProps = extend({}, {
     },
     visibleItemCount: {
         type: Number,
-        default:5
+        default: 5
     },
     itemHeight: {
         type: Number,
-        default:50
+        default: 50
     }
 })

@@ -5,7 +5,12 @@
         <div :class="[
             bem.e('content')
         ]">
-            <picker-column :col-items="items" :visible-item-count="visibleItemCount" :item-height="itemHeight" />
+            <div :class="[
+                bem.e('wrapper')
+            ]">
+                <picker-column :col-items="items" :visible-item-count="visibleItemCount" :item-height="itemHeight"
+                    @change="onPickerColumnChange" />
+            </div>
         </div>
         <div :class="[
             bem.e('mask'),
@@ -27,8 +32,8 @@
 </template>
 <script lang="ts" setup>
 import { useBem } from '@pk-ui/use'
-import { pickerViewProps, pickerViewEmits } from './picker-view'
-import pickerColumn from './picker-column.vue'
+import { pickerViewProps, pickerViewEmits, PickerItem } from './picker-view'
+import PickerColumn from './picker-column.vue'
 import './picker-view.less'
 import { computed } from 'vue';
 
@@ -45,4 +50,8 @@ const bem = useBem('picker-view')
 const maskHeight = computed(() => {
     return (props.visibleItemCount - 1) / 2 * props.itemHeight
 })
+
+const onPickerColumnChange = (value: PickerItem) => {
+    console.log('切换值', value)
+}
 </script>

@@ -28,7 +28,7 @@ import { useBem, useTouch } from '@pk-ui/use'
 
 const props = defineProps(pickerColumnProps)
 
-const emits = defineEmits(pickerColumnEmits)
+const emits = defineEmits<pickerColumnEmits>()
 
 defineOptions({
     name: 'PkPickerViewColumn',
@@ -70,6 +70,8 @@ const getIndexByOffset = () => {
     else index = props.colItems.length - 1;
 
     translateY.value = -index * props.itemHeight;
+
+    emits('change', props.colItems[index]);
 }
 
 </script>
