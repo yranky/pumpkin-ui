@@ -1,12 +1,36 @@
 :root,
-:host {}
+:host {
+    --pk-field-margin: var(--pk-margin-m);
+    --pk-field-padding: var(--pk-padding-m);
+    --pk-filed-font-size: var(--pk-font-size-m);
+}
 
 @namespace: pk-field;
 
 .@{namespace} {
     &__content {
         display: flex;
+        align-items: center;
 
-        .@{namespace}__title {}
+        .@{namespace}__title {
+            margin-right: var(--pk-field-margin);
+            padding: var(--pk-field-padding) 0;
+            font-size: var(--pk-filed-font-size);
+        }
+
+        .@{namespace}__wrapper {
+            flex: 1;
+            display: flex;
+            align-self: stretch;
+
+            .@{namespace}__placeholder {}
+
+            .@{namespace}__input {
+                border: none;
+                flex: 1;
+                justify-self: stretch;
+                font-size: var(--pk-filed-font-size);
+            }
+        }
     }
 }

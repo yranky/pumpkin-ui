@@ -16,11 +16,9 @@
                 <div :class="[
                     bem.e('placeholder')
                 ]"></div>
-                <div :class="[
+                <input :class="[
                     bem.e('input')
-                ]">
-                    <input />
-                </div>
+                ]" />
             </div>
         </div>
     </div>
