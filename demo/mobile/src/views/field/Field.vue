@@ -1,6 +1,6 @@
 <template>
     <div class="field-container">
-        <pk-field title="测试" />
+        <pk-field title="测试" placeholder="测试测试测试测试测试" />
     </div>
 </template>
 <script lang="ts" setup>

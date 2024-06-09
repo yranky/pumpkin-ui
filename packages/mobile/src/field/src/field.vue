@@ -13,10 +13,10 @@
             <div :class="[
                 bem.e('wrapper')
             ]">
-                <div :class="[
+                <!-- <div :class="[
                     bem.e('placeholder')
-                ]"></div>
-                <input :class="[
+                ]">请输入</div> -->
+                <input :placeholder="placeholder" :class="[
                     bem.e('input')
                 ]" />
             </div>

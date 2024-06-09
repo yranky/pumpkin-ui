@@ -3,6 +3,8 @@
     --pk-field-margin: var(--pk-margin-m);
     --pk-field-padding: var(--pk-padding-m);
     --pk-filed-font-size: var(--pk-font-size-m);
+    --pk-filed-text-color-secondary: var(--pk-text-color-secondary);
+    --pk-filed-text-color: var(--pk-text-color);
 }
 
 @namespace: pk-field;
@@ -13,23 +15,38 @@
         align-items: center;
 
         .@{namespace}__title {
-            margin-right: var(--pk-field-margin);
+            margin: 0 var(--pk-field-margin);
             padding: var(--pk-field-padding) 0;
             font-size: var(--pk-filed-font-size);
+            color: var(--pk-filed-text-color);
         }
 
         .@{namespace}__wrapper {
             flex: 1;
             display: flex;
             align-self: stretch;
+            position: relative;
 
-            .@{namespace}__placeholder {}
+            // .@{namespace}__placeholder {
+            //     position: absolute;
+            //     left: 0;
+            //     top: 50%;
+            //     transform: translateY(-50%);
+            //     color: var(--pk-filed-text-color-secondary);
+            // }
 
             .@{namespace}__input {
                 border: none;
                 flex: 1;
                 justify-self: stretch;
                 font-size: var(--pk-filed-font-size);
+                outline: none;
+                color: var(--pk-text-color);
+                margin-right: var(--pk-field-margin);
+
+                &::placeholder {
+                    color: var(--pk-filed-text-color-secondary);
+                }
             }
         }
     }
