@@ -1,0 +1,75 @@
+:root,
+:host {
+    --switch-height-s: 20px;
+    --switch-height-m: 26px;
+    --switch-height-l: 32px;
+    --switch-width: 60px;
+    --switch-inactive-background: #b9bec5;
+    --switch-active-background: var(--pk-primary-color);
+    --switch-transition-duration: .3s;
+    --switch-transition-fn: cubic-bezier(0.07, 1.04, 0.7, 0.9);
+}
+
+@namespace: pk-switch;
+
+.@{namespace} {
+    width: var(--switch-width);
+    border-radius: 9999999px;
+    background: var(--switch-inactive-background);
+    overflow: hidden;
+    padding: var(--pk-border-width-l);
+    transition: background var(--switch-transition-duration) var(--switch-transition-fn);
+    position: relative;
+
+    &__slide {
+        background: var(--pk-bg-color);
+        border-radius: 100%;
+        position: absolute;
+        left: var(--pk-border-width-l);
+        top: var(--pk-border-width-l);
+        transition: all var(--switch-transition-duration) var(--switch-transition-fn);
+    }
+
+    &__wrapper {
+        .@{namespace}__close {}
+
+        .@{namespace}__open {}
+    }
+
+    &--active {
+        background: var(--switch-active-background);
+
+        .@{namespace}__slide {
+            position: absolute;
+            left: calc(100% - var(--pk-border-width-l));
+            transform: translateX(-100%);
+        }
+    }
+
+    &--s {
+        height: var(--switch-height-s);
+
+        .@{namespace}__slide {
+            width: var(--switch-height-s);
+            height: var(--switch-height-s);
+        }
+    }
+
+    &--m {
+        height: var(--switch-height-m);
+
+        .@{namespace}__slide {
+            width: var(--switch-height-m);
+            height: var(--switch-height-m);
+        }
+    }
+
+    &--l {
+        height: var(--switch-height-l);
+
+        .@{namespace}__slide {
+            width: var(--switch-height-l);
+            height: var(--switch-height-l);
+        }
+    }
+}

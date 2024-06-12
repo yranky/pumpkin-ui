@@ -10,7 +10,8 @@ const routes = [
     { path: '/action-sheet', component: () => import('../views/action-sheet/ActionSheet.vue') },
     { path: '/picker', component: () => import('../views/picker/Picker.vue') },
     { path: '/picker-view', component: () => import('../views/picker-view/PickerView.vue') },
-    { path: '/field', component: () => import('../views/field/Field.vue') }
+    { path: '/field', component: () => import('../views/field/Field.vue') },
+    { path: '/switch', component: () => import('../views/switch/Switch.vue') }
 ]
 
 
