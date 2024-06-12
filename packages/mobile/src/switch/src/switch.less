@@ -27,7 +27,7 @@
         position: absolute;
         left: var(--pk-border-width-l);
         top: var(--pk-border-width-l);
-        transition: all var(--switch-transition-duration) var(--switch-transition-fn);
+        transition: left var(--switch-transition-duration) var(--switch-transition-fn);
     }
 
     &__wrapper {
@@ -38,12 +38,6 @@
 
     &--active {
         background: var(--switch-active-background);
-
-        .@{namespace}__slide {
-            position: absolute;
-            left: calc(100% - var(--pk-border-width-l));
-            transform: translateX(-100%);
-        }
     }
 
     &--s {
@@ -52,6 +46,12 @@
         .@{namespace}__slide {
             width: var(--switch-height-s);
             height: var(--switch-height-s);
+        }
+
+        &.@{namespace}--active {
+            .@{namespace}__slide {
+                left: calc(100% - var(--switch-height-s) - var(--pk-border-width-l));
+            }
         }
     }
 
@@ -62,6 +62,12 @@
             width: var(--switch-height-m);
             height: var(--switch-height-m);
         }
+
+        &.@{namespace}--active {
+            .@{namespace}__slide {
+                left: calc(100% - var(--switch-height-m) - var(--pk-border-width-l));
+            }
+        }
     }
 
     &--l {
@@ -70,6 +76,12 @@
         .@{namespace}__slide {
             width: var(--switch-height-l);
             height: var(--switch-height-l);
+        }
+
+        &.@{namespace}--active {
+            .@{namespace}__slide {
+                left: calc(100% - var(--switch-height-l) - var(--pk-border-width-l));
+            }
         }
     }
 }
