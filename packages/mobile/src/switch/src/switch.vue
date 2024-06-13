@@ -3,7 +3,7 @@
         bem.b(),
         bem.m(size),
         bem.eqm('active', value)
-    ]" @click="value = !value">
+    ]" @click="onSwitchClick">
         <div :class="[
             bem.e('slide')
         ]">
@@ -14,26 +14,43 @@
         ]">
             <div :class="[
                 bem.e('close')
-            ]"></div>
+            ]">
+
+            </div>
             <div :class="[
                 bem.e('open')
-            ]"></div>
+            ]">
+
+            </div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-import { switchProps } from './switch'
+import { switchEmits, switchProps } from './switch'
 import { useBem } from '@pk-ui/use'
 import './switch.less'
-import { ref } from 'vue';
+import { computed } from 'vue';
 
 defineOptions({
     name: 'PkSwitch'
 })
 
-const value = ref(true);
-
 const props = defineProps(switchProps)
+const emits = defineEmits(switchEmits)
 
 const bem = useBem('switch')
+
+const onSwitchClick = () => {
+    console.log('switch点击')
+    value.value = !value.value
+}
+
+const value = computed<boolean>({
+    get() {
+        return props.modelValue
+    },
+    set(val) {
+        emits("update:modelValue", val)
+    }
+})
 </script>
