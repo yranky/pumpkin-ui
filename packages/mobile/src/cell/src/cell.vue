@@ -1,31 +1,34 @@
 <template>
     <div :class="[
         bem.b(),
+        bem.eqm('link', isLink),
         bem.eqm('border', border)]">
         <div :class="[
-        bem.e('top')
-    ]">
+            bem.e('top')
+        ]">
             <div :class="[
-        bem.e('title')
-    ]">
+                bem.e('title')
+            ]">
                 {{ title }}
             </div>
 
             <div :class="[
-        bem.e('value')
-    ]">
-                {{ value }}
+                bem.e('value')
+            ]">
+                <slot>
+                    {{ value }}
+                </slot>
             </div>
 
             <div v-if="isLink" :class="[
-        bem.e('right')
-    ]">
+                bem.e('right')
+            ]">
                 <RightOutlined />
             </div>
         </div>
         <div :class="[
-        bem.e('bottom')
-    ]">
+            bem.e('bottom')
+        ]">
             <slot name="bottom"></slot>
         </div>
     </div>
