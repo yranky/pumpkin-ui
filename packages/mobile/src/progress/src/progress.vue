@@ -1,0 +1,31 @@
+<template>
+    <div :class="[
+        bem.b(),
+        bem.eqm('square', props.square)
+    ]" :style="{
+        '--pk-progress-stroke-height': props.strokeHeight + 'px',
+        '--pk-progress-track-background': props.trackBackground,
+        '--pk-progress-stroke-background': props.background,
+        '--pk-progress-transition-duration': props.transitionDuration + 's'
+    }">
+        <div :class="[
+            bem.e('stroke')
+        ]" :style="{
+            width: `${props.percentage}%`
+        }"></div>
+    </div>
+</template>
+<script lang="ts" setup>
+import { useBem } from "@pk-ui/use";
+import { progressProps } from "./progress";
+import "./progress.less"
+
+defineOptions({
+    name: 'PkPopup',
+})
+
+const props = defineProps(progressProps)
+
+const bem = useBem('progress')
+
+</script>

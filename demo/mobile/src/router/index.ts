@@ -11,7 +11,8 @@ const routes = [
     { path: '/picker', component: () => import('../views/picker/Picker.vue') },
     { path: '/picker-view', component: () => import('../views/picker-view/PickerView.vue') },
     { path: '/field', component: () => import('../views/field/Field.vue') },
-    { path: '/switch', component: () => import('../views/switch/Switch.vue') }
+    { path: '/switch', component: () => import('../views/switch/Switch.vue') },
+    { path: '/progress', component: () => import('../views/progress/Progress.vue') }
 ]
 
 
