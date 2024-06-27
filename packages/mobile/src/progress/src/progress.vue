@@ -6,13 +6,24 @@
         '--pk-progress-stroke-height': props.strokeHeight + 'px',
         '--pk-progress-track-background': props.trackBackground,
         '--pk-progress-stroke-background': props.background,
-        '--pk-progress-transition-duration': props.transitionDuration + 's'
+        '--pk-progress-transition-duration': props.transitionDuration + 's',
+        '--pk-progress-pivot-color': props.pivotColor,
+        '--pk-progress-pivot-font-size': props.pivotFontSize + 'px'
     }">
         <div :class="[
             bem.e('stroke')
         ]" :style="{
             width: `${props.percentage}%`
-        }"></div>
+        }">
+        </div>
+        <div :class="[
+            bem.e('pivot')
+        ]" :style="{
+            left: `${props.percentage}%`,
+            transform: `translate(-${props.percentage}%,-50%)`
+        }" v-if="props.showPivot">
+            {{ percentage }}%
+        </div>
     </div>
 </template>
 <script lang="ts" setup>

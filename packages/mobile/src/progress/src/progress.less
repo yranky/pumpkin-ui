@@ -4,6 +4,8 @@
     --pk-progress-track-background: var(--pk-border-color);
     --pk-progress-stroke-background: var(--pk-primary-color);
     --pk-progress-transition-duration: var(--pk-transition-duration);
+    --pk-progress-pivot-color: var(--pk-text-color-invert);
+    --pk-progress-pivot-font-size: var(--pk-font-size-xs);
 }
 
 @namespace: pk-progress;
@@ -21,6 +23,10 @@
         .@{namespace}__stroke {
             border-radius: 0;
         }
+
+        .@{namespace}__pivot {
+            border-radius: 0;
+        }
     }
 
     &__stroke {
@@ -29,6 +35,22 @@
         border-radius: 99999px;
         background: var(--pk-progress-stroke-background);
         transition-property: width;
+        transition-duration: var(--pk-progress-transition-duration);
+        transition-timing-function: var(--pk-transition-timing-function-in);
+        position: relative;
+    }
+
+    &__pivot {
+        padding: 0 4px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: var(--pk-progress-pivot-color);
+        font-size: var(--pk-progress-pivot-font-size);
+        background: var(--pk-progress-stroke-background);
+        border-radius: 9999px;
+        transition-property: left;
         transition-duration: var(--pk-progress-transition-duration);
         transition-timing-function: var(--pk-transition-timing-function-in);
     }

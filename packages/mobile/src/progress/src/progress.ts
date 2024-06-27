@@ -25,5 +25,17 @@ export const progressProps = extend({}, {
     transitionDuration: {
         type: Number,
         default: 0.3
+    },
+    pivotColor: {
+        type: String,
+        default: ''
+    },
+    pivotFontSize: {
+        type: Number,
+        default: 13
+    },
+    showPivot: {
+        type: Boolean,
+        default: false
     }
 })

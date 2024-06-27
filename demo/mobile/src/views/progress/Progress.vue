@@ -5,6 +5,8 @@
         <pk-progress :percentage="percent" background="red" />
         <br />
         <pk-progress :percentage="percent" :strokeHeight="6" />
+        <br />
+        <pk-progress :percentage="percent" :strokeHeight="6" showPivot />
 
         <br />
         <pk-button @click="add">增加</pk-button>
