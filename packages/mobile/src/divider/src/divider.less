@@ -1,6 +1,34 @@
 :root,
-:host {}
+:host {
+    --pk-divider-color: var(--pk-border-color);
+    --pk-divider-style: solid;
+    --pk-divider-size: 1px;
+    --pk-divider-margin-horizontal: var(--pk-margin-m);
+}
 
 @namespace: pk-divider;
 
-.@{namespace} {}
+.@{namespace} {
+    display: flex;
+    align-items: center;
+
+    &__left {
+        border-top: var(--pk-divider-size) var(--pk-divider-style) var(--pk-divider-color);
+        flex: 1;
+        transform: scaleY(0.5);
+    }
+
+    &__content {
+        flex-shrink: 0;
+        margin: 0 var(--pk-divider-margin-horizontal);
+        font-size: var(--pk-font-size-xs);
+        color: var(--pk-text-color-secondary);
+    }
+
+    &__right {
+        border-top: var(--pk-divider-size) var(--pk-divider-style) var(--pk-divider-color);
+        flex: 1;
+        transform: scaleY(0.5);
+    }
+
+}
