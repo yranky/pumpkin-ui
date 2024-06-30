@@ -1,6 +1,7 @@
 ---
 title: 按钮组件
 lang: zh-cn
+aside: false
 ---
 
 # button 按钮
