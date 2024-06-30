@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import zhCn from './languages/zh-cn'
 
 export default defineConfig({
     lastUpdated: true,
@@ -14,14 +15,6 @@ export default defineConfig({
         }
     },
     locales: {
-        root: {
-            title: 'PK-UI',
-            description: 'PK-UI 组件库 - 移动端',
-            label: '简体中文',
-            lang: 'zh-CN',
-            themeConfig: {
-
-            }
-        }
+        ...zhCn.locales
     }
 })
