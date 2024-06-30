@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev":"vitepress dev . --open",
-    "build":"vitepress build ."
+    "dev": "vitepress dev . --open",
+    "build": "vitepress build ."
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.45"
+    "vitepress": "^1.2.3"
   }
 }
