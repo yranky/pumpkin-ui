@@ -41,11 +41,20 @@ onMounted(() => {
 <style scoped>
 ::v-deep .VPDoc.has-sidebar {
     display: flex;
+    padding-right: 0;
+}
+
+::v-deep .VPDoc.has-sidebar .container {
+    width: calc(100% - 375px);
 }
 
 @media (max-width: 1270px) {
     ::v-deep .preview-iframe-container {
         display: none !important;
+    }
+
+    ::v-deep .VPDoc.has-sidebar .container {
+        width: 100%;
     }
 }
 
@@ -63,5 +72,6 @@ onMounted(() => {
     transform: translateY(-50%);
     width: 375px;
     height: 667px;
+    border-radius: 8px;
 }
 </style>
