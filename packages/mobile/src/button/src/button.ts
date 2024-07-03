@@ -1,5 +1,6 @@
 import { definePropType, extend } from '@pk-ui/utils'
 import { ButtonHTMLAttributes, Component, computed, ExtractPropTypes } from 'vue'
+import { loadingTypes } from '../../loading/src/loading'
 
 
 export const buttonTypes = ['primary', 'hazy', 'outline', 'ghost', 'link'] as const
@@ -71,32 +72,46 @@ export const buttonProps = extend({}, {
     borderColor: {
         type: String,
         default: ''
+    },
+    loading: {
+        type: Boolean,
+        default: false
+    },
+    loadingSize: {
+        type: String,
+        default: '20px'
+    },
+    loadingType: {
+        type: String,
+        values: loadingTypes,
+        default: 'circular'
     }
 })
 
 export const useButtonStyle = (props: ExtractPropTypes<typeof buttonProps>) => {
     return computed(() => {
-        const { color: bgColor, textColor, borderColor, type } = props
+        const { color: bgColor, textColor, borderColor, type, loadingSize } = props
 
-        const color: { [key: string]: string } = {}
+        const style: { [key: string]: string } = {}
 
         if (bgColor) {
-            color['--pk-button-primary-background'] = bgColor
+            style['--pk-button-primary-background'] = bgColor
             if (bgColor.indexOf('gradient') > -1) {
-                color['--pk-button-primary-border-color'] = "transparent"
-                color['--pk-button-primary-text-color'] = type === "primary" ? "var(--pk-text-color-invert)" : "var(--pk-text-color)"
+                style['--pk-button-primary-border-color'] = "transparent"
+                style['--pk-button-primary-text-color'] = type === "primary" ? "var(--pk-text-color-invert)" : "var(--pk-text-color)"
             }
         }
         if (borderColor || bgColor.indexOf('gradient') === -1) {
-            color['--pk-button-primary-border-color'] = borderColor || bgColor
+            style['--pk-button-primary-border-color'] = borderColor || bgColor
         }
         // if (textColor || bgColor.indexOf('gradient') === -1) {
         //     color['--pk-button-primary-text-color'] = textColor || bgColor
         // }
-        if (textColor) color['color'] = textColor
+        if (textColor) style['color'] = textColor
+        style['--pk-loading-size'] = loadingSize
 
         return {
-            ...color
+            ...style
         }
     })
 }
