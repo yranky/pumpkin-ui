@@ -133,6 +133,17 @@ aside: false
 ```
 :::
 
+### 自定义文字颜色
+通过设置text-color属性设置自定义文字颜色。
+
+::: code-group
+
+```vue [示例]
+    <pk-button type="primary" text-color="#000000" color="#ffffff">自定义颜色</pk-button>
+    <pk-button type="primary" text-color="#000000"
+        color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">渐变色</pk-button>
+```
+:::
 ## API
 
 ### props

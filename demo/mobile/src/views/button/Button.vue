@@ -69,6 +69,13 @@
             <pk-button type="primary" color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">渐变色</pk-button>
         </div>
 
+        <pk-divider>自定义文字颜色</pk-divider>
+        <div class="button-row">
+            <pk-button type="primary" text-color="#000000" color="#ffffff">自定义颜色</pk-button>
+            <pk-button type="primary" text-color="#000000"
+                color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">渐变色</pk-button>
+        </div>
+
 
     </div>
 </template>
