@@ -90,9 +90,10 @@ export const useButtonStyle = (props: ExtractPropTypes<typeof buttonProps>) => {
         if (borderColor || bgColor.indexOf('gradient') === -1) {
             color['--pk-button-primary-border-color'] = borderColor || bgColor
         }
-        if (textColor || bgColor.indexOf('gradient') === -1) {
-            color['--pk-button-primary-text-color'] = textColor || bgColor
-        }
+        // if (textColor || bgColor.indexOf('gradient') === -1) {
+        //     color['--pk-button-primary-text-color'] = textColor || bgColor
+        // }
+        if (textColor) color['color'] = textColor
 
         return {
             ...color
