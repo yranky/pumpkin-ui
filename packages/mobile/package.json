@@ -1,7 +1,7 @@
 {
   "name": "@pk-ui/mobile",
   "private": false,
-  "license":"MIT",
+  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "peerDependencies": {
     "less": "^4.1.3",
-    "@ant-design/icons-vue":"^7.0.1"
+    "@ant-design/icons-vue": "^7.0.1"
   }
 }
