@@ -71,9 +71,16 @@
 
         <pk-divider>自定义文字颜色</pk-divider>
         <div class="button-row">
-            <pk-button type="primary" text-color="#000000" color="#ffffff">自定义颜色</pk-button>
+            <pk-button type="primary" text-color="#000000" color="#ffffff">自定义文字颜色</pk-button>
             <pk-button type="primary" text-color="#000000"
-                color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">渐变色</pk-button>
+                color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">自定义文字颜色</pk-button>
+        </div>
+
+        <pk-divider>加载状态</pk-divider>
+        <div class="button-row">
+            <pk-button type="primary" loading>默认图标样式</pk-button>
+            <pk-button type="primary" loading loading-type="spinner">spinner图标样式</pk-button>
+            <pk-button type="primary" loading loading-type="circular" loading-size="35px">35px</pk-button>
         </div>
 
 
@@ -90,6 +97,10 @@ import { computed, ref } from 'vue';
     padding: 10px;
 
     .button-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
         :deep(.pk-button) {
             margin: 5px;
         }

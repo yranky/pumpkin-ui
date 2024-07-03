@@ -128,8 +128,8 @@ aside: false
 ::: code-group
 
 ```vue [示例]
-    <pk-button type="primary" sub-text="我是子文案我是子文案" color="#65da79">自定义颜色</pk-button>
-    <pk-button type="primary" color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">渐变色</pk-button>
+    <pk-button type="primary" sub-text="我是子文案我是子文案" color="#65da79">自定义文字颜色</pk-button>
+    <pk-button type="primary" color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">自定义文字颜色</pk-button>
 ```
 :::
 
@@ -144,26 +144,41 @@ aside: false
         color="linear-gradient(90deg,#F83600 0%,#F9D423 100%)">渐变色</pk-button>
 ```
 :::
+
+### 加载状态
+通过设置loading属性为true，可设置加载状态。通过loading-size设置加载图标的大小，通过设置loading-type设置加载图标的类型。
+::: code-group
+
+```vue [示例]
+    <pk-button type="primary" loading>默认图标样式</pk-button>
+    <pk-button type="primary" loading loading-type="spinner">spinner图标样式</pk-button>
+    <pk-button type="primary" loading loading-type="circular" loading-size="35px">35px</pk-button>
+```
+:::
+
 ## API
 
 ### props
 
-| 属性名       | 说明                         | 类型                                               | 默认值    | 可选值                                             |
-| ------------ | ---------------------------- | -------------------------------------------------- | --------- | -------------------------------------------------- |
-| type         | 按钮类型                     | `'primary'｜ 'hazy'｜ 'outline'｜ 'ghost'｜'link'` | `primary` | `'primary'｜ 'hazy'｜ 'outline'｜ 'ghost'｜'link'` |
-| native-type  | button标签的原生type属性     | `'button'｜ 'submit'｜ 'reset'`                    | `button`  | `'button'｜ 'submit'｜ 'reset'`                    |
-| text         | 按钮上的文字，也可以通过slot | `string`                                           |           |                                                    |
-| sub-text     | 按钮上的字文案               | `string`                                           |           |                                                    |
-| size         | 按钮尺寸                     | `'xl'｜ 'l'｜ 'm'｜ 's'｜'xs'`                     | `m`       | `'xl'｜ 'l'｜ 'm'｜ 's'｜'xs'`                     |
-| round        | 圆形按钮                     | `boolean`                                          | `false`   |                                                    |
-| square       | 方形按钮                     | `boolean`                                          | `false`   |                                                    |
-| block        | 块级元素                     | `boolean`                                          | `false`   |                                                    |
-| disabled     | 是否禁用                     | `boolean`                                          | `false`   |                                                    |
-| danger       | 设置危险按钮                 | `boolean`                                          | `false`   |                                                    |
-| warning      | 设置警告按钮                 | `boolean`                                          | `false`   |                                                    |
-| color        | 按钮的背景色                 | `string`                                           |           |                                                    |
-| text-color   | 按钮的文字颜色               | `string`                                           |           |                                                    |
-| border-color | 按钮的边框颜色               | `string`                                           |           |                                                    |
+| 属性名       | 说明                                           | 类型                                               | 默认值     | 可选值                                             |
+| ------------ | ---------------------------------------------- | -------------------------------------------------- | ---------- | -------------------------------------------------- |
+| type         | 按钮类型                                       | `'primary'｜ 'hazy'｜ 'outline'｜ 'ghost'｜'link'` | `primary`  | `'primary'｜ 'hazy'｜ 'outline'｜ 'ghost'｜'link'` |
+| native-type  | button标签的原生type属性                       | `'button'｜ 'submit'｜ 'reset'`                    | `button`   | `'button'｜ 'submit'｜ 'reset'`                    |
+| text         | 按钮上的文字，也可以通过slot                   | `string`                                           |            |                                                    |
+| sub-text     | 按钮上的字文案                                 | `string`                                           |            |                                                    |
+| size         | 按钮尺寸                                       | `'xl'｜ 'l'｜ 'm'｜ 's'｜'xs'`                     | `m`        | `'xl'｜ 'l'｜ 'm'｜ 's'｜'xs'`                     |
+| round        | 圆形按钮                                       | `boolean`                                          | `false`    |                                                    |
+| square       | 方形按钮                                       | `boolean`                                          | `false`    |                                                    |
+| block        | 块级元素                                       | `boolean`                                          | `false`    |                                                    |
+| disabled     | 是否禁用                                       | `boolean`                                          | `false`    |                                                    |
+| danger       | 设置危险按钮                                   | `boolean`                                          | `false`    |                                                    |
+| warning      | 设置警告按钮                                   | `boolean`                                          | `false`    |                                                    |
+| color        | 按钮的背景色                                   | `string`                                           |            |                                                    |
+| text-color   | 按钮的文字颜色                                 | `string`                                           |            |                                                    |
+| border-color | 按钮的边框颜色                                 | `string`                                           |            |                                                    |
+| loading      | 设置加载按钮                                   | `boolean`                                          | `false`    |                                                    |
+| loading-size | 设置加载图标的大小                             | `string`                                           | `20px`     |                                                    |
+| loading-type | 设置加载图标的样式,与loading组件的type属性一致 | `'circular'｜ 'spinner'`                           | `circular` | `'circular'｜ 'spinner'`                           |
 
 
 ### Events
