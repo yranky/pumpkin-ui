@@ -83,6 +83,18 @@
             <pk-button type="primary" loading loading-type="circular" loading-size="35px">35px</pk-button>
         </div>
 
+        <pk-divider>插槽</pk-divider>
+        <div class="button-row">
+            <pk-button type="primary" loading sub-text="子文案">
+                主内容区域
+                <template #sub>
+                    字文案区域
+                </template>
+                <template #loading>
+                    加载图标区域
+                </template>
+            </pk-button>
+        </div>
 
     </div>
 </template>

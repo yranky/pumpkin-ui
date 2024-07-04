@@ -183,30 +183,57 @@ aside: false
 
 ### Events
 
-| 事件名 | 说明                              | 回调参数                              |
-| ------ | --------------------------------- | ------------------------------------- |
-| change | triggers when fixed state changed | ^[Function]`(fixed: boolean) => void` |
+| 事件名 | 说明                                 | 回调参数                      |
+| ------ | ------------------------------------ | ----------------------------- |
+| click  | 点击按钮时触发(不为禁用或者加载状态) | `(event: MouseEvent) => void` |
 
 
 
 ### Slots
 
-| 插槽名  | 说明                      |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名  | 说明                                    |
+| ------- | --------------------------------------- |
+| default | 按钮主内容区域                          |
+| sub     | 子文案区域(生效需要sub-text值不为空)    |
+| loading | 加载图标区域(生效需要设置loading为true) |
+
+#### 示例
+::: code-group
+
+```vue [示例]
+   <pk-button type="primary" loading sub-text="子文案">
+                主内容区域
+        <template #sub>
+            字文案区域
+        </template>
+        <template #loading>
+            加载图标区域
+        </template>
+    </pk-button>
+```
+:::
 
 
 
 ### Exposes
 
-| 名称   | 说明                        | 类型说明                |
-| ------ | --------------------------- | ----------------------- |
-| update | update affix state manually | ^[Function]`() => void` |
+| 名称 | 说明 | 类型说明 |
+| ---- | ---- | -------- |
 
 
 
 ## 样式变量
 
-| 名称   | 默认字                      | 说明                    |
-| ------ | --------------------------- | ----------------------- |
-| update | update affix state manually | ^[Function]`() => void` |
+| 名称                             | 默认字=值               | 说明 |
+| -------------------------------- | ----------------------- | ---- |
+| --pk-button-line-height-xs       | 1.1                     |      |
+| --pk-button-line-height-s        | 1.2                     |      |
+| --pk-button-line-height-m        | 1.7                     |      |
+| --pk-button-line-height-l        | 2                       |      |
+| --pk-button-line-height-xl       | 2.5                     |      |
+| --pk-button-line-height-sub      | 1.53                    |      |
+| --pk-button-z-index-text         | var(--pk-z-index-min)   |      |
+| --pk-button-z-index-mask         | var(--pk-z-index-min-2) |      |
+| --pk-button-primary-background   | var(--pk-primary-color) |      |
+| --pk-button-primary-border-color | var(--pk-primary-color) |      |
+| --pk-button-primary-text-color   | var(--pk-primary-color) |      |
