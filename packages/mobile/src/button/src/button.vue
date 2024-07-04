@@ -11,9 +11,11 @@
         bem.eqm('warning', props.warning)
     ]" :type="nativeType" @click="onClick" :style="buttonStyle">
         <div :class="bem.e('container')">
-            <Loading :class="[
-                bem.e('loading')
-            ]" :type="props.loadingType" v-if="props.loading" />
+            <slot name="loading">
+                <Loading :class="[
+                    bem.e('loading')
+                ]" :type="props.loadingType" v-if="props.loading" />
+            </slot>
             <div :class="[
                 bem.e('content')
             ]">
@@ -25,8 +27,9 @@
                 <div :class="[
                     bem.be('sub', 'text')
                 ]" v-if="subText">
-                    {{ props.subText }}
-                    <slot name="sub"></slot>
+                    <slot name="sub">
+                        {{ props.subText }}
+                    </slot>
                 </div>
             </div>
         </div>
