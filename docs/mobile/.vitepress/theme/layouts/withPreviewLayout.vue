@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { ref, watch, onMounted } from 'vue'
 import urls from '../../preview/urls'
@@ -25,7 +25,7 @@ watch(route, () => {
 })
 
 const updateUrl = () => {
-    const item = urls.find(item => item.activeMatch === route.path)
+    const item = urls.find(item => withBase(item.activeMatch) === route.path)
     if (item) {
         iframeUrl.value = item.url
     } else {

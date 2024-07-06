@@ -1,0 +1,45 @@
+variables: 
+    BUILD_DOCS: 'pnpm run build:mobile_docs --base=/pk-ui/'
+    BUILD_DEMO: 'pnpm run build:demo_mobile --mode=gitlab'
+cache: 
+    paths: 
+        - node_modules/
+        - demo/mobile/node_modules
+        - docs/mobile/node_modules
+        - packages/mobile/node_modules
+        - packages/uni-vue3/node_modules
+        - packages/use/node_modules
+        - packages/utils/node_modules
+        - demo/mobile/dist
+        - docs/mobile/.vitepress/dist
+stages: 
+    - install
+    - build
+    - deploy
+install: 
+    stage: install
+    script: 
+        - 'pnpm install'
+    only:
+        - tags
+build: 
+    stage: build
+    script: 
+        - $BUILD_DOCS
+        - $BUILD_DEMO
+        - ls
+    only:
+        - tags
+pages: 
+    stage: deploy
+    script: 
+        - rm -rf public/*
+        - mkdir -p public/demo
+        - ls
+        - mv demo/mobile/dist/* public/demo
+        - mv docs/mobile/.vitepress/dist/* public/
+    artifacts: 
+        paths: 
+            - public
+    only:
+        - tags
