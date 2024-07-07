@@ -6,5 +6,8 @@ export default [
     {
         activeMatch: '/components/button',
         url: BASE_URL + '/#/button'
+    }, {
+        activeMatch: '/components/cell',
+        url: BASE_URL + '/#/cell'
     }
 ];

@@ -31,8 +31,12 @@ export default defineUserConfig({
               text: '基础组件',
               children: [
                 {
-                  text: 'button 按钮',
+                  text: 'Button 按钮',
                   link: '/components/button'
+                },
+                {
+                  text: 'Cell 单元格',
+                  link: '/components/cell'
                 }
               ]
             }

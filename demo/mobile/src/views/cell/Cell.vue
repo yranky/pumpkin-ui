@@ -1,39 +1,20 @@
 <template>
     <div class="cell-container">
-        <pk-cell title="标题" value="值"></pk-cell>
-        <pk-cell title="标题" value="值"></pk-cell>
-        <pk-cell title="标题" value="值" is-link></pk-cell>
-        <pk-cell title="标题" value="值"></pk-cell>
-        <pk-cell title="标题" value="值" is-link></pk-cell>
-        <pk-cell title="标题" value="值">
-            <template #bottom>
-                我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽
-            </template>
-        </pk-cell>
+        <pk-divider>基础用法</pk-divider>
+        <pk-cell title="标题" value="内容"></pk-cell>
+        <pk-cell title="标题2" value="内容2"></pk-cell>
 
-        <pk-cell title="无底部线" :border="false"></pk-cell>
+        <pk-divider>展示右箭头</pk-divider>
+        <pk-cell title="标题" value="内容" is-link></pk-cell>
+        <pk-cell title="标题2" value="内容2" is-link></pk-cell>
 
-        <pk-cell title="标题" value="值">
-            <template #bottom>
-                我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽
-            </template>
-        </pk-cell>
-
-        <pk-cell title="标题" value="值">
-            <template #bottom>
-                我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽
-            </template>
-        </pk-cell>
-
-        <pk-cell title="标题" value="值">
-            <template #bottom>
-                我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽我是底部插槽
-            </template>
-        </pk-cell>
+        <pk-divider>展示分割线</pk-divider>
+        <pk-cell title="显示分割线" value="内容"></pk-cell>
+        <pk-cell title="隐藏分割线" value="内容2" :border="false"></pk-cell>
     </div>
 </template>
 <script lang="ts" setup>
-import { PkCell } from "@pk-ui/mobile";
+import { PkCell, PkDivider } from "@pk-ui/mobile";
 
 </script>
 <style lang="less" scoped>

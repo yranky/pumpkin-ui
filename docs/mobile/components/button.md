@@ -4,7 +4,7 @@ lang: zh-cn
 aside: false
 ---
 
-# button 按钮
+# Button 按钮
 
 ## 基本使用
 ```vue
@@ -237,7 +237,7 @@ aside: false
 
 ## 样式变量
 
-| 名称                             | 默认字=值               | 说明 |
+| 名称                             | 默认值                  | 说明 |
 | -------------------------------- | ----------------------- | ---- |
 | --pk-button-line-height-xs       | 1.1                     |      |
 | --pk-button-line-height-s        | 1.2                     |      |

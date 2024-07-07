@@ -39,16 +39,20 @@ onMounted(() => {
 })
 </script>
 <style lang="scss">
-.theme-default-content {
-    padding: 2rem 385px 2rem 2.5rem !important;
+.vp-page {
+    padding: 2rem 385px 2rem var(--sidebar-width);
 
     @media screen and (max-width:1080px) {
-        padding: 2rem 2.5rem !important;
+        padding: 2rem 2.5rem 2rem var(--sidebar-width);
+    }
+
+    @media screen and (max-width:719px) {
+        padding-left: 0;
     }
 }
 
-.no-frame .theme-default-content {
-    padding: 2rem 2.5rem !important;
+.no-frame .vp-page {
+    padding: 2rem 2.5rem 2rem var(--sidebar-width);
 }
 
 .page-demo-frame-container {
