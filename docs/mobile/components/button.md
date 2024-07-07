@@ -15,7 +15,8 @@ aside: false
 ### 按钮类型
 按钮有五种类型：主要按钮`primary`、朦胧按钮`hazy`、边框按钮`outline`、幽灵按钮`ghost`和链接按钮`link`。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary">主要按钮 primary</pk-button>
@@ -29,7 +30,8 @@ aside: false
 ### 子文案
 通过 sub-text 设置。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案">主要按钮 primary</pk-button>
@@ -43,7 +45,8 @@ aside: false
 ### 按钮尺寸
 按钮有五种尺寸：大按钮`xl`、大按钮`l`、中按钮`m`、小按钮`s`和超小按钮`xs`。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" size="xl">大按钮 xl</pk-button>
@@ -58,7 +61,8 @@ aside: false
 ### 圆形按钮
 通过设置round属性为true，可设置圆形按钮。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案" round>圆形按钮</pk-button>
@@ -70,7 +74,8 @@ aside: false
 ### 方形按钮
 通过设置square属性为true，可设置方形按钮。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案" square>方形按钮</pk-button>
@@ -81,7 +86,8 @@ aside: false
 ### 块级元素
 通过设置block属性为true，可设置块级元素。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案" block>块级元素</pk-button>
@@ -92,7 +98,8 @@ aside: false
 ### 设置禁用
 通过设置disabled属性为true，可设置禁用。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案" disabled>禁用按钮</pk-button>
@@ -103,7 +110,8 @@ aside: false
 ### 危险按钮
 通过设置danger属性为true，可设置危险按钮。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案" danger>危险按钮</pk-button>
@@ -114,7 +122,8 @@ aside: false
 ### 警告按钮
 通过设置warning属性为true，可设置警告按钮。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案" warning>警告按钮</pk-button>
@@ -125,7 +134,8 @@ aside: false
 ### 自定义颜色
 通过设置color属性设置自定义颜色。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" sub-text="我是子文案我是子文案" color="#65da79">自定义文字颜色</pk-button>
@@ -136,7 +146,8 @@ aside: false
 ### 自定义文字颜色
 通过设置text-color属性设置自定义文字颜色。
 
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" text-color="#000000" color="#ffffff">自定义颜色</pk-button>
@@ -147,7 +158,8 @@ aside: false
 
 ### 加载状态
 通过设置loading属性为true，可设置加载状态。通过loading-size设置加载图标的大小，通过设置loading-type设置加载图标的类型。
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
     <pk-button type="primary" loading>默认图标样式</pk-button>
@@ -198,7 +210,8 @@ aside: false
 | loading | 加载图标区域(生效需要设置loading为true) |
 
 #### 示例
-::: code-group
+::: code-tabs#shell
+@tab vue
 
 ```vue [示例]
    <pk-button type="primary" loading sub-text="子文案">

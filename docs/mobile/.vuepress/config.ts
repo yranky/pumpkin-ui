@@ -2,12 +2,14 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
+import pkTheme from './theme'
 
 export default defineUserConfig({
   lang: 'zh-Hans',
   title: 'PK-UI',
   description: 'PK-UI 组件库 - 移动端',
-  theme: defaultTheme({
+  theme: pkTheme({
     locales: {
       '/': {
         selectLanguageName: '简体中文',
@@ -50,6 +52,9 @@ export default defineUserConfig({
   plugins: [
     searchPlugin({
 
+    }),
+    mdEnhancePlugin({
+      codetabs: true
     })
   ]
 })
