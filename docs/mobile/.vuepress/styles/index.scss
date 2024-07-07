@@ -1,0 +1,10 @@
+:root {
+    // brand colors
+    --c-brand: rgb(255, 111, 0);
+    --c-brand-light: rgba(255, 111, 0, 0.6);
+}
+
+html.dark {
+    --c-brand: rgb(255, 111, 0);
+    --c-brand-light: rgba(255, 111, 0, 0.6);
+}

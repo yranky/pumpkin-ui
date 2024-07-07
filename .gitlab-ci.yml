@@ -1,17 +1,17 @@
 variables: 
-    BUILD_DOCS: 'pnpm run build:mobile_docs --base=/pk-ui/'
+    BUILD_DOCS: 'pnpm run build:mobile_docs -c mobile/.vuepress/config/gitlab.ts'
     BUILD_DEMO: 'pnpm run build:demo_mobile --mode=gitlab'
 cache: 
     paths: 
         - node_modules/
         - demo/mobile/node_modules
-        - docs/mobile/node_modules
+        - docs/node_modules
         - packages/mobile/node_modules
         - packages/uni-vue3/node_modules
         - packages/use/node_modules
         - packages/utils/node_modules
         - demo/mobile/dist
-        - docs/mobile/.vitepress/dist
+        - docs/mobile/.vuepress/dist
 stages: 
     - install
     - build
@@ -37,7 +37,7 @@ pages:
         - mkdir -p public/demo
         - ls
         - mv demo/mobile/dist/* public/demo
-        - mv docs/mobile/.vitepress/dist/* public/
+        - mv docs/mobile/.vuepress/dist/* public/
     artifacts: 
         paths: 
             - public
