@@ -3,5 +3,5 @@ import config from '../config'
 
 export default defineUserConfig({
     ...config,
-    base: '/pk-ui-test/'
+    base: '/pk-ui/'
 })
