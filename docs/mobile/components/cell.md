@@ -11,6 +11,14 @@ aside: false
 <pk-cell>按钮</pk-cell>
 ```
 
+## 配合CellGroup
+```vue
+<pk-cell-group>
+  <pk-cell>按钮</pk-cell>
+  <pk-cell>按钮</pk-cell>
+</pk-cell-group>
+```
+
 ## 代码示例
 ### 基础用法
 单独使用`Cell`。
@@ -65,9 +73,28 @@ aside: false
 ```
 :::
 
+### 单元格组
+`Cell`组件可配置`CellGroup`组件使用。
+::: code-tabs#shell
+@tab vue
+```vue
+   <pk-cell-group title="单元格组标题">
+        <pk-cell title="单元格1" value="内容1"></pk-cell>
+        <pk-cell title="单元格2" value="内容2"></pk-cell>
+        <pk-cell title="单元格3" value="内容3"></pk-cell>
+   </pk-cell-group>
+```
+:::
+
+
 ## API
 
-### props
+### CellGroup props
+| 属性名 | 说明         | 类型     | 默认值 | 可选值 |
+| ------ | ------------ | -------- | ------ | ------ |
+| title  | 单元格组标题 | `string` |        |        |
+
+### Cell props
 
 | 属性名   | 说明       | 类型      | 默认值  | 可选值 |
 | -------- | ---------- | --------- | ------- | ------ |
@@ -84,10 +111,22 @@ aside: false
 | ------ | ---- | -------- |
 
 
-### Slots
+### CellGroup Slots
 
-| 插槽名 | 说明 |
-| ------ | ---- |
+| 插槽名  | 说明             |
+| ------- | ---------------- |
+| title   | 头部标题插槽     |
+| extra   | 头部标题右侧插槽 |
+| default | 内容区域插槽     |
+
+### Cell Slots
+
+| 插槽名     | 说明                                |
+| ---------- | ----------------------------------- |
+| title      | 标题区域插槽                        |
+| default    | 内容区域插槽                        |
+| right-icon | 右侧箭头图标插槽(需要is-link为true) |
+| bottom     | 下方区域插槽                        |
 
 
 ### Exposes
