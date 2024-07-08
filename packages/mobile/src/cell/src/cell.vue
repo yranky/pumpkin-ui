@@ -1,31 +1,45 @@
 <template>
     <div :class="[
         bem.b(),
-        bem.eqm('link', isLink),
-        bem.eqm('border', border)]">
+        bem.eqm('link', props.isLink),
+        bem.eqm('border', props.border),
+        bem.eqm('required', props.required),
+        bem.eqm('vertical', props.vertical)
+    ]">
         <div :class="[
             bem.e('top')
         ]">
+
+            <div :class="[
+                bem.e('required')
+            ]" v-if="props.required">*</div>
+
             <div :class="[
                 bem.e('title')
             ]">
-                {{ title }}
+                {{ props.title }}
             </div>
 
             <div :class="[
-                bem.e('value')
+                bem.e('content')
             ]">
-                <slot>
-                    {{ value }}
-                </slot>
+                <div :class="[
+                    bem.e('value')
+                ]">
+                    <slot>
+                        {{ props.value }}
+                    </slot>
+                </div>
+
+                <div v-if="props.isLink" :class="[
+                    bem.e('right')
+                ]">
+                    <RightOutlined />
+                </div>
             </div>
 
-            <div v-if="isLink" :class="[
-                bem.e('right')
-            ]">
-                <RightOutlined />
-            </div>
         </div>
+
         <div :class="[
             bem.e('bottom')
         ]">

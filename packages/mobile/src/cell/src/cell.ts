@@ -18,5 +18,13 @@ export const cellProps = extend({}, {
     border: {
         type: Boolean,
         default: true
+    },
+    required: {
+        type: Boolean,
+        default: false
+    },
+    vertical: {
+        type: Boolean,
+        default: false
     }
 })
