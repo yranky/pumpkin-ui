@@ -1,0 +1,27 @@
+:root,
+:host {
+    --pk-cell-group-padding-horizontal: var(--pk-padding-l);
+    --pk-cell-group-padding-vertical: var(--pk-padding-s);
+
+    --pk-cell-group-header-color: var(--pk-text-color-secondary);
+    --pk-cell-group-header-font-size: var(--pk-font-size-s);
+}
+
+@namespace: pk-cell-group;
+
+.@{namespace} {
+    &__header {
+        display: flex;
+        padding: var(--pk-cell-group-padding-vertical) var(--pk-cell-group-padding-horizontal);
+        color: var(--pk-cell-group-header-color);
+        font-size: var(--pk-cell-group-header-font-size);
+
+        .@{namespace}__title {
+            flex: 1;
+        }
+
+        .@{namespace}__extra {
+            flex-shrink: 0;
+        }
+    }
+}

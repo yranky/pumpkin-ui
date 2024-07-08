@@ -1,6 +1,4 @@
-import { extend } from "@pk-ui/utils";
-
-
+import { extend } from "@pk-ui/utils"
 
 export const cellProps = extend({}, {
     title: {

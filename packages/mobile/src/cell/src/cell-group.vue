@@ -1,0 +1,40 @@
+<template>
+    <div :class="[
+        bem.b()
+    ]">
+        <div :class="[
+            bem.e('header')
+        ]">
+            <div :class="[
+                bem.e('title')
+            ]">
+                <slot name="title">
+                    {{ props.title }}
+                </slot>
+            </div>
+            <div :class="[
+                bem.e('extra')
+            ]">
+                <slot name="extra"></slot>
+            </div>
+        </div>
+        <div :class="[
+            bem.e('content')
+        ]">
+            <slot></slot>
+        </div>
+    </div>
+</template>
+<script lang="ts" setup>
+import { cellGroupProps } from './cell-group'
+import { useBem } from '@pk-ui/use'
+import "./cell-group.less"
+
+defineOptions({
+    name: 'PkCellGroup',
+})
+
+const props = defineProps(cellGroupProps)
+
+const bem = useBem('cell-group')
+</script>
