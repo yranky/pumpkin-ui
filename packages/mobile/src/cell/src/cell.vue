@@ -17,7 +17,9 @@
             <div :class="[
                 bem.e('title')
             ]">
-                {{ props.title }}
+                <slot name="title">
+                    {{ props.title }}
+                </slot>
             </div>
 
             <div :class="[
@@ -34,7 +36,9 @@
                 <div v-if="props.isLink" :class="[
                     bem.e('right')
                 ]">
-                    <RightOutlined />
+                    <slot name="right-icon">
+                        <RightOutlined />
+                    </slot>
                 </div>
             </div>
 
