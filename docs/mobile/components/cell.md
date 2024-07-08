@@ -44,17 +44,38 @@ aside: false
 ```
 :::
 
+### 显示星号
+可通过`required`属性设置星号显示隐藏，默认为`false`。
+
+::: code-tabs#shell
+@tab vue
+```vue
+    <pk-cell title="显示星号" value="内容" required></pk-cell>
+```
+:::
+
+### 垂直布局
+可通过`vertical`属性设置垂直布局，默认为`false`。
+
+::: code-tabs#shell
+@tab vue
+```vue
+    <pk-cell title="垂直布局" value="内容" vertical></pk-cell>
+    <pk-cell title="垂直布局" value="内容" vertical is-link></pk-cell>
+```
+:::
 
 ## API
 
 ### props
 
-| 属性名  | 说明       | 类型      | 默认值  | 可选值 |
-| ------- | ---------- | --------- | ------- | ------ |
-| title   | 左侧标题   | `string`  |         |        |
-| value   | 右侧内容   | `string`  |         |        |
-| is-link | 显示右箭头 | `boolean` | `false` |        |
-| border  | 显示分割线 | `boolean` | `true`  |        |
+| 属性名   | 说明       | 类型      | 默认值  | 可选值 |
+| -------- | ---------- | --------- | ------- | ------ |
+| title    | 左侧标题   | `string`  |         |        |
+| value    | 右侧内容   | `string`  |         |        |
+| is-link  | 显示右箭头 | `boolean` | `false` |        |
+| border   | 显示分割线 | `boolean` | `true`  |        |
+| required | 显示星号   | `boolean` | `false` |        |
 
 
 ### Events
