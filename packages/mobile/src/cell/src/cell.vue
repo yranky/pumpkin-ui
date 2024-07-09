@@ -5,7 +5,7 @@
         bem.eqm('border', props.border),
         bem.eqm('required', props.required),
         bem.eqm('vertical', props.vertical)
-    ]">
+    ]" @click="onClick">
         <div :class="[
             bem.e('top')
         ]">
@@ -52,7 +52,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { cellProps } from './cell'
+import { cellEmits, cellProps } from './cell'
 import { useBem } from '@pk-ui/use'
 import { RightOutlined } from '@ant-design/icons-vue'
 import "./cell.less"
@@ -62,8 +62,12 @@ defineOptions({
 })
 
 const props = defineProps(cellProps)
+const emit = defineEmits(cellEmits)
 
 const bem = useBem('cell')
 
+const onClick = (event: MouseEvent) => {
+    emit('click', event);
+}
 
 </script>

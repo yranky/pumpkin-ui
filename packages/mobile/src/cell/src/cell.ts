@@ -1,5 +1,7 @@
 import { extend } from "@pk-ui/utils"
 
+
+export const cellEmits = ['click']
 export const cellProps = extend({}, {
     title: {
         type: String,
