@@ -25,8 +25,8 @@ aside: false
 ::: code-tabs#shell
 @tab vue
 ```vue
-    <pk-cell title="标题" value="内容"></pk-cell>
-    <pk-cell title="标题2" value="内容2"></pk-cell>
+<pk-cell title="标题" value="内容"></pk-cell>
+<pk-cell title="标题2" value="内容2"></pk-cell>
 ```
 :::
 
@@ -36,8 +36,8 @@ aside: false
 ::: code-tabs#shell
 @tab vue
 ```vue
-    <pk-cell title="标题" value="内容" is-link></pk-cell>
-    <pk-cell title="标题2" value="内容2" is-link></pk-cell>
+<pk-cell title="标题" value="内容" is-link></pk-cell>
+<pk-cell title="标题2" value="内容2" is-link></pk-cell>
 ```
 :::
 
@@ -47,8 +47,8 @@ aside: false
 ::: code-tabs#shell
 @tab vue
 ```vue
-    <pk-cell title="显示分割线" value="内容"></pk-cell>
-    <pk-cell title="隐藏分割线" value="内容2" :border="false"></pk-cell>
+<pk-cell title="显示分割线" value="内容"></pk-cell>
+<pk-cell title="隐藏分割线" value="内容2" :border="false"></pk-cell>
 ```
 :::
 
@@ -58,7 +58,7 @@ aside: false
 ::: code-tabs#shell
 @tab vue
 ```vue
-    <pk-cell title="显示星号" value="内容" required></pk-cell>
+<pk-cell title="显示星号" value="内容" required></pk-cell>
 ```
 :::
 
@@ -68,8 +68,8 @@ aside: false
 ::: code-tabs#shell
 @tab vue
 ```vue
-    <pk-cell title="垂直布局" value="内容" vertical></pk-cell>
-    <pk-cell title="垂直布局" value="内容" vertical is-link></pk-cell>
+<pk-cell title="垂直布局" value="内容" vertical></pk-cell>
+<pk-cell title="垂直布局" value="内容" vertical is-link></pk-cell>
 ```
 :::
 
@@ -78,11 +78,11 @@ aside: false
 ::: code-tabs#shell
 @tab vue
 ```vue
-   <pk-cell-group title="单元格组标题">
-        <pk-cell title="单元格1" value="内容1"></pk-cell>
-        <pk-cell title="单元格2" value="内容2"></pk-cell>
-        <pk-cell title="单元格3" value="内容3"></pk-cell>
-   </pk-cell-group>
+<pk-cell-group title="单元格组标题">
+    <pk-cell title="单元格1" value="内容1"></pk-cell>
+    <pk-cell title="单元格2" value="内容2"></pk-cell>
+    <pk-cell title="单元格3" value="内容3"></pk-cell>
+</pk-cell-group>
 ```
 :::
 
@@ -126,17 +126,17 @@ aside: false
 @tab vue
 
 ```vue [示例]
-    <pk-cell-group>
-        <template #title>
-            自定义标题
-        </template>
-        <template #extra>
-            更多
-        </template>
-        <pk-cell title="单元格1" value="内容1"></pk-cell>
-        <pk-cell title="单元格2" value="内容2"></pk-cell>
-        <pk-cell title="单元格3" value="内容3"></pk-cell>
-    </pk-cell-group>
+<pk-cell-group>
+    <template #title>
+        自定义标题
+    </template>
+    <template #extra>
+        更多
+    </template>
+    <pk-cell title="单元格1" value="内容1"></pk-cell>
+    <pk-cell title="单元格2" value="内容2"></pk-cell>
+    <pk-cell title="单元格3" value="内容3"></pk-cell>
+</pk-cell-group>
 ```
 :::
 
@@ -155,18 +155,18 @@ aside: false
 @tab vue
 
 ```vue [示例]
-   <pk-cell is-link>
-        <template #title>
-            单元格1标题
-        </template>
-        <template #right-icon>
-            📈
-        </template>
-        <template #bottom>
-            bottom下的内容
-        </template>
-        单元格1内容
-    </pk-cell>
+<pk-cell is-link>
+    <template #title>
+        单元格1标题
+    </template>
+    <template #right-icon>
+        📈
+    </template>
+    <template #bottom>
+        bottom下的内容
+    </template>
+    单元格1内容
+</pk-cell>
 ```
 :::
 

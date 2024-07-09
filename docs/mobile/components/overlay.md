@@ -1,14 +1,14 @@
 ---
-title: 遮罩组件
+title: 遮罩层
 lang: zh-cn
 aside: false
 ---
 
-# Overlay 遮罩
+# Overlay 遮罩层
 
 ## 基本使用
 ```vue
-<pk-overlay>遮罩</pk-overlay>
+<pk-overlay>遮罩层</pk-overlay>
 ```
 
 ## 代码示例
@@ -32,7 +32,7 @@ const show = ref<boolean>(false)
 ```
 :::
 
-### 自定义遮罩颜色
+### 自定义遮罩层颜色
 通过`background-color`设置自定义背景颜色。
 
 ::: code-tabs#background-color
@@ -52,7 +52,7 @@ const showCustomBg = ref<boolean>(false)
 ```
 :::
 
-### 禁止点击遮罩关闭
+### 禁止点击遮罩层关闭
 通过`close-on-press`为false关闭点击关闭。
 
 ::: code-tabs#close-on-press
@@ -101,12 +101,12 @@ const showZIndex = ref<boolean>(false)
 ## API
 
 ### Props
-| 属性名           | 说明                                              | 类型      | 默认值 | 可选值 |
-| ---------------- | ------------------------------------------------- | --------- | ------ | ------ |
-| v-model          | 是否显示遮罩层，双向绑定                          | `boolean` |        |        |
-| background-color | 遮罩层背景颜色                                    | `string`  |        |        |
-| close-on-press   | 是否支持点击关闭                                  | `boolean` | `true` |        |
-| z-index          | 遮罩层级，组件默认层级是css变量：--pk-z-index-max | `number`  |        |        |
+| 属性名           | 说明                                                | 类型      | 默认值 | 可选值 |
+| ---------------- | --------------------------------------------------- | --------- | ------ | ------ |
+| v-model          | 是否显示遮罩层，双向绑定                            | `boolean` |        |        |
+| background-color | 遮罩层背景颜色                                      | `string`  |        |        |
+| close-on-press   | 是否支持点击关闭                                    | `boolean` | `true` |        |
+| z-index          | 遮罩层层级，组件默认层级是css变量：--pk-z-index-max | `number`  |        |        |
 
 
 ### Events
@@ -116,9 +116,9 @@ const showZIndex = ref<boolean>(false)
 
 ### Slots
 
-| 插槽名  | 说明                     |
-| ------- | ------------------------ |
-| default | 默认插槽，遮罩上添加内容 |
+| 插槽名  | 说明                       |
+| ------- | -------------------------- |
+| default | 默认插槽，遮罩层上添加内容 |
 
 #### 示例
 以下是`Overlay`插槽示例。

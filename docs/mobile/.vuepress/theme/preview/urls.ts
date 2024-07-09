@@ -12,5 +12,8 @@ export default [
     }, {
         activeMatch: '/components/overlay',
         url: BASE_URL + '#/overlay'
+    }, {
+        activeMatch: '/components/popup',
+        url: BASE_URL + '#/popup'
     }
 ];

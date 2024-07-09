@@ -37,6 +37,10 @@ export default defineUserConfig({
                 {
                   text: 'Cell 单元格',
                   link: '/components/cell'
+                },
+                {
+                  text: 'Popup 弹出层',
+                  link: '/components/popup'
                 }
               ]
             },
