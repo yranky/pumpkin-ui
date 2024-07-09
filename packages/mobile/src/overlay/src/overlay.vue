@@ -2,8 +2,9 @@
     <transition :name="transitionName.b()" appear>
         <div :class="[
             bem.b()
-        ]" v-show="show" @click="closeOnPress ? show = false : ''" :style="{
-            backgroundColor
+        ]" v-show="show" @click="onClick" :style="{
+            backgroundColor,
+            '--pk-overlay-z-index': props.zIndex
         }">
             <slot></slot>
         </div>
@@ -34,4 +35,11 @@ const show = computed<boolean>({
         emits("update:modelValue", val)
     }
 })
+
+const onClick = (event: MouseEvent) => {
+    if (props.closeOnPress) show.value = false
+
+    emits('click', event)
+}
+
 </script>

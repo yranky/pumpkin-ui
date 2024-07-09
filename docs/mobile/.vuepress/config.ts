@@ -39,6 +39,15 @@ export default defineUserConfig({
                   link: '/components/cell'
                 }
               ]
+            },
+            {
+              text: '反馈组件',
+              children: [
+                {
+                  text: 'Overlay 遮罩',
+                  link: '/components/overlay'
+                }
+              ]
             }
           ]
         }

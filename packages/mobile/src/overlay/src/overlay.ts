@@ -1,7 +1,7 @@
 import { extend } from "@pk-ui/utils";
 
 
-export const overlayEmits = ['update:modelValue']
+export const overlayEmits = ['update:modelValue', 'click']
 
 export const overlayProps = extend({}, {
     modelValue: {
@@ -15,5 +15,8 @@ export const overlayProps = extend({}, {
     closeOnPress: {
         type: Boolean,
         default: true
+    },
+    zIndex: {
+        type: Number
     }
 })

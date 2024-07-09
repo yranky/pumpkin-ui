@@ -9,5 +9,8 @@ export default [
     }, {
         activeMatch: '/components/cell',
         url: BASE_URL + '#/cell'
+    }, {
+        activeMatch: '/components/overlay',
+        url: BASE_URL + '#/overlay'
     }
 ];

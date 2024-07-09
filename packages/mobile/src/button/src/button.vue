@@ -49,13 +49,13 @@ const props = defineProps(buttonProps)
 
 const bem = useBem('button')
 
-const emit = defineEmits(buttonEmits)
+const emits = defineEmits(buttonEmits)
 
 const buttonStyle = useButtonStyle(props)
 
 const onClick = (event: MouseEvent) => {
     if (!props.disabled && !props.loading) {
-        emit('click', event);
+        emits('click', event);
     }
 }
 
