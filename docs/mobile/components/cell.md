@@ -107,8 +107,9 @@ aside: false
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-| ------ | ---- | -------- |
+| 事件名 | 说明             | 回调参数                      |
+| ------ | ---------------- | ----------------------------- |
+| click  | 点击`Cell`时触发 | `(event: MouseEvent) => void` |
 
 
 ### CellGroup Slots
@@ -119,6 +120,26 @@ aside: false
 | extra   | 头部标题右侧插槽 |
 | default | 内容区域插槽     |
 
+#### 示例
+以下是`CellGroup`插槽示例。
+::: code-tabs#shell
+@tab vue
+
+```vue [示例]
+    <pk-cell-group>
+        <template #title>
+            自定义标题
+        </template>
+        <template #extra>
+            更多
+        </template>
+        <pk-cell title="单元格1" value="内容1"></pk-cell>
+        <pk-cell title="单元格2" value="内容2"></pk-cell>
+        <pk-cell title="单元格3" value="内容3"></pk-cell>
+    </pk-cell-group>
+```
+:::
+
 ### Cell Slots
 
 | 插槽名     | 说明                                |
@@ -128,6 +149,27 @@ aside: false
 | right-icon | 右侧箭头图标插槽(需要is-link为true) |
 | bottom     | 下方区域插槽                        |
 
+#### 示例
+以下是`Cell`插槽示例。
+::: code-tabs#shell
+@tab vue
+
+```vue [示例]
+   <pk-cell is-link>
+        <template #title>
+            单元格1标题
+        </template>
+        <template #right-icon>
+            📈
+        </template>
+        <template #bottom>
+            bottom下的内容
+        </template>
+        单元格1内容
+    </pk-cell>
+```
+:::
+
 
 ### Exposes
 
@@ -135,7 +177,27 @@ aside: false
 | ---- | ---- | -------- |
 
 
-## 样式变量
+## CellGroup 样式变量
 
-| 名称 | 默认值 | 说明 |
-| ---- | ------ | ---- |
+| 名称                               | 默认值                         | 说明 |
+| ---------------------------------- | ------------------------------ | ---- |
+| --pk-cell-group-padding-horizontal | var(--pk-padding-l)            |      |
+| --pk-cell-group-padding-vertical   | var(--pk-padding-s)            |      |
+| --pk-cell-group-header-color       | var(--pk-text-color-secondary) |      |
+| --pk-cell-group-header-font-size   | var(--pk-font-size-s)          |      |
+
+## Cell 样式变量
+
+| 名称                         | 默认值                         | 说明 |
+| ---------------------------- | ------------------------------ | ---- |
+| --pk-cell-padding            | var(--pk-padding-l)            |      |
+| --pk-cell-title-font-size    | var(--pk-font-size-m)          |      |
+| --pk-cell-value-font-size    | var(--pk-font-size-m)          |      |
+| --pk-cell-bottom-font-size   | var(--pk-font-size-s)          |      |
+| --pk-cell-title-color        | var(--pk-text-color)           |      |
+| --pk-cell-value-color        | var(--pk-text-color-secondary) |      |
+| --pk-cell-bottom-color       | var(--pk-text-color-secondary) |      |
+| --pk-cell-required-color     | var(--pk-error-color)          |      |
+| --pk-cell-title-line-height  | 1.375                          |      |
+| --pk-cell-value-line-height  | 1.375                          |      |
+| --pk-cell-bottom-line-height | 1.5                            |      |
