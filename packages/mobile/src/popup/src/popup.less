@@ -2,15 +2,21 @@
 :host {
     --pk-popup-background: var(--pk-bg-color);
     --pk-popup-z-index: var(--pk-z-index-max-2);
+    --pk-popup-border-radius: var(--pk-radius-l);
 }
 
 
+@namespace: pk-popup;
 
-.pk-popup {
+.@{namespace} {
     position: fixed;
     max-height: 100%;
     background: var(--pk-popup-background);
     z-index: var(--pk-popup-z-index);
+
+    &--round {
+        border-radius: var(--pk-popup-border-radius);
+    }
 
     &--bottom {
         bottom: 0;

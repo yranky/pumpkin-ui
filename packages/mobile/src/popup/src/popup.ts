@@ -24,7 +24,7 @@ export const popupProps = extend({}, {
     },
     overlayBackgroundColor: {
         type: String,
-        default:''
+        default: ''
     },
     fade: {
         type: Boolean,
@@ -36,6 +36,10 @@ export const popupProps = extend({}, {
     },
     overflowY: {
         type: String,
-        default:'auto'
+        default: 'auto'
+    },
+    round: {
+        type: Boolean,
+        default: false
     }
 })

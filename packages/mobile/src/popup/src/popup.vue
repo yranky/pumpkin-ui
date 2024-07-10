@@ -1,18 +1,21 @@
 <template>
-    <teleport to="body" :disabled="!appendToBody">
-        <transition :name="position === 'center' || fade ? transitionFadeName.b() : transitionSlideName.b(position)"
+    <teleport to="body" :disabled="!props.appendToBody">
+        <transition
+            :name="props.position === 'center' || props.fade ? transitionFadeName.b() : transitionSlideName.b(props.position)"
             appear>
             <div :class="[
                 bem.b(),
-                bem.m(position)
+                bem.m(props.position),
+                bem.eqm('round', props.round)
             ]" v-show="show" :style="{
-                background: backgroundColor,
-                overflowY
+                background: props.backgroundColor,
+                overflowY: props.overflowY
             }">
                 <slot></slot>
             </div>
         </transition>
-        <pk-overlay v-if="overlay" v-model="show" v-bind="$attrs" :backgroundColor="overlayBackgroundColor" />
+        <pk-overlay v-if="props.overlay" v-model="show" v-bind="$attrs"
+            :backgroundColor="props.overlayBackgroundColor" />
     </teleport>
 </template>
 <script setup lang="ts">
