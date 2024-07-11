@@ -2,7 +2,7 @@
     <teleport to="body" :disabled="!props.appendToBody">
         <transition
             :name="props.position === 'center' || props.fade ? transitionFadeName.b() : transitionSlideName.b(props.position)"
-            appear>
+            appear @after-enter="onAfterEnter" @after-leave="onAfterLeave">
             <div :class="[
                 bem.b(),
                 bem.m(props.position),
@@ -22,7 +22,7 @@
 import { useBem } from '@pk-ui/use';
 import PkOverlay from '../../overlay/src/overlay.vue'
 import { popupProps, popupEmits } from './popup'
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import "./popup.less"
 
 defineOptions({
@@ -45,4 +45,13 @@ const show = computed<boolean>({
         emits("update:modelValue", val)
     }
 })
+
+const onAfterEnter = () => emits("onOpened")
+const onAfterLeave = () => emits("onClosed")
+
+watch(show, (val) => {
+    if (val) emits("onOpen")
+    else emits("onClose")
+})
+
 </script>

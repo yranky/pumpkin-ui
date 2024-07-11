@@ -1,7 +1,7 @@
 import { extend } from "@pk-ui/utils";
 
 
-export const popupEmits = ['update:modelValue']
+export const popupEmits = ['update:modelValue', 'onOpen', 'onClose', 'onOpened', 'onClosed']
 export const positionTypes = ['top', 'bottom', 'left', 'right', 'center'] as const
 
 export const popupProps = extend({}, {
