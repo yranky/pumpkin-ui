@@ -171,3 +171,93 @@ const roundShow = ref<boolean>(false)
 }
 ```
 :::
+
+
+### 自定义内容区域背景色
+通过 `background-color` 属性自定义内容区域背景色。
+
+::: code-tabs#round
+@tab template
+
+```vue [template]
+<pk-cell is-link @click="backgroundShow = true">
+    <template #title>自定义内容区域背景色</template>
+</pk-cell>
+
+<pk-popup v-model="backgroundShow" position="bottom" background-color="#ee772f">
+    <div class="popup-content">
+        <pk-button @click="backgroundShow = false">点击关闭</pk-button>
+    </div>
+</pk-popup>
+```
+
+@tab script
+```js [script]
+import { PkPopup, PkCell, PkButton } from "@pk-ui/mobile"
+import { ref } from 'vue'
+
+const backgroundShow = ref<boolean>(false)
+
+```
+
+@tab style
+```css [style]
+.popup-container {}
+
+.popup-content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+```
+:::
+
+
+## API
+
+### Props
+| 属性名                   | 说明                                                          | 类型                                                | 默认值   | 可选值                                              |
+| ------------------------ | ------------------------------------------------------------- | --------------------------------------------------- | -------- | --------------------------------------------------- |
+| v-model                  | 是否显示弹出层，双向绑定                                      | `boolean`                                           |          |                                                     |
+| position                 | 弹出层的弹出方向                                              | `'top'｜ 'bottom'｜ 'left'｜ 'right'｜ 'center'`    | `center` | `'top'｜ 'bottom'｜ 'left'｜ 'right'｜ 'center'`    |
+| append-to-body           | 是否将组件插入到body上                                        | `boolean`                                           | `true`   |                                                     |
+| overlay                  | 是否存在遮罩                                                  | `boolean`                                           | `true`   |                                                     |
+| overlay-background-color | 遮罩层背景颜色                                                | `string`                                            |          |                                                     |
+| fade                     | 强制显示fade效果，postion为`center`时，默认为`true`不支持修改 | `boolean`                                           | `false`  |                                                     |
+| background-color         | 弹出层内容区域背景颜色                                        | `string`                                            | `false`  |                                                     |
+| overflow-y               | 弹出层内容区域的overflow-y属性                                | `'visible'｜ 'hidden'｜ 'scroll'｜ 'clip'｜ 'auro'` | `auto`   | `'visible'｜ 'hidden'｜ 'scroll'｜ 'clip'｜ 'auro'` |
+| round                    | 设置弹出层内容区域是否为圆角                                  | `boolean`                                           | `false`  |
+| close-on-press           | 是否支持点击遮罩关闭                                          | `boolean`                                           | `true`   |                                                     |
+| z-index                  | 遮罩层层级，组件默认层级是css变量：--pk-z-index-max           | `number`                                            |          |                                                     |
+
+
+### Events
+| 事件名   | 说明               | 回调参数     |
+| -------- | ------------------ | ------------ |
+| onOpen   | 打开时触发         | `() => void` |
+| onClose  | 打开时触发         | `() => void` |
+| onOpened | 打开动画结束时触发 | `() => void` |
+| onClosed | 关闭动画结束时触发 | `() => void` |
+
+
+### Slots
+
+| 插槽名  | 说明                     |
+| ------- | ------------------------ |
+| default | 默认插槽，弹出层上的内容 |
+
+### Exposes
+
+| 名称 | 说明 | 类型说明 |
+| ---- | ---- | -------- |
+
+
+## 样式变量
+
+| 名称                     | 默认值                     | 说明 |
+| ------------------------ | -------------------------- | ---- |
+| --pk-overlay-background  | var(--pk-overlay-bg-color) |      |
+| --pk-overlay-z-index     | var(--pk-z-index-max)      |      |
+| --pk-popup-background    | var(--pk-bg-color)         |      |
+| --pk-popup-z-index       | var(--pk-z-index-max-2)    |      |
+| --pk-popup-border-radius | var(--pk-radius-l)         |      |

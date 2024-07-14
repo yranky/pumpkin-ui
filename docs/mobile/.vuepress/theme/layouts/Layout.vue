@@ -75,6 +75,7 @@ onMounted(() => {
         border: none;
         border-radius: 10px;
         z-index: 10;
+        box-shadow: grey 0px 0px 10px 0px;
     }
 }
 </style>

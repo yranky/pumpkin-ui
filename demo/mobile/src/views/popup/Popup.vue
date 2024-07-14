@@ -22,6 +22,9 @@
             <pk-cell is-link @click="roundShow = true">
                 <template #title>圆角弹出层</template>
             </pk-cell>
+            <pk-cell is-link @click="backgroundShow = true">
+                <template #title>自定义内容区域背景色</template>
+            </pk-cell>
         </pk-cell-group>
 
         <pk-popup v-model="defaultShow">
@@ -60,6 +63,11 @@
                 <pk-button @click="roundShow = false">点击关闭</pk-button>
             </div>
         </pk-popup>
+        <pk-popup v-model="backgroundShow" position="bottom" background-color="#ee772f">
+            <div class="popup-content">
+                <pk-button @click="backgroundShow = false">点击关闭</pk-button>
+            </div>
+        </pk-popup>
     </div>
 </template>
 <script lang="ts" setup>
@@ -74,6 +82,8 @@ const bottomShow = ref<boolean>(false)
 const centerShow = ref<boolean>(false)
 
 const roundShow = ref<boolean>(false)
+
+const backgroundShow = ref<boolean>(false)
 
 </script>
 <style lang="less" scoped>
