@@ -15,5 +15,8 @@ export default [
     }, {
         activeMatch: '/components/popup',
         url: BASE_URL + '#/popup'
+    }, {
+        activeMatch: '/components/toast',
+        url: BASE_URL + '#/toast'
     }
 ];

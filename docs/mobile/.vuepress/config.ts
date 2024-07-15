@@ -41,6 +41,10 @@ export default defineUserConfig({
                 {
                   text: 'Popup 弹出层',
                   link: '/components/popup'
+                },
+                {
+                  text: 'Toast 轻提示',
+                  link: '/components/toast'
                 }
               ]
             },
