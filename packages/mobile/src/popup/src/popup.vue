@@ -15,14 +15,14 @@
             </div>
         </transition>
         <pk-overlay v-if="props.overlay" v-model="show" v-bind="$attrs"
-            :backgroundColor="props.overlayBackgroundColor" />
+            :background-color="props.overlayBackgroundColor" />
     </teleport>
 </template>
 <script setup lang="ts">
 import { useBem } from '@pk-ui/use';
 import PkOverlay from '../../overlay/src/overlay.vue'
 import { popupProps, popupEmits } from './popup'
-import { computed, watch } from 'vue';
+import { computed, useAttrs, watch } from 'vue';
 import "./popup.less"
 
 defineOptions({
@@ -32,6 +32,8 @@ defineOptions({
 const props = defineProps(popupProps)
 
 const emits = defineEmits(popupEmits)
+
+const $attrs = useAttrs();
 
 const bem = useBem('popup')
 const transitionSlideName = useBem('slide')
