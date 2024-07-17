@@ -1,6 +1,8 @@
 <template>
-    <popup v-model="show" fade :close-on-press="false" :overlayBackgroundColor="overlayBackgroundColor"
-        backgroundColor="transparent" :position="position" overflowY="visible">
+    <popup v-model="_show" fade :close-on-press="false" :overlay-background-color="props.overlayBackgroundColor"
+        background-color="transparent" :position="props.position" overflow-y="visible" :overlay="props.overlay"
+        @onClose="emits('onClose')" @onOpen="emits('onOpen')" @onOpened="emits('onOpened')"
+        @onClosed="emits('onClosed')">
         <div :class="[
             bem.b(),
             bem.m(position),
@@ -26,7 +28,7 @@
 <script setup lang="ts">
 import { useBem } from '@pk-ui/use'
 import { toastProps, toastEmits } from './toast'
-import { computed, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import "./toast.less"
 import Popup from '../../popup'
 import Loading from '../../loading'
@@ -41,32 +43,42 @@ const emits = defineEmits(toastEmits)
 
 const bem = useBem('toast')
 
-const show = computed<boolean>({
+const __show = ref<boolean>(false)
+const _show = computed<boolean>({
     get() {
-        return props.modelValue
+        // if (props.modelValue !== void 0) return props.modelValue
+        return __show.value
     },
     set(val) {
-        emits("update:modelValue", val)
+        // if (props.modelValue !== void 0) return emits("update:modelValue", val)
+        __show.value = val
     }
 })
 
 let timer: ReturnType<typeof setTimeout>
 
 const clearTimer = () => clearTimeout(timer)
-const updateShow = (val: boolean) => show.value = val
+
+const startTimer = () => {
+    clearTimer();
+    if (_show.value && props.duration > 0) {
+        timer = setTimeout(() => {
+            updateShow(false)
+        }, props.duration);
+    }
+}
+const updateShow = (val: boolean) => _show.value = val
 
 watch(
-    () => [show.value, props.position, props.text, props.duration],
-    () => {
-        clearTimer();
-        if (show && props.duration > 0) {
-            timer = setTimeout(() => {
-                updateShow(false)
-            }, props.duration);
-        }
-    },
+    () => [_show.value, props.position, props.text, props.duration],
+    startTimer,
     {
         immediate: true
     }
-);
+)
+
+
+defineExpose({
+    updateShow
+})
 </script>

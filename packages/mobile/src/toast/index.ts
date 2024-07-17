@@ -7,3 +7,5 @@ PkToast.install = (app: App) => {
 
 export default PkToast
 export { PkToast }
+
+export * from './src/fun/toast'
