@@ -12,3 +12,10 @@ export type ToastOptions = {
     onOpen?: Function,
     onOpened?: Function
 }
+
+export type ToastOptionsProps = ToastOptions & {
+    onOnClose?: Function,
+    onOnClosed?: Function,
+    onOnOpen?: Function,
+    onOnOpened?: Function
+}
