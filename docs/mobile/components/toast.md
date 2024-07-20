@@ -8,7 +8,7 @@ aside: false
 
 ## 基本使用
 
-### 函数调用
+### 命令式调用
 ::: code-tabs#fun
 
 @tab script

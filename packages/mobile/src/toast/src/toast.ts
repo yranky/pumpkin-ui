@@ -3,7 +3,8 @@ import { extend } from "@pk-ui/utils"
 
 export const toastEmits = ['update:modelValue', 'onOpen', 'onClose', 'onOpened', 'onClosed']
 export const positionTypes = ['top', 'bottom', 'center'] as const
-export const types = ['text', 'loading', 'success', 'fail', 'icon'] as const
+// export const types = ['text', 'loading', 'success', 'fail', 'icon'] as const
+export const types = ['text', 'loading'] as const
 
 export const toastProps = extend({}, {
     type: {
