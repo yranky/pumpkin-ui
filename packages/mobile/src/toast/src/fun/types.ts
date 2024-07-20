@@ -1,6 +1,6 @@
 import { positionTypes, types } from "../toast"
 
-export type LoadingProps = {
+export type LoadingOptions = {
     type?: typeof types[keyof typeof types],
     text?: string,
     overlay?: boolean,
@@ -12,7 +12,7 @@ export type LoadingProps = {
     onOpened?: Function
 }
 
-export type ToastOptions = LoadingProps & {
+export type ToastOptions = LoadingOptions & {
     duration?: number
 }
 

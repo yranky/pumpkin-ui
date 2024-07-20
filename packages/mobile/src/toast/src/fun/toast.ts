@@ -1,5 +1,5 @@
 import { extend } from "@pk-ui/utils";
-import { LoadingProps, ToastOptions, ToastOptionsProps } from "./types";
+import { LoadingOptions, ToastOptions, ToastOptionsProps } from "./types";
 import { App, createApp, PropType, reactive, ref, toRefs } from "vue";
 import PkToast from "../toast.vue";
 import { types } from "../toast";
@@ -63,7 +63,7 @@ const createToastInstance = (option: ToastOptions) => {
 }
 
 
-const setMultiple = function (m: boolean) {
+const setMultiple = function (m: boolean = true) {
     multiple = m
 }
 
@@ -96,7 +96,7 @@ const showToast = function (option: ToastOptions | string) {
     } : option)
 }
 
-const showLoading = function (option?: LoadingProps | string) {
+const showLoading = function (option?: LoadingOptions | string) {
     hideLoading()
 
     return _showToast(extend({}, typeof option === 'string' ? {
