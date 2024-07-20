@@ -68,7 +68,7 @@ const startTimer = () => {
         }, props.duration);
     }
 }
-const updateShow = (val: boolean) => _show.value = val
+const updateShow = (val: boolean = true) => _show.value = val
 
 watch(
     () => [_show.value, props.position, props.text, props.duration],

@@ -1,39 +1,59 @@
 <template>
     <div class="toast-container">
         <pk-cell-group>
-            <pk-cell is-link @click="showDefaultToast">
-                <template #title>显示toast</template>
+            <pk-cell is-link @click="Toast.showToast('基础用法')">
+                <template #title>基础用法</template>
             </pk-cell>
-            <pk-cell is-link @click="showDefaultLoading">
-                <template #title>显示loading</template>
+            <pk-cell is-link @click="showLoading">
+                <template #title>加载用法</template>
+            </pk-cell>
+            <pk-cell is-link @click="showLoadingClose">
+                <template #title>加载用法（通过close关闭）</template>
+            </pk-cell>
+            <pk-cell is-link @click="Toast.showToast({
+                text: 'top',
+                position: 'top'
+            })">
+                <template #title>top</template>
+            </pk-cell>
+            <pk-cell is-link @click="Toast.showToast({
+                text: 'bottom',
+                position: 'bottom'
+            })">
+                <template #title>bottom</template>
+            </pk-cell>
+            <pk-cell is-link @click="Toast.showToast({
+                text: 'center',
+                position: 'center'
+            })">
+                <template #title>center</template>
+            </pk-cell>
+            <pk-cell is-link @click="Toast.setMultiple(true); Toast.showToast('开启同时显示多个')">
+                <template #title>开启同时显示多个</template>
+            </pk-cell>
+            <pk-cell is-link @click="Toast.setMultiple(false); Toast.showToast('关闭同时显示多个')">
+                <template #title>关闭同时显示多个</template>
             </pk-cell>
         </pk-cell-group>
     </div>
 </template>
 <script lang="ts" setup>
 import { Toast, PkButton, PkCell, PkCellGroup } from "@pk-ui/mobile"
-import { ref } from 'vue'
 
-const showDefaultToast = function () {
-    Toast.showToast({
-        text: '测试测试',
-        onClose() {
-            console.log('关闭了', this)
-        },
-        onOpen() {
-            console.log('打开了', this)
-        },
-        onClosed() {
-            console.log('关闭结束了', this)
-        },
-        onOpened() {
-            console.log('打开结束了', this)
-        }
-    })
+const showLoading = () => {
+    Toast.showLoading('加载加载')
+
+    setTimeout(() => {
+        Toast.hideLoading()
+    }, 2000)
 }
 
-const showDefaultLoading = () => {
-    Toast.showLoading()
+const showLoadingClose = () => {
+    const { close } = Toast.showLoading('加载，close关闭')
+
+    setTimeout(() => {
+        close();
+    }, 2000)
 }
 
 </script>
