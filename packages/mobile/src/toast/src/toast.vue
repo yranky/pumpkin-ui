@@ -5,21 +5,21 @@
         @onClosed="emits('onClosed')">
         <div :class="[
             bem.b(),
-            bem.m(position),
-            bem.m(type)
+            bem.m(props.position),
+            bem.m(props.type)
         ]">
             <div :class="[
                 bem.e('icon')
-            ]" v-if="type === 'icon' || type === 'loading'">
+            ]" v-if="props.type === 'icon' || props.type === 'loading'">
                 <slot name="icon">
-                    <loading v-if="type === 'loading'" color="currentColor" />
+                    <loading v-if="props.type === 'loading'" color="currentColor" />
                 </slot>
             </div>
             <div :class="[
                 bem.e('text')
             ]">
                 <slot name="text">
-                    {{ text }}
+                    {{ props.text }}
                 </slot>
             </div>
         </div>
@@ -44,13 +44,14 @@ const emits = defineEmits(toastEmits)
 const bem = useBem('toast')
 
 const __show = ref<boolean>(false)
+
 const _show = computed<boolean>({
     get() {
-        // if (props.modelValue !== void 0) return props.modelValue
+        if (props.modelValue !== void 0) return props.modelValue
         return __show.value
     },
     set(val) {
-        // if (props.modelValue !== void 0) return emits("update:modelValue", val)
+        if (props.modelValue !== void 0) return emits("update:modelValue", val)
         __show.value = val
     }
 })
@@ -61,7 +62,7 @@ const clearTimer = () => clearTimeout(timer)
 
 const startTimer = () => {
     clearTimer();
-    if (_show.value && props.duration > 0) {
+    if (_show.value && props.duration > 0 && props.type !== 'loading') {
         timer = setTimeout(() => {
             updateShow(false)
         }, props.duration);
@@ -76,7 +77,6 @@ watch(
         immediate: true
     }
 )
-
 
 defineExpose({
     updateShow

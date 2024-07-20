@@ -12,7 +12,8 @@ export const toastProps = extend({}, {
         default: 'text'
     },
     modelValue: {
-        type: Boolean
+        type: Boolean,
+        default: void 0
     },
     text: {
         type: String,

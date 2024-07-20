@@ -1,7 +1,8 @@
 import { extend } from "@pk-ui/utils";
-import { ToastOptions, ToastOptionsProps } from "./types";
-import { App, createApp, reactive, ref, toRefs } from "vue";
+import { LoadingProps, ToastOptions, ToastOptionsProps } from "./types";
+import { App, createApp, PropType, reactive, ref, toRefs } from "vue";
 import PkToast from "../toast.vue";
+import { types } from "../toast";
 
 interface IQueueItem {
     instance: InstanceType<typeof PkToast>
@@ -44,7 +45,7 @@ const createToastInstance = (option: ToastOptions) => {
         const ind = queue.findIndex(item => item.options === options)
         queue[ind]?.app.unmount()
         queue[ind]?.el.remove()
-        queue.splice(ind, 1)
+        ind > -1 && queue.splice(ind, 1)
     }
 
     const app = createApp(PkToast, options)
@@ -66,10 +67,14 @@ const setMultiple = function (m: boolean) {
     multiple = m
 }
 
-const showToast = function (option: ToastOptions) {
+const _showToast = function (option: ToastOptions) {
     if (!multiple) {
         let ins
         while (ins = queue.shift()) {
+            if (ins.options.type === 'loading') {
+                queue.unshift(ins)
+                continue
+            }
             ins.app.unmount();
             ins.el.remove();
         }
@@ -79,21 +84,35 @@ const showToast = function (option: ToastOptions) {
     const { app, instance, options, el } = createToastInstance(toastOption);
     (instance as InstanceType<typeof PkToast>).updateShow(true)
     queue.push({ app, instance, options, el } as IQueueItem)
-
     const close = () => (instance as InstanceType<typeof PkToast>).updateShow(false)
-
     return {
         close
     }
 }
 
-const showLoading = function (option?: ToastOptions) {
-    return showToast(extend({}, option, { type: "loading", overlay: true }))
+const showToast = function (option: ToastOptions | string) {
+    return _showToast(typeof option === 'string' ? {
+        text: option
+    } : option)
 }
 
-const closeAllToast = function () {
-    while (queue.length) {
-        queue.shift()?.instance.updateShow(false)
+const showLoading = function (option?: LoadingProps | string) {
+    hideLoading()
+
+    return _showToast(extend({}, typeof option === 'string' ? {
+        text: option
+    } : option, { type: "loading", overlay: typeof option === 'string' ? true : option?.overlay }))
+}
+
+const hideLoading = () => closeToastByType('loading')
+
+const closeAllToast = () => closeToastByType('loading', true)
+
+const closeToastByType = function (type: typeof types[number], except: boolean = false) {
+    for (let i = 0; i < queue.length; i++) {
+        const item = queue[i]
+        if (except && item?.options.type !== type) queue[i].instance.updateShow(false)
+        else if (item.options.type === type) queue[i].instance.updateShow(false)
     }
 }
 
@@ -101,5 +120,6 @@ export const Toast = {
     showToast,
     showLoading,
     closeAllToast,
-    setMultiple
+    setMultiple,
+    hideLoading
 }
