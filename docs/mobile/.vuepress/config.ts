@@ -54,6 +54,9 @@ export default defineUserConfig({
                 {
                   text: 'Overlay 遮罩',
                   link: '/components/overlay'
+                }, {
+                  text: 'Loading 加载',
+                  link: '/components/loading'
                 }
               ]
             }

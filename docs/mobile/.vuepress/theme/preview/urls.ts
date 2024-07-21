@@ -18,5 +18,8 @@ export default [
     }, {
         activeMatch: '/components/toast',
         url: BASE_URL + '#/toast'
+    }, {
+        activeMatch: '/components/loading',
+        url: BASE_URL + '#/loading'
     }
 ];

@@ -41,13 +41,7 @@ const defaultShow = ref<boolean>(false)
 
 @tab style
 ```css [style]
-.popup-container {}
 
-.popup-content {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
 ```
 :::
 
@@ -123,13 +117,7 @@ const centerShow = ref<boolean>(false)
 
 @tab style
 ```css [style]
-.popup-container {}
 
-.popup-content {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
 ```
 :::
 
@@ -162,13 +150,7 @@ const roundShow = ref<boolean>(false)
 
 @tab style
 ```css [style]
-.popup-container {}
 
-.popup-content {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
 ```
 :::
 
@@ -202,13 +184,7 @@ const backgroundShow = ref<boolean>(false)
 
 @tab style
 ```css [style]
-.popup-container {}
 
-.popup-content {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
 ```
 :::
 
