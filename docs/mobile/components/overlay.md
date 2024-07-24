@@ -8,7 +8,7 @@ aside: false
 
 ## 基本使用
 ```vue
-<pk-overlay>遮罩层</pk-overlay>
+<pk-overlay></pk-overlay>
 ```
 
 ## 代码示例

@@ -8,7 +8,7 @@ aside: false
 
 ## 基本使用
 ```vue
-<pk-popup>弹出层</pk-popup>
+<pk-popup></pk-popup>
 ```
 
 

@@ -57,6 +57,9 @@ export default defineUserConfig({
                 }, {
                   text: 'Loading 加载',
                   link: '/components/loading'
+                }, {
+                  text: 'ActionSheet 动作面板',
+                  link: '/components/action-sheet'
                 }
               ]
             }

@@ -21,5 +21,8 @@ export default [
     }, {
         activeMatch: '/components/loading',
         url: BASE_URL + '#/loading'
+    }, {
+        activeMatch: '/components/action-sheet',
+        url: BASE_URL + '#/action-sheet'
     }
 ];

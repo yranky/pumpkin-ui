@@ -8,7 +8,7 @@ aside: false
 
 ## 基本使用
 ```vue
-<pk-loading>弹出层</pk-loading>
+<pk-loading></pk-loading>
 ```
 
 ## 代码示例
