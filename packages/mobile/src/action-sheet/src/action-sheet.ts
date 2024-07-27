@@ -2,19 +2,19 @@ import { extend } from "@pk-ui/utils"
 import { PropType } from "vue"
 
 
-export const actionSheetEmits = ['update:modelValue']
-export interface ActionSheetItem{
-    name: String,
-    color?: String,
-    disabled?: Boolean,
-    loading?: Boolean
+export const actionSheetEmits = ['update:modelValue', 'onOpen', 'onClose', 'onOpened', 'onClosed']
+export interface ActionSheetItem {
+    name: string,
+    color?: string,
+    disabled?: boolean,
+    loading?: boolean
 }
 
 
 export const actionSheetProps = extend({}, {
     modelValue: {
         type: Boolean,
-        default: false
+        default: void 0
     },
     actions: {
         type: Array as PropType<ActionSheetItem[]>,
@@ -30,10 +30,22 @@ export const actionSheetProps = extend({}, {
     },
     title: {
         type: String,
-        default:''
+        default: ''
     },
     subtitle: {
         type: String,
-        default:''
+        default: ''
+    },
+    overlay: {
+        type: Boolean,
+        default: true
+    },
+    overlayBackgroundColor: {
+        type: String,
+        default: ''
+    },
+    closeOnPressOverlay: {
+        type: Boolean,
+        default: true
     }
 })

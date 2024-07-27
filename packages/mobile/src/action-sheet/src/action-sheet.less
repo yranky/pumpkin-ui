@@ -7,8 +7,9 @@
     --pk-action-sheet-disabled-text-color: var(--pk-text-color-disabled);
 }
 
+@namespace: pk-action-sheet;
 
-.pk-action-sheet {
+.@{namespace} {
     color: var(--pk-action-sheet-color);
     background: var(--pk-bg-color);
     border-radius: var(--pk-radius-l) var(--pk-radius-l) 0 0;
@@ -31,22 +32,22 @@
             width: 100%;
             transform: scaleY(0.5);
         }
-    }
 
-    &__title {
-        font-size: var(--pk-font-size-m);
-        font-weight: bold;
-    }
+        .@{namespace}__title {
+            font-size: var(--pk-font-size-m);
+            font-weight: bold;
+        }
 
-    &__subtitle {
-        font-size: var(--pk-font-size-s);
-        color: var(--pk-text-color-secondary);
-        padding: var(--pk-padding-s) 0 0 0;
+        .@{namespace}__subtitle {
+            font-size: var(--pk-font-size-s);
+            color: var(--pk-text-color-secondary);
+            padding: var(--pk-padding-s) 0 0 0;
+        }
     }
 
     &__content {}
 
-    &__item {
+    .@{namespace}__item {
         position: relative;
         padding: var(--pk-action-sheet-item-padding);
         display: flex;
@@ -69,34 +70,36 @@
             opacity: 0.05;
             z-index: var(--pk-button-z-index-mask);
         }
-    }
 
-    &--loading {
-        color: var(--pk-action-sheet-disabled-text-color);
+        &.@{namespace}--loading {
+            color: var(--pk-action-sheet-disabled-text-color);
 
-        &:active::before {
-            display: none;
+            &:active::before {
+                display: none;
+            }
         }
-    }
 
-    &--disabled {
-        color: var(--pk-action-sheet-disabled-text-color);
+        &.@{namespace}--disabled {
+            color: var(--pk-action-sheet-disabled-text-color);
 
-        &:active::before {
-            display: none;
+            &:active::before {
+                display: none;
+            }
         }
-    }
 
-    &__item-icon {
-        &>div {
-            width: var(--pk-action-sheet-item-icon);
-            height: var(--pk-action-sheet-item-icon);
+        &.@{namespace}__item-icon {
+            &>div {
+                width: var(--pk-action-sheet-item-icon);
+                height: var(--pk-action-sheet-item-icon);
+            }
         }
+
+        &.@{namespace}__text {
+            margin: 0 2px;
+        }
+
     }
 
-    &__text {
-        margin: 0 2px;
-    }
 
     &__footer {
         position: relative;

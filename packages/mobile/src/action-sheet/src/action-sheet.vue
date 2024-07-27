@@ -1,20 +1,23 @@
 <template>
-    <popup v-model="show" position="bottom" backgroundColor="transparent">
+    <popup v-model="_show" position="bottom" :overlay="props.overlay"
+        :close-on-press-overlay="props.closeOnPressOverlay" :overlay-background-color="props.overlayBackgroundColor"
+        @onClose="emits('onClose')" @onOpen="emits('onOpen')" @onOpened="emits('onOpened')"
+        @onClosed="emits('onClosed')">
         <div :class="[
             bem.b()
         ]">
             <div :class="[
                 bem.e('header')
-            ]" v-if="!!title || !!subtitle">
+            ]" v-if="!!props.title || !!props.subtitle">
                 <div :class="[
                     bem.e('title')
-                ]" v-if="!!title">
-                    {{ title }}
+                ]" v-if="!!props.title">
+                    {{ props.title }}
                 </div>
                 <div :class="[
                     bem.e('subtitle')
-                ]" v-if="!!subtitle">
-                    {{ subtitle }}
+                ]" v-if="!!props.subtitle">
+                    {{ props.subtitle }}
                 </div>
             </div>
 
@@ -25,7 +28,7 @@
                     bem.e('item'),
                     bem.eqm('loading', !!item.loading),
                     bem.eqm('disabled', !!item.disabled)
-                ]" v-for="(item, index) in actions" :key="item.name">
+                ]" v-for="(item, index) in props.actions" :key="item.name">
                     <loading :class="[
                         bem.e('item-icon')
                     ]" color="currentColor" v-if="item.loading" />
@@ -37,14 +40,13 @@
                 </div>
             </div>
 
-
             <div :class="[
                 bem.e('footer')
-            ]" v-if="cancel">
+            ]" v-if="props.cancel">
                 <div :class="[
                     bem.e('item')
                 ]">
-                    {{ cancelText }}
+                    {{ props.cancelText }}
                 </div>
             </div>
         </div>
@@ -55,7 +57,7 @@ import { useBem } from '@pk-ui/use'
 import Popup from '../../popup/src/popup.vue'
 import Loading from '../../loading/src/loading.vue'
 import './action-sheet.less'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { actionSheetProps, actionSheetEmits } from './action-sheet'
 
 defineOptions({
@@ -68,12 +70,16 @@ const props = defineProps(actionSheetProps)
 
 const emits = defineEmits(actionSheetEmits)
 
-const show = computed<boolean>({
+const __show = ref<boolean>(false)
+
+const _show = computed<boolean>({
     get() {
-        return props.modelValue
+        if (props.modelValue !== void 0) return props.modelValue
+        return __show.value
     },
     set(val) {
-        emits("update:modelValue", val)
+        if (props.modelValue !== void 0) return emits("update:modelValue", val)
+        __show.value = val
     }
 })
 </script>
