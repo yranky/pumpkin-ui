@@ -7,3 +7,5 @@ PkActionSheet.install = (app: App) => {
 
 export default PkActionSheet
 export { PkActionSheet }
+
+export * from './src/fun/action-sheet'

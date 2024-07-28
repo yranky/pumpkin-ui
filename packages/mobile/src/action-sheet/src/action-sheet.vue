@@ -8,7 +8,7 @@
         ]">
             <div :class="[
                 bem.e('header')
-            ]" v-if="!!props.title || !!props.subtitle">
+            ]" v-if="!!props.title || !!props.subTitle">
                 <div :class="[
                     bem.e('title')
                 ]" v-if="!!props.title">
@@ -16,8 +16,8 @@
                 </div>
                 <div :class="[
                     bem.e('subtitle')
-                ]" v-if="!!props.subtitle">
-                    {{ props.subtitle }}
+                ]" v-if="!!props.subTitle">
+                    {{ props.subTitle }}
                 </div>
             </div>
 
@@ -81,5 +81,11 @@ const _show = computed<boolean>({
         if (props.modelValue !== void 0) return emits("update:modelValue", val)
         __show.value = val
     }
+})
+
+const updateShow = (val: boolean = true) => _show.value = val
+
+defineExpose({
+    updateShow
 })
 </script>

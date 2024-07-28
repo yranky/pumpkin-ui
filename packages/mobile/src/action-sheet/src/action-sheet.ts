@@ -32,7 +32,7 @@ export const actionSheetProps = extend({}, {
         type: String,
         default: ''
     },
-    subtitle: {
+    subTitle: {
         type: String,
         default: ''
     },
