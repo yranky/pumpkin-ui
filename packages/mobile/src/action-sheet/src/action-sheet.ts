@@ -2,7 +2,7 @@ import { extend } from "@pk-ui/utils"
 import { PropType } from "vue"
 
 
-export const actionSheetEmits = ['update:modelValue', 'onOpen', 'onClose', 'onOpened', 'onClosed']
+export const actionSheetEmits = ['update:modelValue', 'onOpen', 'onClose', 'onOpened', 'onClosed', 'onItemClick', 'onCancel']
 export interface ActionSheetItem {
     name: string,
     color?: string,
@@ -45,6 +45,10 @@ export const actionSheetProps = extend({}, {
         default: ''
     },
     closeOnPressOverlay: {
+        type: Boolean,
+        default: true
+    },
+    closeOnClickAction: {
         type: Boolean,
         default: true
     }

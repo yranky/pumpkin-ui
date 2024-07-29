@@ -54,6 +54,7 @@
         justify-content: center;
         font-size: var(--pk-font-size-m);
         align-items: center;
+        color: var(--pk-action-sheet-color);
 
         &:active::before {
             position: absolute;
@@ -87,14 +88,14 @@
             }
         }
 
-        &.@{namespace}__item-icon {
+        .@{namespace}__item-icon {
             &>div {
                 width: var(--pk-action-sheet-item-icon);
                 height: var(--pk-action-sheet-item-icon);
             }
         }
 
-        &.@{namespace}__text {
+        .@{namespace}__text {
             margin: 0 2px;
         }
 

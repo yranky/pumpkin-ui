@@ -1,7 +1,7 @@
-import { extend } from "@pk-ui/utils";
+import { extend, usePromiseHooks } from "@pk-ui/utils";
 import { App, createApp, PropType, reactive, ref, toRefs } from "vue";
 import PkActionSheet from "../action-sheet.vue";
-import { ActionSheetOptions, ActionSheetOptionsProps } from "./types";
+import { ActionSheetCallbackParams, ActionSheetOptions, ActionSheetOptionsProps, ActionSheetPromiseHooks } from "./types";
 import { ActionSheetItem } from "../action-sheet";
 
 interface IQueueItem {
@@ -20,26 +20,52 @@ const defaultOption: ActionSheetOptions = {
     overlay: true,
     overlayBackgroundColor: '',
     closeOnPressOverlay: true,
+    closeOnClickAction: true,
     onClose: () => { },
     onClosed: () => { },
     onOpen: () => { },
-    onOpened: () => { }
+    onOpened: () => { },
+    onCancel: () => { },
+    onItemClick: () => { }
 }
 
 let queue: IQueueItem[] = []
 let multiple = true
 
-const createActionSheetInstance = (option: ActionSheetOptions) => {
+const createActionSheetInstance = (option: ActionSheetOptions, Hooks: ActionSheetPromiseHooks) => {
     const options: ActionSheetOptionsProps = extend({}, defaultOption, option, {
         onOnClose: option.onClose || defaultOption.onClose,
         onOnClosed: option.onClosed || defaultOption.onClosed,
         onOnOpen: option.onOpen || defaultOption.onOpen,
-        onOnOpened: option.onOpened || defaultOption.onOpened
+        onOnOpened: option.onOpened || defaultOption.onOpened,
+        onOnCancel: option.onCancel || defaultOption.onCancel,
+        onOnItemClick: option.onItemClick || defaultOption.onItemClick
     })
     delete options.onClose
     delete options.onClosed
     delete options.onOpen
     delete options.onOpened
+    delete options.onCancel
+    delete options.onItemClick
+
+
+    const clickFn = options.onOnItemClick
+    options.onOnItemClick = (item: ActionSheetItem, index: number) => {
+        clickFn && clickFn(item, index)
+        Hooks.resolve({
+            type: 'confirm',
+            item,
+            index
+        })
+    }
+
+    const cancelFn = options.onOnCancel
+    options.onOnCancel = () => {
+        cancelFn && cancelFn()
+        Hooks.resolve({
+            type: 'cancel'
+        })
+    }
 
     const fn = options.onOnClosed
     options.onOnClosed = () => {
@@ -64,23 +90,26 @@ const createActionSheetInstance = (option: ActionSheetOptions) => {
     }
 }
 
-const _showActionSheet = function (option: ActionSheetOptions) {
+const _showActionSheet = function (option: ActionSheetOptions): Promise<ActionSheetCallbackParams> {
+    const { promise, resolve, reject } = usePromiseHooks()
+
     if (!multiple) {
         let ins
         while (ins = queue.shift()) {
-            ins.app.unmount();
-            ins.el.remove();
+            ins.app.unmount()
+            ins.el.remove()
         }
     }
 
     const ActionSheetOption = extend({}, defaultOption, option)
-    const { app, instance, options, el } = createActionSheetInstance(ActionSheetOption);
+    const { app, instance, options, el } = createActionSheetInstance(ActionSheetOption, {
+        resolve: resolve,
+        reject
+    } as unknown as ActionSheetPromiseHooks);
     (instance as InstanceType<typeof PkActionSheet>).updateShow(true)
     queue.push({ app, instance, options, el } as IQueueItem)
-    const close = () => (instance as InstanceType<typeof PkActionSheet>).updateShow(false)
-    return {
-        close
-    }
+
+    return promise as Promise<ActionSheetCallbackParams>
 }
 
 const showActionSheet = function (option: ActionSheetOptions | ActionSheetItem[]) {

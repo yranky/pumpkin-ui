@@ -28,7 +28,9 @@
                     bem.e('item'),
                     bem.eqm('loading', !!item.loading),
                     bem.eqm('disabled', !!item.disabled)
-                ]" v-for="(item, index) in props.actions" :key="item.name">
+                ]" v-for="(item, index) in props.actions" :key="item.name" @click="itemClick(item, index)" :style="{
+                    '--pk-action-sheet-color': item.color
+                }">
                     <loading :class="[
                         bem.e('item-icon')
                     ]" color="currentColor" v-if="item.loading" />
@@ -45,7 +47,7 @@
             ]" v-if="props.cancel">
                 <div :class="[
                     bem.e('item')
-                ]">
+                ]" @click="onCancel">
                     {{ props.cancelText }}
                 </div>
             </div>
@@ -58,7 +60,7 @@ import Popup from '../../popup/src/popup.vue'
 import Loading from '../../loading/src/loading.vue'
 import './action-sheet.less'
 import { computed, ref } from 'vue'
-import { actionSheetProps, actionSheetEmits } from './action-sheet'
+import { actionSheetProps, actionSheetEmits, ActionSheetItem } from './action-sheet'
 
 defineOptions({
     name: 'PkActionSheet',
@@ -84,6 +86,17 @@ const _show = computed<boolean>({
 })
 
 const updateShow = (val: boolean = true) => _show.value = val
+
+const itemClick = (item: ActionSheetItem, index: number) => {
+    if (item.disabled || item.loading) return
+    emits('onItemClick', item, index)
+    if (props.closeOnClickAction) updateShow(false)
+}
+
+const onCancel = () => {
+    emits('onCancel')
+    if (props.closeOnClickAction) updateShow(false)
+}
 
 defineExpose({
     updateShow
