@@ -221,3 +221,94 @@ const showStatusActionSheet = () => {
 }
 ```
 :::
+
+## API
+### 命令式调用
+#### 方法
+| 方法                        | 说明            | 类型                                                                                    |
+| --------------------------- | --------------- | --------------------------------------------------------------------------------------- |
+| ActionSheet.showActionSheet | 显示ActionSheet | `(option: ActionSheetOptions ｜ ActionSheetItem[])=>Promise<ActionSheetCallbackParams>` |
+
+#### ActionSheetOptions
+| 属性名                 | 说明                 | 类型                                        | 默认值 |
+| ---------------------- | -------------------- | ------------------------------------------- | ------ |
+| actions                | 选项                 | `ActionSheetItem[]`                         | `[]`   |
+| cancel                 | 显示取消             | `boolean`                                   | `true` |
+| cancelText             | 取消文字             | `string`                                    | `取消` |
+| title                  | 标题                 | `string`                                    | ``     |
+| subTitle               | 子标题               | `string`                                    | ``     |
+| overlay                | 显示遮罩层           | `boolean`                                   | `true` |
+| overlayBackgroundColor | 遮罩层背景颜色       | `string`                                    | ``     |
+| closeOnPressOverlay    | 点击遮罩层关闭       | `boolean`                                   | `true` |
+| closeOnClickAction     | 点击选项关闭         | `boolean`                                   | `true` |
+| onClose                | 关闭时的回调         | `()=>void`                                  |        |
+| onClosed               | 关闭动画结束时的回调 | `()=>void`                                  |        |
+| onOpen                 | 打开时的回调         | `()=>void`                                  |        |
+| onOpened               | 打开动画结束时的回调 | `()=>void`                                  |        |
+| onCancel               | 点击取消时的回调     | `()=>void`                                  |        |
+| onItemClick            | 点击选项时的回调     | `(item:ActionSheetItem,index:number)=>void` |        |
+
+
+#### ActionSheetItem
+| 属性名   | 说明     | 类型      | 默认值 | 可选 |
+| -------- | -------- | --------- | ------ | ---- |
+| name     | 名称     | `string`  |        | 必选 |
+| color    | 颜色     | `string`  |        | 可选 |
+| loading  | 加载状态 | `boolean` |        | 可选 |
+| disabled | 禁用状态 | `boolean` |        | 可选 |
+
+
+#### ActionSheetCallbackParams
+| 属性名 | 说明                  | 类型                  | 默认值 |
+| ------ | --------------------- | --------------------- | ------ |
+| type   | 类型                  | `'confirm'｜'cancel'` |        |
+| item   | 选项(`confirm`时才有) | `ActionSheetItem`     |        |
+| index  | 索引(`confirm`时才有) | `number`              |        |
+
+
+### Props
+| 属性名                   | 说明                           | 类型                | 默认值 | 可选值 |
+| ------------------------ | ------------------------------ | ------------------- | ------ | ------ |
+| v-model                  | 是否显示动作面板组件，双向绑定 | `boolean`           |        |        |
+| actions                  | 选项                           | `ActionSheetItem[]` | `[]`   |        |
+| cancel                   | 显示取消                       | `boolean`           | `true` |        |
+| cancel-text              | 取消文字                       | `string`            | `取消` |        |
+| title                    | 标题                           | `string`            | ``     |        |
+| sub-title                | 子标题                         | `string`            | ``     |        |
+| overlay                  | 显示遮罩层                     | `boolean`           | `true` |        |
+| overlay-background-color | 遮罩层背景颜色                 | `string`            | ``     |        |
+| close-on-press-overlay   | 点击遮罩层关闭                 | `boolean`           | `true` |        |
+| close-on-click-action    | 点击选项关闭                   | `boolean`           | `true` |        |
+
+
+### Events
+| 事件名      | 说明               | 回调参数                                    |
+| ----------- | ------------------ | ------------------------------------------- |
+| onOpen      | 打开时触发         | `() => void`                                |
+| onClose     | 打开时触发         | `() => void`                                |
+| onOpened    | 打开动画结束时触发 | `() => void`                                |
+| onClosed    | 关闭动画结束时触发 | `() => void`                                |
+| onCancel    | 点击取消时的回调   | `()=>void`                                  |
+| onItemClick | 点击选项时的回调   | `(item:ActionSheetItem,index:number)=>void` |
+
+### Slot
+| 插槽名 | 说明 |
+| ------ | ---- |
+
+### Exposes
+
+| 名称       | 说明             | 类型说明                      |
+| ---------- | ---------------- | ----------------------------- |
+| updateShow | 更新动作面板显示 | `(show:boolean = true)=>void` |
+
+
+
+## 样式变量
+
+| 名称                                  | 默认值                        | 说明 |
+| ------------------------------------- | ----------------------------- | ---- |
+| --pk-action-sheet-color               | var(--pk-text-color)          |      |
+| --pk-action-sheet-footer-gap          | 8px                           |      |
+| --pk-action-sheet-item-padding        | 16px                          |      |
+| --pk-action-sheet-item-icon           | 24px                          |      |
+| --pk-action-sheet-disabled-text-color | var(--pk-text-color-disabled) |      |
