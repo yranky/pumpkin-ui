@@ -1,7 +1,7 @@
 import { extend } from "@pk-ui/utils"
 
 
-export interface PickerItem{
+export interface PickerItem {
     label: string | number,
     value: string | number,
     children?: PickerItem[]
@@ -15,10 +15,10 @@ export const pickerViewProps = extend({}, {
     },
     visibleItemCount: {
         type: Number,
-        default:5
+        default: 5
     },
     itemHeight: {
         type: Number,
-        default:50
+        default: 50
     }
 })

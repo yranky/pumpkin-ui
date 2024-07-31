@@ -3,59 +3,68 @@
 
 
 
-.pk-picker-view {
+@namespace: pk-picker-view;
+
+.@{namespace} {
     position: relative;
 
     &__content {
         display: flex;
-    }
 
-    &__wrapper {
-        flex: 1;
-    }
+        .@{namespace}__wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
 
-    &--top {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        background: var(--pk-bg-color);
-        opacity: .8;
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 200%;
-            height: 1px;
-            background: var(--pk-bg-invert);
-            transform: scaleY(.5) translateX(-50%);
-            opacity: .2;
+            .@{namespace}__column {
+                flex: 1;
+            }
         }
     }
 
-
-    &--bottom {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        pointer-events: none;
-        background: var(--pk-bg-color);
-        opacity: .8;
-
-        &::after {
-            content: '';
+    &__mask {
+        &.@{namespace}--top {
             position: absolute;
+            width: 100%;
             top: 0;
-            left: 50%;
-            width: 200%;
-            height: 1px;
-            background: var(--pk-bg-invert);
-            transform: scaleY(.5) translateX(-50%);
-            opacity: .2;
+            left: 0;
+            pointer-events: none;
+            background: var(--pk-bg-color);
+            opacity: .8;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 200%;
+                height: 1px;
+                background: var(--pk-bg-invert);
+                transform: scaleY(.5) translateX(-50%);
+                opacity: .2;
+            }
+        }
+
+        &.@{namespace}--bottom {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            background: var(--pk-bg-color);
+            opacity: .8;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 200%;
+                height: 1px;
+                background: var(--pk-bg-invert);
+                transform: scaleY(.5) translateX(-50%);
+                opacity: .2;
+            }
         }
     }
 }

@@ -3,16 +3,16 @@
 
 
 
-.pk-picker-column {
-    &__column {
-        overflow: hidden;
-    }
+@namespace: pk-picker-column;
 
-    &__wrapper {}
+.@{namespace} {
+    overflow: hidden;
 
-    &__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    &__wrapper {
+        .@{namespace}__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }

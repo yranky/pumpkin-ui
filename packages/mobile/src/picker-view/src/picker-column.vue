@@ -1,8 +1,8 @@
 <template>
     <div :class="[
-        bem.e('column')
+        bem.b()
     ]" @touchstart.prevent="onColumnTouchStart" @touchmove.prevent="onColumnTouchMove"
-        @touchend.prevent="onColumnTouchEnd">
+        @touchend.prevent="onColumnTouchEnd" @touchcancel.prevent="onColumnTouchEnd">
         <div :class="[
             bem.e('wrapper')
         ]" :style="{
