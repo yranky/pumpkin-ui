@@ -24,5 +24,8 @@ export default [
     }, {
         activeMatch: '/components/action-sheet',
         url: BASE_URL + '#/action-sheet'
+    }, {
+        activeMatch: '/components/picker-view',
+        url: BASE_URL + '#/picker-view'
     }
 ];

@@ -49,6 +49,15 @@ export default defineUserConfig({
               ]
             },
             {
+              text: '表单组件',
+              children: [
+                {
+                  text: 'PickerView 选择器视图',
+                  link: '/components/picker-view'
+                }
+              ]
+            },
+            {
               text: '反馈组件',
               children: [
                 {
