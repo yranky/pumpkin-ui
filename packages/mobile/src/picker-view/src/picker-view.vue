@@ -38,7 +38,7 @@ import { useBem } from '@pk-ui/use'
 import { pickerViewProps, pickerViewEmits, PickerItem } from './picker-view'
 import PickerColumn from './picker-column.vue'
 import './picker-view.less'
-import { computed, readonly, ref, unref } from 'vue';
+import { computed, nextTick, readonly, ref, watch } from 'vue';
 
 defineOptions({
     name: 'PkPickerView',
@@ -60,20 +60,21 @@ const onPickerColumnChange = (value: PickerItem, index: number) => {
     if (value.value === values.value[index]) return
 
     values.value[index] = value.value
-    updateValues(index)
+    //update value and children view
+    updateValues(index + 1)
 }
 
 const checkIsControlled = () => {
     return !(props.items.length > 0 && props.items[0] instanceof Array)
 }
 
-const updateValues = (startIndex: number = 0) => {
+const updateValues = (startIndex: number = 0, emit: boolean = true) => {
     //delete outrange values
     values.value.splice(columns.value.length, columns.value.length)
 
     const items = columns.value.map((children, index) => {
         const itemIndex = children.findIndex(col => col.value === values.value[index])
-        if (index > startIndex) {
+        if (index >= startIndex) {
             if (itemIndex > 0) pickerColumnRef.value?.[index]?.setOffetByIndex(itemIndex)
             else {
                 pickerColumnRef.value?.[index]?.setOffetByIndex(0)
@@ -83,12 +84,37 @@ const updateValues = (startIndex: number = 0) => {
         }
         return readonly(itemIndex > 0 ? children[itemIndex] : children[0])
     })
-    emits('onChange', items)
+    //update v-model
+    if (props.modelValue !== void 0) props.modelValue.splice(0, props.modelValue.length, ...items.map(item => item.value))
+    //dispatch change event
+    emit && emits('onChange', items)
+
+    return items
 }
 
 const values = ref<PickerItem['value'][]>([])
+
+watch(() => props.modelValue, (value) => {
+    nextTick(() => {
+        //check need update values and view
+        if (value && value.length === values.value.length && value.every((val, index) => val === values.value[index])) return
+        //delete outrange values
+        value && values.value.splice(value.length, values.value.length)
+        //update values
+        value?.forEach((val, index) => {
+            values.value[index] = val
+        })
+        //update view
+        updateValues(0, false)
+    })
+}, { immediate: true, deep: true })
+
+
 const columns = computed<PickerItem[][]>(() => {
+    //if not controlled
     if (!checkIsControlled()) return props.items as PickerItem[][]
+
+    //if controlled,need convert
     let currentCol: PickerItem[] = props.items as PickerItem[],
         cols: PickerItem[][] = [],
         deep = 0
