@@ -7,10 +7,10 @@ export interface PickerItem {
     children?: PickerItem[]
 }
 
-export const pickerViewEmits = []
+export const pickerViewEmits = ['onChange']
 export const pickerViewProps = extend({}, {
     items: {
-        type: Array as () => PickerItem[],
+        type: Array as () => PickerItem[] | PickerItem[][],
         default: () => []
     },
     visibleItemCount: {

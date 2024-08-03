@@ -74,4 +74,14 @@ const getIndexByOffset = () => {
     emits('change', props.colItems[index]);
 }
 
+const setOffetByIndex = (index: number) => {
+    setDuration(false)
+    translateY.value = -index * props.itemHeight
+    // setDuration(true)
+}
+
+defineExpose({
+    setOffetByIndex
+})
+
 </script>
