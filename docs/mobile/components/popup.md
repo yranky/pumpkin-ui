@@ -223,9 +223,10 @@ const backgroundShow = ref<boolean>(false)
 | default | 默认插槽，弹出层上的内容 |
 
 ### Exposes
-
-| 名称 | 说明 | 类型说明 |
-| ---- | ---- | -------- |
+| 名称      | 说明       | 类型说明   |
+| --------- | ---------- | ---------- |
+| showPopup | 显示弹出层 | `()=>void` |
+| hidePopup | 隐藏弹出层 | `()=>void` |
 
 
 ## 样式变量

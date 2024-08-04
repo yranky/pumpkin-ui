@@ -145,8 +145,10 @@ const showSlot = ref<boolean>(false)
 
 ### Exposes
 
-| 名称 | 说明 | 类型说明 |
-| ---- | ---- | -------- |
+| 名称        | 说明       | 类型说明   |
+| ----------- | ---------- | ---------- |
+| showOverlay | 显示遮罩层 | `()=>void` |
+| hideOverlay | 隐藏遮罩层 | `()=>void` |
 
 
 
