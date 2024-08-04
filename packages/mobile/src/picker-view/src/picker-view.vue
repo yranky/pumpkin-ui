@@ -46,7 +46,7 @@ defineOptions({
 
 const props = defineProps(pickerViewProps)
 
-const emits = defineEmits(pickerViewEmits)
+const emits = defineEmits<pickerViewEmits>()
 
 const bem = useBem('picker-view')
 
@@ -82,7 +82,7 @@ const updateValues = (startIndex: number = 0, emit: boolean = true) => {
                 values.value[index] = children[0].value
             }
         }
-        return readonly(itemIndex > 0 ? children[itemIndex] : children[0])
+        return itemIndex > 0 ? children[itemIndex] : children[0]
     })
     //update v-model
     if (props.modelValue !== void 0) props.modelValue.splice(0, props.modelValue.length, ...items.map(item => item.value))
@@ -90,6 +90,10 @@ const updateValues = (startIndex: number = 0, emit: boolean = true) => {
     emit && emits('onChange', items)
 
     return items
+}
+
+const getValues = () => {
+    return updateValues(0, false)
 }
 
 const values = ref<PickerItem['value'][]>([])
@@ -105,7 +109,9 @@ watch(() => props.modelValue, (value) => {
             values.value[index] = val
         })
         //update view
-        updateValues(0, false)
+        nextTick(() => {
+            updateValues(0, false)
+        })
     })
 }, { immediate: true, deep: true })
 
@@ -131,6 +137,10 @@ const columns = computed<PickerItem[][]>(() => {
     }
 
     return cols
+})
+
+defineExpose({
+    getValues
 })
 
 </script>

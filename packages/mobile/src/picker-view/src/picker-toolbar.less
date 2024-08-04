@@ -1,0 +1,46 @@
+:root,
+:host {
+    --pk-picker-toolbar-padding: var(--pk-padding-l) var(--pk-padding-m);
+    --pk-picker-toolbar-item-margin: 0 var(--pk-margin-m);
+    --pk-picker-toolbar-item-font-size: var(--pk-font-size-m);
+    --pk-picker-toolbar-item-confirm-color: var(--pk-primary-color);
+    --pk-picker-toolbar-item-cancel-color: var(--pk-info-color);
+}
+
+
+
+@namespace: pk-picker-toolbar;
+
+.@{namespace} {
+    display: flex;
+    align-items: center;
+    padding: var(--pk-picker-toolbar-padding);
+    font-size: var(--pk-picker-toolbar-item-font-size);
+
+    .@{namespace}__left {
+        margin: var(--pk-picker-toolbar-item-margin);
+        color: var(--pk-picker-toolbar-item-info-color);
+
+        &:active {
+            opacity: .3;
+        }
+    }
+
+    .@{namespace}__title {
+        flex: 1;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: bolder;
+    }
+
+    .@{namespace}__right {
+        margin: var(--pk-picker-toolbar-item-margin);
+        color: var(--pk-picker-toolbar-item-confirm-color);
+
+        &:active {
+            opacity: .3;
+        }
+    }
+}

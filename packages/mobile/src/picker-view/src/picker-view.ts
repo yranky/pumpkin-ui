@@ -7,7 +7,10 @@ export interface PickerItem {
     children?: PickerItem[]
 }
 
-export const pickerViewEmits = ['onChange', 'update:modelValue']
+export type pickerViewEmits = {
+    (event: 'onChange', value: PickerItem[]): void,
+    (event: 'update:modelValue', value: PickerItem['value'][]): void
+}
 export const pickerViewProps = extend({}, {
     modelValue: {
         type: Array as () => PickerItem['value'][],

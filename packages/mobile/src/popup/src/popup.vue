@@ -14,15 +14,15 @@
                 <slot></slot>
             </div>
         </transition>
-        <pk-overlay v-if="props.overlay" v-model="show" v-bind="$attrs"
+        <overlay ref="overlayRef" v-if="props.overlay" v-model="show" v-bind="$attrs"
             :background-color="props.overlayBackgroundColor" />
     </teleport>
 </template>
 <script setup lang="ts">
 import { useBem } from '@pk-ui/use';
-import PkOverlay from '../../overlay/src/overlay.vue'
+import Overlay from '../../overlay/src/overlay.vue'
 import { popupProps, popupEmits } from './popup'
-import { computed, useAttrs, watch } from 'vue';
+import { computed, ref, useAttrs, watch } from 'vue';
 import "./popup.less"
 
 defineOptions({
@@ -33,11 +33,12 @@ const props = defineProps(popupProps)
 
 const emits = defineEmits(popupEmits)
 
-const $attrs = useAttrs();
+const $attrs = useAttrs()
 
 const bem = useBem('popup')
 const transitionSlideName = useBem('slide')
 const transitionFadeName = useBem('fade')
+const overlayRef = ref<InstanceType<typeof Overlay>>()
 
 const show = computed<boolean>({
     get() {
@@ -54,6 +55,21 @@ const onAfterLeave = () => emits("onClosed")
 watch(show, (val) => {
     if (val) emits("onOpen")
     else emits("onClose")
+})
+
+const showPopup = () => {
+    if (overlayRef.value) overlayRef.value.showOverlay()
+    else show.value = true
+}
+
+const hidePopup = () => {
+    if (overlayRef.value) overlayRef.value.hideOverlay()
+    else show.value = false
+}
+
+defineExpose({
+    showPopup,
+    hidePopup
 })
 
 </script>
