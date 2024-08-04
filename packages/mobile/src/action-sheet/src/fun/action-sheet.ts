@@ -101,8 +101,8 @@ const _showActionSheet = function (option: ActionSheetOptions): Promise<ActionSh
         }
     }
 
-    const ActionSheetOption = extend({}, defaultOption, option)
-    const { app, instance, options, el } = createActionSheetInstance(ActionSheetOption, {
+    const actionSheetOption = extend({}, defaultOption, option)
+    const { app, instance, options, el } = createActionSheetInstance(actionSheetOption, {
         resolve: resolve,
         reject
     } as unknown as ActionSheetPromiseHooks);

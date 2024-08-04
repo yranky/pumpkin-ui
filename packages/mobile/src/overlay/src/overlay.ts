@@ -1,7 +1,7 @@
 import { extend } from "@pk-ui/utils";
 
 
-export const overlayEmits = ['update:modelValue', 'click']
+export const overlayEmits = ['update:modelValue', 'click', 'onCloseByClick']
 
 export const overlayProps = extend({}, {
     modelValue: {

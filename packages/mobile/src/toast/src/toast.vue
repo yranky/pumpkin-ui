@@ -1,5 +1,5 @@
 <template>
-    <popup v-model="_show" fade :close-on-press="false" :overlay-background-color="props.overlayBackgroundColor"
+    <popup v-model="_show" fade :close-on-press-overlay="false" :overlay-background-color="props.overlayBackgroundColor"
         background-color="transparent" :position="props.position" overflow-y="visible" :overlay="props.overlay"
         @onClose="emits('onClose')" @onOpen="emits('onOpen')" @onOpened="emits('onOpened')"
         @onClosed="emits('onClosed')">

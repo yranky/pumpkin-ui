@@ -41,5 +41,9 @@ export const popupProps = extend({}, {
     round: {
         type: Boolean,
         default: false
+    },
+    closeOnPressOverlay: {
+        type: Boolean,
+        default: true
     }
 })

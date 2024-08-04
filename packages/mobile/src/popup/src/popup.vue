@@ -15,7 +15,7 @@
             </div>
         </transition>
         <overlay ref="overlayRef" v-if="props.overlay" v-model="show" v-bind="$attrs"
-            :background-color="props.overlayBackgroundColor" />
+            :background-color="props.overlayBackgroundColor" :close-on-press="props.closeOnPressOverlay" />
     </teleport>
 </template>
 <script setup lang="ts">

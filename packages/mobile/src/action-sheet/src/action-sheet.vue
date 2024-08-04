@@ -2,7 +2,7 @@
     <popup v-model="_show" position="bottom" :overlay="props.overlay"
         :close-on-press-overlay="props.closeOnPressOverlay" :overlay-background-color="props.overlayBackgroundColor"
         @onClose="emits('onClose')" @onOpen="emits('onOpen')" @onOpened="emits('onOpened')"
-        @onClosed="emits('onClosed')">
+        @onClosed="emits('onClosed')" @onCloseByClick="onCancel">
         <div :class="[
             bem.b()
         ]">
@@ -85,8 +85,6 @@ const _show = computed<boolean>({
     }
 })
 
-const updateShow = (val: boolean = true) => _show.value = val
-
 const itemClick = (item: ActionSheetItem, index: number) => {
     if (item.disabled || item.loading) return
     emits('onItemClick', item, index)
@@ -98,6 +96,7 @@ const onCancel = () => {
     if (props.closeOnClickAction) updateShow(false)
 }
 
+const updateShow = (val: boolean = true) => _show.value = val
 defineExpose({
     updateShow
 })

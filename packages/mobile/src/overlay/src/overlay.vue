@@ -37,16 +37,18 @@ const show = computed<boolean>({
 })
 
 const onClick = (event: MouseEvent) => {
-    hideOverlay()
+    hideOverlay(true)
     emits('click', event)
+    props.closeOnPress && emits('onCloseByClick')
 }
 
 const showOverlay = () => {
     show.value = true
 }
 
-const hideOverlay = () => {
-    if (props.closeOnPress) show.value = false
+const hideOverlay = (press: boolean = false) => {
+    if (press && !props.closeOnPress) return
+    show.value = false
 }
 
 defineExpose({
