@@ -1,20 +1,31 @@
 import { extend } from "@pk-ui/utils"
+import { PickerItem } from "../../picker-view/src/picker-view"
 
-
-export interface PickerItem{
-    label: String|Number,
-    value: String | Number,
-    children?: PickerItem[]
+export type pickerEmits = {
+    (event: 'update:modelValue', value: boolean): void
+    (event: 'update:current', value: PickerItem['value'][] | undefined): void
+    (event: 'onChange', value: PickerItem[]): void
+    (event: 'onCancel'): void
+    (event: 'onConfirm', value: PickerItem[]): void
 }
-
-export const pickerEmits = ['update:modelValue']
 export const pickerProps = extend({}, {
     modelValue: {
         type: Boolean,
-        default: false
+        default: void 0
     },
-    items: {
-        type: Array as () => PickerItem[],
-        default: () => []
+    current: {
+        type: Array as () => PickerItem['value'][],
+        default: void 0
+    },
+    backgroundColor: {
+        type: String
+    },
+    round: {
+        type: Boolean,
+        default: true
+    },
+    closeOnPressOverlay: {
+        type: Boolean,
+        default: true
     }
 })

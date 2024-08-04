@@ -1,6 +1,11 @@
 :root,
-:host {}
+:host {
+    --pk-picker-background: var(--pk-bg-color);
+}
 
 
+@namespace: pk-picker;
 
-.pk-picker {}
+.@{namespace} {
+    --pk-popup-background: var(--pk-picker-background);
+}

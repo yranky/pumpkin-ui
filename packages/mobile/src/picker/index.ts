@@ -7,3 +7,5 @@ PkPicker.install = (app: App) => {
 
 export default PkPicker
 export { PkPicker }
+
+export * from './src/fun/picker'
