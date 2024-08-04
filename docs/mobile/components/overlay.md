@@ -110,9 +110,10 @@ const showZIndex = ref<boolean>(false)
 
 
 ### Events
-| 事件名 | 说明             | 回调参数                      |
-| ------ | ---------------- | ----------------------------- |
-| click  | 点击遮罩层时触发 | `(event: MouseEvent) => void` |
+| 事件名         | 说明             | 回调参数                      |
+| -------------- | ---------------- | ----------------------------- |
+| click          | 点击遮罩层时触发 | `(event: MouseEvent) => void` | ' |
+| onCloseByClick | 点击触发了关闭   | `() => void`                  | ' |
 
 ### Slots
 

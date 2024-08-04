@@ -54,6 +54,9 @@ export default defineUserConfig({
                 {
                   text: 'PickerView 选择器视图',
                   link: '/components/picker-view'
+                }, {
+                  text: 'Picker 选择器',
+                  link: '/components/picker'
                 }
               ]
             },

@@ -203,7 +203,7 @@ const backgroundShow = ref<boolean>(false)
 | background-color         | 弹出层内容区域背景颜色                                        | `string`                                            | `false`  |                                                     |
 | overflow-y               | 弹出层内容区域的overflow-y属性                                | `'visible'｜ 'hidden'｜ 'scroll'｜ 'clip'｜ 'auro'` | `auto`   | `'visible'｜ 'hidden'｜ 'scroll'｜ 'clip'｜ 'auro'` |
 | round                    | 设置弹出层内容区域是否为圆角                                  | `boolean`                                           | `false`  |
-| close-on-press           | 是否支持点击遮罩关闭                                          | `boolean`                                           | `true`   |                                                     |
+| close-on-press-overlay   | 是否支持点击遮罩关闭                                          | `boolean`                                           | `true`   |                                                     |
 | z-index                  | 遮罩层层级，组件默认层级是css变量：--pk-z-index-max           | `number`                                            |          |                                                     |
 
 

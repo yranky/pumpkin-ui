@@ -27,5 +27,8 @@ export default [
     }, {
         activeMatch: '/components/picker-view',
         url: BASE_URL + '#/picker-view'
+    }, {
+        activeMatch: '/components/picker',
+        url: BASE_URL + '#/picker'
     }
 ];
