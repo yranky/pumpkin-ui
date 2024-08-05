@@ -62,12 +62,16 @@ const _show = computed<boolean>({
     }
 })
 
+const __current = ref<PickerItem['value'][]>([])
 const _current = computed<PickerItem['value'][] | undefined>({
     get() {
-        return props.current
+        if (props.current !== void 0) return props.current
+
+        return __current.value
     },
     set(val) {
-        emits("update:current", val)
+        if (props.current !== void 0) return emits("update:current", val)
+        __current.value = val || []
     }
 })
 
