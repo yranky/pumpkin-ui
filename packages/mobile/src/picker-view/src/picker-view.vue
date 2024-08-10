@@ -61,7 +61,12 @@ const onPickerColumnChange = (value: PickerItem, index: number) => {
 
     values.value[index] = value.value
     //update value and children view
-    updateValues(index + 1)
+    if (props.beforeUpdateEmitsHooks) emits('onBeforeUpdateEmits', (columns: PickerItem['value'][]) => {
+        values.value = columns
+    }, () => {
+        updateValues(index + 1)
+    }, values.value)
+    else updateValues(index + 1)
 }
 
 const checkIsControlled = () => {

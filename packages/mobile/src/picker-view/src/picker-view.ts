@@ -9,7 +9,8 @@ export interface PickerItem {
 
 export type pickerViewEmits = {
     (event: 'onChange', value: PickerItem[]): void,
-    (event: 'update:modelValue', value: PickerItem['value'][]): void
+    (event: 'update:modelValue', value: PickerItem['value'][]): void,
+    (event: 'onBeforeUpdateEmits', updateValues: (columns: PickerItem['value'][]) => void, updateScroll: Function, values: PickerItem['value'][]): void
 }
 export const pickerViewProps = extend({}, {
     modelValue: {
@@ -27,5 +28,9 @@ export const pickerViewProps = extend({}, {
     itemHeight: {
         type: Number,
         default: 50
+    },
+    beforeUpdateEmitsHooks: {
+        type: Boolean,
+        default: false
     }
 })
