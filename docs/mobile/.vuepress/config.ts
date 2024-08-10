@@ -57,6 +57,9 @@ export default defineUserConfig({
                 }, {
                   text: 'Picker 选择器',
                   link: '/components/picker'
+                }, {
+                  text: 'DatePicker 日期时间选择器',
+                  link: '/components/date-picker'
                 }
               ]
             },

@@ -30,5 +30,8 @@ export default [
     }, {
         activeMatch: '/components/picker',
         url: BASE_URL + '#/picker'
+    }, {
+        activeMatch: '/components/date-picker',
+        url: BASE_URL + '#/date-picker'
     }
 ];
