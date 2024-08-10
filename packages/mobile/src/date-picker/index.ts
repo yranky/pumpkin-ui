@@ -7,3 +7,5 @@ PkDatePicker.install = (app: App) => {
 
 export default PkDatePicker
 export { PkDatePicker }
+
+export * from './src/fun/date-picker'

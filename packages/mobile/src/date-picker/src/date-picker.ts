@@ -8,7 +8,7 @@ export type pickerEmits = {
 
 const type = ['year', 'month', 'day', 'hour', 'minute', 'second', 'Y', 'M', 'D', 'H', 'm', 's'] as const
 type TypeMap = typeof type[number][]
-type Type = TypeMap[number]
+export type DatePickerType = TypeMap[number]
 
 export const pickerProps = extend({}, {
     modelValue: {
@@ -81,8 +81,8 @@ interface DatePickerGetterColumnsOptions {
     max?: string | Date,
     current: ReturnType<typeof DateUtils>,
     type: TypeMap,
-    formatter?: (type: Type, item: PickerItem) => PickerItem,
-    filter?: (type: Type, items: PickerItem[]) => PickerItem[]
+    formatter?: (type: DatePickerType, item: PickerItem) => PickerItem,
+    filter?: (type: DatePickerType, items: PickerItem[]) => PickerItem[]
 }
 
 export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[][] {
@@ -165,15 +165,15 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
 interface DatePickerGetterItemsOptions {
     min: number,
     max: number,
-    type: Type,
-    formatter?: (type: Type, item: PickerItem) => PickerItem,
-    filter?: (type: Type, items: PickerItem[]) => PickerItem[]
+    type: DatePickerType,
+    formatter?: (type: DatePickerType, item: PickerItem) => PickerItem,
+    filter?: (type: DatePickerType, items: PickerItem[]) => PickerItem[]
 }
 
 export function getDatePickerItems(options: DatePickerGetterItemsOptions): PickerItem[] {
     const needToFixed = options.type === 'hour' || options.type === 'minute' || options.type === 'second'
-    const formatter = typeof options.formatter === 'function' ? options.formatter : function (type: Type, item: PickerItem) { return item }
-    const filter = typeof options.filter === 'function' ? options.filter : function (type: Type, items: PickerItem[]) { return items }
+    const formatter = typeof options.formatter === 'function' ? options.formatter : function (type: DatePickerType, item: PickerItem) { return item }
+    const filter = typeof options.filter === 'function' ? options.filter : function (type: DatePickerType, items: PickerItem[]) { return items }
     return filter(options.type, Array(options.max - options.min + 1).fill(0).map((_, index) => {
         return formatter(options.type, {
             label: needToFixed && (options.min + index < 10) ? `0${options.min + index}` : `${options.min + index}`,
