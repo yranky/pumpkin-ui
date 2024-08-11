@@ -2,7 +2,7 @@ import { extend } from "@pk-ui/utils";
 import { loadingTypes } from "../../loading/src/loading";
 
 export const switchSizeTypes = ['l', 'm', 's'] as const
-export const switchEmits = ['update:modelValue']
+export const switchEmits = ['update:modelValue', 'click', 'onChange']
 export const switchProps = extend({}, {
     size: {
         type: String,
@@ -11,7 +11,7 @@ export const switchProps = extend({}, {
     },
     modelValue: {
         type: Boolean,
-        default: false
+        default: void 0
     },
     disabled: {
         type: Boolean,
@@ -29,5 +29,17 @@ export const switchProps = extend({}, {
         type: String,
         values: loadingTypes,
         default: 'circular'
+    },
+    loadingColor: {
+        type: String
+    },
+    background: {
+        type: String
+    },
+    inactiveBackground: {
+        type: String
+    },
+    beforeChange: {
+        type: Function
     }
 })

@@ -14,7 +14,7 @@
                 <picker-column :class="[
                     bem.e('column')
                 ]" ref="pickerColumnRef" :col-items="item" :visible-item-count="visibleItemCount"
-                    :item-height="itemHeight" @change="(...args) => onPickerColumnChange(...args, index)"
+                    :item-height="itemHeight" @onChange="(value: PickerItem) => onPickerColumnChange(value, index)"
                     v-for="(item, index) in columns" :key="index" />
             </div>
         </div>
@@ -38,7 +38,7 @@ import { useBem } from '@pk-ui/use'
 import { pickerViewProps, pickerViewEmits, PickerItem } from './picker-view'
 import PickerColumn from './picker-column.vue'
 import './picker-view.less'
-import { computed, nextTick, readonly, ref, watch } from 'vue';
+import { computed, nextTick, ref, watch } from 'vue';
 
 defineOptions({
     name: 'PkPickerView',

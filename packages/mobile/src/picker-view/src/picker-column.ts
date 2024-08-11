@@ -2,7 +2,7 @@ import { extend } from "@pk-ui/utils"
 import { PickerItem } from "./picker-view"
 
 export type pickerColumnEmits = {
-    (event: 'change', value: PickerItem): void
+    (event: 'onChange', value: PickerItem): void
 }
 
 export const pickerColumnProps = extend({}, {

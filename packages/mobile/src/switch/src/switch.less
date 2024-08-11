@@ -1,27 +1,28 @@
 :root,
 :host {
-    --switch-height-s: 20px;
-    --switch-height-m: 26px;
-    --switch-height-l: 32px;
-    --switch-width: 60px;
-    --switch-inactive-background: #b9bec5;
-    --switch-active-background: var(--pk-primary-color);
-    --switch-transition-duration: .3s;
-    --switch-transition-fn: cubic-bezier(0.07, 1.04, 0.7, 0.9);
-    --switch-disabled-opacity: var(--pk-disabled-opacity);
-    --switch-loading-size: 20px;
+    --pk-switch-height-s: 20px;
+    --pk-switch-height-m: 26px;
+    --pk-switch-height-l: 32px;
+    --pk-switch-width: 60px;
+    --pk-switch-inactive-background: var(--pk-inactive-bg-color);
+    --pk-switch-active-background: var(--pk-primary-color);
+    --pk-switch-transition-duration: var(--pk-transition-duration);
+    --pk-switch-transition-fn: cubic-bezier(0.07, 1.04, 0.7, 0.9);
+    --pk-switch-disabled-opacity: var(--pk-disabled-opacity);
+    --pk-switch-loading-size: 20px;
 }
 
 @namespace: pk-switch;
 
 .@{namespace} {
-    width: var(--switch-width);
+    width: var(--pk-switch-width);
     border-radius: 9999999px;
-    background: var(--switch-inactive-background);
+    background: var(--pk-switch-inactive-background);
     overflow: hidden;
     padding: var(--pk-border-width-l);
-    transition: background var(--switch-transition-duration) var(--switch-transition-fn);
+    transition: background var(--pk-switch-transition-duration) var(--pk-switch-transition-fn);
     position: relative;
+    cursor: pointer;
 
     &__slide {
         background: var(--pk-bg-color);
@@ -29,14 +30,14 @@
         position: absolute;
         left: var(--pk-border-width-l);
         top: var(--pk-border-width-l);
-        transition: left var(--switch-transition-duration) var(--switch-transition-fn);
+        transition: left var(--pk-switch-transition-duration) var(--pk-switch-transition-fn);
         z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
 
         .@{namespace}__loading {
-            --pk-loading-size: var(--switch-loading-size);
+            --pk-loading-size: var(--pk-switch-loading-size);
         }
     }
 
@@ -54,55 +55,60 @@
     }
 
     &--active {
-        background: var(--switch-active-background);
+        background: var(--pk-switch-active-background);
     }
 
     &--s {
-        height: var(--switch-height-s);
+        height: var(--pk-switch-height-s);
 
         .@{namespace}__slide {
-            width: var(--switch-height-s);
-            height: var(--switch-height-s);
+            width: var(--pk-switch-height-s);
+            height: var(--pk-switch-height-s);
         }
 
         &.@{namespace}--active {
             .@{namespace}__slide {
-                left: calc(100% - var(--switch-height-s) - var(--pk-border-width-l));
+                left: calc(100% - var(--pk-switch-height-s) - var(--pk-border-width-l));
             }
         }
     }
 
     &--m {
-        height: var(--switch-height-m);
+        height: var(--pk-switch-height-m);
 
         .@{namespace}__slide {
-            width: var(--switch-height-m);
-            height: var(--switch-height-m);
+            width: var(--pk-switch-height-m);
+            height: var(--pk-switch-height-m);
         }
 
         &.@{namespace}--active {
             .@{namespace}__slide {
-                left: calc(100% - var(--switch-height-m) - var(--pk-border-width-l));
+                left: calc(100% - var(--pk-switch-height-m) - var(--pk-border-width-l));
             }
         }
     }
 
     &--l {
-        height: var(--switch-height-l);
+        height: var(--pk-switch-height-l);
 
         .@{namespace}__slide {
-            width: var(--switch-height-l);
-            height: var(--switch-height-l);
+            width: var(--pk-switch-height-l);
+            height: var(--pk-switch-height-l);
         }
 
         &.@{namespace}--active {
             .@{namespace}__slide {
-                left: calc(100% - var(--switch-height-l) - var(--pk-border-width-l));
+                left: calc(100% - var(--pk-switch-height-l) - var(--pk-border-width-l));
             }
         }
     }
 
     &--disabled {
+        opacity: var(--pk-disabled-opacity);
+        cursor: not-allowed;
+    }
+
+    &--loading {
         opacity: var(--pk-disabled-opacity);
         cursor: not-allowed;
     }

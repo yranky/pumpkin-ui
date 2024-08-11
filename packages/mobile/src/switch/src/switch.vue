@@ -3,17 +3,20 @@
         bem.b(),
         bem.m(props.size),
         bem.eqm('active', value),
-        bem.eqm('disabled', props.disabled)
+        bem.eqm('disabled', props.disabled),
+        bem.eqm('loading', props.loading)
     ]" @click="onSwitchClick" :style="{
-        '--switch-loading-size': props.loadingSize
+        '--pk-switch-loading-size': props.loadingSize,
+        '--pk-switch-active-background': props.background,
+        '--pk-switch-inactive-background': props.inactiveBackground
     }">
         <div :class="[
             bem.e('slide')
         ]">
-            <slot name="icon">
+            <slot name="slide">
                 <Loading :class="[
                     bem.e('loading')
-                ]" :type="props.loadingType" v-if="props.loading" />
+                ]" :type="props.loadingType" :color="props.loadingColor" v-if="props.loading" />
             </slot>
         </div>
         <div :class="[
@@ -34,7 +37,7 @@
 import { switchEmits, switchProps } from './switch'
 import { useBem } from '@pk-ui/use'
 import './switch.less'
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import Loading from '../../loading/src/loading.vue';
 
 defineOptions({
@@ -46,15 +49,30 @@ const emits = defineEmits(switchEmits)
 
 const bem = useBem('switch')
 
-const onSwitchClick = () => {
-    if (!props.disabled) value.value = !value.value
+const onSwitchClick = (event: MouseEvent) => {
+    emits('click', event)
+    if (!props.disabled && !props.loading) updateValue(!value.value)
 }
 
+const updateValue = async (val: boolean) => {
+    if (typeof props.beforeChange === 'function') {
+        const next = await props.beforeChange(value.value, val)
+
+        if (next === false) return
+    }
+
+    value.value = val
+    emits('onChange', val)
+}
+
+const _value = ref<boolean>(false)
 const value = computed<boolean>({
     get() {
+        if (props.modelValue === void 0) return _value.value
         return props.modelValue
     },
     set(val) {
+        if (props.modelValue === void 0) _value.value = val
         emits("update:modelValue", val)
     }
 })

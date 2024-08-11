@@ -71,7 +71,7 @@ const getIndexByOffset = () => {
 
     translateY.value = -index * props.itemHeight;
 
-    emits('change', props.colItems[index]);
+    emits('onChange', props.colItems[index]);
 }
 
 const setOffetByIndex = (index: number) => {
