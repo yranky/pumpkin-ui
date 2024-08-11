@@ -8,7 +8,7 @@
                 <template #title>默认值(2022/01/01)</template>
             </pk-cell>
             <pk-cell is-link @click="showDatePickerWidthMinMax">
-                <template #title>设置时间范围(2022/01/01 - 2022/12/31)</template>
+                <template #title>设置日期范围(2022/01/01 - 2022/12/31)</template>
             </pk-cell>
             <pk-cell is-link @click="showDatePickerTime">
                 <template #title>时间选择</template>
@@ -78,9 +78,10 @@ const showDatePickerWithDefaultTime = () => {
 
 const showItemFilterDatePicker = () => {
     DatePicker.showDatePicker({
-        filter: (type, items) => {
-            if (type === 'month') return items.filter(item => item.value !== 7)
-            return items
+        filter: (type, item) => {
+            if (type === 'month') return item.value !== 7
+
+            return true
         }
     }).then(result => {
         if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
