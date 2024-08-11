@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 import { useBem } from '@pk-ui/use'
 import { computed, nextTick, ref, useAttrs } from 'vue'
-import { checkValueIsInColumns, getColumns, getCurrentSelectDateItemByColumnsAndType, getValueByDate, pickerEmits, pickerProps, sortDateType } from './date-picker'
+import { checkValueIsInColumns, DatePickerSimpleType, getColumns, getCurrentSelectDateItemByColumnsAndType, getValueByDate, pickerEmits, pickerProps, sortDateType } from './date-picker'
 import picker from '../../picker/src/picker.vue'
 import './date-picker.less'
 import { PickerItem } from '../../picker-view/src/picker-view'
@@ -34,8 +34,8 @@ const updateColumns = (values?: PickerItem['value'][]) => {
         min: props.min,
         max: props.max,
         type: props.type,
-        formatter: props.formatter,
-        filter: props.filter,
+        formatter: props.formatter as (type: DatePickerSimpleType, item: PickerItem) => PickerItem,
+        filter: props.filter as (type: DatePickerSimpleType, items: PickerItem) => boolean,
         current: getCurrentSelectDateItemByColumnsAndType(values || current.value, props.type)
     })
     dateColumns.value = newColumns
@@ -45,7 +45,7 @@ const updateDefaultValue = () => {
     const date = DateUtils(props.current || DateUtils())
     const isInColumns = checkValueIsInColumns(props.type, date, dateColumns.value)
     if (isInColumns) current.value = getValueByDate(props.type, date)
-    else current.value = dateColumns.value.map((column) => column[0].value)
+    else current.value = dateColumns.value.map((column) => column[0] ? column[0].value : '')
 }
 updateColumns()
 // set Default Value

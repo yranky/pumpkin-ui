@@ -8,6 +8,9 @@
             <div :class="[
                 bem.e('wrapper')
             ]">
+                <picker-column v-if="columns.length === 0" :class="[bem.e('column')]" :col-items="[]"
+                    :visible-item-count="visibleItemCount" :item-height="itemHeight" />
+
                 <picker-column :class="[
                     bem.e('column')
                 ]" ref="pickerColumnRef" :col-items="item" :visible-item-count="visibleItemCount"
@@ -15,10 +18,7 @@
                     v-for="(item, index) in columns" :key="index" />
             </div>
         </div>
-        <div :class="[
-            bem.e('mask'),
-            bem.m('top')
-        ]" :style="{
+        <div :class="[bem.e('mask'), bem.m('top')]" :style="{
             height: maskHeight + 'px'
         }">
 

@@ -9,6 +9,7 @@ export type pickerEmits = {
 const type = ['year', 'month', 'day', 'hour', 'minute', 'second', 'Y', 'M', 'D', 'H', 'm', 's'] as const
 type TypeMap = typeof type[number][]
 export type DatePickerType = TypeMap[number]
+export type DatePickerSimpleType = Exclude<DatePickerType, 'Y' | 'M' | 'D' | 'H' | 'm' | 's'>
 
 export const pickerProps = extend({}, {
     modelValue: {
@@ -32,10 +33,10 @@ export const pickerProps = extend({}, {
         default: void 0
     },
     formatter: {
-        type: Function as (type: Type, item: PickerItem) => PickerItem
+        type: Function
     },
     filter: {
-        type: Function as (type: Type, items: PickerItem[]) => PickerItem[]
+        type: Function
     }
 })
 
@@ -81,8 +82,8 @@ interface DatePickerGetterColumnsOptions {
     max?: string | Date,
     current: ReturnType<typeof DateUtils>,
     type: TypeMap,
-    formatter?: (type: DatePickerType, item: PickerItem) => PickerItem,
-    filter?: (type: DatePickerType, items: PickerItem[]) => PickerItem[]
+    formatter?: (type: DatePickerSimpleType, item: PickerItem) => PickerItem,
+    filter?: (type: DatePickerSimpleType, items: PickerItem) => boolean
 }
 
 export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[][] {
@@ -93,7 +94,6 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
     return type.map(typeItem => {
         switch (typeItem) {
             case 'year':
-            case 'Y':
                 return getDatePickerItems({
                     min: min.year(),
                     max: max.year(),
@@ -102,7 +102,6 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
                     filter: options.filter
                 })
             case 'month':
-            case 'M':
                 let minMonth = 1
                 let maxMonth = 12
                 if (options.current.year() === min.year()) minMonth = min.month() + 1
@@ -116,7 +115,6 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
                     filter: options.filter
                 })
             case 'day':
-            case 'D':
                 let minDate = 1
                 let maxDate = options.current.daysInMonth()
                 if (options.current.year() === min.year() && options.current.month() === min.month()) minDate = min.date()
@@ -130,7 +128,6 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
                     filter: options.filter
                 })
             case 'hour':
-            case 'H':
                 return getDatePickerItems({
                     min: 0,
                     max: 60,
@@ -139,7 +136,6 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
                     filter: options.filter
                 })
             case 'minute':
-            case 'm':
                 return getDatePickerItems({
                     min: 0,
                     max: 60,
@@ -148,7 +144,6 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
                     filter: options.filter
                 })
             case 'second':
-            case 's':
                 return getDatePickerItems({
                     min: 0,
                     max: 60,
@@ -165,21 +160,24 @@ export function getColumns(options: DatePickerGetterColumnsOptions): PickerItem[
 interface DatePickerGetterItemsOptions {
     min: number,
     max: number,
-    type: DatePickerType,
-    formatter?: (type: DatePickerType, item: PickerItem) => PickerItem,
-    filter?: (type: DatePickerType, items: PickerItem[]) => PickerItem[]
+    type: DatePickerSimpleType,
+    formatter?: (type: DatePickerSimpleType, item: PickerItem) => PickerItem,
+    filter?: (type: DatePickerSimpleType, items: PickerItem) => boolean
 }
 
 export function getDatePickerItems(options: DatePickerGetterItemsOptions): PickerItem[] {
     const needToFixed = options.type === 'hour' || options.type === 'minute' || options.type === 'second'
     const formatter = typeof options.formatter === 'function' ? options.formatter : function (type: DatePickerType, item: PickerItem) { return item }
-    const filter = typeof options.filter === 'function' ? options.filter : function (type: DatePickerType, items: PickerItem[]) { return items }
-    return filter(options.type, Array(options.max - options.min + 1).fill(0).map((_, index) => {
-        return formatter(options.type, {
-            label: needToFixed && (options.min + index < 10) ? `0${options.min + index}` : `${options.min + index}`,
+    const filter = typeof options.filter === 'function' ? options.filter : function (type: DatePickerType, item: PickerItem) { return true }
+    return Array(options.max - options.min + 1).fill(0).map((_, index) => {
+        return {
+            ...formatter(options.type, {
+                label: needToFixed && (options.min + index < 10) ? `0${options.min + index}` : `${options.min + index}`,
+                value: options.min + index
+            }),
             value: options.min + index
-        })
-    }))
+        }
+    }).filter((item) => filter(options.type, item))
 }
 
 export function getCurrentSelectDateItemByColumnsAndType(columns: PickerItem['value'][], type: TypeMap, forceValid: boolean = true) {

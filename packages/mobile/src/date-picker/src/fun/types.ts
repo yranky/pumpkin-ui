@@ -1,13 +1,13 @@
 import { PickerItem } from '../../../picker-view/src/picker-view'
-import { DatePickerType } from '../date-picker'
+import { DatePickerType, DatePickerSimpleType } from '../date-picker'
 
 export type DatePickerOptions = {
     current?: Date | string,
     min?: Date | string,
     max?: Date | string,
     type?: DatePickerType[]
-    formatter?: (type: DatePickerType, item: PickerItem) => PickerItem,
-    filter?: (type: DatePickerType, item: PickerItem[]) => PickerItem[],
+    formatter?: (type: DatePickerSimpleType, item: PickerItem) => PickerItem,
+    filter?: (type: DatePickerSimpleType, item: PickerItem) => boolean,
     backgroundColor?: string,
     round?: boolean,
     closeOnPressOverlay?: boolean,
