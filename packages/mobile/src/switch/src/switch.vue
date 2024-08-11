@@ -1,13 +1,20 @@
 <template>
     <div :class="[
         bem.b(),
-        bem.m(size),
-        bem.eqm('active', value)
-    ]" @click="onSwitchClick">
+        bem.m(props.size),
+        bem.eqm('active', value),
+        bem.eqm('disabled', props.disabled)
+    ]" @click="onSwitchClick" :style="{
+        '--switch-loading-size': props.loadingSize
+    }">
         <div :class="[
             bem.e('slide')
         ]">
-
+            <slot name="icon">
+                <Loading :class="[
+                    bem.e('loading')
+                ]" :type="props.loadingType" v-if="props.loading" />
+            </slot>
         </div>
         <div :class="[
             bem.e('wrapper')
@@ -15,12 +22,10 @@
             <div :class="[
                 bem.e('close')
             ]">
-
             </div>
             <div :class="[
                 bem.e('open')
             ]">
-
             </div>
         </div>
     </div>
@@ -30,6 +35,7 @@ import { switchEmits, switchProps } from './switch'
 import { useBem } from '@pk-ui/use'
 import './switch.less'
 import { computed } from 'vue';
+import Loading from '../../loading/src/loading.vue';
 
 defineOptions({
     name: 'PkSwitch'
@@ -41,8 +47,7 @@ const emits = defineEmits(switchEmits)
 const bem = useBem('switch')
 
 const onSwitchClick = () => {
-    console.log('switch点击')
-    value.value = !value.value
+    if (!props.disabled) value.value = !value.value
 }
 
 const value = computed<boolean>({

@@ -8,6 +8,8 @@
     --switch-active-background: var(--pk-primary-color);
     --switch-transition-duration: .3s;
     --switch-transition-fn: cubic-bezier(0.07, 1.04, 0.7, 0.9);
+    --switch-disabled-opacity: var(--pk-disabled-opacity);
+    --switch-loading-size: 20px;
 }
 
 @namespace: pk-switch;
@@ -28,9 +30,24 @@
         left: var(--pk-border-width-l);
         top: var(--pk-border-width-l);
         transition: left var(--switch-transition-duration) var(--switch-transition-fn);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .@{namespace}__loading {
+            --pk-loading-size: var(--switch-loading-size);
+        }
     }
 
     &__wrapper {
+        // position: absolute;
+        // top: 50%;
+        // transform: translate(0, -50%);
+        // display: flex;
+        // align-items: center;
+        // width: max-content;
+
         .@{namespace}__close {}
 
         .@{namespace}__open {}
@@ -83,5 +100,10 @@
                 left: calc(100% - var(--switch-height-l) - var(--pk-border-width-l));
             }
         }
+    }
+
+    &--disabled {
+        opacity: var(--pk-disabled-opacity);
+        cursor: not-allowed;
     }
 }

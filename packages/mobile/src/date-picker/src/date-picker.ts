@@ -167,8 +167,8 @@ interface DatePickerGetterItemsOptions {
 
 export function getDatePickerItems(options: DatePickerGetterItemsOptions): PickerItem[] {
     const needToFixed = options.type === 'hour' || options.type === 'minute' || options.type === 'second'
-    const formatter = typeof options.formatter === 'function' ? options.formatter : function (type: DatePickerType, item: PickerItem) { return item }
-    const filter = typeof options.filter === 'function' ? options.filter : function (type: DatePickerType, item: PickerItem) { return true }
+    const formatter = typeof options.formatter === 'function' ? options.formatter : function (_: DatePickerSimpleType, item: PickerItem) { return item }
+    const filter = typeof options.filter === 'function' ? options.filter : function () { return true }
     return Array(options.max - options.min + 1).fill(0).map((_, index) => {
         return {
             ...formatter(options.type, {
@@ -226,7 +226,7 @@ export function checkValueIsInColumns(types: TypeMap, date: ReturnType<typeof Da
 
 export function getValueByDate(types: TypeMap, date: ReturnType<typeof DateUtils>) {
     const type = sortDateType(types)
-    return type.map((typeName, index) => {
+    return type.map((typeName) => {
         switch (typeName) {
             case 'year':
                 return date.year()
