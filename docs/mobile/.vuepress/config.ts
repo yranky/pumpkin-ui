@@ -60,6 +60,9 @@ export default defineUserConfig({
                 }, {
                   text: 'DatePicker 日期时间选择器',
                   link: '/components/date-picker'
+                }, {
+                  text: 'Switch 开关',
+                  link: '/components/switch'
                 }
               ]
             },

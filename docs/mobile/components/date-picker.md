@@ -374,33 +374,33 @@ const showNotCloseOnPressOverlay = () => {
 | Picker.showDatePicker | 显示Picker | `(option: DatePickerOptions)=>Promise<DatePickerCallbackParams>` |
 
 #### PickerOptions
-| 属性名                 | 说明                               | 类型                                                      | 默认值                           |
-| ---------------------- | ---------------------------------- | --------------------------------------------------------- | -------------------------------- |
-| current                | 日期时间选择器的默认值             | `Date｜string`                                            | 系统时间。不在范围内，则为第一列 |
-| min                    | 日期时间选择器的日期最小值         | `Date｜string`                                            | 前十年                           |
-| max                    | 日期时间选择器的日期最大值         | `Date｜string`                                            | 后十年                           |
-| type                   | 日期时间选择器展示的列             | `DatePickerType[]`                                        | `['year','month','day']`         |
-| formatter              | 日期时间选择器选项修改器           | `(type:DatePickerSimpleType,item:PickerItem)=>PickerItem` |                                  |
-| filter                 | 日期时间选择器选项过滤器           | `(type:DatePickerSimpleType,item:PickerItem)=>boolean`    |                                  |
-| backgroundColor        | 选择器的背景颜色                   | `string`                                                  |                                  |
-| round                  | 是否圆角                           | `boolean`                                                 | `true`                           |
-| closeOnPressOverlay    | 点击遮罩层是否关闭                 | `boolean`                                                 | `true`                           |
-| visibleItemCount       | 选择器可视的选项数量               | `number`                                                  | `5`                              |
-| itemHeight             | 选择器单个选项的高度，单位为px     | `number`                                                  | `50`                             |
-| overlay                | 是否显示遮罩层                     | `boolean`                                                 | `true`                           |
-| overlayBackgroundColor | 遮罩层背景颜色                     | `string`                                                  |                                  |
-| fade                   | 弹出层是否以`fade`动画形式打开关闭 | `boolean`                                                 | `false`                          |
-| zIndex                 | 层级                               | `number`                                                  |                                  |
-| title                  | 选择器的toolbar标题                | `string`                                                  |                                  |
-| cancelText             | 选择器的toolbar取消文案            | `string`                                                  | `取消`                           |
-| confirmText            | 选择器的toolbar确定文案            | `string`                                                  | `确定`                           |
-| onChange               | 选择器值变化时触发的回调           | `(values:PickerItem[])=>void`                             |                                  |
-| onCancel               | 选择器取消时触发的回调             | `()=>void`                                                |                                  |
-| onConfirm              | 选择器确认时触发的回调             | `(values:PickerItem[])=>void`                             |                                  |
-| onClose                | 选择器关闭时触发的回调             | `()=>void`                                                |                                  |
-| onClosed               | 选择器关闭动画结束时触发的回调     | `()=>void`                                                |                                  |
-| onOpen                 | 选择器打开时触发的回调             | `()=>void`                                                |                                  |
-| onOpened               | 选择器打开动画结束时触发的回调     | `()=>void`                                                |                                  |
+| 属性名                 | 说明                                   | 类型                                                      | 默认值                           |
+| ---------------------- | -------------------------------------- | --------------------------------------------------------- | -------------------------------- |
+| current                | 日期时间选择器的默认值                 | `Date｜string`                                            | 系统时间。不在范围内，则为第一列 |
+| min                    | 日期时间选择器的日期最小值             | `Date｜string`                                            | 前十年                           |
+| max                    | 日期时间选择器的日期最大值             | `Date｜string`                                            | 后十年                           |
+| type                   | 日期时间选择器展示的列                 | `DatePickerType[]`                                        | `['year','month','day']`         |
+| formatter              | 日期时间选择器选项修改器               | `(type:DatePickerSimpleType,item:PickerItem)=>PickerItem` |                                  |
+| filter                 | 日期时间选择器选项过滤器               | `(type:DatePickerSimpleType,item:PickerItem)=>boolean`    |                                  |
+| backgroundColor        | 选择器的背景颜色                       | `string`                                                  |                                  |
+| round                  | 是否圆角                               | `boolean`                                                 | `true`                           |
+| closeOnPressOverlay    | 点击遮罩层是否关闭                     | `boolean`                                                 | `true`                           |
+| visibleItemCount       | 选择器可视的选项数量                   | `number`                                                  | `5`                              |
+| itemHeight             | 选择器单个选项的高度，单位为px         | `number`                                                  | `50`                             |
+| overlay                | 是否显示遮罩层                         | `boolean`                                                 | `true`                           |
+| overlayBackgroundColor | 遮罩层背景颜色                         | `string`                                                  |                                  |
+| fade                   | 弹出层是否以`fade`动画形式打开关闭     | `boolean`                                                 | `false`                          |
+| zIndex                 | 层级                                   | `number`                                                  |                                  |
+| title                  | 选择器的toolbar标题                    | `string`                                                  |                                  |
+| cancelText             | 选择器的toolbar取消文案                | `string`                                                  | `取消`                           |
+| confirmText            | 选择器的toolbar确定文案                | `string`                                                  | `确定`                           |
+| onChange               | 选择器值变化时触发的回调(用户主动触发) | `(values:PickerItem[])=>void`                             |                                  |
+| onCancel               | 选择器取消时触发的回调                 | `()=>void`                                                |                                  |
+| onConfirm              | 选择器确认时触发的回调                 | `(values:PickerItem[])=>void`                             |                                  |
+| onClose                | 选择器关闭时触发的回调                 | `()=>void`                                                |                                  |
+| onClosed               | 选择器关闭动画结束时触发的回调         | `()=>void`                                                |                                  |
+| onOpen                 | 选择器打开时触发的回调                 | `()=>void`                                                |                                  |
+| onOpened               | 选择器打开动画结束时触发的回调         | `()=>void`                                                |                                  |
 
 #### DatePickerType
 | 值     | 说明 |
@@ -470,15 +470,15 @@ const showNotCloseOnPressOverlay = () => {
 
 
 ### Events
-| 事件名    | 说明                     | 回调参数                      |
-| --------- | ------------------------ | ----------------------------- |
-| onOpen    | 打开时触发               | `() => void`                  |
-| onClose   | 打开时触发               | `() => void`                  |
-| onOpened  | 打开动画结束时触发       | `() => void`                  |
-| onClosed  | 关闭动画结束时触发       | `() => void`                  |
-| onCancel  | 点击取消时的回调         | `()=>void`                    |
-| onConfirm | 选择器确认时触发的回调   | `(values:PickerItem[])=>void` |
-| onChange  | 选择器值变化时触发的回调 | `(values:PickerItem[])=>void` |
+| 事件名    | 说明                                   | 回调参数                      |
+| --------- | -------------------------------------- | ----------------------------- |
+| onOpen    | 打开时触发                             | `() => void`                  |
+| onClose   | 打开时触发                             | `() => void`                  |
+| onOpened  | 打开动画结束时触发                     | `() => void`                  |
+| onClosed  | 关闭动画结束时触发                     | `() => void`                  |
+| onCancel  | 点击取消时的回调                       | `()=>void`                    |
+| onConfirm | 选择器确认时触发的回调                 | `(values:PickerItem[])=>void` |
+| onChange  | 选择器值变化时触发的回调(用户主动触发) | `(values:PickerItem[])=>void` |
 
 
 ### Slot
