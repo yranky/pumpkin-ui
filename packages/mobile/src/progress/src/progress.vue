@@ -6,7 +6,7 @@
         '--pk-progress-stroke-height': props.strokeHeight + 'px',
         '--pk-progress-track-background': props.trackBackground,
         '--pk-progress-stroke-background': props.background,
-        '--pk-progress-transition-duration': props.transitionDuration + 's',
+        '--pk-progress-transition-duration': typeof props.transitionDuration === 'number' ? props.transitionDuration + 's' : '',
         '--pk-progress-pivot-color': props.pivotColor,
         '--pk-progress-pivot-font-size': props.pivotFontSize + 'px'
     }">
@@ -22,7 +22,7 @@
             left: `${props.percentage}%`,
             transform: `translate(-${props.percentage}%,-50%)`
         }" v-if="props.showPivot">
-            {{ percentage }}%
+            <slot name="pivot" :percentage="props.percentage"> {{ props.percentage }}%</slot>
         </div>
     </div>
 </template>

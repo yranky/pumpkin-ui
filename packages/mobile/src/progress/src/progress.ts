@@ -23,12 +23,10 @@ export const progressProps = extend({}, {
         default: false
     },
     transitionDuration: {
-        type: Number,
-        default: 0.3
+        type: Number
     },
     pivotColor: {
-        type: String,
-        default: ''
+        type: String
     },
     pivotFontSize: {
         type: Number,
