@@ -12,8 +12,8 @@ const routes = [
     { path: '/picker', component: () => import('../views/picker/Picker.vue') },
     { path: '/date-picker', component: () => import('../views/date-picker/DatePicker.vue') },
     { path: '/switch', component: () => import('../views/switch/Switch.vue') },
-    { path: '/field', component: () => import('../views/field/Field.vue') },
     { path: '/progress', component: () => import('../views/progress/Progress.vue') },
+    { path: '/field', component: () => import('../views/field/Field.vue') },
     { path: '/divider', component: () => import('../views/divider/Divider.vue') }
 ]
 

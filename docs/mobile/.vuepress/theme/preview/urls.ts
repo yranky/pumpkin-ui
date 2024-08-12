@@ -36,5 +36,8 @@ export default [
     }, {
         activeMatch: '/components/switch',
         url: BASE_URL + '#/switch'
+    }, {
+        activeMatch: '/components/progress',
+        url: BASE_URL + '#/progress'
     }
 ];

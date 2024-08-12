@@ -80,6 +80,15 @@ export default defineUserConfig({
                   link: '/components/action-sheet'
                 }
               ]
+            },
+            {
+              text: '展示组件',
+              children: [
+                {
+                  text: 'Progress 进度条',
+                  link: '/components/progress'
+                }
+              ]
             }
           ]
         }
