@@ -4,6 +4,7 @@
     --pk-divider-style: solid;
     --pk-divider-size: 1px;
     --pk-divider-margin-horizontal: var(--pk-margin-m);
+    --pk-divider-font-color: var(--pk-text-color-secondary);
 }
 
 @namespace: pk-divider;
@@ -22,13 +23,36 @@
         flex-shrink: 0;
         margin: 0 var(--pk-divider-margin-horizontal);
         font-size: var(--pk-font-size-xs);
-        color: var(--pk-text-color-secondary);
+        color: var(--pk-divider-font-color);
+        max-width: 60%;
     }
 
     &__right {
         border-top: var(--pk-divider-size) var(--pk-divider-style) var(--pk-divider-color);
         flex: 1;
         transform: scaleY(0.5);
+    }
+
+
+    &--left {
+        .@{namespace}__left {
+            flex: 1;
+        }
+
+        .@{namespace}__right {
+            flex: 5;
+        }
+    }
+
+
+    &--right {
+        .@{namespace}__left {
+            flex: 5;
+        }
+
+        .@{namespace}__right {
+            flex: 1;
+        }
     }
 
 }
