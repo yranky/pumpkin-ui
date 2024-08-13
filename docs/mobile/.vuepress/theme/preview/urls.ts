@@ -39,5 +39,8 @@ export default [
     }, {
         activeMatch: '/components/progress',
         url: BASE_URL + '#/progress'
+    }, {
+        activeMatch: '/components/divider',
+        url: BASE_URL + '#/divider'
     }
 ];

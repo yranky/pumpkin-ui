@@ -87,6 +87,10 @@ export default defineUserConfig({
                 {
                   text: 'Progress 进度条',
                   link: '/components/progress'
+                },
+                {
+                  text: 'Divider 分割线',
+                  link: '/components/divider'
                 }
               ]
             }
