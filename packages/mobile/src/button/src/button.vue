@@ -9,7 +9,7 @@
         bem.eqm('disabled', props.disabled || props.loading),
         bem.eqm('danger', props.danger),
         bem.eqm('warning', props.warning)
-    ]" :type="nativeType" @click="onClick" :style="buttonStyle">
+    ]" :type="nativeType" @click="onClick" :style="buttonStyle" @touchstart="">
         <div :class="bem.e('container')">
             <slot name="loading">
                 <Loading :class="[
