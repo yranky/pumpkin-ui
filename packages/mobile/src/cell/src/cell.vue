@@ -5,7 +5,7 @@
         bem.eqm('border', props.border),
         bem.eqm('required', props.required),
         bem.eqm('vertical', props.vertical)
-    ]" @click="onClick">
+    ]" @click="onClick" @touchstart="">
         <div :class="[
             bem.e('top')
         ]">
