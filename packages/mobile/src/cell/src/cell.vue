@@ -16,7 +16,7 @@
 
             <div :class="[
                 bem.e('title')
-            ]">
+            ]" v-if="$slots.title || props.title">
                 <slot name="title">
                     {{ props.title }}
                 </slot>
@@ -27,7 +27,7 @@
             ]">
                 <div :class="[
                     bem.e('value')
-                ]">
+                ]" v-if="$slots.default || props.value">
                     <slot>
                         {{ props.value }}
                     </slot>
@@ -56,6 +56,7 @@ import { cellEmits, cellProps } from './cell'
 import { useBem } from '@pk-ui/use'
 import { RightOutlined } from '@ant-design/icons-vue'
 import "./cell.less"
+import { useSlots } from 'vue';
 
 defineOptions({
     name: 'PkCell',
@@ -69,5 +70,7 @@ const bem = useBem('cell')
 const onClick = (event: MouseEvent) => {
     emit('click', event);
 }
+
+const $slots = useSlots()
 
 </script>
