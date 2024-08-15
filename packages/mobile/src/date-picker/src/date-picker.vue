@@ -34,8 +34,8 @@ const updateColumns = (values?: PickerItem['value'][]) => {
         min: props.min,
         max: props.max,
         type: props.type,
-        formatter: props.formatter as (type: DatePickerSimpleType, item: PickerItem) => PickerItem,
-        filter: props.filter as (type: DatePickerSimpleType, items: PickerItem) => boolean,
+        formatter: props.formatter,
+        filter: props.filter,
         current: getCurrentSelectDateItemByColumnsAndType(values || current.value, props.type)
     })
     dateColumns.value = newColumns

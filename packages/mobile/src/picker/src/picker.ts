@@ -1,5 +1,6 @@
 import { extend } from "@pk-ui/utils"
 import { PickerItem } from "../../picker-view/src/picker-view"
+import { PropType } from "vue"
 
 export type pickerEmits = {
     (event: 'update:modelValue', value: boolean): void
@@ -14,7 +15,7 @@ export const pickerProps = extend({}, {
         default: void 0
     },
     current: {
-        type: Array as () => PickerItem['value'][],
+        type: Array as PropType<PickerItem['value'][]>,
         default: void 0
     },
     backgroundColor: {

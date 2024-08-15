@@ -1,5 +1,6 @@
 import { extend } from "@pk-ui/utils"
 import { PickerItem } from "./picker-view"
+import { PropType } from "vue"
 
 export type pickerColumnEmits = {
     (event: 'onChange', value: PickerItem): void
@@ -7,7 +8,7 @@ export type pickerColumnEmits = {
 
 export const pickerColumnProps = extend({}, {
     colItems: {
-        type: Array as () => PickerItem[],
+        type: Array as PropType<PickerItem[]>,
         default: () => []
     },
     visibleItemCount: {

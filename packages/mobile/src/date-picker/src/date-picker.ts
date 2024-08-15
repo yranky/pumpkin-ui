@@ -1,5 +1,6 @@
 import { DateUtils, extend } from "@pk-ui/utils"
 import { PickerItem } from "../../picker-view/src/picker-view"
+import { PropType } from "vue"
 
 export type pickerEmits = {
     (event: 'update:modelValue', value: boolean): void
@@ -25,7 +26,7 @@ export const pickerProps = extend({}, {
         default: void 0
     },
     type: {
-        type: Array as () => TypeMap,
+        type: Array as PropType<TypeMap>,
         default: () => (['year', 'month', 'day'])
     },
     current: {
@@ -33,10 +34,10 @@ export const pickerProps = extend({}, {
         default: void 0
     },
     formatter: {
-        type: Function
+        type: Function as PropType<(type: DatePickerSimpleType, item: PickerItem) => PickerItem>
     },
     filter: {
-        type: Function
+        type: Function as PropType<(type: DatePickerSimpleType, items: PickerItem) => boolean>
     }
 })
 

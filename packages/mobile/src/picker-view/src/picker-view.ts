@@ -1,4 +1,5 @@
 import { extend } from "@pk-ui/utils"
+import { PropType } from "vue"
 
 
 export interface PickerItem {
@@ -14,11 +15,11 @@ export type pickerViewEmits = {
 }
 export const pickerViewProps = extend({}, {
     modelValue: {
-        type: Array as () => PickerItem['value'][],
+        type: Array as PropType<PickerItem['value'][]>,
         default: void 0
     },
     items: {
-        type: Array as () => PickerItem[] | PickerItem[][],
+        type: Array as PropType<PickerItem[] | PickerItem[][]>,
         default: () => []
     },
     visibleItemCount: {
