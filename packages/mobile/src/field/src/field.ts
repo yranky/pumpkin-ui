@@ -6,9 +6,12 @@ export type fieldEmits = {
     (event: 'update:modelValue', value: string): void
     (event: 'onFocus', e: FocusEvent): void,
     (event: 'onBlur', e: FocusEvent): void,
-    (event: 'onChange', value: string): void
+    (event: 'onChange', value: string): void,
+    (event: 'onClear'): void
 }
-const filedTypes = ['text'] as const
+const fieldTypes = ['text'] as const
+const fieldInputAlign = ['left', 'center', 'right'] as const
+const fieldLabelAlign = ['left', 'center', 'right'] as const
 export const fieldProps = extend({}, {
     label: {
         type: String,
@@ -36,10 +39,36 @@ export const fieldProps = extend({}, {
     },
     type: {
         type: String,
-        values: filedTypes,
+        values: fieldTypes,
         default: 'text'
     },
     rules: {
         type: Array as PropType<FieldRule[]>
+    },
+    readonly: {
+        type: Boolean,
+        default: false
+    },
+    disabled: {
+        type: Boolean,
+        default: false
+    },
+    isLink: {
+        type: Boolean,
+        default: false
+    },
+    inputAlign: {
+        type: String as PropType<typeof fieldInputAlign[number]>,
+    },
+    labelAlign: {
+        type: String as PropType<typeof fieldLabelAlign[number]>
+    },
+    vertical: {
+        type: Boolean,
+        default: false
+    },
+    clearable: {
+        type: Boolean,
+        default: true
     }
 })

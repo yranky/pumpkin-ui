@@ -12,6 +12,7 @@
 @cell-namespace: pk-cell;
 
 .@{namespace} {
+
     .@{cell-namespace}__content {
         flex: 3;
 
@@ -30,32 +31,84 @@
             display: flex;
             align-self: stretch;
             position: relative;
+            align-items: center;
 
-            // .@{namespace}__placeholder {
-            //     position: absolute;
-            //     left: 0;
-            //     top: 50%;
-            //     transform: translateY(-50%);
-            //     color: var(--pk-filed-text-color-secondary);
-            // }
-
-            .@{namespace}__input {
-                border: none;
+            .@{namespace}__input__container {
+                display: flex;
                 flex: 1;
                 justify-self: stretch;
-                font-size: var(--pk-filed-font-size);
-                outline: none;
-                color: var(--pk-text-color);
-                margin-right: var(--pk-field-margin);
+                justify-content: flex-end;
+                // .@{namespace}__placeholder {
+                //     position: absolute;
+                //     left: 0;
+                //     top: 50%;
+                //     transform: translateY(-50%);
+                //     color: var(--pk-filed-text-color-secondary);
+                // }
 
-                &::placeholder {
-                    color: var(--pk-filed-text-color-secondary);
+                .@{namespace}__input {
+                    border: none;
+                    flex: 1;
+                    justify-self: stretch;
+                    font-size: var(--pk-filed-font-size);
+                    outline: none;
+                    color: var(--pk-text-color);
+
+                    &::placeholder {
+                        color: var(--pk-filed-text-color-secondary);
+                    }
+
+                    &:disabled {
+                        background: transparent;
+                    }
+
                 }
+
+                &.@{namespace}--margin {
+                    margin-right: var(--pk-field-margin);
+                }
+
+
+                &.@{namespace}--left {
+                    justify-content: flex-start;
+                }
+
+                &.@{namespace}--center {
+                    justify-content: center;
+                }
+
+                &.@{namespace}--right {
+                    justify-content: flex-end;
+                }
+            }
+
+            .@{namespace}__button {
+                margin: 0 var(--pk-field-margin);
             }
         }
     }
 
     &__tip {
         color: var(--pk-field-tip-text-color);
+    }
+
+    &--vertical {
+        .@{cell-namespace}__content {
+            .@{namespace}__wrapper {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    &--center {
+        .@{cell-namespace}__title {
+            text-align: center;
+        }
+    }
+
+    &--right {
+        .@{cell-namespace}__title {
+            text-align: right;
+        }
     }
 }

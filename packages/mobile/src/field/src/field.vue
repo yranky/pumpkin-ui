@@ -1,22 +1,45 @@
 <template>
     <cell :title="props.label" :class="[
-        bem.b()
-    ]" :required="props.required" :border="props.border">
+        bem.b(),
+        bem.eqm('vertical', props.vertical),
+        bem.m(props.labelAlign)
+    ]" :required="props.required" :border="props.border" :is-link="props.isLink" :disabled="props.disabled"
+        :vertical="props.vertical">
         <div :class="[
             bem.e('content')
         ]">
             <div :class="[
                 bem.e('wrapper')
             ]">
-                <!-- <div :class="[
+                <!-- input container -->
+                <div :class="[
+                    bem.e('input__container'),
+                    bem.eqm('margin', !$slots.button),
+                    bem.m(props.inputAlign)
+                ]">
+                    <!-- input -->
+                    <slot name="input">
+                        <!-- <div :class="[
                     bem.e('placeholder')
                 ]">请输入</div> -->
-                <input :placeholder="props.placeholder" :class="[
-                    bem.e('input')
-                ]" v-model="value" @blur="onBlur" @focus="onFocus" @compositionstart="onCompositionStart"
-                    @compositionend="onCompositionEnd" @input="onInput" />
+                        <input :placeholder="props.placeholder" :class="[
+                            bem.e('input')
+                        ]" v-model="value" @blur="onBlur" @focus="onFocus" @compositionstart="onCompositionStart"
+                            @compositionend="onCompositionEnd" @input="onInput" :readonly="props.readonly"
+                            :disabled="props.disabled" />
+                    </slot>
+                </div>
+                <!-- right eg:button -->
+                <div :class="[
+                    bem.e('button')
+                ]" v-if="$slots.button">
+                    <slot name="button"></slot>
+                </div>
             </div>
         </div>
+        <template #right-icon v-if="showClear">
+            <close-circle-filled @click="onClear" />
+        </template>
         <template #bottom v-if="validateMessage">
             <div :class="[
                 bem.e('tip')
@@ -31,8 +54,9 @@ import { fieldEmits, fieldProps } from './field'
 import { useBem } from '@pk-ui/use'
 import Cell from '../../cell/src/cell.vue'
 import './field.less'
-import { inject, onBeforeUnmount, onMounted, ref, computed } from 'vue'
+import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots } from 'vue'
 import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
+import { CloseCircleFilled } from '@ant-design/icons-vue'
 
 defineOptions({
     name: 'PkField'
@@ -40,6 +64,7 @@ defineOptions({
 
 const props = defineProps(fieldProps)
 const emits = defineEmits<fieldEmits>()
+const $slots = useSlots()
 
 const bem = useBem('field')
 
@@ -56,6 +81,15 @@ const onInput = (e: Event) => {
     isCompositionEnd && formProvide?.triggerEmit('onChange', fieldId)
     isCompositionEnd && emits('onChange', value.value)
 }
+
+const onClear = () => {
+    value.value = ''
+    emits('onClear')
+}
+
+const showClear = computed(() => {
+    return props.clearable && value.value
+})
 
 let isCompositionEnd = true
 const onCompositionStart = (e: CompositionEvent) => isCompositionEnd = false
