@@ -1,3 +1,6 @@
 export * from './src/props'
 export * from './src/utils'
 export * from './src/DateUtils'
+export * from './src/IForm'
+export * from './src/useField'
+export * from './src/formValidate'

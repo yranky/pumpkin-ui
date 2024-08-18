@@ -5,21 +5,25 @@
     --pk-filed-font-size: var(--pk-font-size-m);
     --pk-filed-text-color-secondary: var(--pk-text-color-secondary);
     --pk-filed-text-color: var(--pk-text-color);
+    --pk-field-tip-text-color: var(--pk-error-color);
 }
 
 @namespace: pk-field;
+@cell-namespace: pk-cell;
 
 .@{namespace} {
+    .@{cell-namespace}__content {
+        flex: 3;
+
+        .@{cell-namespace}__value {
+            padding: 0;
+        }
+    }
+
     &__content {
         display: flex;
         align-items: center;
-
-        .@{namespace}__title {
-            margin: 0 var(--pk-field-margin);
-            padding: var(--pk-field-padding) 0;
-            font-size: var(--pk-filed-font-size);
-            color: var(--pk-filed-text-color);
-        }
+        flex: 1;
 
         .@{namespace}__wrapper {
             flex: 1;
@@ -49,5 +53,9 @@
                 }
             }
         }
+    }
+
+    &__tip {
+        color: var(--pk-field-tip-text-color);
     }
 }
