@@ -25,6 +25,12 @@
     flex-direction: column;
 
     &--link {
+        &.@{namespace}--disabled {
+            &:active::before {
+                display: none;
+            }
+        }
+
         &:active::before {
             position: absolute;
             content: ' ';
@@ -76,6 +82,7 @@
             line-height: var(--pk-cell-title-line-height);
             flex: 1;
             color: var(--pk-cell-title-color);
+            word-break: break-all;
         }
 
         .@{namespace}__content {

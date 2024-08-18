@@ -26,5 +26,9 @@ export const cellProps = extend({}, {
     vertical: {
         type: Boolean,
         default: false
+    },
+    disabled: {
+        type: Boolean,
+        default: false
     }
 })

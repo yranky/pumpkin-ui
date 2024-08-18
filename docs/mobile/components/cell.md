@@ -96,13 +96,14 @@ aside: false
 
 ### Cell Props
 
-| 属性名   | 说明       | 类型      | 默认值  | 可选值 |
-| -------- | ---------- | --------- | ------- | ------ |
-| title    | 左侧标题   | `string`  |         |        |
-| value    | 右侧内容   | `string`  |         |        |
-| is-link  | 显示右箭头 | `boolean` | `false` |        |
-| border   | 显示分割线 | `boolean` | `true`  |        |
-| required | 显示星号   | `boolean` | `false` |        |
+| 属性名   | 说明                                  | 类型      | 默认值  | 可选值 |
+| -------- | ------------------------------------- | --------- | ------- | ------ |
+| title    | 左侧标题                              | `string`  |         |        |
+| value    | 右侧内容                              | `string`  |         |        |
+| is-link  | 显示右箭头                            | `boolean` | `false` |        |
+| border   | 显示分割线                            | `boolean` | `true`  |        |
+| required | 显示星号                              | `boolean` | `false` |        |
+| disabled | 禁用，不显示点击效果且不触发click事件 | `boolean` | `false` |        |
 
 
 ### Events
@@ -142,12 +143,12 @@ aside: false
 
 ### Cell Slots
 
-| 插槽名     | 说明                                |
-| ---------- | ----------------------------------- |
-| title      | 标题区域插槽                        |
-| default    | 内容区域插槽                        |
-| right-icon | 右侧箭头图标插槽(需要is-link为true) |
-| bottom     | 下方区域插槽                        |
+| 插槽名     | 说明             |
+| ---------- | ---------------- |
+| title      | 标题区域插槽     |
+| default    | 内容区域插槽     |
+| right-icon | 右侧箭头图标插槽 |
+| bottom     | 下方区域插槽     |
 
 #### 示例
 以下是`Cell`插槽示例。

@@ -4,7 +4,8 @@
         bem.eqm('link', props.isLink),
         bem.eqm('border', props.border),
         bem.eqm('required', props.required),
-        bem.eqm('vertical', props.vertical)
+        bem.eqm('vertical', props.vertical),
+        bem.eqm('disabled', props.disabled)
     ]" @click="onClick" @touchstart="">
         <div :class="[
             bem.e('top')
@@ -33,7 +34,7 @@
                     </slot>
                 </div>
 
-                <div v-if="props.isLink" :class="[
+                <div v-if="props.isLink || $slots['right-icon']" :class="[
                     bem.e('right')
                 ]">
                     <slot name="right-icon">
@@ -68,6 +69,7 @@ const emit = defineEmits(cellEmits)
 const bem = useBem('cell')
 
 const onClick = (event: MouseEvent) => {
+    if (props.disabled) return
     emit('click', event);
 }
 
