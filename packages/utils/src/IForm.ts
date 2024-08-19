@@ -6,13 +6,14 @@ export interface IFieldExposeToForm {
     getRules: () => FieldRule[] | void
     setValidateMessage: (info: string) => void
     getLabel: () => string
-    fieldId: Symbol
+    getValidateAutoTrim: () => boolean
+    fieldId: string
 }
 
 export const formProvideSymbol = Symbol('formProvide')
 
 export interface IFormProvide {
     addField: (field: IFieldExposeToForm) => void,
-    removeField: (fieldId: Symbol) => void,
-    triggerEmit: (trigger: FieldRuleTrigger, fieldId: Symbol) => void
+    removeField: (fieldId: string) => void,
+    triggerEmit: (trigger: FieldRuleTrigger, fieldId: string) => void
 }

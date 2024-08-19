@@ -32,7 +32,7 @@ const onSubmit = async (e?: Event) => {
 }
 
 
-const checkFields = async (trigger: FieldRuleTrigger | 'force', fieldId?: Symbol): Promise<IFormValidateErrorResult[]> => {
+const checkFields = async (trigger: FieldRuleTrigger | 'force', fieldId?: string): Promise<IFormValidateErrorResult[]> => {
     const validateErrorResults: IFormValidateErrorResult[] = []
 
     let needCheckFields = fieldExpose.value;
@@ -46,7 +46,7 @@ const checkFields = async (trigger: FieldRuleTrigger | 'force', fieldId?: Symbol
         needCheckFields[i].setValidateMessage('')
 
         try {
-            await formFieldValidate(needCheckFields[i].getRules() || [], needCheckFields[i].getValue(), props.validateTrigger, trigger)
+            await formFieldValidate(needCheckFields[i].getRules() || [], needCheckFields[i].getValue(), props.validateTrigger, trigger, needCheckFields[i].getValidateAutoTrim())
         } catch (err: any) {
             validateErrorResults.push({
                 name,
@@ -97,12 +97,12 @@ const addField = (field: IFieldExposeToForm) => {
     fieldExpose.value.push(field)
 }
 
-const removeField = (fieldId: Symbol) => {
+const removeField = (fieldId: string) => {
     const index = fieldExpose.value.findIndex(field => field.fieldId === fieldId)
     if (index > -1) fieldExpose.value.splice(index, 1)
 }
 
-const triggerEmit = (trigger: FieldRuleTrigger, fieldId: Symbol) => {
+const triggerEmit = (trigger: FieldRuleTrigger, fieldId: string) => {
     checkFields(trigger, fieldId)
 }
 

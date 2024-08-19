@@ -1,6 +1,7 @@
 import { FieldRule, FieldRuleTrigger } from "@pk-ui/mobile"
+import { isEmptyValue } from "./utils"
 
-export async function formFieldValidate(rules: FieldRule[], value: any, formTrigger: FieldRuleTrigger[], trigger: FieldRuleTrigger | 'force'): Promise<boolean> {
+export async function formFieldValidate(rules: FieldRule[], value: any, formTrigger: FieldRuleTrigger[], trigger: FieldRuleTrigger | 'force', trim: boolean): Promise<boolean> {
     //validate rules one by one
     for (let rule of rules || []) {
         //check need trigger
@@ -10,7 +11,7 @@ export async function formFieldValidate(rules: FieldRule[], value: any, formTrig
             //formatter value
             const formatterValue = await (typeof rule.formatter === 'function' ? rule.formatter(value) : value)
             //validate required first
-            if (rule.required && !formatterValue) throw new Error(rule.message || '')
+            if (rule.required && isEmptyValue(formatterValue, trim)) throw new Error(rule.message || '')
             //then validate validator
             if (typeof rule.validator === 'function') {
                 let result = await rule.validator(rule, formatterValue)

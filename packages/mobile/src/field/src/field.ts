@@ -9,9 +9,11 @@ export type fieldEmits = {
     (event: 'onChange', value: string): void,
     (event: 'onClear'): void
 }
-const fieldTypes = ['text'] as const
+// const fieldTypes = ['text', 'color', 'date', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'tel', 'time', 'url', 'week', 'button', 'checkbox', 'file', 'image', 'radio', 'range', 'reset', 'search', 'submit'] as const
+const fieldTypes = ['text', 'color', 'date', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'tel', 'time', 'url', 'week'] as const
 const fieldInputAlign = ['left', 'center', 'right'] as const
 const fieldLabelAlign = ['left', 'center', 'right'] as const
+const fieldClearTrigger = ['always', 'auto'] as const
 export const fieldProps = extend({}, {
     label: {
         type: String,
@@ -38,7 +40,7 @@ export const fieldProps = extend({}, {
         default: ""
     },
     type: {
-        type: String,
+        type: String as PropType<typeof fieldTypes[number]>,
         values: fieldTypes,
         default: 'text'
     },
@@ -52,6 +54,10 @@ export const fieldProps = extend({}, {
     disabled: {
         type: Boolean,
         default: false
+    },
+    validateAutoTrim: {
+        type: Boolean,
+        default: true
     },
     isLink: {
         type: Boolean,
@@ -70,5 +76,35 @@ export const fieldProps = extend({}, {
     clearable: {
         type: Boolean,
         default: true
+    },
+    clearTrigger: {
+        type: String as PropType<typeof fieldClearTrigger[number]>,
+        values: fieldClearTrigger,
+        default: 'auto'
+    },
+    rows: {
+        type: Number,
+        default: 1,
+        validator: (value: number) => value >= 1
+    },
+    autosize: {
+        type: Boolean,
+        default: false
+    },
+    // https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input
+    max: {
+        type: Number
+    },
+    min: {
+        type: Number
+    },
+    maxlength: {
+        type: Number
+    },
+    minlength: {
+        type: Number
+    },
+    autocomplete: {
+        type: Boolean
     }
 })

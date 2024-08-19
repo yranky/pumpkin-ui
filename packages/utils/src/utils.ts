@@ -19,3 +19,8 @@ export const generateRandomId = () => {
         return v.toString(16);
     })
 }
+
+export const isEmptyValue = (value: any, trim: boolean = false) => {
+    if (value === undefined || value === null || (trim && typeof value === 'string' && value.trim() === '') || (!trim && value === '')) return true
+    return false
+}

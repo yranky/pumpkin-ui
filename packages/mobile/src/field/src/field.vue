@@ -1,10 +1,13 @@
 <template>
-    <cell :title="props.label" :class="[
+    <cell :class="[
         bem.b(),
         bem.eqm('vertical', props.vertical),
         bem.m(props.labelAlign)
     ]" :required="props.required" :border="props.border" :is-link="props.isLink" :disabled="props.disabled"
         :vertical="props.vertical">
+        <template #title v-if="props.label">
+            <label :for="fieldId">{{ props.label }}</label>
+        </template>
         <div :class="[
             bem.e('content')
         ]">
@@ -22,11 +25,21 @@
                         <!-- <div :class="[
                     bem.e('placeholder')
                 ]">请输入</div> -->
-                        <input :placeholder="props.placeholder" :class="[
+                        <input v-if="props.rows === 1 || props.autosize" :id="fieldId" :placeholder="props.placeholder"
+                            :class="[
+                                bem.e('input')
+                            ]" v-model="value" :type="props.type" @blur="onBlur" @focus="onFocus"
+                            @compositionstart="onCompositionStart" @compositionend="onCompositionEnd" @input="onInput"
+                            :readonly="props.readonly" :disabled="props.disabled" :min="props.min" :max="props.max"
+                            :maxlength="props.maxlength" :minlength="props.minlength"
+                            :autocomplete="props.autocomplete" />
+
+                        <textarea v-else :id="fieldId" :rows="props.rows" :placeholder="props.placeholder" :class="[
                             bem.e('input')
-                        ]" v-model="value" @blur="onBlur" @focus="onFocus" @compositionstart="onCompositionStart"
-                            @compositionend="onCompositionEnd" @input="onInput" :readonly="props.readonly"
-                            :disabled="props.disabled" />
+                        ]" v-model="value" @blur="onBlur" @input="onInput" @focus="onFocus" :readonly="props.readonly"
+                            :disabled="props.disabled" :maxlength="props.maxlength" :minlength="props.minlength"
+                            :autocomplete="props.autocomplete" @compositionstart="onCompositionStart"
+                            @compositionend="onCompositionEnd"></textarea>
                     </slot>
                 </div>
                 <!-- right eg:button -->
@@ -54,7 +67,7 @@ import { fieldEmits, fieldProps } from './field'
 import { useBem } from '@pk-ui/use'
 import Cell from '../../cell/src/cell.vue'
 import './field.less'
-import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots } from 'vue'
+import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots, readonly } from 'vue'
 import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
 import { CloseCircleFilled } from '@ant-design/icons-vue'
 
@@ -65,15 +78,18 @@ defineOptions({
 const props = defineProps(fieldProps)
 const emits = defineEmits<fieldEmits>()
 const $slots = useSlots()
+const isFocus = ref(false)
 
 const bem = useBem('field')
 
 const onBlur = (e: FocusEvent) => {
+    isFocus.value = false
     formProvide?.triggerEmit('onBlur', fieldId)
     emits('onBlur', e)
 }
 
 const onFocus = (e: FocusEvent) => {
+    isFocus.value = true
     emits('onFocus', e)
 }
 
@@ -88,7 +104,15 @@ const onClear = () => {
 }
 
 const showClear = computed(() => {
-    return props.clearable && value.value
+    let flag
+    switch (props.clearTrigger) {
+        case 'always':
+            flag = true
+            break
+        case 'auto':
+            flag = isFocus.value
+    }
+    return props.clearable && value.value && flag
 })
 
 let isCompositionEnd = true
@@ -116,7 +140,7 @@ const value = computed({
 
 const validateMessage = ref<string>('')
 
-const { getName, getValue, getRules, fieldId, setValidateMessage, getLabel } = useField<typeof props, typeof value>(props, value, validateMessage)
+const { getName, getValue, getRules, fieldId, setValidateMessage, getLabel, getValidateAutoTrim } = useField<typeof props, typeof value>(props, value, validateMessage)
 
 onMounted(() => {
     formProvide?.addField({
@@ -125,7 +149,8 @@ onMounted(() => {
         getRules,
         fieldId,
         setValidateMessage,
-        getLabel
+        getLabel,
+        getValidateAutoTrim
     })
 })
 
