@@ -25,7 +25,7 @@
                         <!-- <div :class="[
                     bem.e('placeholder')
                 ]">请输入</div> -->
-                        <input v-if="props.rows === 1 || props.autosize" :id="fieldId" :placeholder="props.placeholder"
+                        <input v-if="props.rows === 1 && !props.autosize" :id="fieldId" :placeholder="props.placeholder"
                             :class="[
                                 bem.e('input')
                             ]" v-model="value" :type="props.type" @blur="onBlur" @focus="onFocus"
@@ -35,11 +35,12 @@
                             :autocomplete="props.autocomplete" />
 
                         <textarea v-else :id="fieldId" :rows="props.rows" :placeholder="props.placeholder" :class="[
-                            bem.e('input')
-                        ]" v-model="value" @blur="onBlur" @input="onInput" @focus="onFocus" :readonly="props.readonly"
-                            :disabled="props.disabled" :maxlength="props.maxlength" :minlength="props.minlength"
-                            :autocomplete="props.autocomplete" @compositionstart="onCompositionStart"
-                            @compositionend="onCompositionEnd"></textarea>
+                            bem.e('input'),
+                            bem.e('textarea')
+                        ]" v-model="value" ref="textareaRef" @blur="onBlur" @input="onInput" @focus="onFocus"
+                            :readonly="props.readonly" :disabled="props.disabled" :maxlength="props.maxlength"
+                            :minlength="props.minlength" :autocomplete="props.autocomplete"
+                            @compositionstart="onCompositionStart" @compositionend="onCompositionEnd"></textarea>
                     </slot>
                 </div>
                 <!-- right eg:button -->
@@ -67,7 +68,7 @@ import { fieldEmits, fieldProps } from './field'
 import { useBem } from '@pk-ui/use'
 import Cell from '../../cell/src/cell.vue'
 import './field.less'
-import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots, readonly } from 'vue'
+import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots, readonly, nextTick } from 'vue'
 import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
 import { CloseCircleFilled } from '@ant-design/icons-vue'
 
@@ -83,17 +84,22 @@ const isFocus = ref(false)
 const bem = useBem('field')
 
 const onBlur = (e: FocusEvent) => {
-    isFocus.value = false
+    setTimeout(() => isFocus.value = false)
     formProvide?.triggerEmit('onBlur', fieldId)
     emits('onBlur', e)
+
+    //wait for the close icon to be rerender and next wait for the input to be rerender
+    setTimeout(() => nextTick(updateTextareaHeight))
 }
 
 const onFocus = (e: FocusEvent) => {
     isFocus.value = true
     emits('onFocus', e)
+    nextTick(updateTextareaHeight)
 }
 
 const onInput = (e: Event) => {
+    updateTextareaHeight()
     isCompositionEnd && formProvide?.triggerEmit('onChange', fieldId)
     isCompositionEnd && emits('onChange', value.value)
 }
@@ -137,6 +143,15 @@ const value = computed({
         emits('update:modelValue', val)
     }
 })
+
+const textareaRef = ref<HTMLTextAreaElement>()
+const updateTextareaHeight = () => {
+    if (!props.autosize || !textareaRef.value) return
+    textareaRef.value.style.height = 'auto'
+    let height = textareaRef.value.scrollHeight
+    textareaRef.value.style.height = height + 'px'
+}
+nextTick(updateTextareaHeight)
 
 const validateMessage = ref<string>('')
 

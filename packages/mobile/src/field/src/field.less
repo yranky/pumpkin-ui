@@ -64,6 +64,15 @@
 
                 }
 
+                .@{namespace}__textarea {
+                    resize: none;
+                    box-sizing: border-box;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+
                 &.@{namespace}--margin {
                     margin-right: var(--pk-field-margin);
                 }
