@@ -8,6 +8,7 @@
 }
 
 @namespace: pk-cell-group;
+@cell-namespace: pk-cell;
 
 .@{namespace} {
     &__header {
@@ -24,4 +25,16 @@
             flex-shrink: 0;
         }
     }
+
+    &--border {
+        .@{namespace}__content {
+            .@{cell-namespace} {
+
+                &:last-child::after {
+                    display: initial;
+                }
+            }
+        }
+    }
+
 }

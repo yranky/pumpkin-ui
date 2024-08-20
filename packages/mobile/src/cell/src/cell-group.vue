@@ -1,6 +1,7 @@
 <template>
     <div :class="[
-        bem.b()
+        bem.b(),
+        bem.eqm('border', !props.lastHideBorder)
     ]">
         <div :class="[
             bem.e('header')
