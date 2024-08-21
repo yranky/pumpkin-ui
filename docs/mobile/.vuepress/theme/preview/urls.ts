@@ -42,5 +42,8 @@ export default [
     }, {
         activeMatch: '/components/divider',
         url: BASE_URL + '#/divider'
+    }, {
+        activeMatch: '/components/field',
+        url: BASE_URL + '#/field'
     }
 ];

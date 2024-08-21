@@ -63,6 +63,9 @@ export default defineUserConfig({
                 }, {
                   text: 'Switch 开关',
                   link: '/components/switch'
+                }, {
+                  text: 'Field 输入项',
+                  link: '/components/field'
                 }
               ]
             },

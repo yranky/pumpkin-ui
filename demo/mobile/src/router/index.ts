@@ -15,6 +15,7 @@ const routes = [
     { path: '/switch', component: () => import('../views/switch/Switch.vue') },
     { path: '/progress', component: () => import('../views/progress/Progress.vue') },
     { path: '/divider', component: () => import('../views/divider/Divider.vue') },
+    { path: '/form', component: () => import('../views/form/Form.vue') },
     { path: '/field', component: () => import('../views/field/Field.vue') }
 ]
 
