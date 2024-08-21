@@ -26,6 +26,15 @@
         }
     }
 
+
+    .@{namespace}__content {
+        .@{cell-namespace} {
+            &:last-child::after {
+                display: none;
+            }
+        }
+    }
+
     &--border {
         .@{namespace}__content {
             .@{cell-namespace} {

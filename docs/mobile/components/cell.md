@@ -203,3 +203,6 @@ aside: false
 | --pk-cell-title-line-height  | 1.375                          |      |
 | --pk-cell-value-line-height  | 1.375                          |      |
 | --pk-cell-bottom-line-height | 1.5                            |      |
+| --pk-cell-background         | var(--pk-bg-color)             |      |
+| --pk-cell-disabled-opacity   | var(--pk-disabled-opacity)     |      |
+
