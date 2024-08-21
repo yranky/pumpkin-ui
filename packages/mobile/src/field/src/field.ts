@@ -3,11 +3,12 @@ import { FieldRule } from "../../form"
 import { PropType } from "vue"
 
 export type fieldEmits = {
-    (event: 'update:modelValue', value: string): void
+    (event: 'update:modelValue', value: string | number): void
     (event: 'onFocus', e: FocusEvent): void,
     (event: 'onBlur', e: FocusEvent): void,
-    (event: 'onChange', value: string): void,
-    (event: 'onClear'): void
+    (event: 'onChange', value: string | number): void,
+    (event: 'onClear'): void,
+    (event: 'click', e: MouseEvent): void
 }
 // const fieldTypes = ['text', 'color', 'date', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'tel', 'time', 'url', 'week', 'button', 'checkbox', 'file', 'image', 'radio', 'range', 'reset', 'search', 'submit'] as const
 const fieldTypes = ['text', 'color', 'date', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'tel', 'time', 'url', 'week'] as const
@@ -15,6 +16,10 @@ const fieldInputAlign = ['left', 'center', 'right'] as const
 const fieldLabelAlign = ['left', 'center', 'right'] as const
 const fieldClearTrigger = ['always', 'auto'] as const
 export const fieldProps = extend({}, {
+    modelValue: {
+        type: [String, Number],
+        default: void 0
+    },
     label: {
         type: String,
         default: ""
@@ -26,10 +31,6 @@ export const fieldProps = extend({}, {
     border: {
         type: Boolean,
         default: true
-    },
-    modelValue: {
-        type: String,
-        default: void 0
     },
     placeholder: {
         type: String,
@@ -105,6 +106,6 @@ export const fieldProps = extend({}, {
         type: Number
     },
     autocomplete: {
-        type: Boolean
+        type: String
     }
 })

@@ -4,9 +4,11 @@
         bem.eqm('vertical', props.vertical),
         bem.m(props.labelAlign)
     ]" :required="props.required" :border="props.border" :is-link="props.isLink" :disabled="props.disabled"
-        :vertical="props.vertical">
-        <template #title v-if="props.label">
-            <label :for="fieldId">{{ props.label }}</label>
+        :vertical="props.vertical" @click="onClick">
+        <template #title v-if="props.label || $slots.label">
+            <slot name="label">
+                <label :for="fieldId">{{ props.label }}</label>
+            </slot>
         </template>
         <div :class="[
             bem.e('content')
@@ -25,22 +27,21 @@
                         <!-- <div :class="[
                     bem.e('placeholder')
                 ]">请输入</div> -->
-                        <input v-if="props.rows === 1 && !props.autosize" :id="fieldId" :placeholder="props.placeholder"
-                            :class="[
-                                bem.e('input')
-                            ]" v-model="value" :type="props.type" @blur="onBlur" @focus="onFocus"
+                        <textarea v-if="(props.rows > 1 || props.autosize) && props.type === 'text'" :id="fieldId"
+                            :rows="props.rows" :placeholder="props.placeholder" :class="[
+                                bem.e('input'),
+                                bem.e('textarea')
+                            ]" v-model="value" ref="textareaRef" @blur="onBlur" @input="onInput" @focus="onFocus"
+                            :readonly="props.readonly" :disabled="props.disabled" :maxlength="props.maxlength"
+                            :minlength="props.minlength" :autocomplete="props.autocomplete"
+                            @compositionstart="onCompositionStart" @compositionend="onCompositionEnd"></textarea>
+                        <input v-else :id="fieldId" ref="inputRef" :placeholder="props.placeholder" :class="[
+                            bem.e('input')
+                        ]" v-model="value" :type="props.type" @blur="onBlur" @focus="onFocus"
                             @compositionstart="onCompositionStart" @compositionend="onCompositionEnd" @input="onInput"
                             :readonly="props.readonly" :disabled="props.disabled" :min="props.min" :max="props.max"
                             :maxlength="props.maxlength" :minlength="props.minlength"
                             :autocomplete="props.autocomplete" />
-
-                        <textarea v-else :id="fieldId" :rows="props.rows" :placeholder="props.placeholder" :class="[
-                            bem.e('input'),
-                            bem.e('textarea')
-                        ]" v-model="value" ref="textareaRef" @blur="onBlur" @input="onInput" @focus="onFocus"
-                            :readonly="props.readonly" :disabled="props.disabled" :maxlength="props.maxlength"
-                            :minlength="props.minlength" :autocomplete="props.autocomplete"
-                            @compositionstart="onCompositionStart" @compositionend="onCompositionEnd"></textarea>
                     </slot>
                 </div>
                 <!-- right eg:button -->
@@ -51,15 +52,19 @@
                 </div>
             </div>
         </div>
-        <template #right-icon v-if="showClear">
-            <close-circle-filled @click="onClear" />
+        <template #right-icon v-if="showClear || $slots['right-icon']">
+            <slot name="right-icon" :showClear="showClear">
+                <close-circle-filled @click.stop="onClear" />
+            </slot>
         </template>
         <template #bottom v-if="validateMessage">
-            <div :class="[
-                bem.e('tip')
-            ]">
-                {{ validateMessage }}
-            </div>
+            <slot name="tip" :tip="validateMessage">
+                <div :class="[
+                    bem.e('tip')
+                ]">
+                    {{ validateMessage }}
+                </div>
+            </slot>
         </template>
     </cell>
 </template>
@@ -68,7 +73,7 @@ import { fieldEmits, fieldProps } from './field'
 import { useBem } from '@pk-ui/use'
 import Cell from '../../cell/src/cell.vue'
 import './field.less'
-import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots, readonly, nextTick } from 'vue'
+import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots, nextTick, watch } from 'vue'
 import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
 import { CloseCircleFilled } from '@ant-design/icons-vue'
 
@@ -109,16 +114,18 @@ const onClear = () => {
     emits('onClear')
 }
 
+const onClick = (event: MouseEvent) => {
+    emits('click', event)
+}
+
 const showClear = computed(() => {
-    let flag
     switch (props.clearTrigger) {
         case 'always':
-            flag = true
-            break
+            return props.clearable && true
         case 'auto':
-            flag = isFocus.value
+            return props.clearable && value.value && isFocus.value
     }
-    return props.clearable && value.value && flag
+    return false
 })
 
 let isCompositionEnd = true
@@ -132,7 +139,7 @@ const onCompositionEnd = (e: CompositionEvent) => {
 
 const formProvide = inject<IFormProvide>(formProvideSymbol)
 
-const _value = ref<string>('')
+const _value = ref<string | number>('')
 const value = computed({
     get() {
         if (props.modelValue === void 0) return _value.value
@@ -144,11 +151,17 @@ const value = computed({
     }
 })
 
+watch(() => value.value, () => {
+    if (!isFocus.value) nextTick(updateTextareaHeight)
+})
+
 const textareaRef = ref<HTMLTextAreaElement>()
+const inputRef = ref<HTMLInputElement>()
 const updateTextareaHeight = () => {
     if (!props.autosize || !textareaRef.value) return
     textareaRef.value.style.height = 'auto'
     let height = textareaRef.value.scrollHeight
+    console.log(textareaRef.value.scrollHeight)
     textareaRef.value.style.height = height + 'px'
 }
 nextTick(updateTextareaHeight)
@@ -171,6 +184,19 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
     formProvide?.removeField(fieldId)
+})
+
+const focus = () => {
+    if (textareaRef.value || inputRef.value) (textareaRef.value || inputRef.value)?.focus()
+}
+
+const blur = () => {
+    if (textareaRef.value || inputRef.value) (textareaRef.value || inputRef.value)?.blur()
+}
+
+defineExpose({
+    focus,
+    blur
 })
 
 </script>

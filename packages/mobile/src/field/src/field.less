@@ -53,9 +53,12 @@
                     font-size: var(--pk-filed-font-size);
                     outline: none;
                     color: var(--pk-text-color);
+                    background: transparent;
 
                     &::placeholder {
                         color: var(--pk-filed-text-color-secondary);
+                        font-size: var(--pk-filed-font-size);
+                        line-height: 1;
                     }
 
                     &:disabled {
@@ -67,6 +70,7 @@
                 .@{namespace}__textarea {
                     resize: none;
                     box-sizing: border-box;
+                    background: transparent;
 
                     &::-webkit-scrollbar {
                         display: none;
@@ -105,6 +109,12 @@
         .@{cell-namespace}__content {
             .@{namespace}__wrapper {
                 justify-content: flex-start;
+
+                .@{namespace}__input__container {
+                    .@{namespace}__input {
+                        padding: 0;
+                    }
+                }
             }
         }
     }
