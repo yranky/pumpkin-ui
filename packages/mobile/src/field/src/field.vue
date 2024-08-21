@@ -89,6 +89,7 @@ const isFocus = ref(false)
 const bem = useBem('field')
 
 const onBlur = (e: FocusEvent) => {
+    if (props.disabled || props.readonly) return
     setTimeout(() => isFocus.value = false)
     formProvide?.triggerEmit('onBlur', fieldId)
     emits('onBlur', e)
@@ -98,6 +99,7 @@ const onBlur = (e: FocusEvent) => {
 }
 
 const onFocus = (e: FocusEvent) => {
+    if (props.disabled || props.readonly) return
     isFocus.value = true
     emits('onFocus', e)
     nextTick(updateTextareaHeight)
