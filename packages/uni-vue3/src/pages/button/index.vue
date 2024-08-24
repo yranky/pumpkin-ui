@@ -98,7 +98,9 @@
   </view>
 </template>
 <script lang="ts" setup>
-import PkButton from '@/pk-ui/src/button/src/button.vue'
+import PkButton from '@/pk-ui/components/pk-button/pk-button.vue'
+import PkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue';
+
 </script>
 <style lang="less" scoped>
 .button-container {

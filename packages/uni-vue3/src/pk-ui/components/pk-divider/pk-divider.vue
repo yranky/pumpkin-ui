@@ -1,0 +1,41 @@
+<template>
+    <div :class="[
+        bem.b(),
+        bem.m(props.contentPosition)
+    ]" :style="{
+        '--pk-divider-style': props.dashed ? 'dashed' : 'solid',
+        '--pk-divider-size': (props.size * 2) + 'px',
+        '--pk-divider-color': props.borderColor || '',
+        '--pk-divider-font-color': props.color || ''
+    }">
+        <div :class="[
+            bem.e('left')
+        ]"></div>
+        <div :class="[
+            bem.e('content')
+        ]" v-if="$slot.default">
+            <slot></slot>
+        </div>
+        <div :class="[
+            bem.e('right')
+        ]"></div>
+    </div>
+</template>
+<script lang="ts" setup>
+import { useBem } from "@pk-ui/use";
+import { dividerProps } from "./pk-divider";
+import "./pk-divider.less"
+import { useSlots } from "vue";
+
+defineOptions({
+    name: 'PkDivider',
+})
+
+const props = defineProps(dividerProps)
+
+const bem = useBem('divider')
+
+const $slot = useSlots()
+
+
+</script>

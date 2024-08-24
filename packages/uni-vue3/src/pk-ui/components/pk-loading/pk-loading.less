@@ -75,55 +75,68 @@ page {
         .@{namespace}__circle {
             width: var(--pk-loading-size);
             height: var(--pk-loading-size);
+            position: relative;
             animation: pk-rotate var(--pk-loading-animation-duration) ease-in-out infinite;
         }
 
         .@{namespace}__circle1 {
-            stroke-width: 3;
             animation: circle1 calc(var(--pk-loading-animation-duration)* 1.5) ease-in-out infinite;
-            transform: rotate(-90deg);
-            transform-origin: bottom right;
-            stroke: var(--pk-loading-color);
+            border: var(--pk-loading-color) 2px solid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            box-sizing: border-box;
 
             @keyframes circle1 {
                 0% {
-                    stroke-dasharray: 1, 200;
-                    stroke-dashoffset: 0;
+                    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+                }
+
+                25% {
+                    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
                 }
 
                 50% {
-                    stroke-dasharray: 90, 150;
-                    stroke-dashoffset: -40;
+                    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+                }
+
+                75% {
+                    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
                 }
 
                 100% {
-                    stroke-dasharray: 90, 150;
-                    stroke-dashoffset: -120;
+                    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
                 }
             }
         }
 
         .@{namespace}__circle2 {
-            stroke-width: 3;
-            transform: rotate(-90deg);
-            transform-origin: bottom right;
             animation: circle2 calc(var(--pk-loading-animation-duration)* 2.5) linear infinite;
-            stroke: var(--pk-loading-color);
+            border: var(--pk-loading-color) 2px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            border-radius: 100%;
+            box-sizing: border-box;
+            transform: translate(-50%, -50%);
 
             @keyframes circle2 {
                 0% {
-                    stroke-dasharray: 1, 100;
-                    stroke-dashoffset: 0;
+                    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
                 }
 
                 50% {
-                    stroke-dasharray: 45, 75;
-                    stroke-dashoffset: -20;
+                    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
                 }
 
+                75%,
                 100% {
-                    stroke-dasharray: 45, 75;
-                    stroke-dashoffset: -60;
+                    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
                 }
             }
         }

@@ -27,9 +27,9 @@
     </view>
 </template>
 <script lang="ts" setup>
-import { cellGroupProps } from './cell-group'
+import { cellGroupProps } from './pk-cell-group'
 import { useBem } from '@pk-ui/use'
-import "./cell-group.less"
+import "./pk-cell-group.less"
 
 defineOptions({
     name: 'PkCellGroup',

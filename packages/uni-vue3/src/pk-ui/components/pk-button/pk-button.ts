@@ -1,6 +1,6 @@
 import { extend } from '@pk-ui/utils'
 import { computed } from 'vue'
-import { loadingTypes } from '../../loading/src/types'
+import { loadingTypes } from '../pk-loading/types'
 import { buttonTypes, buttonNativeTypes, buttonSizeTypes } from './types'
 
 export const buttonProps = extend({}, {

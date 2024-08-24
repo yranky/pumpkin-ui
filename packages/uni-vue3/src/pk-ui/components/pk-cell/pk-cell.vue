@@ -37,7 +37,7 @@
                     bem.e('right')
                 ]">
                     <slot name="right-icon">
-                        <RightOutlined />
+                        <pk-icon name="right-outlined"></pk-icon>
                     </slot>
                 </view>
             </view>
@@ -52,11 +52,12 @@
     </view>
 </template>
 <script setup lang="ts">
-import { cellProps } from './cell'
+import { cellProps } from './pk-cell'
 import { cellEmits } from './types'
 import { useBem } from '@pk-ui/use'
-import "./cell.less"
-import { useSlots } from 'vue';
+import "./pk-cell.less"
+import { useSlots } from 'vue'
+import PkIcon from '../pk-icon/pk-icon.vue'
 
 defineOptions({
     name: 'PkCell',

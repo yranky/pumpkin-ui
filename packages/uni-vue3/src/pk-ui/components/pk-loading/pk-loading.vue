@@ -24,14 +24,12 @@
                 <view :class="[
                     bem.e('circle')
                 ]" v-else-if="props.type === 'circular'">
-                    <svg viewBox="25 25 50 50">
-                        <circle :class="[
-                            bem.e('circle1')
-                        ]" cy="50" cx="50" r="22" stroke-linecap="round" fill="none"></circle>
-                        <circle :class="[
-                            bem.e('circle2')
-                        ]" cy="50" cx="50" r="11" stroke-linecap="round" fill="none"></circle>
-                    </svg>
+                    <view :class="[
+                        bem.e('circle1')
+                    ]"></view>
+                    <view :class="[
+                        bem.e('circle2')
+                    ]"></view>
                 </view>
             </slot>
         </view>
@@ -43,8 +41,8 @@
     </view>
 </template>
 <script lang="ts" setup>
-import { loadingProps } from './loading';
-import './loading.less'
+import { loadingProps } from './pk-loading';
+import './pk-loading.less'
 import { useBem } from '@pk-ui/use'
 
 defineOptions({

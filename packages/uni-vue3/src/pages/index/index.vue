@@ -12,8 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import PkButton from '@/pk-ui/src/button/src/button.vue'
-import PkCell from '@/pk-ui/src/cell/src/cell.vue'
+import PkCell from '@/pk-ui/components/pk-cell/pk-cell.vue'
+import PkCellGroup from '@/pk-ui/components/pk-cell/pk-cell-group.vue'
+import PkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue'
+
 import { ref } from 'vue'
 
 

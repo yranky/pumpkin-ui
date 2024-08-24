@@ -1,5 +1,5 @@
 <template>
-    <button :disabled="props.disabled" :aria-disabled="props.disabled" :class="[
+    <button :class="[
         bem.b(),
         bem.m(props.type),
         bem.m(props.size),
@@ -12,7 +12,7 @@
     ]" @click="onClick" :style="buttonStyle" @touchstart="">
         <view :class="bem.e('container')">
             <slot name="loading">
-                <Loading :class="[
+                <pk-loading :class="[
                     bem.e('loading')
                 ]" :type="props.loadingType" v-if="props.loading" />
             </slot>
@@ -36,11 +36,11 @@
     </button>
 </template>
 <script lang="ts" setup>
-import { buttonProps, useButtonStyle } from './button'
+import { buttonProps, useButtonStyle } from './pk-button'
 import { buttonEmits } from './types'
 import { useBem } from '@pk-ui/use'
-import './button.less'
-import Loading from '../../loading/src/loading.vue';
+import './pk-button.less'
+import PkLoading from '../pk-loading/pk-loading.vue'
 
 defineOptions({
     name: 'PkButton',
