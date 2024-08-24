@@ -3,7 +3,7 @@
         bem.e()
     ]" :src="props.name" :style="{
         width: props.size ? props.size + 'px' : '',
-        height: props.size ? props.size + 'px' : (props.height ? props.height + 'px' : '')
+        height: props.height ? props.height + 'px' : (props.size ? props.size + 'px' : '')
     }" @click="onClick" v-if="isImage" />
 
     <i :class="[
