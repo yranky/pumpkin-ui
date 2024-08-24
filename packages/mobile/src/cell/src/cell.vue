@@ -38,7 +38,7 @@
                     bem.e('right')
                 ]">
                     <slot name="right-icon">
-                        <RightOutlined />
+                        <icon name="right-outlined" />
                     </slot>
                 </div>
             </div>
@@ -55,7 +55,7 @@
 <script setup lang="ts">
 import { cellEmits, cellProps } from './cell'
 import { useBem } from '@pk-ui/use'
-import { RightOutlined } from '@ant-design/icons-vue'
+import icon from '../../icon/src/icon.vue'
 import "./cell.less"
 import { useSlots } from 'vue';
 

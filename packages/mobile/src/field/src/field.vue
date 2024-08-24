@@ -54,7 +54,7 @@
         </div>
         <template #right-icon v-if="showClear || $slots['right-icon']">
             <slot name="right-icon" :showClear="showClear">
-                <close-circle-filled @click.stop="onClear" />
+                <icon name="close-circle-filled" @click="onClear" />
             </slot>
         </template>
         <template #bottom v-if="validateMessage">
@@ -75,7 +75,7 @@ import Cell from '../../cell/src/cell.vue'
 import './field.less'
 import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots, nextTick, watch } from 'vue'
 import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
-import { CloseCircleFilled } from '@ant-design/icons-vue'
+import Icon from '../../icon/src/icon.vue'
 
 defineOptions({
     name: 'PkField'
