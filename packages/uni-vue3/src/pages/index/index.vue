@@ -1,16 +1,95 @@
 <template>
-  <view class="content">
-    <pk-button text="文字" @click="toButton"></pk-button>
+  <view class="index-container">
+    <template v-for="item in modules" :key="item.text">
+      <pk-divider>{{ item.text }}</pk-divider>
+      <pk-cell-group>
+        <template v-for="subItem in item.children" :key="subItem.text">
+          <pk-cell :title="subItem.text" is-link @click="toPath(subItem.link)"></pk-cell>
+        </template>
+      </pk-cell-group>
+    </template>
   </view>
 </template>
 
 <script setup lang="ts">
 import PkButton from '@/pk-ui/src/button/src/button.vue'
+import PkCell from '@/pk-ui/src/cell/src/cell.vue'
 import { ref } from 'vue'
 
-const toButton = () => {
+
+const modules = ref([
+  {
+    text: '基础组件',
+    children: [
+      {
+        text: 'Button 按钮',
+        link: '/pages/button/index'
+      },
+      {
+        text: 'Cell 单元格',
+        link: '/cell'
+      },
+      {
+        text: 'Popup 弹出层',
+        link: '/popup'
+      },
+      {
+        text: 'Toast 轻提示',
+        link: '/toast'
+      }
+    ]
+  },
+  {
+    text: '表单组件',
+    children: [
+      {
+        text: 'PickerView 选择器视图',
+        link: '/picker-view'
+      }, {
+        text: 'Picker 选择器',
+        link: '/picker'
+      }, {
+        text: 'DatePicker 日期时间选择器',
+        link: '/date-picker'
+      }, {
+        text: 'Switch 开关',
+        link: '/switch'
+      }
+    ]
+  },
+  {
+    text: '反馈组件',
+    children: [
+      {
+        text: 'Overlay 遮罩',
+        link: '/overlay'
+      }, {
+        text: 'Loading 加载',
+        link: '/loading'
+      }, {
+        text: 'ActionSheet 动作面板',
+        link: '/action-sheet'
+      }
+    ]
+  },
+  {
+    text: '展示组件',
+    children: [
+      {
+        text: 'Progress 进度条',
+        link: '/progress'
+      },
+      {
+        text: 'Divider 分割线',
+        link: '/divider'
+      }
+    ]
+  }
+])
+
+const toPath = (path: string) => {
   uni.navigateTo({
-    url: '/pages/button/index'
+    url: path
   })
 }
 </script>
