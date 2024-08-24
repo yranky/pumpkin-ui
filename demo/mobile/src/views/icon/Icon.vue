@@ -1,0 +1,83 @@
+<template>
+    <div class="icon-container">
+        <pk-divider>基础用法</pk-divider>
+        <pk-icon name="mail-outlined"></pk-icon>
+
+        <pk-divider>自定义颜色和大小</pk-divider>
+        <pk-icon name="mail-outlined" color="red" :size="50"></pk-icon>
+
+        <pk-divider>使用url图片</pk-divider>
+        <pk-icon name="https://at.douyeblog.top/anydoor/www/anydoor_www@2.2.0/favicon.ico"></pk-icon>
+        <pk-icon name="https://at.douyeblog.top/anydoor/www/anydoor_www@2.2.0/favicon.ico" :size="12"></pk-icon>
+
+        <template v-for="type in icons" :key="type.title">
+            <pk-divider>全部图标-{{ type.title }}</pk-divider>
+            <div class="icon-items">
+                <div class="icon-item" v-for="item in type.items" :key="item" @click="copySelect(item)">
+                    <div class="icon">
+                        <pk-icon :name="item"></pk-icon>
+                    </div>
+                    <div class="name">{{ item }}</div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
+<script lang="ts" setup>
+import { PkIcon, PkDivider, Toast } from '@pk-ui/mobile'
+
+const icons = [{
+    title: '线框风格',
+    items: ["account-book-outlined", "aim-outlined", "alert-outlined", "alibaba-outlined", "align-center-outlined", "align-left-outlined", "align-right-outlined", "alipay-circle-outlined", "alipay-outlined", "aliwangwang-outlined", "aliyun-outlined", "amazon-outlined", "android-outlined", "ant-cloud-outlined", "ant-design-outlined", "apartment-outlined", "api-outlined", "apple-outlined", "appstore-add-outlined", "appstore-outlined", "area-chart-outlined", "arrow-down-outlined", "arrow-left-outlined", "arrow-right-outlined", "arrow-up-outlined", "arrows-alt-outlined", "audio-muted-outlined", "audio-outlined", "audit-outlined", "backward-outlined", "baidu-outlined", "bank-outlined", "bar-chart-outlined", "barcode-outlined", "bars-outlined", "behance-square-outlined", "behance-outlined", "bell-outlined", "bg-colors-outlined", "bilibili-outlined", "block-outlined", "bold-outlined", "book-outlined", "border-bottom-outlined", "border-horizontal-outlined", "border-inner-outlined", "border-left-outlined", "border-outer-outlined", "border-right-outlined", "border-top-outlined", "border-verticle-outlined", "border-outlined", "borderless-table-outlined", "box-plot-outlined", "branches-outlined", "bug-outlined", "build-outlined", "bulb-outlined", "calculator-outlined", "calendar-outlined", "camera-outlined", "car-outlined", "caret-down-outlined", "caret-left-outlined", "caret-right-outlined", "caret-up-outlined", "carry-out-outlined", "check-circle-outlined", "check-square-outlined", "check-outlined", "chrome-outlined", "ci-circle-outlined", "ci-outlined", "clear-outlined", "clock-circle-outlined", "close-circle-outlined", "close-square-outlined", "close-outlined", "cloud-download-outlined", "cloud-server-outlined", "cloud-sync-outlined", "cloud-upload-outlined", "cloud-outlined", "cluster-outlined", "code-sandbox-outlined", "code-outlined", "codepen-circle-outlined", "codepen-outlined", "coffee-outlined", "column-height-outlined", "column-width-outlined", "comment-outlined", "compass-outlined", "compress-outlined", "console-sql-outlined", "contacts-outlined", "container-outlined", "control-outlined", "copy-outlined", "copyright-circle-outlined", "copyright-outlined", "credit-card-outlined", "crown-outlined", "customer-service-outlined", "dash-outlined", "dashboard-outlined", "database-outlined", "delete-column-outlined", "delete-row-outlined", "delete-outlined", "delivered-procedure-outlined", "deployment-unit-outlined", "desktop-outlined", "diff-outlined", "dingding-outlined", "dingtalk-outlined", "disconnect-outlined", "discord-outlined", "dislike-outlined", "docker-outlined", "dollar-circle-outlined", "dollar-outlined", "dot-chart-outlined", "dot-net-outlined", "double-left-outlined", "double-right-outlined", "down-circle-outlined", "down-square-outlined", "down-outlined", "download-outlined", "drag-outlined", "dribbble-square-outlined", "dribbble-outlined", "dropbox-outlined", "edit-outlined", "ellipsis-outlined", "enter-outlined", "environment-outlined", "euro-circle-outlined", "euro-outlined", "exception-outlined", "exclamation-circle-outlined", "exclamation-outlined", "expand-alt-outlined", "expand-outlined", "experiment-outlined", "export-outlined", "eye-invisible-outlined", "eye-outlined", "facebook-outlined", "fall-outlined", "fast-backward-outlined", "fast-forward-outlined", "field-binary-outlined", "field-number-outlined", "field-string-outlined", "field-time-outlined", "file-add-outlined", "file-done-outlined", "file-excel-outlined", "file-exclamation-outlined", "file-gif-outlined", "file-image-outlined", "file-jpg-outlined", "file-markdown-outlined", "file-pdf-outlined", "file-ppt-outlined", "file-protect-outlined", "file-search-outlined", "file-sync-outlined", "file-text-outlined", "file-unknown-outlined", "file-word-outlined", "file-zip-outlined", "file-outlined", "filter-outlined", "fire-outlined", "flag-outlined", "folder-add-outlined", "folder-open-outlined", "folder-view-outlined", "folder-outlined", "font-colors-outlined", "font-size-outlined", "fork-outlined", "form-outlined", "format-painter-outlined", "forward-outlined", "frown-outlined", "fullscreen-exit-outlined", "fullscreen-outlined", "function-outlined", "fund-projection-screen-outlined", "fund-view-outlined", "fund-outlined", "funnel-plot-outlined", "gateway-outlined", "gif-outlined", "gift-outlined", "github-outlined", "gitlab-outlined", "global-outlined", "gold-outlined", "google-plus-outlined", "google-outlined", "group-outlined", "harmony-o-s-outlined", "hdd-outlined", "heart-outlined", "heat-map-outlined", "highlight-outlined", "history-outlined", "holder-outlined", "home-outlined", "hourglass-outlined", "html5-outlined", "idcard-outlined", "ie-outlined", "import-outlined", "inbox-outlined", "info-circle-outlined", "info-outlined", "insert-row-above-outlined", "insert-row-below-outlined", "insert-row-left-outlined", "insert-row-right-outlined", "instagram-outlined", "insurance-outlined", "interaction-outlined", "issues-close-outlined", "italic-outlined", "java-script-outlined", "java-outlined", "key-outlined", "kubernetes-outlined", "laptop-outlined", "layout-outlined", "left-circle-outlined", "left-square-outlined", "left-outlined", "like-outlined", "line-chart-outlined", "line-height-outlined", "line-outlined", "link-outlined", "linkedin-outlined", "linux-outlined", "loading-3-quarters-outlined", "loading-outlined", "lock-outlined", "login-outlined", "logout-outlined", "mac-command-outlined", "mail-outlined", "man-outlined", "medicine-box-outlined", "medium-workmark-outlined", "medium-outlined", "meh-outlined", "menu-fold-outlined", "menu-unfold-outlined", "menu-outlined", "merge-cells-outlined", "merge-outlined", "message-outlined", "minus-circle-outlined", "minus-square-outlined", "minus-outlined", "mobile-outlined", "money-collect-outlined", "monitor-outlined", "moon-outlined", "more-outlined", "muted-outlined", "node-collapse-outlined", "node-expand-outlined", "node-index-outlined", "notification-outlined", "number-outlined", "one-to-one-outlined", "open-a-i-outlined", "ordered-list-outlined", "paper-clip-outlined", "partition-outlined", "pause-circle-outlined", "pause-outlined", "pay-circle-outlined", "percentage-outlined", "phone-outlined", "pic-center-outlined", "pic-left-outlined", "pic-right-outlined", "picture-outlined", "pie-chart-outlined", "pinterest-outlined", "play-circle-outlined", "play-square-outlined", "plus-circle-outlined", "plus-square-outlined", "plus-outlined", "pound-circle-outlined", "pound-outlined", "poweroff-outlined", "printer-outlined", "product-outlined", "profile-outlined", "project-outlined", "property-safety-outlined", "pull-request-outlined", "pushpin-outlined", "python-outlined", "qq-outlined", "qrcode-outlined", "question-circle-outlined", "question-outlined", "radar-chart-outlined", "radius-bottomleft-outlined", "radius-bottomright-outlined", "radius-setting-outlined", "radius-upleft-outlined", "radius-upright-outlined", "read-outlined", "reconciliation-outlined", "red-envelope-outlined", "reddit-outlined", "redo-outlined", "reload-outlined", "rest-outlined", "retweet-outlined", "right-circle-outlined", "right-square-outlined", "right-outlined", "rise-outlined", "robot-outlined", "rocket-outlined", "rollback-outlined", "rotate-left-outlined", "rotate-right-outlined", "ruby-outlined", "safety-certificate-outlined", "safety-outlined", "save-outlined", "scan-outlined", "schedule-outlined", "scissor-outlined", "search-outlined", "security-scan-outlined", "select-outlined", "send-outlined", "setting-outlined", "shake-outlined", "share-alt-outlined", "shop-outlined", "shopping-cart-outlined", "shopping-outlined", "shrink-outlined", "signature-outlined", "sisternode-outlined", "sketch-outlined", "skin-outlined", "skype-outlined", "slack-square-outlined", "slack-outlined", "sliders-outlined", "small-dash-outlined", "smile-outlined", "snippets-outlined", "solution-outlined", "sort-ascending-outlined", "sort-descending-outlined", "sound-outlined", "split-cells-outlined", "spotify-outlined", "star-outlined", "step-backward-outlined", "step-forward-outlined", "stock-outlined", "stop-outlined", "strikethrough-outlined", "subnode-outlined", "sun-outlined", "swap-left-outlined", "swap-right-outlined", "swap-outlined", "switcher-outlined", "sync-outlined", "table-outlined", "tablet-outlined", "tag-outlined", "tags-outlined", "taobao-circle-outlined", "taobao-outlined", "team-outlined", "thunderbolt-outlined", "tik-tok-outlined", "to-top-outlined", "tool-outlined", "trademark-circle-outlined", "trademark-outlined", "transaction-outlined", "translation-outlined", "trophy-outlined", "truck-outlined", "twitch-outlined", "twitter-outlined", "underline-outlined", "undo-outlined", "ungroup-outlined", "unlock-outlined", "unordered-list-outlined", "up-circle-outlined", "up-square-outlined", "up-outlined", "upload-outlined", "usb-outlined", "user-add-outlined", "user-delete-outlined", "user-switch-outlined", "user-outlined", "usergroup-add-outlined", "usergroup-delete-outlined", "verified-outlined", "vertical-align-bottom-outlined", "vertical-align-middle-outlined", "vertical-align-top-outlined", "vertical-left-outlined", "vertical-right-outlined", "video-camera-add-outlined", "video-camera-outlined", "wallet-outlined", "warning-outlined", "wechat-work-outlined", "wechat-outlined", "weibo-circle-outlined", "weibo-square-outlined", "weibo-outlined", "whats-app-outlined", "wifi-outlined", "windows-outlined", "woman-outlined", "x-outlined", "yahoo-outlined", "youtube-outlined", "yuque-outlined", "zhihu-outlined", "zoom-in-outlined", "zoom-out-outlined"]
+},
+{
+    title: '实底风格',
+    items: ["account-book-filled", "alert-filled", "alipay-circle-filled", "alipay-square-filled", "aliwangwang-filled", "amazon-circle-filled", "amazon-square-filled", "android-filled", "api-filled", "apple-filled", "appstore-filled", "audio-filled", "backward-filled", "bank-filled", "behance-circle-filled", "behance-square-filled", "bell-filled", "bilibili-filled", "book-filled", "box-plot-filled", "bug-filled", "build-filled", "bulb-filled", "calculator-filled", "calendar-filled", "camera-filled", "car-filled", "caret-down-filled", "caret-left-filled", "caret-right-filled", "caret-up-filled", "carry-out-filled", "check-circle-filled", "check-square-filled", "chrome-filled", "ci-circle-filled", "clock-circle-filled", "close-circle-filled", "close-square-filled", "cloud-filled", "code-sandbox-circle-filled", "code-sandbox-square-filled", "code-filled", "codepen-circle-filled", "codepen-square-filled", "compass-filled", "contacts-filled", "container-filled", "control-filled", "copy-filled", "copyright-circle-filled", "credit-card-filled", "crown-filled", "customer-service-filled", "dashboard-filled", "database-filled", "delete-filled", "diff-filled", "dingtalk-circle-filled", "dingtalk-square-filled", "discord-filled", "dislike-filled", "dollar-circle-filled", "down-circle-filled", "down-square-filled", "dribbble-circle-filled", "dribbble-square-filled", "dropbox-circle-filled", "dropbox-square-filled", "edit-filled", "environment-filled", "euro-circle-filled", "exclamation-circle-filled", "experiment-filled", "eye-invisible-filled", "eye-filled", "facebook-filled", "fast-backward-filled", "fast-forward-filled", "file-add-filled", "file-excel-filled", "file-exclamation-filled", "file-image-filled", "file-markdown-filled", "file-pdf-filled", "file-ppt-filled", "file-text-filled", "file-unknown-filled", "file-word-filled", "file-zip-filled", "file-filled", "filter-filled", "fire-filled", "flag-filled", "folder-add-filled", "folder-open-filled", "folder-filled", "format-painter-filled", "forward-filled", "frown-filled", "fund-filled", "funnel-plot-filled", "gift-filled", "github-filled", "gitlab-filled", "gold-filled", "golden-filled", "google-circle-filled", "google-plus-circle-filled", "google-plus-square-filled", "google-square-filled", "hdd-filled", "heart-filled", "highlight-filled", "home-filled", "hourglass-filled", "html5-filled", "idcard-filled", "ie-circle-filled", "ie-square-filled", "info-circle-filled", "instagram-filled", "insurance-filled", "interaction-filled", "layout-filled", "left-circle-filled", "left-square-filled", "like-filled", "linkedin-filled", "lock-filled", "mac-command-filled", "mail-filled", "medicine-box-filled", "medium-circle-filled", "medium-square-filled", "meh-filled", "merge-filled", "message-filled", "minus-circle-filled", "minus-square-filled", "mobile-filled", "money-collect-filled", "moon-filled", "muted-filled", "notification-filled", "open-a-i-filled", "pause-circle-filled", "pay-circle-filled", "phone-filled", "picture-filled", "pie-chart-filled", "pinterest-filled", "play-circle-filled", "play-square-filled", "plus-circle-filled", "plus-square-filled", "pound-circle-filled", "printer-filled", "product-filled", "profile-filled", "project-filled", "property-safety-filled", "pushpin-filled", "qq-circle-filled", "qq-square-filled", "question-circle-filled", "read-filled", "reconciliation-filled", "red-envelope-filled", "reddit-circle-filled", "reddit-square-filled", "rest-filled", "right-circle-filled", "right-square-filled", "robot-filled", "rocket-filled", "safety-certificate-filled", "save-filled", "schedule-filled", "security-scan-filled", "setting-filled", "shop-filled", "shopping-filled", "signal-filled", "signature-filled", "sketch-circle-filled", "sketch-square-filled", "skin-filled", "skype-filled", "slack-circle-filled", "slack-square-filled", "sliders-filled", "smile-filled", "snippets-filled", "sound-filled", "spotify-filled", "star-filled", "step-backward-filled", "step-forward-filled", "stop-filled", "sun-filled", "switcher-filled", "tablet-filled", "tag-filled", "tags-filled", "taobao-circle-filled", "taobao-square-filled", "thunderbolt-filled", "tik-tok-filled", "tool-filled", "trademark-circle-filled", "trophy-filled", "truck-filled", "twitch-filled", "twitter-circle-filled", "twitter-square-filled", "unlock-filled", "up-circle-filled", "up-square-filled", "usb-filled", "video-camera-filled", "wallet-filled", "warning-filled", "wechat-work-filled", "wechat-filled", "weibo-circle-filled", "weibo-square-filled", "windows-filled", "x-filled", "yahoo-filled", "youtube-filled", "yuque-filled", "zhihu-circle-filled", "zhihu-square-filled"]
+}
+]
+
+const copySelect = (name: string) => {
+    const input = document.createElement("input");
+    input.value = name;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    Toast.showToast(`已复制:${name}`)
+}
+
+
+</script>
+<style lang="less" scoped>
+.icon-container {
+    padding: 10px 0;
+
+    .icon-items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+
+            .icon {
+                width: 100%;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .name {
+                font-size: 12px;
+                margin-top: 5px;
+                word-break: break-all;
+                color: grey;
+            }
+        }
+    }
+}
+</style>

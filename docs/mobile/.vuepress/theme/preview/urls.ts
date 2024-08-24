@@ -45,5 +45,8 @@ export default [
     }, {
         activeMatch: '/components/field',
         url: BASE_URL + '#/field'
+    }, {
+        activeMatch: '/components/icon',
+        url: BASE_URL + '#/icon'
     }
 ];

@@ -39,6 +39,10 @@ export default defineUserConfig({
                   link: '/components/cell'
                 },
                 {
+                  text: 'Icon 图标',
+                  link: '/components/icon'
+                },
+                {
                   text: 'Popup 弹出层',
                   link: '/components/popup'
                 },
