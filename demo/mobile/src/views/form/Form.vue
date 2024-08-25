@@ -1,97 +1,74 @@
 <template>
     <div class="form-container">
-        <pk-form>
-            <pk-field label="姓名" name="username" :rules="[
-                {
-                    required: true,
-                    message: '请输入姓名',
-                    trigger: ['onBlur', 'onSubmit']
-                }
-            ]" @on-change="onChange" required></pk-field>
-            <pk-field :rows="3" autosize label="姓名" name="username" :rules="[
-                {
-                    required: true,
-                    message: '请输入姓名',
-                    trigger: ['onBlur', 'onSubmit']
-                }
-            ]" @on-change="onChange" required v-model="value"></pk-field>
-            <pk-field placeholder="请输入"></pk-field>
-            <pk-field :rows="3" autosize label="姓名" name="username" :rules="[
-                {
-                    required: true,
-                    message: '请输入姓名',
-                    trigger: ['onBlur', 'onSubmit']
-                }
-            ]" @on-change="onChange" required></pk-field>
-
-
-            <pk-field placeholder="color" type='color'></pk-field>
-            <pk-field placeholder="date" type='date'></pk-field>
-            <pk-field placeholder="datetime-local" type='datetime-local'></pk-field>
-            <pk-field placeholder="email" type='email'></pk-field>
-            <pk-field placeholder="hidden" type='hidden'></pk-field>
-            <pk-field placeholder="month" type='month'></pk-field>
-            <pk-field placeholder="number" type='number' :rules="[{
-                required: true,
-                message: '请输入姓名',
-                trigger: ['onBlur', 'onSubmit']
-            }]"></pk-field>
-            <pk-field placeholder="password" type='password'></pk-field>
-            <pk-field placeholder="tel" type='tel'></pk-field>
-            <pk-field placeholder="time" type='time'></pk-field>
-            <pk-field placeholder="url" type='url'></pk-field>
-            <pk-field placeholder="week" type='week'></pk-field>
-
-
-            <pk-field label="12321212" placeholder="请输入" label-align="right"></pk-field>
-            <pk-field required label="12321212" placeholder="请输入" label-align="center"></pk-field>
-            <pk-field placeholder="只读" readonly></pk-field>
-            <pk-field placeholder="禁用" disabled></pk-field>
-            <pk-field placeholder="禁用" is-link disabled></pk-field>
-            <pk-field label="开关" placeholder="禁用">
-                <template #input>
-                    <pk-switch></pk-switch>
-                </template>
-            </pk-field>
-            <pk-field label="开关" placeholder="禁用" vertical>
-                <template #input>
-                    <pk-switch></pk-switch>
-                </template>
-                <template #button>
-                    <pk-button>123</pk-button>
-                </template>
-            </pk-field>
-            <pk-field placeholder="测试测试测试测试" label="姓名" name="username" :rules="[
-                {
-                    required: true,
-                    message: '请输入姓名',
-                    trigger: ['onBlur', 'onSubmit']
-                }
-            ]" @on-change="onChange" required vertical>
-                <template #button>
-                    <pk-button>123</pk-button>
-                </template>
-            </pk-field>
-
+        <pk-divider>基础用法</pk-divider>
+        <pk-form @on-submit="onSubmit">
+            <pk-field label="用户名" name="username" placeholder="请输入用户名"></pk-field>
+            <pk-field label="密码" name="password" type="password" placeholder="请输入密码"></pk-field>
             <pk-cell>
                 <template #title>
                     <pk-button native-type="submit" block>提交</pk-button>
                 </template>
             </pk-cell>
         </pk-form>
+
+        <pk-divider>表单校验</pk-divider>
+        <pk-form @on-submit="onSubmit">
+            <pk-field label="用户名" name="username" required placeholder="请输入用户名" :rules="[
+                { required: true, message: '用户名不能为空' }
+            ]"></pk-field>
+            <pk-field label="密码" name="password" required type="password" placeholder="请输入密码" :rules="[
+                { validator: passwordValidator }
+            ]"></pk-field>
+            <pk-cell>
+                <template #title>
+                    <pk-button native-type="submit" block>提交</pk-button>
+                </template>
+            </pk-cell>
+        </pk-form>
+
+        <pk-divider>表单校验-异步</pk-divider>
+        <pk-form @on-submit="onSubmit" @on-submit-validate="Toast.showLoading('校验中...')"
+            @on-submit-validate-complete="Toast.hideLoading()">
+            <pk-field label="用户名" name="username" required placeholder="请输入用户名" :rules="[
+                { required: true, message: '用户名不能为空' },
+                { validator: usernameValidator }
+            ]"></pk-field>
+            <pk-field label="密码" name="password" required type="password" placeholder="请输入密码" :rules="[
+                { validator: passwordValidator }
+            ]"></pk-field>
+            <pk-cell>
+                <template #title>
+                    <pk-button block native-type="submit"> 提交</pk-button>
+                </template>
+            </pk-cell>
+        </pk-form>
     </div>
 </template>
 <script lang="ts" setup>
-import { PkForm, PkField, PkButton, PkCell, PkSwitch } from '@pk-ui/mobile';
-import { ref } from 'vue';
+import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pk-ui/mobile'
 
-const onChange = (e: any) => {
-    console.log(e)
+const usernameValidator = (rule, value) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (value.length < 3) reject(new Error('用户名已经被占用了'))
+            resolve(true)
+        }, 1000)
+    }) as Promise<boolean>
 }
-const value = ref('121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212')
+
+const passwordValidator = (rule, value) => {
+    if (value.length < 6) throw new Error('密码不能少于6位')
+    return true
+}
+
+const onSubmit = (data) => {
+    Toast.showToast(JSON.stringify(data))
+}
+
 </script>
 <style lang="less" scoped>
 .form-container {
-    padding: 10px 0;
+    min-height: 100vh;
+    background-color: #f5f5f5;
 }
 </style>

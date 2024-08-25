@@ -230,6 +230,9 @@ const textValue = ref('')
 ```
 :::
 
+### 与表单联用
+详见[Form 表单](./field.html)
+
 
 ## API
 
@@ -261,7 +264,7 @@ const textValue = ref('')
 | maxlength          | 原生的`maxlength`属性                                                          | `number`                                                                                                                               |            |                                                                                                                                        |
 | minlength          | 原生的`minlength`属性                                                          | `number`                                                                                                                               |            |                                                                                                                                        |
 |                    |
-| autocomplete       | 原生的`autocomplete`属性                                                       | `number`                                                                                                                               |            |
+| autocomplete       | 原生的`autocomplete`属性                                                       | `string`                                                                                                                               |            |
 |                    |
 
 

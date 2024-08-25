@@ -70,6 +70,9 @@ export default defineUserConfig({
                 }, {
                   text: 'Field 输入项',
                   link: '/components/field'
+                }, {
+                  text: 'Form 表单',
+                  link: '/components/form'
                 }
               ]
             },

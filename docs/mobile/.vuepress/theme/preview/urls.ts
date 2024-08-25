@@ -48,5 +48,8 @@ export default [
     }, {
         activeMatch: '/components/icon',
         url: BASE_URL + '#/icon'
+    }, {
+        activeMatch: '/components/form',
+        url: BASE_URL + '#/form'
     }
 ];

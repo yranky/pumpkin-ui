@@ -28,6 +28,10 @@ const modules = ref([
                 link: '/cell'
             },
             {
+                text: 'Icon 图标',
+                link: '/icon'
+            },
+            {
                 text: 'Popup 弹出层',
                 link: '/popup'
             },
@@ -52,6 +56,12 @@ const modules = ref([
             }, {
                 text: 'Switch 开关',
                 link: '/switch'
+            }, {
+                text: 'Field 输入项',
+                link: '/field'
+            }, {
+                text: 'Form 表单',
+                link: '/form'
             }
         ]
     },
