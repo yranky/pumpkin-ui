@@ -106,6 +106,7 @@ export const fieldProps = extend({}, {
         type: Number
     },
     autocomplete: {
-        type: String
+        type: String,
+        default: ''
     }
 })

@@ -91,7 +91,7 @@ const bem = useBem('field')
 const onBlur = (e: FocusEvent) => {
     if (props.disabled || props.readonly) return
     setTimeout(() => isFocus.value = false)
-    formProvide?.triggerEmit('onBlur', fieldId)
+    formProvide.triggerEmit && formProvide.triggerEmit('onBlur', fieldId)
     emits('onBlur', e)
 
     //wait for the close icon to be rerender and next wait for the input to be rerender
@@ -107,7 +107,7 @@ const onFocus = (e: FocusEvent) => {
 
 const onInput = (e: Event) => {
     updateTextareaHeight()
-    isCompositionEnd && formProvide?.triggerEmit('onChange', fieldId)
+    isCompositionEnd && formProvide.triggerEmit && formProvide.triggerEmit('onChange', fieldId)
     isCompositionEnd && emits('onChange', value.value)
 }
 
@@ -133,13 +133,13 @@ const showClear = computed(() => {
 let isCompositionEnd = true
 const onCompositionStart = (e: CompositionEvent) => isCompositionEnd = false
 const onCompositionEnd = (e: CompositionEvent) => {
-    formProvide?.triggerEmit('onChange', fieldId)
+    formProvide.triggerEmit && formProvide.triggerEmit('onChange', fieldId)
     emits('onChange', value.value)
     isCompositionEnd = true
 }
 
 
-const formProvide = inject<IFormProvide>(formProvideSymbol)
+const formProvide = inject<IFormProvide>(formProvideSymbol, {})
 
 const _value = ref<string | number>('')
 const value = computed({
@@ -173,7 +173,7 @@ const validateMessage = ref<string>('')
 const { getName, getValue, getRules, fieldId, setValidateMessage, getLabel, getValidateAutoTrim } = useField<typeof props, typeof value>(props, value, validateMessage)
 
 onMounted(() => {
-    formProvide?.addField({
+    formProvide.addField && formProvide.addField({
         getName,
         getValue,
         getRules,
@@ -185,7 +185,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-    formProvide?.removeField(fieldId)
+    formProvide.removeField && formProvide.removeField(fieldId)
 })
 
 const focus = () => {

@@ -13,7 +13,7 @@ export interface IFieldExposeToForm {
 export const formProvideSymbol = Symbol('formProvide')
 
 export interface IFormProvide {
-    addField: (field: IFieldExposeToForm) => void,
-    removeField: (fieldId: string) => void,
-    triggerEmit: (trigger: FieldRuleTrigger, fieldId: string) => void
+    addField?: (field: IFieldExposeToForm) => void,
+    removeField?: (fieldId: string) => void,
+    triggerEmit?: (trigger: FieldRuleTrigger, fieldId: string) => void
 }

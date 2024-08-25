@@ -27,13 +27,18 @@ const bem = useBem('form')
 const fieldExpose = ref<IFieldExposeToForm[]>([])
 
 const onSubmit = async (e?: Event) => {
+    emits('onSubmitValidate')
     const errorResult = await checkFields('onSubmit')
+    emits('onSubmitValidateComplete', errorResult)
     if (errorResult.length === 0) emits('onSubmit', getValues())
+    else emits('onSubmitFailed', errorResult)
 }
 
 
+let validateId
 const checkFields = async (trigger: FieldRuleTrigger | 'force', fieldId?: string): Promise<IFormValidateErrorResult[]> => {
     const validateErrorResults: IFormValidateErrorResult[] = []
+    let validateIdTemp = validateId = Symbol()
 
     let needCheckFields = fieldExpose.value;
     if (fieldId) needCheckFields = fieldExpose.value.filter((i) => i.fieldId === fieldId)
@@ -54,8 +59,8 @@ const checkFields = async (trigger: FieldRuleTrigger | 'force', fieldId?: string
                 message: err.message,
                 value
             })
-            //set validate message
-            needCheckFields[i].setValidateMessage(err.message)
+            //set validate message(because maybe async)
+            validateIdTemp === validateId && props.showErrorMessage && needCheckFields[i].setValidateMessage(err.message)
             if (props.validateFirst) return validateErrorResults
         }
     }
