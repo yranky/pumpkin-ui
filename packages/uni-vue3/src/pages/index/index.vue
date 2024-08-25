@@ -68,7 +68,7 @@ const modules = ref([
     children: [
       {
         text: 'Overlay 遮罩',
-        link: '/overlay'
+        link: '/pages/overlay/index'
       }, {
         text: 'Loading 加载',
         link: '/pages/loading/index'

@@ -49,8 +49,8 @@
     </view>
 </template>
 <script lang="ts" setup>
-import { isEmptyValue } from '@pk-ui/utils';
-import { loadingProps } from './pk-loading';
+import { isEmptyValue } from '@pk-ui/utils'
+import { loadingProps } from './pk-loading'
 import './pk-loading.less'
 import { useBem } from '@pk-ui/use'
 

@@ -16,12 +16,12 @@
     }" @click="onClick" v-else></text>
 </template>
 <script lang="ts" setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 import { iconProps } from './pk-icon'
 import './pk-icon.less'
 import { useBem } from '@pk-ui/use'
 import './icons/antd-icon.css'
-import { isEmptyValue } from '@pk-ui/utils';
+import { isEmptyValue } from '@pk-ui/utils'
 
 defineOptions({
     name: 'PkIcon',

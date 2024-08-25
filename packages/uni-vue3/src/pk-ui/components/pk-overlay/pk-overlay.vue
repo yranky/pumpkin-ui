@@ -1,20 +1,25 @@
 <template>
-    <transition :name="transitionName.b()" appear>
-        <div :class="[
+    <uni-transition :show="show" :custom-class="transitionName.b()" :styles="{
+        'position': 'relative',
+        'z-index': 9999999
+    }">
+        <view :class="[
             bem.b()
-        ]" v-show="show" @click="onClick" :style="{
+        ]" @click="onClick" :style="{
             backgroundColor,
-            '--pk-overlay-z-index': props.zIndex
+            zIndex: isEmptyValue(props.zIndex) ? '' : props.zIndex
         }">
             <slot></slot>
-        </div>
-    </transition>
+        </view>
+    </uni-transition>
 </template>
 <script setup lang="ts">
 import { useBem } from '@pk-ui/use'
-import './overlay.less'
-import { overlayEmits, overlayProps } from './overlay'
+import './pk-overlay.less'
+import { overlayEmits, overlayProps } from './pk-overlay'
 import { computed } from 'vue'
+import { isEmptyValue } from '@pk-ui/utils'
+import uniTransition from '../../libs/components/uni-transition/components/uni-transition/uni-transition.vue'
 
 defineOptions({
     name: 'PkOverlay',

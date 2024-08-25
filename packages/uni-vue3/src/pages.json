@@ -41,6 +41,12 @@
 			"style": {
 				"navigationBarTitleText": "Progress"
 			}
+		},
+		{
+			"path": "pages/overlay/index",
+			"style": {
+				"navigationBarTitleText": "Overlay"
+			}
 		}
 	],
 	"globalStyle": {

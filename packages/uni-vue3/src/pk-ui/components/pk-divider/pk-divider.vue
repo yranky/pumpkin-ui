@@ -31,7 +31,7 @@ import { useBem } from "@pk-ui/use"
 import { dividerProps } from "./pk-divider"
 import "./pk-divider.less"
 import { useSlots } from "vue"
-import { isEmptyValue } from "@pk-ui/utils";
+import { isEmptyValue } from "@pk-ui/utils"
 defineOptions({
     name: 'PkDivider',
 })
