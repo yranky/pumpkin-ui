@@ -2,21 +2,21 @@
     <view class="divider-container">
         <view class="title">基础用法</view>
         <pk-divider />
-        <br />
+        <view class="gap-row"></view>
 
         <view class="title">自定义文本</view>
         <pk-divider>自定义文本</pk-divider>
-        <br />
+        <view class="gap-row"></view>
 
         <view class="title">虚线</view>
         <pk-divider dashed>虚线</pk-divider>
-        <br />
+        <view class="gap-row"></view>
 
         <view class="title">自定义颜色</view>
         <pk-divider border-color="red">实线</pk-divider>
         <pk-divider dashed border-color="red">虚线</pk-divider>
         <pk-divider dashed border-color="red" color="red">字体颜色</pk-divider>
-        <br />
+        <view class="gap-row"></view>
 
 
         <view class="title">内容文字位置</view>
@@ -24,7 +24,7 @@
         <pk-divider>默认中间</pk-divider>
         <pk-divider content-position="right">右侧</pk-divider>
         <pk-divider content-position="right">我是长文本我是长文本我是长文本我是长文本我是长文本我是长文本</pk-divider>
-        <br />
+        <view class="gap-row"></view>
 
 
         <view class="title">分割线粗细</view>
@@ -45,6 +45,14 @@ import pkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue'
         font-size: 24rpx;
         padding: 10rpx 20rpx;
         color: var(--pk-text-color-secondary)
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .gap-row {
+        width: 100%;
+        height: 30rpx;
     }
 }
 </style>
