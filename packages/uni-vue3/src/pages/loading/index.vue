@@ -59,6 +59,7 @@ import { ref } from 'vue'
 <style lang="less" scoped>
 .loading-container {
     padding: 10px 0;
+    color: grey;
 
     .loading-row {
         display: flex;

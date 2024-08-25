@@ -12,7 +12,7 @@
 .@{namespace} {
     position: relative;
     color: @pk-loading-text-color;
-    font-size: 0;
+    font-size: @pk-loading-size;
     vertical-align: middle;
     display: flex;
     align-items: center;
@@ -55,7 +55,7 @@
                 content: ' ';
                 background-color: currentColor;
                 display: block;
-                width: 4rpx;
+                width: 0.07em;
                 height: 30%;
                 margin: 0 auto;
             }
@@ -81,7 +81,7 @@
 
         .@{namespace}__circle1 {
             animation: circle1 calc(@pk-loading-animation-duration* 1.5) ease-in-out infinite;
-            border: currentColor 4rpx solid;
+            border: currentColor 0.07em solid;
             position: absolute;
             top: 0;
             left: 0;
@@ -115,7 +115,7 @@
 
         .@{namespace}__circle2 {
             animation: circle2 calc(@pk-loading-animation-duration* 2.5) linear infinite;
-            border: currentColor 4rpx solid;
+            border: currentColor 0.07em solid;
             position: absolute;
             top: 50%;
             left: 50%;

@@ -3,7 +3,8 @@
         bem.b(),
         bem.eqm('vertical', props.vertical)
     ]" :style="{
-        color: props.textColor || ''
+        color: props.textColor || '',
+        fontSize: isEmptyValue(props.size) ? '' : props.size + 'rpx'
     }">
         <view :class="[
             bem.e('icon')
