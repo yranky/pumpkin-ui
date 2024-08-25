@@ -83,7 +83,7 @@ const modules = ref([
     children: [
       {
         text: 'Progress 进度条',
-        link: '/progress'
+        link: '/pages/progress/index'
       },
       {
         text: 'Divider 分割线',

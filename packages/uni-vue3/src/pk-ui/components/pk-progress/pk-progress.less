@@ -1,0 +1,57 @@
+@import '../../theme/index.less';
+
+@pk-progress-stroke-height: 8rpx;
+@pk-progress-track-background: @pk-border-color;
+@pk-progress-stroke-background: @pk-primary-color;
+@pk-progress-transition-duration: @pk-transition-duration;
+@pk-progress-pivot-color: @pk-text-color-invert;
+@pk-progress-pivot-font-size: @pk-font-size-xs;
+
+@namespace: pk-progress;
+
+.@{namespace} {
+    width: 100%;
+    height: @pk-progress-stroke-height;
+    background: @pk-progress-track-background;
+    border-radius: 9999999999rpx;
+    position: relative;
+
+    &__stroke {
+        left: 0;
+        height: 100%;
+        border-radius: 99999999999rpx;
+        background: @pk-progress-stroke-background;
+        transition-property: width;
+        transition-duration: @pk-progress-transition-duration;
+        transition-timing-function: @pk-transition-timing-function-in;
+        position: relative;
+    }
+
+    &__pivot {
+        padding: 0 16rpx;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: @pk-progress-pivot-color;
+        font-size: @pk-progress-pivot-font-size;
+        background: @pk-progress-stroke-background;
+        border-radius: 99999999999rpx;
+        transition-property: left, transform;
+        transition-duration: @pk-progress-transition-duration;
+        transition-timing-function: @pk-transition-timing-function-in;
+        width: max-content;
+    }
+
+    &--square {
+        border-radius: 0;
+
+        .@{namespace}__stroke {
+            border-radius: 0;
+        }
+
+        .@{namespace}__pivot {
+            border-radius: 0;
+        }
+    }
+}

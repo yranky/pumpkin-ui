@@ -58,30 +58,30 @@ const copySelect = (name: string) => {
 </script>
 <style lang="less" scoped>
 .icon-container {
-    padding: 10px 0;
+    padding: 20rpx 0;
 
     .icon-items {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+        gap: 20rpx;
 
         .icon-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 24px;
+            font-size: 48rpx;
 
             .icon {
                 width: 100%;
-                height: 30px;
+                height: 60rpx;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
 
             .name {
-                font-size: 12px;
-                margin-top: 5px;
+                font-size: 24rpx;
+                margin-top: 10rpx;
                 word-break: break-all;
                 color: grey;
             }

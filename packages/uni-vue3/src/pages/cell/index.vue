@@ -64,6 +64,6 @@ import PkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue'
 </script>
 <style lang="less" scoped>
 .cell-container {
-    padding: 10px 0;
+    padding: 20rpx 0;
 }
 </style>

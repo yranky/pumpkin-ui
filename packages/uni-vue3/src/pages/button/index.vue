@@ -101,7 +101,7 @@ import PkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue'
 </script>
 <style lang="less" scoped>
 .button-container {
-  padding: 10px;
+  padding: 20rpx;
 
   .button-row {
     display: flex;
@@ -109,7 +109,7 @@ import PkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue'
     flex-wrap: wrap;
 
     :deep(.pk-button) {
-      margin: 5px;
+      margin: 10rpx;
     }
   }
 }

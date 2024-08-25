@@ -58,7 +58,7 @@ import { ref } from 'vue'
 </script>
 <style lang="less" scoped>
 .loading-container {
-    padding: 10px 0;
+    padding: 20rpx 0;
     color: grey;
 
     .loading-row {
@@ -67,9 +67,9 @@ import { ref } from 'vue'
 }
 
 .loading-icon {
-    width: 20px;
-    height: 20px;
-    border: 2px solid red;
+    width: 40rpx;
+    height: 40rpx;
+    border: 4rpx solid red;
     border-top-color: transparent;
     border-radius: 100%;
     animation: demo-circle infinite 1s linear;

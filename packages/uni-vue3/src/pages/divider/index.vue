@@ -39,11 +39,11 @@ import pkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue'
 </script>
 <style lang="less" scoped>
 .divider-container {
-    padding: 10px 0;
+    padding: 20rpx 0;
 
     .title {
-        font-size: 12px;
-        padding: 5px 10px;
+        font-size: 24rpx;
+        padding: 10rpx 20rpx;
         color: var(--pk-text-color-secondary)
     }
 }

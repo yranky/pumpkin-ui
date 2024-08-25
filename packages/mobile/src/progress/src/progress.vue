@@ -27,8 +27,8 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from "@pk-ui/use";
-import { progressProps } from "./progress";
+import { useBem } from "@pk-ui/use"
+import { progressProps } from "./progress"
 import "./progress.less"
 
 defineOptions({

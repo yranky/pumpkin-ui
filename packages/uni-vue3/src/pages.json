@@ -35,6 +35,12 @@
 			"style": {
 				"navigationBarTitleText": "Icon"
 			}
+		},
+		{
+			"path": "pages/progress/index",
+			"style": {
+				"navigationBarTitleText": "Progress"
+			}
 		}
 	],
 	"globalStyle": {

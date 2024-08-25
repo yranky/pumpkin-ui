@@ -8,7 +8,7 @@ export const progressProps = extend({}, {
     },
     strokeHeight: {
         type: Number,
-        default: 2
+        default: 4
     },
     background: {
         type: String,
@@ -30,7 +30,7 @@ export const progressProps = extend({}, {
     },
     pivotFontSize: {
         type: Number,
-        default: 13
+        default: 26
     },
     showPivot: {
         type: Boolean,
