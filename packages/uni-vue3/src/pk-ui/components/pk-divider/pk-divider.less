@@ -1,33 +1,37 @@
-page {
-    --pk-divider-color: var(--pk-border-color);
-    --pk-divider-style: solid;
-    --pk-divider-size: 1px;
-    --pk-divider-margin-horizontal: var(--pk-margin-m);
-    --pk-divider-font-color: var(--pk-text-color-secondary);
-}
+@import '../../theme/index.less';
+
+@pk-divider-color: @pk-border-color;
+@pk-divider-style: solid;
+@pk-divider-size: 1px;
+@pk-divider-margin-horizontal: @pk-margin-m;
+@pk-divider-font-color: @pk-text-color-secondary;
 
 @namespace: pk-divider;
 
 .@{namespace} {
     display: flex;
     align-items: center;
+    color: @pk-divider-font-color;
 
     &__left {
-        border-top: var(--pk-divider-size) var(--pk-divider-style) var(--pk-divider-color);
+        border-top-color: @pk-divider-color;
+        border-top-width: @pk-divider-size;
+        border-top-style: @pk-divider-style;
         flex: 1;
         transform: scaleY(0.5);
     }
 
     &__content {
         flex-shrink: 0;
-        margin: 0 var(--pk-divider-margin-horizontal);
-        font-size: var(--pk-font-size-xs);
-        color: var(--pk-divider-font-color);
+        margin: 0 @pk-divider-margin-horizontal;
+        font-size: @pk-font-size-xs;
         max-width: 60%;
     }
 
     &__right {
-        border-top: var(--pk-divider-size) var(--pk-divider-style) var(--pk-divider-color);
+        border-top-color: @pk-divider-color;
+        border-top-width: @pk-divider-size;
+        border-top-style: @pk-divider-style;
         flex: 1;
         transform: scaleY(0.5);
     }

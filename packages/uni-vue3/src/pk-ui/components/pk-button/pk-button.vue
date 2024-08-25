@@ -8,13 +8,14 @@
         bem.eqm('block', props.block),
         bem.eqm('disabled', props.disabled || props.loading),
         bem.eqm('danger', props.danger),
-        bem.eqm('warning', props.warning)
-    ]" @click="onClick" :style="buttonStyle" @touchstart="">
+        bem.eqm('warning', props.warning),
+        buttonStyleAndClassName.className
+    ]" @click="onClick" :style="buttonStyleAndClassName.style" @touchstart="">
         <view :class="bem.e('container')">
             <slot name="loading">
                 <pk-loading :class="[
                     bem.e('loading')
-                ]" :type="props.loadingType" v-if="props.loading" />
+                ]" :type="props.loadingType" :size="props.loadingSize" v-if="props.loading" />
             </slot>
             <view :class="[
                 bem.e('content')
@@ -36,9 +37,8 @@
     </button>
 </template>
 <script lang="ts" setup>
-import { buttonProps, useButtonStyle } from './pk-button'
-import { buttonEmits } from './types'
-import { useBem } from '@pk-ui/use'
+import { buttonProps, useButtonStyleAndClassName } from './pk-button'
+import { buttonEmits, bem } from './types'
 import './pk-button.less'
 import PkLoading from '../pk-loading/pk-loading.vue'
 
@@ -48,11 +48,9 @@ defineOptions({
 
 const props = defineProps(buttonProps)
 
-const bem = useBem('button')
-
 const emits = defineEmits(buttonEmits)
 
-const buttonStyle = useButtonStyle(props)
+const buttonStyleAndClassName = useButtonStyleAndClassName(props)
 
 const onClick = (event: MouseEvent) => {
     if (!props.disabled && !props.loading) {

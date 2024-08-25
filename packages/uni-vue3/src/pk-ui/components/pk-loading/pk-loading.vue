@@ -3,18 +3,20 @@
         bem.b(),
         bem.eqm('vertical', props.vertical)
     ]" :style="{
-        '--pk-loading-color': props.color,
-        '--pk-loading-text-color': props.textColor,
-        '--pk-loading-size': props.size || '',
-        '--pk-loading-text-size': props.textSize || ''
+        color: props.textColor || ''
     }">
         <view :class="[
             bem.e('icon')
-        ]">
+        ]" :style="{
+            color: props.color || ''
+        }">
             <slot name="icon">
                 <view :class="[
                     bem.e('spinner')
-                ]" v-if="props.type === 'spinner'">
+                ]" :style="{
+                    width: isEmptyValue(props.size) ? '' : props.size + 'rpx',
+                    height: isEmptyValue(props.size) ? '' : props.size + 'rpx'
+                }" v-if="props.type === 'spinner'">
                     <view v-for="item in 8" :key="item" :class="[
                         bem.e('line'),
                         bem.em('line', `${item}`)
@@ -23,7 +25,10 @@
 
                 <view :class="[
                     bem.e('circle')
-                ]" v-else-if="props.type === 'circular'">
+                ]" :style="{
+                    width: isEmptyValue(props.size) ? '' : props.size + 'rpx',
+                    height: isEmptyValue(props.size) ? '' : props.size + 'rpx'
+                }" v-else-if="props.type === 'circular'">
                     <view :class="[
                         bem.e('circle1')
                     ]"></view>
@@ -35,12 +40,15 @@
         </view>
         <view :class="[
             bem.e('text')
-        ]">
+        ]" :style="{
+            fontSize: isEmptyValue(props.textSize) ? '' : props.textSize + 'rpx'
+        }">
             <slot>{{ props.text }}</slot>
         </view>
     </view>
 </template>
 <script lang="ts" setup>
+import { isEmptyValue } from '@pk-ui/utils';
 import { loadingProps } from './pk-loading';
 import './pk-loading.less'
 import { useBem } from '@pk-ui/use'

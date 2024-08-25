@@ -59,14 +59,17 @@ import "./pk-cell.less"
 import { useSlots } from 'vue'
 import PkIcon from '../pk-icon/pk-icon.vue'
 
+const bem = useBem('cell')
+
 defineOptions({
     name: 'PkCell',
+    options: {
+        virtualHost: true
+    }
 })
 
 const props = defineProps(cellProps)
 const emit = defineEmits(cellEmits)
-
-const bem = useBem('cell')
 
 const onClick = (event: MouseEvent) => {
     if (props.disabled) return

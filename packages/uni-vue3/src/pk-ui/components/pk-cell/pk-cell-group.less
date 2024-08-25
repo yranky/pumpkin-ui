@@ -1,10 +1,9 @@
-page {
-    --pk-cell-group-padding-horizontal: var(--pk-padding-l);
-    --pk-cell-group-padding-vertical: var(--pk-padding-s);
+@import '../../theme/index.less';
+@pk-cell-group-padding-horizontal: @pk-padding-l;
+@pk-cell-group-padding-vertical: @pk-padding-s;
 
-    --pk-cell-group-header-color: var(--pk-text-color-secondary);
-    --pk-cell-group-header-font-size: var(--pk-font-size-s);
-}
+@pk-cell-group-header-color: @pk-text-color-secondary;
+@pk-cell-group-header-font-size: @pk-font-size-s;
 
 @namespace: pk-cell-group;
 @cell-namespace: pk-cell;
@@ -12,9 +11,9 @@ page {
 .@{namespace} {
     &__header {
         display: flex;
-        padding: var(--pk-cell-group-padding-vertical) var(--pk-cell-group-padding-horizontal);
-        color: var(--pk-cell-group-header-color);
-        font-size: var(--pk-cell-group-header-font-size);
+        padding: @pk-cell-group-padding-vertical @pk-cell-group-padding-horizontal;
+        color: @pk-cell-group-header-color;
+        font-size: @pk-cell-group-header-font-size;
 
         .@{namespace}__title {
             flex: 1;

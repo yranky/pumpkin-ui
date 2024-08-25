@@ -33,9 +33,12 @@ import "./pk-cell-group.less"
 
 defineOptions({
     name: 'PkCellGroup',
+    options: {
+        styleIsolation: 'shared'
+    }
 })
-
 const props = defineProps(cellGroupProps)
 
 const bem = useBem('cell-group')
+
 </script>

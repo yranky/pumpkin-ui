@@ -3,14 +3,15 @@
         bem.b(),
         bem.m(props.contentPosition)
     ]" :style="{
-        '--pk-divider-style': props.dashed ? 'dashed' : 'solid',
-        '--pk-divider-size': (props.size * 2) + 'px',
-        '--pk-divider-color': props.borderColor || '',
-        '--pk-divider-font-color': props.color || ''
+        color: props.color || ''
     }">
         <div :class="[
             bem.e('left')
-        ]"></div>
+        ]" :style="{
+            borderTopColor: props.borderColor || '',
+            borderTopStyle: props.dashed ? 'dashed' : 'solid',
+            borderTopWidth: isEmptyValue(props.size) ? '' : (props.size * 2) + 'rpx'
+        }"></div>
         <div :class="[
             bem.e('content')
         ]" v-if="$slot.default">
@@ -18,23 +19,24 @@
         </div>
         <div :class="[
             bem.e('right')
-        ]"></div>
+        ]" :style="{
+            borderTopColor: props.borderColor || '',
+            borderTopStyle: props.dashed ? 'dashed' : 'solid',
+            borderTopWidth: isEmptyValue(props.size) ? '' : (props.size * 2) + 'rpx'
+        }"></div>
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from "@pk-ui/use";
-import { dividerProps } from "./pk-divider";
+import { useBem } from "@pk-ui/use"
+import { dividerProps } from "./pk-divider"
 import "./pk-divider.less"
-import { useSlots } from "vue";
-
+import { useSlots } from "vue"
+import { isEmptyValue } from "@pk-ui/utils";
 defineOptions({
     name: 'PkDivider',
 })
-
 const props = defineProps(dividerProps)
-
 const bem = useBem('divider')
-
 const $slot = useSlots()
 
 

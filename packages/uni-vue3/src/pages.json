@@ -5,10 +5,35 @@
 			"style": {
 				"navigationBarTitleText": "pk-ui"
 			}
-		},{
+		},
+		{
 			"path": "pages/button/index",
 			"style": {
-				"navigationBarTitleText": "button"
+				"navigationBarTitleText": "Button"
+			}
+		},
+		{
+			"path": "pages/cell/index",
+			"style": {
+				"navigationBarTitleText": "Cell"
+			}
+		},
+		{
+			"path": "pages/divider/index",
+			"style": {
+				"navigationBarTitleText": "Divider"
+			}
+		},
+		{
+			"path": "pages/loading/index",
+			"style": {
+				"navigationBarTitleText": "Loading"
+			}
+		},
+		{
+			"path": "pages/icon/index",
+			"style": {
+				"navigationBarTitleText": "Icon"
 			}
 		}
 	],

@@ -29,7 +29,11 @@ const modules = ref([
       },
       {
         text: 'Cell 单元格',
-        link: '/cell'
+        link: '/pages/cell/index'
+      },
+      {
+        text: 'Icon 图标',
+        link: '/pages/icon/index'
       },
       {
         text: 'Popup 弹出层',
@@ -67,7 +71,7 @@ const modules = ref([
         link: '/overlay'
       }, {
         text: 'Loading 加载',
-        link: '/loading'
+        link: '/pages/loading/index'
       }, {
         text: 'ActionSheet 动作面板',
         link: '/action-sheet'
@@ -83,7 +87,7 @@ const modules = ref([
       },
       {
         text: 'Divider 分割线',
-        link: '/divider'
+        link: '/pages/divider/index'
       }
     ]
   }

@@ -1,7 +1,8 @@
 import { extend } from '@pk-ui/utils'
 import { computed } from 'vue'
 import { loadingTypes } from '../pk-loading/types'
-import { buttonTypes, buttonNativeTypes, buttonSizeTypes } from './types'
+import { buttonTypes, buttonNativeTypes, buttonSizeTypes, bem } from './types'
+
 
 export const buttonProps = extend({}, {
     type: {
@@ -68,8 +69,8 @@ export const buttonProps = extend({}, {
         default: false
     },
     loadingSize: {
-        type: String,
-        default: '20px'
+        type: Number,
+        default: 40
     },
     loadingType: {
         type: String,
@@ -78,31 +79,29 @@ export const buttonProps = extend({}, {
     }
 })
 
-export const useButtonStyle = (props: any) => {
+export const useButtonStyleAndClassName = (props: any) => {
     return computed(() => {
         const { color: bgColor, textColor, borderColor, type, loadingSize } = props
 
         const style: { [key: string]: string } = {}
+        const className = []
 
         if (bgColor) {
-            style['--pk-button-primary-background'] = bgColor
+            style['background'] = bgColor
             if (bgColor.indexOf('gradient') > -1) {
-                style['--pk-button-primary-border-color'] = "none"
-                style['--pk-button-primary-text-color'] = type === "primary" ? "var(--pk-text-color-invert)" : "var(--pk-text-color)"
+                style['border'] = "none"
+                type === "primary" ? className.push(bem.m('text-color-invert')) : className.push(bem.m('text-color'))
             }
         }
         if (borderColor || bgColor.indexOf('gradient') === -1) {
-            style['--pk-button-primary-border-color'] = borderColor || bgColor
+            style['border-color'] = borderColor || bgColor
         }
 
-        // if (textColor || bgColor.indexOf('gradient') === -1) {
-        //     color['--pk-button-primary-text-color'] = textColor || bgColor
-        // }
         if (textColor) style['color'] = textColor
-        style['--pk-loading-size'] = loadingSize
 
         return {
-            ...style
+            style,
+            className
         }
     })
 }

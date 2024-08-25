@@ -24,9 +24,9 @@ export const loadingProps = extend({}, {
         default: ''
     },
     size: {
-        type: String
+        type: Number
     },
     textSize: {
-        type: String
+        type: Number
     }
 })

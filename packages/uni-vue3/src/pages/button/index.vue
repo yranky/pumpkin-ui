@@ -40,10 +40,7 @@
     </view>
 
     <pk-divider>块级元素</pk-divider>
-    <view class="button-row">
-      <pk-button type="primary" sub-text="我是子文案我是子文案" block>块级元素</pk-button>
-      <pk-button type="primary" block>块级元素</pk-button>
-    </view>
+    <pk-button type="primary" sub-text="我是子文案我是子文案" block>块级元素</pk-button>
 
     <pk-divider>禁用按钮</pk-divider>
     <div class="button-row">
@@ -80,7 +77,7 @@
     <view class="button-row">
       <pk-button type="primary" loading>默认图标样式</pk-button>
       <pk-button type="primary" loading loading-type="spinner">spinner图标样式</pk-button>
-      <pk-button type="primary" loading loading-type="circular" loading-size="35px">35px</pk-button>
+      <pk-button type="primary" loading loading-type="circular" :loading-size="70">70rpx</pk-button>
     </view>
 
     <pk-divider>插槽</pk-divider>
@@ -99,7 +96,7 @@
 </template>
 <script lang="ts" setup>
 import PkButton from '@/pk-ui/components/pk-button/pk-button.vue'
-import PkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue';
+import PkDivider from '@/pk-ui/components/pk-divider/pk-divider.vue'
 
 </script>
 <style lang="less" scoped>

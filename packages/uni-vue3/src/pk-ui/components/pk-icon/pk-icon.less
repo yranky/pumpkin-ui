@@ -1,11 +1,11 @@
-page {
-    --pk-icon-size: inherit;
-    --pk-icon-color: inherit;
-}
+@import '../../theme/index.less';
+
+@pk-icon-size: inherit;
+@pk-icon-color: inherit;
 
 @namespace: pk-icon;
 
 .@{namespace} {
-    font-size: var(--pk-icon-size);
-    color: var(--pk-icon-color);
+    font-size: @pk-icon-size;
+    color: @pk-icon-color;
 }

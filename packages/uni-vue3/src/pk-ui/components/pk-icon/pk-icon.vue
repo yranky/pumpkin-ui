@@ -2,8 +2,8 @@
     <image :class="[
         bem.e()
     ]" :src="props.name" :style="{
-        width: props.size ? props.size + 'px' : '',
-        height: props.height ? props.height + 'px' : (props.size ? props.size + 'px' : '')
+        width: isEmptyValue(props.size) ? '' : props.size + 'rpx',
+        height: isEmptyValue(props.height) ? (isEmptyValue(props.size) ? '' : props.size + 'rpx') : props.height + 'rpx'
     }" @click="onClick" v-if="isImage" />
 
     <text :class="[
@@ -12,7 +12,7 @@
         iconClassName
     ]" :style="{
         color: props.color || '',
-        fontSize: props.size ? props.size + 'px' : ''
+        fontSize: isEmptyValue(props.size) ? '' : props.size + 'rpx'
     }" @click="onClick" v-else></text>
 </template>
 <script lang="ts" setup>
@@ -21,6 +21,7 @@ import { iconProps } from './pk-icon'
 import './pk-icon.less'
 import { useBem } from '@pk-ui/use'
 import './icons/antd-icon.css'
+import { isEmptyValue } from '@pk-ui/utils';
 
 defineOptions({
     name: 'PkIcon',

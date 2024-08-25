@@ -1,18 +1,17 @@
-page {
-    --pk-loading-size: 30px;
-    --pk-loading-text-color: var(--pk-text-color-disabled);
-    --pk-loading-color: var(--pk-text-color-secondary);
-    --pk-loading-animation-duration: var(--pk-animation-duration);
-    --pk-loading-text-size: var(--pk-font-size-s);
-    --pk-loading-text-color: var(--pk-text-color-secondary);
-    --pk-loading-margin: var(--pk-margin-s);
-}
+@import '../../theme/index.less';
+
+@pk-loading-size: 60rpx;
+@pk-loading-color: currentColor;
+@pk-loading-animation-duration: @pk-animation-duration;
+@pk-loading-text-size: @pk-font-size-s;
+@pk-loading-text-color: inherit;
+@pk-loading-margin: @pk-margin-s;
 
 @namespace: pk-loading;
 
 .@{namespace} {
     position: relative;
-    color: var(--pk-loading-text-color);
+    color: @pk-loading-text-color;
     font-size: 0;
     vertical-align: middle;
     display: flex;
@@ -23,25 +22,26 @@ page {
         justify-content: center;
 
         .@{namespace}__icon {
-            margin: var(--pk-loading-margin) 0;
+            margin: @pk-loading-margin 0;
         }
     }
 
     &__text {
-        font-size: var(--pk-loading-text-size);
-        color: var(--pk-loading-text-color);
+        font-size: @pk-loading-text-size;
+        color: currentColor;
     }
 
     &__icon {
-        margin: 0 var(--pk-loading-margin);
+        margin: 0 @pk-loading-margin;
+        color: @pk-loading-color;
 
         .@{namespace}__spinner {
             position: relative;
             display: inline-block;
-            width: var(--pk-loading-size);
-            height: var(--pk-loading-size);
+            width: @pk-loading-size;
+            height: @pk-loading-size;
             vertical-align: middle;
-            animation: pk-rotate var(--pk-loading-animation-duration) linear infinite;
+            animation: pk-rotate @pk-loading-animation-duration linear infinite;
         }
 
         .@{namespace}__line {
@@ -53,9 +53,9 @@ page {
 
             &::before {
                 content: ' ';
-                background-color: var(--pk-loading-color);
+                background-color: currentColor;
                 display: block;
-                width: 2px;
+                width: 4rpx;
                 height: 30%;
                 margin: 0 auto;
             }
@@ -73,15 +73,15 @@ page {
         }
 
         .@{namespace}__circle {
-            width: var(--pk-loading-size);
-            height: var(--pk-loading-size);
+            width: @pk-loading-size;
+            height: @pk-loading-size;
             position: relative;
-            animation: pk-rotate var(--pk-loading-animation-duration) ease-in-out infinite;
+            animation: pk-rotate @pk-loading-animation-duration ease-in-out infinite;
         }
 
         .@{namespace}__circle1 {
-            animation: circle1 calc(var(--pk-loading-animation-duration)* 1.5) ease-in-out infinite;
-            border: var(--pk-loading-color) 2px solid;
+            animation: circle1 calc(@pk-loading-animation-duration* 1.5) ease-in-out infinite;
+            border: currentColor 4rpx solid;
             position: absolute;
             top: 0;
             left: 0;
@@ -114,8 +114,8 @@ page {
         }
 
         .@{namespace}__circle2 {
-            animation: circle2 calc(var(--pk-loading-animation-duration)* 2.5) linear infinite;
-            border: var(--pk-loading-color) 2px solid;
+            animation: circle2 calc(@pk-loading-animation-duration* 2.5) linear infinite;
+            border: currentColor 4rpx solid;
             position: absolute;
             top: 50%;
             left: 50%;
