@@ -1,8 +1,6 @@
 <template>
     <teleport to="body" :disabled="!props.appendToBody">
-        <transition
-            :name="props.position === 'center' || props.fade ? transitionFadeName.b() : transitionSlideName.b(props.position)"
-            appear @after-enter="onAfterEnter" @after-leave="onAfterLeave">
+        <pk-transition :name="transitionName" appear @on-after-enter="onAfterEnter" @on-after-leave="onAfterLeave">
             <div :class="[
                 bem.b(),
                 bem.m(props.position),
@@ -13,16 +11,18 @@
             }">
                 <slot></slot>
             </div>
-        </transition>
+        </pk-transition>
         <overlay ref="overlayRef" v-if="props.overlay" v-model="show" v-bind="$attrs"
             :background-color="props.overlayBackgroundColor" :close-on-press="props.closeOnPressOverlay" />
     </teleport>
 </template>
 <script setup lang="ts">
-import { useBem } from '@pk-ui/use';
+import { useBem } from '@pk-ui/use'
 import Overlay from '../../overlay/src/overlay.vue'
+import PkTransition from '../../transition/src/pk-transition.vue'
+import { transitionNames } from '../../transition/src/types'
 import { popupProps, popupEmits } from './popup'
-import { computed, ref, useAttrs, watch } from 'vue';
+import { computed, ref, useAttrs, watch } from 'vue'
 import "./popup.less"
 
 defineOptions({
@@ -36,8 +36,6 @@ const emits = defineEmits(popupEmits)
 const $attrs = useAttrs()
 
 const bem = useBem('popup')
-const transitionSlideName = useBem('slide')
-const transitionFadeName = useBem('fade')
 const overlayRef = ref<InstanceType<typeof Overlay>>()
 
 const show = computed<boolean>({
@@ -47,6 +45,12 @@ const show = computed<boolean>({
     set(val) {
         emits("update:modelValue", val)
     }
+})
+
+const transitionName = computed<typeof transitionNames[number]>(() => {
+    if (props.fade) return 'fade'
+    else if (props.position === 'center') return 'fade'
+    return `slide-${props.position}`
 })
 
 const onAfterEnter = () => emits("onOpened")

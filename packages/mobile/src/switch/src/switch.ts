@@ -1,6 +1,6 @@
-import { extend } from "@pk-ui/utils";
-import { loadingTypes } from "../../loading/src/loading";
-import { PropType } from "vue";
+import { extend } from "@pk-ui/utils"
+import { loadingTypes } from "../../loading/src/loading"
+import { PropType } from "vue"
 
 export const switchSizeTypes = ['l', 'm', 's'] as const
 export const switchEmits = ['update:modelValue', 'click', 'onChange']
