@@ -14,7 +14,7 @@
         }"></div>
         <div :class="[
             bem.e('content')
-        ]" v-if="$slot.default">
+        ]" v-if="$slots.default">
             <slot></slot>
         </div>
         <div :class="[
@@ -37,7 +37,7 @@ defineOptions({
 })
 const props = defineProps(dividerProps)
 const bem = useBem('divider')
-const $slot = useSlots()
+const $slots = useSlots()
 
 
 </script>

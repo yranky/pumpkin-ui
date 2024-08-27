@@ -1,13 +1,13 @@
 <template>
     <image :class="[
-        bem.e()
+        bem.b()
     ]" :src="props.name" :style="{
         width: isEmptyValue(props.size) ? '' : props.size + 'rpx',
         height: isEmptyValue(props.height) ? (isEmptyValue(props.size) ? '' : props.size + 'rpx') : props.height + 'rpx'
     }" @click="onClick" v-if="isImage" />
 
     <text :class="[
-        bem.e(),
+        bem.b(),
         props.classPrefix,
         iconClassName
     ]" :style="{

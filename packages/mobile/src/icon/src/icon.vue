@@ -1,13 +1,13 @@
 <template>
     <img :class="[
-        bem.e()
+        bem.b()
     ]" :src="props.name" :style="{
         width: props.size ? props.size + 'px' : '',
         height: props.height ? props.height + 'px' : (props.size ? props.size + 'px' : '')
     }" @click="onClick" v-if="isImage" />
 
     <i :class="[
-        bem.e(),
+        bem.b(),
         props.classPrefix,
         iconClassName
     ]" :style="{
