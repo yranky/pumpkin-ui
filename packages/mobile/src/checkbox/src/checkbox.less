@@ -8,6 +8,7 @@
     --pk-checkbox-label-font-size: var(--pk-font-size-s);
     --pk-checkbox-margin: var(--pk-margin-m);
     --pk-checkbox-icon-weight: 600;
+    --pk-checkbox-disabled-opacity: var(--pk-disabled-opacity);
 }
 
 
@@ -21,6 +22,7 @@
     margin-right: var(--pk-checkbox-margin);
     margin-bottom: var(--pk-checkbox-margin);
     width: fit-content;
+    cursor: pointer;
 
     &__box {
         --pk-icon-size: calc(var(--pk-checkbox-size) * 0.7);
@@ -52,6 +54,11 @@
             color: var(--pk-checkbox-active-color);
             border: none;
         }
+    }
+
+    &--disabled {
+        opacity: var(--pk-checkbox-disabled-opacity);
+        cursor: not-allowed;
     }
 
     &--square {
