@@ -8,7 +8,7 @@ export const checkboxProps = extend({}, {
     },
     size: {
         type: Number,
-        default: 20
+        default: void 0
     },
     label: {
         type: String,
@@ -19,7 +19,7 @@ export const checkboxProps = extend({}, {
         default: void 0
     },
     value: {
-        type: [String, Boolean, Number] as PropType<unknown>
+        type: [String, Boolean, Number]
     },
     disabled: {
         type: Boolean,

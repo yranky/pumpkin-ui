@@ -73,7 +73,7 @@ import { fieldEmits, fieldProps } from './field'
 import { useBem } from '@pk-ui/use'
 import Cell from '../../cell/src/cell.vue'
 import './field.less'
-import { inject, onBeforeUnmount, onMounted, ref, computed, useSlots, nextTick, watch } from 'vue'
+import { inject, onBeforeUnmount, ref, computed, useSlots, nextTick, watch, onBeforeMount } from 'vue'
 import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
 import Icon from '../../icon/src/icon.vue'
 
@@ -172,7 +172,7 @@ const validateMessage = ref<string>('')
 
 const { getName, getValue, getRules, fieldId, setValidateMessage, getLabel, getValidateAutoTrim } = useField<typeof props, typeof value>(props, value, validateMessage)
 
-onMounted(() => {
+onBeforeMount(() => {
     formProvide.addField && formProvide.addField({
         getName,
         getValue,

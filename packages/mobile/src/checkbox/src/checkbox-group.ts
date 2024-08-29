@@ -2,10 +2,6 @@ import { extend } from "@pk-ui/utils"
 import { PropType } from "vue"
 
 export const checkboxGroupProps = extend({}, {
-    modelValue: {
-        type: Array as PropType<any[]>,
-        default: () => ([])
-    },
     size: {
         type: Number,
         default: void 0

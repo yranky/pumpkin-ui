@@ -6,10 +6,14 @@
         bem.eqm('disabled', disabled)
     ]" @click="onClick">
         <div :class="[
-            bem.e('box')
-        ]">
-            <slot name="icon" v-if="checked">
-                <pk-icon name="check-outlined" />
+            bem.e('box'),
+            bem.eqm('custom', !!$slots.icon)
+        ]" :style="{
+            '--pk-checkbox-size': isEmptyValue(size) ? '' : `${size}px`,
+            fontSize: isEmptyValue(size) ? '' : `${size}px`,
+        }">
+            <slot name="icon" :checked="checked">
+                <pk-icon v-if="checked" name="check-outlined" />
             </slot>
         </div>
         <div :class="[
@@ -26,7 +30,7 @@ import { useBem } from '@pk-ui/use'
 import PkIcon from '../../icon/src/icon.vue'
 import './checkbox.less'
 import { checkboxProps } from './checkbox'
-import { computed, inject, ref, useSlots, watch } from 'vue'
+import { computed, inject, onBeforeMount, onBeforeUnmount, ref, useSlots, watch } from 'vue'
 import { checkboxEmits, checkboxProvideSymbol, ICheckboxProvider } from './types'
 import { isEmptyValue } from '@pk-ui/utils'
 defineOptions({
@@ -48,15 +52,52 @@ const checked = computed<boolean>({
         return props.modelValue
     }
 })
-const square = computed(() => isEmptyValue(props.square) ? (groupSquare?.value ? true : false) : (props.square || false))
-const disabled = computed(() => isEmptyValue(props.disabled) ? (groupDisabled?.value ? true : false) : (props.disabled || false))
+const square = computed(() => isEmptyValue(props.square) && group.value ? (groupSquare?.value ? true : false) : (props.square || false))
+const disabled = computed(() => isEmptyValue(props.disabled) && group.value ? (groupDisabled?.value ? true : false) : (props.disabled || false))
+const size = computed(() => isEmptyValue(props.size) && group.value ? (isEmptyValue(groupSize?.value) ? '' : groupSize?.value) : (isEmptyValue(props.size) ? '' : props.size))
+const group = ref(props.group)
 
 
 const onClick = (e: MouseEvent) => {
-    if (disabled.value) return
-    checked.value = !checked.value
-    emits('onChange', checked.value)
+    emits('click', e)
+    const currentValue = checked.value
+
+    //controlled by group
+    if (onCheckboxClick && group.value) {
+        onCheckboxClick(checkboxId.value)
+        if (currentValue !== checked.value) emits('onChange', checked.value)
+    } else {
+        if (disabled.value) return
+        checked.value = !checked.value
+        emits('onChange', checked.value)
+    }
 }
 
-const { square: groupSquare, size: groupSize, disabled: groupDisabled, max: groupMax } = inject<ICheckboxProvider>(checkboxProvideSymbol, {})
+const checkboxId = ref(Symbol())
+const { square: groupSquare, size: groupSize, disabled: groupDisabled, max: groupMax, addCheckbox, removeCheckbox, onCheckboxClick } = inject<ICheckboxProvider>(checkboxProvideSymbol, {})
+
+
+const toggle = (val?: boolean) => {
+    if (val === void 0) checked.value = !checked.value
+    else checked.value = !!val
+}
+
+onBeforeMount(() => {
+    group.value && addCheckbox && addCheckbox({
+        id: checkboxId.value,
+        getChecked: () => checked.value,
+        getDisabled: () => disabled.value,
+        toggle,
+        getLabel: () => props.label,
+        getValue: () => props.value
+    })
+})
+
+onBeforeUnmount(() => {
+    group.value && removeCheckbox && removeCheckbox(checkboxId.value)
+})
+
+defineExpose({
+    toggle
+})
 </script>

@@ -38,6 +38,13 @@
         transition: background calc(var(--pk-transition-duration) * 0.5);
         font-weight: var(--pk-checkbox-icon-weight);
 
+        &.@{namespace}--custom {
+            --pk-icon-size: var(--pk-checkbox-size);
+            width: fit-content;
+            height: fit-content;
+            background: none;
+            border: none;
+        }
     }
 
 
@@ -53,6 +60,11 @@
             background: var(--pk-checkbox-active-background);
             color: var(--pk-checkbox-active-color);
             border: none;
+
+            &.@{namespace}--custom {
+                background: none;
+                border: none;
+            }
         }
     }
 
