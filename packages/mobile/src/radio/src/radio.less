@@ -1,0 +1,81 @@
+:root,
+:host {
+    --pk-radio-size: 20px;
+    --pk-radio-border-color: var(--pk-border-color);
+    --pk-radio-active-background: var(--pk-primary-color);
+    --pk-radio-active-color: #ffffff;
+    --pk-radio-label-color: var(--pk-text-color);
+    --pk-radio-label-font-size: var(--pk-font-size-s);
+    --pk-radio-margin: var(--pk-margin-m);
+    --pk-radio-icon-weight: 600;
+    --pk-radio-disabled-opacity: var(--pk-disabled-opacity);
+}
+
+
+
+@namespace: pk-radio;
+
+.@{namespace} {
+    display: flex;
+    align-items: center;
+    margin-left: var(--pk-radio-margin);
+    margin-right: var(--pk-radio-margin);
+    margin-bottom: var(--pk-radio-margin);
+    width: fit-content;
+    cursor: pointer;
+
+    &__box {
+        --pk-icon-size: calc(var(--pk-radio-size) * 0.7);
+        width: var(--pk-radio-size);
+        height: var(--pk-radio-size);
+        border: var(--pk-border-color) 1px solid;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        transition: background calc(var(--pk-transition-duration) * 0.5);
+        font-weight: var(--pk-radio-icon-weight);
+
+        &.@{namespace}--custom {
+            --pk-icon-size: var(--pk-radio-size);
+            width: fit-content;
+            height: fit-content;
+            background: none;
+            border: none;
+        }
+    }
+
+
+    &__label {
+        color: var(--pk-radio-label-color);
+        font-size: var(--pk-radio-label-font-size);
+        margin-left: var(--pk-radio-margin);
+    }
+
+
+    &--active {
+        .@{namespace}__box {
+            background: var(--pk-radio-active-background);
+            color: var(--pk-radio-active-color);
+            border: none;
+
+            &.@{namespace}--custom {
+                background: none;
+                border: none;
+            }
+        }
+    }
+
+    &--disabled {
+        opacity: var(--pk-radio-disabled-opacity);
+        cursor: not-allowed;
+    }
+
+    &--square {
+        .@{namespace}__box {
+            border-radius: 0;
+        }
+    }
+}
