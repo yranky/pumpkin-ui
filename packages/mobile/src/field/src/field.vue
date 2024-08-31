@@ -70,7 +70,7 @@
 </template>
 <script setup lang="ts">
 import { fieldEmits, fieldProps } from './field'
-import { useBem } from '@pk-ui/use'
+import { useBem, useVModel } from '@pk-ui/use'
 import Cell from '../../cell/src/cell.vue'
 import './field.less'
 import { inject, onBeforeUnmount, ref, computed, useSlots, nextTick, watch, onBeforeMount } from 'vue'
@@ -141,17 +141,8 @@ const onCompositionEnd = (e: CompositionEvent) => {
 
 const formProvide = inject<IFormProvide>(formProvideSymbol, {})
 
-const _value = ref<string | number>('')
-const value = computed({
-    get() {
-        if (props.modelValue === void 0) return _value.value
-        return props.modelValue
-    },
-    set(val) {
-        if (props.modelValue === void 0) _value.value = val
-        emits('update:modelValue', val)
-    }
-})
+
+const value = useVModel(props, 'modelValue', emits)
 
 watch(() => value.value, () => {
     if (!isFocus.value) nextTick(updateTextareaHeight)

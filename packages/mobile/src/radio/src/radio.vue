@@ -26,7 +26,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem, useVModel } from '@pk-ui/use'
 import PkIcon from '../../icon/src/icon.vue'
 import './radio.less'
 import { radioProps } from './radio'
@@ -41,17 +41,9 @@ const bem = useBem('radio')
 const props = defineProps(radioProps)
 const $slots = useSlots()
 
-const _checked = ref<boolean>(false)
-const checked = computed<boolean>({
-    set(val) {
-        if (props.modelValue === void 0) _checked.value = val
-        else emits('update:modelValue', val)
-    },
-    get() {
-        if (props.modelValue === void 0) return _checked.value
-        return props.modelValue
-    }
-})
+
+const checked = useVModel(props, 'modelValue', emits)
+
 
 const square = computed(() => isEmptyValue(props.square) && group.value ? (groupSquare?.value ? true : false) : (props.square || false))
 const disabled = computed(() => isEmptyValue(props.disabled) && group.value ? (groupDisabled?.value ? true : false) : (props.disabled || false))

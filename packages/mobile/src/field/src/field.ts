@@ -18,7 +18,7 @@ const fieldClearTrigger = ['always', 'auto'] as const
 export const fieldProps = extend({}, {
     modelValue: {
         type: [String, Number],
-        default: void 0
+        default: ''
     },
     label: {
         type: String,

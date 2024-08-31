@@ -12,7 +12,7 @@ export const switchProps = extend({}, {
     },
     modelValue: {
         type: Boolean,
-        default: void 0
+        default: false
     },
     disabled: {
         type: Boolean,

@@ -7,7 +7,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem, useVModel } from '@pk-ui/use'
 import './radio-group.less'
 import { computed, provide, ref, toRefs, watch } from 'vue'
 import { radioGroupProps } from './radio-group'
@@ -68,17 +68,8 @@ provide<IRadioProvider>(radioProvideSymbol, {
     onRadioUpdate
 })
 
-const _value = ref<boolean | string | number>()
-const value = computed({
-    get() {
-        if (props.modelValue === void 0) return _value.value
-        return props.modelValue
-    },
-    set(val) {
-        if (props.modelValue === void 0) _value.value = val
-        else val !== void 0 && emits('update:modelValue', val)
-    }
-})
+const value = useVModel(props, 'modelValue', emits)
+
 //update radio checked
 watch(() => value.value, (val) => val !== void 0 && radios.value.forEach(r => r.getValue() === val && r.toggle(true)))
 

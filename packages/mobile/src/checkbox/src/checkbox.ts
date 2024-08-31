@@ -4,7 +4,7 @@ import { PropType } from "vue"
 export const checkboxProps = extend({}, {
     modelValue: {
         type: Boolean as PropType<boolean>,
-        default: void 0
+        default: false
     },
     size: {
         type: Number,

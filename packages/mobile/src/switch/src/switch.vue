@@ -35,7 +35,7 @@
 </template>
 <script setup lang="ts">
 import { switchEmits, switchProps } from './switch'
-import { useBem } from '@pk-ui/use'
+import { useBem, useVModel } from '@pk-ui/use'
 import './switch.less'
 import { computed, ref } from 'vue';
 import Loading from '../../loading/src/loading.vue';
@@ -65,15 +65,6 @@ const updateValue = async (val: boolean) => {
     emits('onChange', val)
 }
 
-const _value = ref<boolean>(false)
-const value = computed<boolean>({
-    get() {
-        if (props.modelValue === void 0) return _value.value
-        return props.modelValue
-    },
-    set(val) {
-        if (props.modelValue === void 0) _value.value = val
-        emits("update:modelValue", val)
-    }
-})
+
+const value = useVModel(props, 'modelValue', emits)
 </script>

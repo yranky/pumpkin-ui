@@ -26,11 +26,11 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem, useVModel } from '@pk-ui/use'
 import PkIcon from '../../icon/src/icon.vue'
 import './checkbox.less'
 import { checkboxProps } from './checkbox'
-import { computed, inject, onBeforeMount, onBeforeUnmount, ref, useSlots, watch } from 'vue'
+import { computed, inject, onBeforeMount, onBeforeUnmount, ref, useSlots } from 'vue'
 import { checkboxEmits, checkboxProvideSymbol, ICheckboxProvider } from './types'
 import { isEmptyValue } from '@pk-ui/utils'
 defineOptions({
@@ -41,17 +41,8 @@ const bem = useBem('checkbox')
 const props = defineProps(checkboxProps)
 const $slots = useSlots()
 
-const _checked = ref<boolean>(false)
-const checked = computed<boolean>({
-    set(val) {
-        if (props.modelValue === void 0) _checked.value = val
-        else emits('update:modelValue', val)
-    },
-    get() {
-        if (props.modelValue === void 0) return _checked.value
-        return props.modelValue
-    }
-})
+const checked = useVModel(props, 'modelValue', emits)
+
 const square = computed(() => isEmptyValue(props.square) && group.value ? (groupSquare?.value ? true : false) : (props.square || false))
 const disabled = computed(() => isEmptyValue(props.disabled) && group.value ? (groupDisabled?.value ? true : false) : (props.disabled || false))
 const size = computed(() => isEmptyValue(props.size) && group.value ? (isEmptyValue(groupSize?.value) ? '' : groupSize?.value) : (isEmptyValue(props.size) ? '' : props.size))
@@ -65,11 +56,19 @@ const onClick = (e: MouseEvent) => {
     //controlled by group
     if (onCheckboxClick && group.value) {
         onCheckboxClick(checkboxId.value)
-        if (currentValue !== checked.value) emits('onChange', checked.value)
+        if (currentValue !== checked.value) emits('onChange', checked.value, {
+            label: props.label,
+            value: props.value,
+            checked: checked.value
+        })
     } else {
         if (disabled.value) return
         checked.value = !checked.value
-        emits('onChange', checked.value)
+        emits('onChange', checked.value, {
+            label: props.label,
+            value: props.value,
+            checked: checked.value
+        })
     }
 }
 

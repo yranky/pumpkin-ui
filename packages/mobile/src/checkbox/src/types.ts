@@ -2,7 +2,7 @@ import { Ref } from "vue"
 
 export type checkboxEmits = {
     (event: 'update:modelValue', value: boolean): void
-    (event: 'onChange', value: boolean): void
+    (event: 'onChange', checked: boolean, value: ICheckboxValue): void
     (event: 'click', e: MouseEvent): void
 }
 
