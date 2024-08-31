@@ -8,14 +8,14 @@ aside: false
 
 ## 基本使用
 ```vue
-<pk-cell>按钮</pk-cell>
+<pk-cell>单元格</pk-cell>
 ```
 
 ## 配合CellGroup
 ```vue
 <pk-cell-group>
-  <pk-cell>按钮</pk-cell>
-  <pk-cell>按钮</pk-cell>
+  <pk-cell>单元格</pk-cell>
+  <pk-cell>单元格</pk-cell>
 </pk-cell-group>
 ```
 

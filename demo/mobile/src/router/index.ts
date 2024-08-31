@@ -17,7 +17,9 @@ const routes = [
     { path: '/divider', component: () => import('../views/divider/Divider.vue') },
     { path: '/form', component: () => import('../views/form/Form.vue') },
     { path: '/field', component: () => import('../views/field/Field.vue') },
-    { path: '/icon', component: () => import('../views/icon/Icon.vue') }
+    { path: '/icon', component: () => import('../views/icon/Icon.vue') },
+    { path: '/checkbox', component: () => import('../views/checkbox/Checkbox.vue') },
+    { path: '/radio', component: () => import('../views/radio/Radio.vue') }
 ]
 
 

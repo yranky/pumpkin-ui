@@ -73,6 +73,9 @@ export default defineUserConfig({
                 }, {
                   text: 'Form 表单',
                   link: '/components/form'
+                }, {
+                  text: 'Checkbox 复选框',
+                  link: '/components/checkbox'
                 }
               ]
             },

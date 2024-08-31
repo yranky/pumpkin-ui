@@ -51,5 +51,8 @@ export default [
     }, {
         activeMatch: '/components/form',
         url: BASE_URL + '#/form'
+    }, {
+        activeMatch: '/components/checkbox',
+        url: BASE_URL + '#/checkbox'
     }
 ];
