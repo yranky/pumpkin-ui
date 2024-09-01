@@ -30,7 +30,7 @@ import { useBem, useVModel } from '@pk-ui/use'
 import PkIcon from '../../icon/src/icon.vue'
 import './checkbox.less'
 import { checkboxProps } from './checkbox'
-import { computed, inject, onBeforeMount, onBeforeUnmount, ref, useSlots } from 'vue'
+import { computed, inject, onBeforeUnmount, ref, useSlots } from 'vue'
 import { checkboxEmits, checkboxProvideSymbol, ICheckboxProvider } from './types'
 import { isEmptyValue } from '@pk-ui/utils'
 defineOptions({
@@ -81,15 +81,13 @@ const toggle = (val?: boolean) => {
     else checked.value = !!val
 }
 
-onBeforeMount(() => {
-    group.value && addCheckbox && addCheckbox({
-        id: checkboxId.value,
-        getChecked: () => checked.value,
-        getDisabled: () => disabled.value,
-        toggle,
-        getLabel: () => props.label,
-        getValue: () => props.value
-    })
+group.value && addCheckbox && addCheckbox({
+    id: checkboxId.value,
+    getChecked: () => checked.value,
+    getDisabled: () => disabled.value,
+    toggle,
+    getLabel: () => props.label,
+    getValue: () => props.value
 })
 
 onBeforeUnmount(() => {

@@ -53,7 +53,7 @@ const onRadioUpdate = (radioId: symbol) => {
     const currentChecked = radios.value.find(r => r.getChecked())
     if (currentChecked) {
         const val = currentChecked.getValue()
-        val !== value.value && emits('onChange', value.value)
+        val !== value.value && emits('onChange', val)
         value.value = val
     }
 }

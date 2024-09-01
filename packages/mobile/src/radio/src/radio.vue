@@ -30,7 +30,7 @@ import { useBem, useVModel } from '@pk-ui/use'
 import PkIcon from '../../icon/src/icon.vue'
 import './radio.less'
 import { radioProps } from './radio'
-import { computed, inject, onBeforeMount, onBeforeUnmount, ref, useSlots, watch } from 'vue'
+import { computed, inject, onBeforeUnmount, ref, useSlots, watch } from 'vue'
 import { IRadioProvider, radioEmits, radioProvideSymbol } from './types'
 import { isEmptyValue } from '@pk-ui/utils'
 defineOptions({
@@ -64,25 +64,24 @@ const onClick = (e: MouseEvent) => {
 
 const radioId = ref(Symbol())
 const { square: groupSquare, size: groupSize, disabled: groupDisabled, addRadio, removeRadio, onRadioClick, onRadioUpdate } = inject<IRadioProvider>(radioProvideSymbol, {})
-watch(() => checked.value, () => group.value && onRadioUpdate && onRadioUpdate(radioId.value), { immediate: true })
-
 
 const toggle = (val?: boolean) => {
     if (val === void 0) checked.value = !checked.value
     else checked.value = !!val
 }
 
-
-onBeforeMount(() => {
-    group.value && addRadio && addRadio({
-        id: radioId.value,
-        getChecked: () => checked.value,
-        getDisabled: () => disabled.value,
-        toggle,
-        getLabel: () => props.label,
-        getValue: () => props.value
-    })
+//mount
+group.value && addRadio && addRadio({
+    id: radioId.value,
+    getChecked: () => checked.value,
+    getDisabled: () => disabled.value,
+    toggle,
+    getLabel: () => props.label,
+    getValue: () => props.value
 })
+
+watch(() => checked.value, () => group.value && onRadioUpdate && onRadioUpdate(radioId.value), { immediate: true })
+
 
 onBeforeUnmount(() => {
     group.value && removeRadio && removeRadio(radioId.value)
