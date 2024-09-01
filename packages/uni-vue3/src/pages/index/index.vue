@@ -37,7 +37,7 @@ const modules = ref([
       },
       {
         text: 'Popup 弹出层',
-        link: '/popup'
+        link: '/pages/popup/index'
       },
       {
         text: 'Toast 轻提示',
