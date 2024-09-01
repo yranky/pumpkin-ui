@@ -53,6 +53,12 @@
 			"style": {
 				"navigationBarTitleText": "Popup"
 			}
+		},
+		{
+			"path": "pages/toast/index",
+			"style": {
+				"navigationBarTitleText": "Toast"
+			}
 		}
 	],
 	"globalStyle": {

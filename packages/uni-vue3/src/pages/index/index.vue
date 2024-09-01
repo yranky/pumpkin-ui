@@ -41,7 +41,7 @@ const modules = ref([
       },
       {
         text: 'Toast 轻提示',
-        link: '/toast'
+        link: '/pages/toast/index'
       }
     ]
   },
