@@ -1,4 +1,5 @@
 import { extend } from "@pk-ui/utils"
+import { PropType } from "vue"
 
 
 export const toastEmits = ['update:modelValue', 'onOpen', 'onClose', 'onOpened', 'onClosed']
@@ -14,7 +15,7 @@ export const toastProps = extend({}, {
     },
     modelValue: {
         type: Boolean,
-        default: void 0
+        default: false
     },
     text: {
         type: String,
@@ -29,7 +30,7 @@ export const toastProps = extend({}, {
         default: 'transparent'
     },
     position: {
-        type: String,
+        type: String as PropType<typeof positionTypes[number]>,
         values: positionTypes,
         default: 'center'
     },
