@@ -62,6 +62,12 @@ const modules = ref([
             }, {
                 text: 'Form 表单',
                 link: '/form'
+            }, {
+                text: 'Checkbox 复选框',
+                link: '/checkbox'
+            }, {
+                text: 'Radio 单选框',
+                link: '/radio'
             }
         ]
     },

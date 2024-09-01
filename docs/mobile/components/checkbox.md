@@ -184,9 +184,9 @@ import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
 :::
 
 ### 默认值
-可通过设置`Checkbox`的`v-model`默认值为`true`实现。
+可通过设置`Checkbox`的`v-model`为`true`实现。
 
-::: code-tabs#vertical
+::: code-tabs#vmodel
 @tab template
 
 ```vue [template]
@@ -216,7 +216,7 @@ const firstChecked = ref(true)
 
 ### 事件
 
-::: code-tabs#vertical
+::: code-tabs#events
 @tab template
 
 ```vue [template]
@@ -315,6 +315,32 @@ const onLimit = (value) => {
 | icon   | 复选框图标插槽 | checked:boolean |
 | label  | 复选框文字插槽 |                 |
 
+##### 自定义图标
+
+::: code-tabs#icon
+@tab template
+```vue [template]
+    <pk-checkbox-group>
+        <pk-checkbox-group>
+            <pk-checkbox label="选项一" :value="1">
+                <template #icon>
+                    <pk-icon name="alert-outlined" />
+                </template>
+            </pk-checkbox>
+        </pk-checkbox-group>
+    </pk-checkbox-group>
+```
+
+@tab script
+```js [script]
+import { PkCheckbox, PkCheckboxGroup, PkIcon } from '@pk-ui/mobile'
+```
+
+@tab style
+```css [style]
+
+```
+:::
 
 
 ### Exposes

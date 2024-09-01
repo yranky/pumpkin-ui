@@ -54,5 +54,8 @@ export default [
     }, {
         activeMatch: '/components/checkbox',
         url: BASE_URL + '#/checkbox'
+    }, {
+        activeMatch: '/components/radio',
+        url: BASE_URL + '#/radio'
     }
 ];

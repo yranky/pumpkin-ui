@@ -56,10 +56,19 @@
             <pk-checkbox label="选项三" :value="3">选项三</pk-checkbox>
             <pk-checkbox label="选项四" :value="4">选项四</pk-checkbox>
         </pk-checkbox-group>
+
+        <pk-divider>自定义图标</pk-divider>
+        <pk-checkbox-group>
+            <pk-checkbox label="选项一" :value="1">
+                <template #icon>
+                    <pk-icon name="alert-outlined" />
+                </template>
+            </pk-checkbox>
+        </pk-checkbox-group>
     </div>
 </template>
 <script lang="ts" setup>
-import { PkCheckbox, PkCheckboxGroup, PkDivider, Toast } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider, Toast, PkIcon } from '@pk-ui/mobile'
 import { ref } from 'vue'
 
 const firstChecked = ref(true)

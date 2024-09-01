@@ -76,6 +76,9 @@ export default defineUserConfig({
                 }, {
                   text: 'Checkbox 复选框',
                   link: '/components/checkbox'
+                }, {
+                  text: 'Radio 单选框',
+                  link: '/components/radio'
                 }
               ]
             },
