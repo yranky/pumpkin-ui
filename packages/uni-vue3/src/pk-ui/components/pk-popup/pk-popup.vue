@@ -7,6 +7,8 @@
             bem.b()
         ]" :styles="{
             position: 'fixed',
+            'max-height': '100%',
+            'z-index': 999999,
             background: '#fff',
             ...transitionStyles
         }">
