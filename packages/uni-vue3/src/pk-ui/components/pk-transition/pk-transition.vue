@@ -1,16 +1,18 @@
 <template>
     <uni-transition :custom-class="[
-        bem.b()
-    ].join(' ')" :show="show" :mode-class="props.name" :duration="!isEmptyValue(props.duration) ? props.duration : 300"
-        @change="onChange" :styles="{
+        bem.b(),
+        ...customClass
+    ].join(' ')" :show="show" :mode-class="[props.name]"
+        :duration="!isEmptyValue(props.duration) ? props.duration : 300" @change="onChange" :styles="{
             'position': 'relative',
-            'z-index': 9999999
+            'z-index': 9999,
+            ...styles
         }">
         <slot></slot>
     </uni-transition>
 </template>
 <script lang="ts" setup>
-import { nextTick, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { transitionProps } from './pk-transition'
 import { useBem } from '@pk-ui/use'
 import { isEmptyValue } from '@pk-ui/utils'
@@ -30,6 +32,10 @@ type transitionEmits = {
 const emits = defineEmits<transitionEmits>()
 const props = defineProps(transitionProps)
 const bem = useBem('transition')
+const customClass = computed(() => {
+    if (props.customClass instanceof Array) return props.customClass
+    else return [props.customClass]
+})
 
 const show = ref(props.modelValue)
 let isUpdating = false

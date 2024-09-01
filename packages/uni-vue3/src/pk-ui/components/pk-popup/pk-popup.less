@@ -1,0 +1,58 @@
+@import '../../theme/index.less';
+
+@pk-popup-background: @pk-bg-color;
+@pk-popup-z-index: @pk-z-index-max-2;
+@pk-popup-border-radius: @pk-radius-l;
+
+@namespace: pk-popup;
+
+.@{namespace} {
+    // position: fixed;
+    max-height: 100%;
+    background: @pk-popup-background;
+    z-index: @pk-popup-z-index;
+
+    &__wrapper {}
+
+    &--round {
+        border-radius: @pk-popup-border-radius;
+    }
+
+    &--bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+
+    &--top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+
+    &--left {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+
+
+    &--right {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+    }
+
+
+    &--center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
