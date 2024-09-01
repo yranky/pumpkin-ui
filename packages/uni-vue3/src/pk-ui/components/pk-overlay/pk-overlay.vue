@@ -1,8 +1,5 @@
 <template>
-    <uni-transition :show="show" :custom-class="transitionName.b()" :styles="{
-        'position': 'relative',
-        'z-index': 9999999
-    }">
+    <pk-transition v-model="show">
         <view :class="[
             bem.b()
         ]" @click="onClick" :style="{
@@ -11,7 +8,7 @@
         }">
             <slot></slot>
         </view>
-    </uni-transition>
+    </pk-transition>
 </template>
 <script setup lang="ts">
 import { useBem } from '@pk-ui/use'
@@ -19,7 +16,7 @@ import './pk-overlay.less'
 import { overlayEmits, overlayProps } from './pk-overlay'
 import { computed } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
-import uniTransition from '../../libs/components/uni-transition/components/uni-transition/uni-transition.vue'
+import PkTransition from '../pk-transition/pk-transition.vue'
 
 defineOptions({
     name: 'PkOverlay',
