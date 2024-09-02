@@ -1,0 +1,42 @@
+:root,
+:host {
+    --pk-badge-padding-vertical: 0;
+    --pk-badge-padding-horizontal: 5px;
+    --pk-badge-background: var(--pk-error-color);
+    --pk-badge-font-size: 12px;
+    --pk-badge-color: #ffffff;
+    --pk-badge-dot-size: 8px;
+}
+
+@namespace: pk-badge;
+
+.@{namespace} {
+    display: inline-block;
+    position: relative;
+
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .@{namespace}__content {
+            transform: translate(var(--pk-badge-padding-horizontal), -50%);
+            padding: var(--pk-badge-padding-vertical) var(--pk-badge-padding-horizontal);
+            background: var(--pk-badge-background);
+            border-radius: 999999px;
+            font-size: var(--pk-badge-font-size);
+            color: var(--pk-badge-color);
+            font-weight: bold;
+        }
+
+        &.@{namespace}--dot {
+            .@{namespace}__content {
+                width: var(--pk-badge-dot-size);
+                height: var(--pk-badge-dot-size);
+                transform: translate(50%, -50%);
+                padding: 0;
+                border-radius: 100%;
+            }
+        }
+    }
+}
