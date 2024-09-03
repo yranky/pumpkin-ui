@@ -1,0 +1,33 @@
+:root,
+:host {
+    --pk-notify-padding-vertical: var(--pk-padding-m);
+    --pk-notify-padding-horizontal: var(--pk-padding-l);
+    --pk-notify-text-color: #ffffff;
+    --pk-notify-font-size: var(--pk-font-size-m);
+}
+
+@namespace: pk-notify;
+
+.@{namespace} {
+    padding: var(--pk-notify-padding-vertical) var(--pk-notify-padding-horizontal);
+    color: var(--pk-notify-text-color);
+    font-size: var(--pk-notify-font-size);
+    text-align: center;
+    word-break: break-all;
+
+    &--primary {
+        background: var(--pk-primary-color);
+    }
+
+    &--success {
+        background: var(--pk-success-color);
+    }
+
+    &--warning {
+        background: var(--pk-warning-color);
+    }
+
+    &--error {
+        background: var(--pk-error-color);
+    }
+}
