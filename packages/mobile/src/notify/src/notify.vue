@@ -8,7 +8,7 @@
         ]" :style="{
             background: props.background,
             color: props.color
-        }">
+        }" @click="onClick">
             <slot>
                 {{ props.message }}
             </slot>
@@ -26,6 +26,9 @@ const props = defineProps(notifyProps)
 const emits = defineEmits<notifyEmits>()
 const bem = useBem('notify')
 const show = useVModel(props, 'modelValue', emits)
+
+
+const onClick = (e: MouseEvent) => emits('click', e)
 
 let timer: ReturnType<typeof setTimeout>
 

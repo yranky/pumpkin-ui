@@ -7,3 +7,5 @@ PkNotify.install = (app: App) => {
 
 export default PkNotify
 export { PkNotify }
+
+export * from './src/fun/notify'

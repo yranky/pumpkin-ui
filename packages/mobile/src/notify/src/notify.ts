@@ -4,6 +4,7 @@ import { PropType } from "vue"
 
 export type notifyEmits = {
     (event: 'update:modelValue', value: boolean): void
+    (event: 'click', e: MouseEvent): void
     (event: 'onClose'): void
     (event: 'onOpen'): void
     (event: 'onOpened'): void
