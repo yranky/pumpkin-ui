@@ -1,0 +1,29 @@
+:root,
+:host {
+    --pk-empty-color: var(--pk-text-color-secondary);
+    --pk-empty-size: 90px;
+    --pk-empty-margin: var(--pk-margin-m);
+    --pk-empty-font-size: var(--pk-font-size-s);
+}
+
+@namespace: pk-empty;
+
+.@{namespace} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--pk-empty-color);
+    margin: var(--pk-empty-margin);
+
+    &__icon {
+        font-size: var(--pk-empty-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__text {
+        margin-top: var(--pk-empty-margin);
+        font-size: var(--pk-empty-font-size);
+    }
+}
