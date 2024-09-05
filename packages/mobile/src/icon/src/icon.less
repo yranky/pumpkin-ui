@@ -2,6 +2,7 @@
 :host {
     --pk-icon-size: inherit;
     --pk-icon-color: inherit;
+    --pk-icon-image-size: 1em;
 }
 
 @namespace: pk-icon;
@@ -9,4 +10,9 @@
 .@{namespace} {
     font-size: var(--pk-icon-size);
     color: var(--pk-icon-color);
+
+    &.@{namespace}__image {
+        width: var(--pk-icon-image-size);
+        height: var(--pk-icon-image-size);
+    }
 }

@@ -1,6 +1,7 @@
 <template>
     <img :class="[
-        bem.b()
+        bem.b(),
+        bem.e('image')
     ]" :src="props.name" :style="{
         width: props.size ? props.size + 'px' : '',
         height: props.height ? props.height + 'px' : (props.size ? props.size + 'px' : '')
