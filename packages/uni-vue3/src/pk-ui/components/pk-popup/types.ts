@@ -1,1 +1,0 @@
-export const popupEmits = ['update:modelValue', 'onOpen', 'onClose', 'onOpened', 'onClosed']

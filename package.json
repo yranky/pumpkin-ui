@@ -7,9 +7,7 @@
     "build:mobile_docs": "pnpm -C docs run mobile:build",
     "dev:mobile_docs": "pnpm -C docs run mobile:dev",
     "build:demo_mobile": "pnpm -C demo/mobile run build",
-    "dev:demo_mobile": "pnpm -C demo/mobile run dev",
-    "dev:uni-vue3:h5": "pnpm -C packages/uni-vue3 run dev:h5",
-    "dev:uni-vue3:mp-weixin": "pnpm -C packages/uni-vue3 run dev:mp-weixin"
+    "dev:demo_mobile": "pnpm -C demo/mobile run dev"
   },
   "keywords": [],
   "author": "yranky",

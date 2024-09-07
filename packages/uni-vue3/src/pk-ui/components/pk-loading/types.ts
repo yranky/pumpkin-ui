@@ -1,1 +1,0 @@
-export const loadingTypes = ['circular', 'spinner'] as const
