@@ -14,10 +14,14 @@
     display: inline-block;
     position: relative;
 
+
+
     &__wrapper {
-        position: absolute;
-        top: 0;
-        right: 0;
+        &.@{namespace}--default {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
 
         .@{namespace}__content {
             transform: translate(var(--pk-badge-padding-horizontal), -50%);

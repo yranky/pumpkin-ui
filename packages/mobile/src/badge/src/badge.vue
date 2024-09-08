@@ -3,7 +3,8 @@
         <slot></slot>
         <div :class="[
             bem.e('wrapper'),
-            bem.eqm('dot', props.dot)
+            bem.eqm('dot', props.dot),
+            bem.eqm('default', !!$slots.default)
         ]" v-if="$slots.content || (!isEmptyValue(props.content) && !(props.content === 0 && !props.showZero)) || props.dot"
             :style="{
                 '--pk-badge-background': isEmptyValue(props.background) ? '' : props.background,
@@ -46,7 +47,7 @@ const contentTransform = computed(() => {
     let y = props.offset[1]
 
     if (typeof x !== 'number') x = 0
-    if (typeof y !== 'number') y = x
+    if (typeof y !== 'number') y = 0
 
     return `translate3d(${x}px, ${y}px, 0)`
 })
