@@ -277,7 +277,7 @@ import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
 
 | 名称       | 说明           | 类型说明                      |
 | ---------- | -------------- | ----------------------------- |
-| updateShow | 更新弹出层显示 | `(show:boolean = true)=>void` |
+| updateShow | 更新轻提示显示 | `(show:boolean = true)=>void` |
 
 
 ## 样式变量

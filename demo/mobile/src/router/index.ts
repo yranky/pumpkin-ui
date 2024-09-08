@@ -19,7 +19,10 @@ const routes = [
     { path: '/field', component: () => import('../views/field/Field.vue') },
     { path: '/icon', component: () => import('../views/icon/Icon.vue') },
     { path: '/checkbox', component: () => import('../views/checkbox/Checkbox.vue') },
-    { path: '/radio', component: () => import('../views/radio/Radio.vue') }
+    { path: '/radio', component: () => import('../views/radio/Radio.vue') },
+    { path: '/badge', component: () => import('../views/badge/Badge.vue') },
+    { path: '/notify', component: () => import('../views/notify/Notify.vue') },
+    { path: '/empty', component: () => import('../views/empty/Empty.vue') }
 ]
 
 

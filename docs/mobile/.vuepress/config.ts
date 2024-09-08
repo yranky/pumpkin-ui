@@ -94,6 +94,9 @@ export default defineUserConfig({
                 }, {
                   text: 'ActionSheet 动作面板',
                   link: '/components/action-sheet'
+                }, {
+                  text: 'Notify 消息提示',
+                  link: '/components/notify'
                 }
               ]
             },
@@ -107,6 +110,14 @@ export default defineUserConfig({
                 {
                   text: 'Divider 分割线',
                   link: '/components/divider'
+                },
+                {
+                  text: 'Badge 徽标',
+                  link: '/components/badge'
+                },
+                {
+                  text: 'Empty 空元素',
+                  link: '/components/empty'
                 }
               ]
             }

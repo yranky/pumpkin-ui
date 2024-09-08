@@ -83,6 +83,9 @@ const modules = ref([
             }, {
                 text: 'ActionSheet 动作面板',
                 link: '/action-sheet'
+            }, {
+                text: 'Notify 消息提示',
+                link: '/notify'
             }
         ]
     },
@@ -96,6 +99,12 @@ const modules = ref([
             {
                 text: 'Divider 分割线',
                 link: '/divider'
+            }, {
+                text: 'Badge 徽标',
+                link: '/badge'
+            }, {
+                text: 'Empty 空元素',
+                link: '/empty'
             }
         ]
     }

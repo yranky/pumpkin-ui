@@ -57,5 +57,14 @@ export default [
     }, {
         activeMatch: '/components/radio',
         url: BASE_URL + '#/radio'
+    }, {
+        activeMatch: '/components/badge',
+        url: BASE_URL + '#/badge'
+    }, {
+        activeMatch: '/components/notify',
+        url: BASE_URL + '#/notify'
+    }, {
+        activeMatch: '/components/empty',
+        url: BASE_URL + '#/empty'
     }
 ];
