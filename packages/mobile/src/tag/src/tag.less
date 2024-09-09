@@ -1,0 +1,100 @@
+:root,
+:host {
+    --pk-tag-padding-s: 0 2px;
+    --pk-tag-padding-m: 0 4px;
+    --pk-tag-padding-l: 0 8px;
+
+    --pk-tag-font-size-s: 10px;
+    --pk-tag-font-size-m: 12px;
+    --pk-tag-font-size-l: 14px;
+
+    --pk-tag-primary-background: var(--pk-primary-color);
+
+    --pk-tag-border-radius: var(--pk-primary-color);
+
+    --pk-tag-border-radius-s: 1px;
+    --pk-tag-border-radius-m: 2px;
+    --pk-tag-border-radius-l: 3px;
+
+    --pk-tag-border-width: var(--pk-border-width-s);
+
+    --pk-tag-icon-margin: 2px;
+
+}
+
+@namespace: pk-tag;
+
+.@{namespace} {
+    display: flex;
+    background: var(--pk-tag-primary-background);
+    width: fit-content;
+    word-break: break-all;
+    color: var(--pk-text-color-invert);
+    position: relative;
+    align-items: center;
+
+    &__content {
+        font-size: inherit;
+        color: inherit;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        margin-left: var(--pk-tag-icon-margin);
+        position: relative;
+        z-index: 1;
+    }
+
+
+    &--l {
+        padding: var(--pk-tag-padding-l);
+        font-size: var(--pk-tag-font-size-l);
+        border-radius: var(--pk-tag-border-radius-l);
+    }
+
+    &--m {
+        padding: var(--pk-tag-padding-m);
+        font-size: var(--pk-tag-font-size-m);
+        border-radius: var(--pk-tag-border-radius-m);
+    }
+
+    &--s {
+        padding: var(--pk-tag-padding-s);
+        font-size: var(--pk-tag-font-size-s);
+        border-radius: var(--pk-tag-border-radius-s);
+    }
+
+
+    &--primary {
+        border: var(--pk-tag-border-width) solid transparent;
+        background: var(--pk-tag-primary-background);
+        color: var(--pk-text-color-invert);
+    }
+
+    &--hazy {
+        border: var(--pk-tag-border-width) solid transparent;
+        color: var(--pk-tag-primary-background);
+        background: inherit;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--pk-tag-primary-background);
+            opacity: 0.2;
+            top: 0;
+            left: 0;
+            border-radius: inherit;
+        }
+
+    }
+
+    &--ghost {
+        border: var(--pk-tag-border-width) solid var(--pk-tag-primary-background);
+        color: var(--pk-tag-primary-background);
+        background: inherit;
+    }
+}
