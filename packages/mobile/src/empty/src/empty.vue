@@ -25,6 +25,10 @@ import { useSlots } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
 
 
+defineOptions({
+    name: 'PkEmpty',
+})
+
 const bem = useBem('empty')
 const emits = defineEmits<emptyEmits>()
 const props = defineProps(emptyProps)

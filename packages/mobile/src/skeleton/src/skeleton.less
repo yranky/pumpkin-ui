@@ -1,0 +1,22 @@
+:root,
+:host {
+    --pk-skeleton-background-start: rgba(237, 239, 242, 1);
+    --pk-skeleton-background-end: rgba(237, 239, 242, 0.6);
+    --pk-skeleton-duration: 1.3s;
+}
+
+
+@namespace: pk-skeleton;
+
+.@{namespace} {}
+
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}

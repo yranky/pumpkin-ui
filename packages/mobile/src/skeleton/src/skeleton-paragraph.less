@@ -1,0 +1,29 @@
+@import './skeleton.less';
+
+:root,
+:host {
+    --pk-skeleton-paragraph-height: 12px;
+    --pk-skeleton-paragraph-border-radius: 2px;
+    --pk-skeleton-paragraph-margin: var(--pk-margin-m) 0 0 0;
+}
+
+@namespace: pk-skeleton-paragraph;
+
+.@{namespace} {
+    width: 100%;
+    height: var(--pk-skeleton-paragraph-height);
+    background-image: linear-gradient(90deg, var(--pk-skeleton-background-start) 25%, var(--pk-skeleton-background-end) 37%, var(--pk-skeleton-background-start) 63%);
+    border-radius: 100%;
+    background-size: 400% 100%;
+    background-position: 100% 50%;
+    border-radius: var(--pk-skeleton-paragraph-border-radius);
+    margin: var(--pk-skeleton-paragraph-margin);
+
+    &:first-child {
+        margin: 0;
+    }
+
+    &--active {
+        animation: skeleton-loading var(--pk-skeleton-duration) infinite;
+    }
+}

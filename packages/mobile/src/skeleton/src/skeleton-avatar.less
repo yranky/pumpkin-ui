@@ -1,0 +1,25 @@
+@import './skeleton.less';
+
+:root,
+:host {
+    --pk-skeleton-avatar-size: 40px;
+}
+
+@namespace: pk-skeleton-avatar;
+
+.@{namespace} {
+    width: var(--pk-skeleton-avatar-size);
+    height: var(--pk-skeleton-avatar-size);
+    background-image: linear-gradient(90deg, var(--pk-skeleton-background-start) 25%, var(--pk-skeleton-background-end) 37%, var(--pk-skeleton-background-start) 63%);
+    border-radius: 100%;
+    background-size: 400% 100%;
+    background-position: 100% 50%;
+
+    &--active {
+        animation: skeleton-loading var(--pk-skeleton-duration) infinite;
+    }
+
+    &--square {
+        border-radius: 0;
+    }
+}

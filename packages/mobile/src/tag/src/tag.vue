@@ -29,6 +29,11 @@ import './tag.less'
 import { useSlots } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
 
+
+defineOptions({
+    name: 'PkTag',
+})
+
 const bem = useBem('tag')
 const props = defineProps(tagProps)
 const emits = defineEmits<tagEmits>()
