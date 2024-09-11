@@ -11,6 +11,8 @@
 import { useBem } from '@pk-ui/use'
 import './skeleton-avatar.less'
 import { skeletonAvatarProps } from './skeleton-avatar'
+import { inject, onBeforeUnmount, ref } from 'vue'
+import { ISkeletonProvider, skeletonProviderId } from './types'
 
 defineOptions({
     name: 'PkSkeletonAvatar'
@@ -18,5 +20,18 @@ defineOptions({
 
 const bem = useBem('skeleton-avatar')
 const props = defineProps(skeletonAvatarProps)
+
+
+
+const { addSkeleton, removeSkeleton } = inject<ISkeletonProvider>(skeletonProviderId, {})
+const skeletonId = ref(Symbol())
+addSkeleton && addSkeleton({
+    id: skeletonId.value
+})
+
+
+onBeforeUnmount(() => {
+    removeSkeleton && removeSkeleton(skeletonId.value)
+})
 
 </script>

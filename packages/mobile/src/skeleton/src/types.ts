@@ -6,3 +6,15 @@ export const skeletonCommonProps = extend({}, {
         default: true
     }
 })
+
+
+export const skeletonProviderId = Symbol()
+export interface ISkeletonProvider {
+    addSkeleton?: (sk: ISkeletonExposeToParent) => void,
+    removeSkeleton?: (sk: symbol) => void
+}
+
+
+export interface ISkeletonExposeToParent {
+    id: symbol
+}

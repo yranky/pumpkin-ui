@@ -3,12 +3,25 @@
     --pk-skeleton-background-start: rgba(237, 239, 242, 1);
     --pk-skeleton-background-end: rgba(237, 239, 242, 0.6);
     --pk-skeleton-duration: 1.3s;
+    --pk-skeleton-margin: var(--pk-margin-m);
 }
 
 
 @namespace: pk-skeleton;
 
-.@{namespace} {}
+.@{namespace} {
+    &__content {
+        display: flex;
+
+        .@{namespace}__image {
+            margin-right: var(--pk-skeleton-margin);
+        }
+
+        .@{namespace}__paragraph {
+            flex: 1;
+        }
+    }
+}
 
 
 @keyframes skeleton-loading {

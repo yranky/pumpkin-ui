@@ -10,8 +10,9 @@
 import { useBem } from '@pk-ui/use'
 import './skeleton-paragraph.less'
 import { skeletonParagraphProps } from './skeleton-paragraph'
-import { computed } from 'vue'
+import { computed, inject, onBeforeUnmount, ref } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
+import { ISkeletonProvider, skeletonProviderId } from './types'
 
 defineOptions({
     name: 'PkSkeletonParagraph'
@@ -27,7 +28,10 @@ const rows = computed(() => {
     const rowWidths: string[] = []
 
     for (let i = 0; i < rowNumber; i++) {
-        if (isEmptyValue(props.widths[i])) rowWidths.push('100%')
+        if (isEmptyValue(props.widths[i])) {
+            if (i < rowNumber - 1) rowWidths.push('100%')
+            else rowWidths.push('60%')
+        }
         else {
             let width: string | number = props.widths[i]
             if (typeof width === 'number') {
@@ -39,6 +43,19 @@ const rows = computed(() => {
     }
 
     return rowWidths
+})
+
+
+
+const { addSkeleton, removeSkeleton } = inject<ISkeletonProvider>(skeletonProviderId, {})
+const skeletonId = ref(Symbol())
+addSkeleton && addSkeleton({
+    id: skeletonId.value
+})
+
+
+onBeforeUnmount(() => {
+    removeSkeleton && removeSkeleton(skeletonId.value)
 })
 
 </script>
