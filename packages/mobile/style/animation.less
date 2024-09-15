@@ -66,6 +66,35 @@
   }
 }
 
+@keyframes pk-bounce-in {
+  0% {
+    transform: scale(.95);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pk-bounce-out {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(.95);
+  }
+}
+
+
 .pk-fade {
   &-enter-active {
     animation: var(--pk-transition-duration) pk-fade-in var(--pk-transition-timing-function-in);
@@ -116,6 +145,17 @@
 
   &-leave-active {
     animation: var(--pk-transition-duration) pk-slide-down-leave var(--pk-transition-timing-function-out);
+  }
+}
+
+.pk-bounce,
+.pk-bounce {
+  &-enter-active {
+    animation: var(--pk-transition-duration) pk-bounce-in var(--pk-transition-timing-function-in);
+  }
+
+  &-leave-active {
+    animation: var(--pk-transition-duration) pk-bounce-out var(--pk-transition-timing-function-out);
   }
 }
 

@@ -1,1 +1,1 @@
-export const transitionNames = ['fade', 'slide-left', 'slide-right', 'slide-top', 'slide-bottom'] as const
+export const transitionNames = ['fade', 'slide-left', 'slide-right', 'slide-top', 'slide-bottom', 'bounce'] as const
