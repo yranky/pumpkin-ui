@@ -47,7 +47,7 @@ const onChange = (val) => {
 }
 
 const loading = ref(false)
-const beforeChange = () => {
+const beforeChange = (): Promise<boolean> => {
     return new Promise((resolve) => {
         loading.value = true
         setTimeout(() => {

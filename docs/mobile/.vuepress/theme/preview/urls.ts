@@ -66,5 +66,8 @@ export default [
     }, {
         activeMatch: '/components/empty',
         url: BASE_URL + '#/empty'
+    }, {
+        activeMatch: '/components/tag',
+        url: BASE_URL + '#/tag'
     }
 ];

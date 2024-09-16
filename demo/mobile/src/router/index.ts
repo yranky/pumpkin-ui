@@ -22,7 +22,10 @@ const routes = [
     { path: '/radio', component: () => import('../views/radio/Radio.vue') },
     { path: '/badge', component: () => import('../views/badge/Badge.vue') },
     { path: '/notify', component: () => import('../views/notify/Notify.vue') },
-    { path: '/empty', component: () => import('../views/empty/Empty.vue') }
+    { path: '/empty', component: () => import('../views/empty/Empty.vue') },
+    { path: '/tag', component: () => import('../views/tag/Tag.vue') },
+    { path: '/skeleton', component: () => import('../views/skeleton/Skeleton.vue') },
+    { path: '/dialog', component: () => import('../views/dialog/Dialog.vue') }
 ]
 
 

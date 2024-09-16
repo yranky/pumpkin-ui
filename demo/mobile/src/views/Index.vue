@@ -86,6 +86,9 @@ const modules = ref([
             }, {
                 text: 'Notify 消息提示',
                 link: '/notify'
+            }, {
+                text: 'Skeleton 骨架屏',
+                link: '/skeleton'
             }
         ]
     },
@@ -105,6 +108,9 @@ const modules = ref([
             }, {
                 text: 'Empty 空元素',
                 link: '/empty'
+            }, {
+                text: 'Tag 标签',
+                link: '/tag'
             }
         ]
     }

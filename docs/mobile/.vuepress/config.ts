@@ -118,6 +118,10 @@ export default defineUserConfig({
                 {
                   text: 'Empty 空元素',
                   link: '/components/empty'
+                },
+                {
+                  text: 'Tag 标签',
+                  link: '/components/tag'
                 }
               ]
             }
