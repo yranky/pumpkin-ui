@@ -10,8 +10,10 @@
             ]">
                 <div :class="[
                     bem.e('title')
-                ]" v-if="!isEmptyValue(props.title)">
-                    {{ props.title }}
+                ]" v-if="!isEmptyValue(props.title) || $slots.title">
+                    <slot name="title">
+                        {{ props.title }}
+                    </slot>
                 </div>
                 <div :class="[
                     bem.e('content')
@@ -81,6 +83,7 @@ const showFooter = computed(() => {
 
 const onCloseClick = () => {
     updateShow(false)
+    emits('onCancel')
 }
 
 const onCancelClick = () => {

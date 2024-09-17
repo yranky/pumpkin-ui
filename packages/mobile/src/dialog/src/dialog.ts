@@ -20,6 +20,9 @@ export const dialogProps = extend({}, {
         type: Boolean,
         default: true
     },
+    overlayBackgroundColor: {
+        type: String
+    },
     title: {
         type: String
     },
@@ -27,16 +30,13 @@ export const dialogProps = extend({}, {
         type: String,
         default: ''
     },
-    overlayBackgroundColor: {
-        type: String
+    messageAlign: {
+        type: String as PropType<typeof messageAlignTypes[number]>,
+        default: 'center'
     },
     showClose: {
         type: Boolean,
         default: false
-    },
-    messageAlign: {
-        type: String as PropType<typeof messageAlignTypes[number]>,
-        default: 'center'
     },
     showConfirmButton: {
         type: Boolean,
