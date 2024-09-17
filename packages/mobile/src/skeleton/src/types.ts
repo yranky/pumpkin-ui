@@ -1,4 +1,5 @@
 import { extend } from "@pk-ui/utils"
+import { Ref } from "vue"
 
 export const skeletonCommonProps = extend({}, {
     active: {
@@ -11,7 +12,8 @@ export const skeletonCommonProps = extend({}, {
 export const skeletonProviderId = Symbol()
 export interface ISkeletonProvider {
     addSkeleton?: (sk: ISkeletonExposeToParent) => void,
-    removeSkeleton?: (sk: symbol) => void
+    removeSkeleton?: (sk: symbol) => void,
+    active: Ref<boolean> | boolean
 }
 
 

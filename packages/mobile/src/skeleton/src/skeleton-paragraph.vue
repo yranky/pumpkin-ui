@@ -1,7 +1,7 @@
 <template>
     <div :class="[
         bem.b(),
-        bem.eqm('active', props.active)
+        bem.eqm('active', active)
     ]" :style="{
         width: item
     }" v-for="(item, index) in rows" :key="index"></div>
@@ -10,7 +10,7 @@
 import { useBem } from '@pk-ui/use'
 import './skeleton-paragraph.less'
 import { skeletonParagraphProps } from './skeleton-paragraph'
-import { computed, inject, onBeforeUnmount, ref } from 'vue'
+import { computed, inject, onBeforeUnmount, ref, unref } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
 import { ISkeletonProvider, skeletonProviderId } from './types'
 
@@ -45,9 +45,11 @@ const rows = computed(() => {
     return rowWidths
 })
 
+const active = computed(() => isEmptyValue(props.active) ? unref(_active) : props.active)
 
-
-const { addSkeleton, removeSkeleton } = inject<ISkeletonProvider>(skeletonProviderId, {})
+const { addSkeleton, removeSkeleton, active: _active } = inject<ISkeletonProvider>(skeletonProviderId, {
+    active: true
+})
 const skeletonId = ref(Symbol())
 addSkeleton && addSkeleton({
     id: skeletonId.value

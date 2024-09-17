@@ -26,7 +26,7 @@
 import { useBem } from '@pk-ui/use'
 import './skeleton.less'
 import { skeletonProps } from './skeleton'
-import { provide, ref, watch } from 'vue'
+import { provide, ref, toRefs, watch } from 'vue'
 import { ISkeletonExposeToParent, ISkeletonProvider, skeletonProviderId } from './types'
 import SkeletonAvatar from './skeleton-avatar.vue'
 import SkeletonParagraph from './skeleton-paragraph.vue'
@@ -37,6 +37,7 @@ defineOptions({
 
 const bem = useBem('skeleton')
 const props = defineProps(skeletonProps)
+const { active } = toRefs(props)
 
 const skeletons = ref<ISkeletonExposeToParent[]>([])
 
@@ -49,11 +50,8 @@ const removeSkeleton = (skeletonId: symbol) => {
 
 provide<ISkeletonProvider>(skeletonProviderId, {
     addSkeleton,
-    removeSkeleton
+    removeSkeleton,
+    active: active
 })
-
-watch(() => skeletons.value, (newVal) => {
-    console.log(newVal)
-}, { immediate: true })
 
 </script>

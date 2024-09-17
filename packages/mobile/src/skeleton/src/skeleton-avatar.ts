@@ -5,6 +5,10 @@ import { PropType } from "vue"
 
 export const skeletonShape = ['circle', 'square'] as const
 export const skeletonAvatarProps = extend({}, skeletonCommonProps, {
+    active: {
+        type: Boolean,
+        default: void 0
+    },
     size: {
         type: Number
     },
