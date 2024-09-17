@@ -89,6 +89,9 @@ const modules = ref([
             }, {
                 text: 'Skeleton 骨架屏',
                 link: '/skeleton'
+            }, {
+                text: 'Dialog 对话框',
+                link: '/dialog'
             }
         ]
     },

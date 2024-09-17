@@ -69,5 +69,11 @@ export default [
     }, {
         activeMatch: '/components/tag',
         url: BASE_URL + '#/tag'
+    }, {
+        activeMatch: '/components/skeleton',
+        url: BASE_URL + '#/skeleton'
+    }, {
+        activeMatch: '/components/dialog',
+        url: BASE_URL + '#/dialog'
     }
 ];

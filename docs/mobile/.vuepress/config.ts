@@ -97,6 +97,12 @@ export default defineUserConfig({
                 }, {
                   text: 'Notify 消息提示',
                   link: '/components/notify'
+                }, {
+                  text: 'Skeleton 骨架屏',
+                  link: '/components/skeleton'
+                }, {
+                  text: 'Dialog 对话框',
+                  link: '/components/dialog'
                 }
               ]
             },
