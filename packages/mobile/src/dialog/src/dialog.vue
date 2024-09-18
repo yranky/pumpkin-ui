@@ -1,8 +1,8 @@
 <template>
-    <popup ref="popupRef" v-model="show" fade :close-on-press-overlay="false"
+    <popup ref="popupRef" v-model="show" fade :close-on-press-overlay="props.closeOnPressOverlay"
         :overlay-background-color="props.overlayBackgroundColor" background-color="transparent" overflow-y="visible"
         :overlay="props.overlay" @onClose="emits('onClose')" @onOpen="emits('onOpen')" @onOpened="emits('onOpened')"
-        @onClosed="emits('onClosed')">
+        @onClosed="emits('onClosed')" @onCloseByClick="onCancelClick">
         <pk-transition name="bounce" v-show="show">
             <div :class="[
                 bem.b(),
@@ -34,7 +34,7 @@
                         ]" v-if="props.showCancelButton" @click="onCancelClick">
                             <pk-button type="link" block :textColor="props.cancelButtonColor">{{
                                 props.cancelButtonText
-                            }}</pk-button>
+                                }}</pk-button>
                         </div>
                         <div :class="[
                             bem.e('action-item')

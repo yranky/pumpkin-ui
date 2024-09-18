@@ -7,3 +7,4 @@ PkDialog.install = (app: App) => {
 
 export default PkDialog
 export { PkDialog }
+export * from './src/fun/dialog'

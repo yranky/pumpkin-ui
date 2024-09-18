@@ -10,7 +10,7 @@ export type dialogEmits = {
     (event: 'onOpened'): void
     (event: 'onClosed'): void
 }
-const messageAlignTypes = ['left', 'center', 'right'] as const
+export const messageAlignTypes = ['left', 'center', 'right'] as const
 export const dialogProps = extend({}, {
     modelValue: {
         type: Boolean,
@@ -61,6 +61,10 @@ export const dialogProps = extend({}, {
         type: String
     },
     buttonReverse: {
+        type: Boolean,
+        default: false
+    },
+    closeOnPressOverlay: {
         type: Boolean,
         default: false
     }
