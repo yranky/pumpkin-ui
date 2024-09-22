@@ -28,6 +28,7 @@ aside: false
 | show-cancel-text         | 取消按钮文本         | `string`                    | `取消`  |        |
 | show-cancel-color        | 取消文本颜色         | `string`                    |         |        |
 | button-reverse           | 按钮顺序反转         | `boolean`                   | `false` |        |
+| close-on-press-overlay   | 点击遮罩层关闭       | `boolean`                   | `false` |        |
 
 
 
