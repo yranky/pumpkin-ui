@@ -33,10 +33,6 @@ import "./toast.less"
 import Popup from '../../popup'
 import Loading from '../../loading'
 
-defineOptions({
-    name: 'PkToast',
-})
-
 const props = defineProps(toastProps)
 
 const emits = defineEmits(toastEmits)

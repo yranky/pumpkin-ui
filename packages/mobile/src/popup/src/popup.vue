@@ -25,10 +25,6 @@ import { popupProps, popupEmits } from './popup'
 import { computed, ref, useAttrs, watch } from 'vue'
 import "./popup.less"
 
-defineOptions({
-    name: 'PkPopup',
-})
-
 const props = defineProps(popupProps)
 
 const emits = defineEmits(popupEmits)

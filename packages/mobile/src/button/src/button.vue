@@ -41,10 +41,6 @@ import { useBem } from '@pk-ui/use'
 import './button.less'
 import Loading from '../../loading/src/loading.vue';
 
-defineOptions({
-    name: 'PkButton',
-})
-
 const props = defineProps(buttonProps)
 
 const bem = useBem('button')

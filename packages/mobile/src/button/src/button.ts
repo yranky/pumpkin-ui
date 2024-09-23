@@ -1,5 +1,5 @@
 import { definePropType, extend } from '@pk-ui/utils'
-import { ButtonHTMLAttributes, Component, computed, ExtractPropTypes } from 'vue'
+import { Component, computed, ExtractPropTypes } from 'vue'
 import { loadingTypes } from '../../loading/src/loading'
 
 

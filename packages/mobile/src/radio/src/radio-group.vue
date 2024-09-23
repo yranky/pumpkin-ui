@@ -9,13 +9,9 @@
 <script lang="ts" setup>
 import { useBem, useVModel } from '@pk-ui/use'
 import './radio-group.less'
-import { computed, provide, ref, toRefs, watch } from 'vue'
+import { provide, ref, toRefs, watch } from 'vue'
 import { radioGroupProps } from './radio-group'
 import { IRadioExposeToGroup, IRadioProvider, radioGroupEmits, radioProvideSymbol } from './types'
-
-defineOptions({
-    name: 'PkRadioGroup'
-})
 
 const bem = useBem('radio-group')
 const props = defineProps(radioGroupProps)

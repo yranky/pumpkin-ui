@@ -38,11 +38,7 @@ import { useBem } from '@pk-ui/use'
 import { pickerViewProps, pickerViewEmits, PickerItem } from './picker-view'
 import PickerColumn from './picker-column.vue'
 import './picker-view.less'
-import { computed, nextTick, ref, watch } from 'vue';
-
-defineOptions({
-    name: 'PkPickerView',
-})
+import { computed, nextTick, ref, watch } from 'vue'
 
 const props = defineProps(pickerViewProps)
 

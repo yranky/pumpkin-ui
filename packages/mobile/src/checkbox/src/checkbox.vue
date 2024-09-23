@@ -33,9 +33,8 @@ import { checkboxProps } from './checkbox'
 import { computed, inject, onBeforeUnmount, ref, useSlots } from 'vue'
 import { checkboxEmits, checkboxProvideSymbol, ICheckboxProvider } from './types'
 import { isEmptyValue } from '@pk-ui/utils'
-defineOptions({
-    name: 'PkCheckbox'
-})
+
+
 const emits = defineEmits<checkboxEmits>()
 const bem = useBem('checkbox')
 const props = defineProps(checkboxProps)
@@ -73,7 +72,7 @@ const onClick = (e: MouseEvent) => {
 }
 
 const checkboxId = ref(Symbol())
-const { square: groupSquare, size: groupSize, disabled: groupDisabled, max: groupMax, addCheckbox, removeCheckbox, onCheckboxClick } = inject<ICheckboxProvider>(checkboxProvideSymbol, {})
+const { square: groupSquare, size: groupSize, disabled: groupDisabled, addCheckbox, removeCheckbox, onCheckboxClick } = inject<ICheckboxProvider>(checkboxProvideSymbol, {})
 
 
 const toggle = (val?: boolean) => {

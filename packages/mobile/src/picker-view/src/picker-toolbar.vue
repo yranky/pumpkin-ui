@@ -24,10 +24,6 @@ import { useBem } from '@pk-ui/use'
 import './picker-toolbar.less'
 import { pickerToolbarEmits, pickerToolbarProps } from './picker-toolbar'
 
-defineOptions({
-    name: 'PkPickerView',
-})
-
 const props = defineProps(pickerToolbarProps)
 
 const emits = defineEmits(pickerToolbarEmits)

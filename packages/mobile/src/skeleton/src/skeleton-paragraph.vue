@@ -14,10 +14,6 @@ import { computed, inject, onBeforeUnmount, ref, unref } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
 import { ISkeletonProvider, skeletonProviderId } from './types'
 
-defineOptions({
-    name: 'PkSkeletonParagraph'
-})
-
 const bem = useBem('skeleton-paragraph')
 const props = defineProps(skeletonParagraphProps)
 

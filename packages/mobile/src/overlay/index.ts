@@ -2,7 +2,7 @@ import PkOverlay from './src/overlay.vue'
 import type { App } from 'vue'
 
 PkOverlay.install = (app: App) => {
-    app.component(PkOverlay.name, PkOverlay)
+    app.component("PkOverlay", PkOverlay)
 }
 
 export default PkOverlay

@@ -17,7 +17,7 @@ export const useTouch = () => {
         data.isEnd = true
     }
 
-    const start = (event:TouchEvent) => {
+    const start = (event: TouchEvent) => {
         reset()
         // 获取第一个触点
         const touch = event.touches[0]
@@ -35,8 +35,8 @@ export const useTouch = () => {
         data.startY = touch.clientY
     }
 
-    const end = (event: TouchEvent) => {
-        data.isEnd = true
+    const end = (event: Event) => {
+        data.isEnd = !!event || true
     }
 
 

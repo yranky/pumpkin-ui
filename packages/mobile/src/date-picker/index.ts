@@ -2,7 +2,7 @@ import PkDatePicker from './src/date-picker.vue'
 import type { App } from 'vue'
 
 PkDatePicker.install = (app: App) => {
-    app.component(PkDatePicker.name, PkDatePicker)
+    app.component("PkDatePicker", PkDatePicker)
 }
 
 export default PkDatePicker

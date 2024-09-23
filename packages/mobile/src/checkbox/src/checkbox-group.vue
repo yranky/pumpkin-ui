@@ -13,9 +13,6 @@ import { provide, ref, toRefs } from 'vue'
 import { checkboxGroupEmits, checkboxProvideSymbol, ICheckboxExposeToGroup, ICheckboxGroupToggleAll, ICheckboxProvider, ICheckboxValue } from './types'
 import { checkboxGroupProps } from './checkbox-group'
 
-defineOptions({
-    name: 'PkCheckboxGroup'
-})
 
 const bem = useBem('checkbox-group')
 const props = defineProps(checkboxGroupProps)

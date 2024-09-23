@@ -31,10 +31,6 @@ import { cellGroupProps } from './cell-group'
 import { useBem } from '@pk-ui/use'
 import "./cell-group.less"
 
-defineOptions({
-    name: 'PkCellGroup',
-})
-
 const props = defineProps(cellGroupProps)
 
 const bem = useBem('cell-group')

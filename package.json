@@ -7,7 +7,8 @@
     "build:mobile_docs": "pnpm -C docs run mobile:build",
     "dev:mobile_docs": "pnpm -C docs run mobile:dev",
     "build:demo_mobile": "pnpm -C demo/mobile run build",
-    "dev:demo_mobile": "pnpm -C demo/mobile run dev"
+    "dev:demo_mobile": "pnpm -C demo/mobile run dev",
+    "build:pk-ui_mobile": "pnpm -C packages/mobile run build"
   },
   "keywords": [],
   "author": "yranky",

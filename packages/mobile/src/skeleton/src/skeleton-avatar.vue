@@ -15,10 +15,6 @@ import { computed, inject, onBeforeUnmount, ref, unref } from 'vue'
 import { ISkeletonProvider, skeletonProviderId } from './types'
 import { isEmptyValue } from '@pk-ui/utils'
 
-defineOptions({
-    name: 'PkSkeletonAvatar'
-})
-
 const bem = useBem('skeleton-avatar')
 const props = defineProps(skeletonAvatarProps)
 

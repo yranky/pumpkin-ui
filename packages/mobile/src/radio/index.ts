@@ -3,11 +3,11 @@ import PkRadioGroup from './src/radio-group.vue'
 import type { App } from 'vue'
 
 PkRadio.install = (app: App) => {
-    app.component(PkRadio.name, PkRadio)
+    app.component("PkRadio", PkRadio)
 }
 
 PkRadioGroup.install = (app: App) => {
-    app.component(PkRadioGroup.name, PkRadioGroup)
+    app.component("PkRadioGroup", PkRadioGroup)
 }
 
 export default PkRadio

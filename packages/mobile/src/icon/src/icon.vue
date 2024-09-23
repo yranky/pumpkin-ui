@@ -23,10 +23,6 @@ import './icon.less'
 import { useBem } from '@pk-ui/use'
 import './icons/antd-icon.css'
 
-defineOptions({
-    name: 'PkIcon',
-})
-
 const props = defineProps(iconProps)
 const emits = defineEmits<iconEmits>()
 

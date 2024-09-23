@@ -30,10 +30,6 @@ const props = defineProps(pickerColumnProps)
 
 const emits = defineEmits<pickerColumnEmits>()
 
-defineOptions({
-    name: 'PkPickerViewColumn',
-})
-
 const bem = useBem('picker-column')
 
 const translateY = ref(0)

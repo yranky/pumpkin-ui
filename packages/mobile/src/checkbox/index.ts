@@ -3,11 +3,11 @@ import PkCheckboxGroup from './src/checkbox-group.vue'
 import type { App } from 'vue'
 
 PkCheckbox.install = (app: App) => {
-    app.component(PkCheckbox.name, PkCheckbox)
+    app.component("PkCheckbox", PkCheckbox)
 }
 
 PkCheckboxGroup.install = (app: App) => {
-    app.component(PkCheckboxGroup.name, PkCheckboxGroup)
+    app.component("PkCheckboxGroup", PkCheckboxGroup)
 }
 
 export default PkCheckbox

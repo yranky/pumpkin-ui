@@ -57,11 +57,7 @@ import { cellEmits, cellProps } from './cell'
 import { useBem } from '@pk-ui/use'
 import icon from '../../icon/src/icon.vue'
 import "./cell.less"
-import { useSlots } from 'vue';
-
-defineOptions({
-    name: 'PkCell',
-})
+import { useSlots } from 'vue'
 
 const props = defineProps(cellProps)
 const emit = defineEmits(cellEmits)

@@ -1,5 +1,5 @@
 import { extend, usePromiseHooks } from "@pk-ui/utils";
-import { App, createApp, PropType, reactive, ref, toRefs } from "vue";
+import { App, createApp } from "vue";
 import PkActionSheet from "../action-sheet.vue";
 import { ActionSheetCallbackParams, ActionSheetOptions, ActionSheetOptionsProps, ActionSheetPromiseHooks } from "./types";
 import { ActionSheetItem } from "../action-sheet";

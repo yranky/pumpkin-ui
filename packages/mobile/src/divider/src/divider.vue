@@ -22,14 +22,10 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from "@pk-ui/use";
-import { dividerProps } from "./divider";
+import { useBem } from "@pk-ui/use"
+import { dividerProps } from "./divider"
 import "./divider.less"
-import { useSlots } from "vue";
-
-defineOptions({
-    name: 'PkDivider',
-})
+import { useSlots } from "vue"
 
 const props = defineProps(dividerProps)
 

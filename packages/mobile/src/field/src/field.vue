@@ -77,10 +77,6 @@ import { inject, ref, computed, useSlots, nextTick, watch, onBeforeUnmount } fro
 import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
 import Icon from '../../icon/src/icon.vue'
 
-defineOptions({
-    name: 'PkField'
-})
-
 const props = defineProps(fieldProps)
 const emits = defineEmits<fieldEmits>()
 const $slots = useSlots()
@@ -105,7 +101,7 @@ const onFocus = (e: FocusEvent) => {
     nextTick(updateTextareaHeight)
 }
 
-const onInput = (e: Event) => {
+const onInput = () => {
     updateTextareaHeight()
     isCompositionEnd && formProvide.triggerEmit && formProvide.triggerEmit('onChange', fieldId)
     isCompositionEnd && emits('onChange', value.value)
@@ -131,8 +127,8 @@ const showClear = computed(() => {
 })
 
 let isCompositionEnd = true
-const onCompositionStart = (e: CompositionEvent) => isCompositionEnd = false
-const onCompositionEnd = (e: CompositionEvent) => {
+const onCompositionStart = () => isCompositionEnd = false
+const onCompositionEnd = () => {
     formProvide.triggerEmit && formProvide.triggerEmit('onChange', fieldId)
     emits('onChange', value.value)
     isCompositionEnd = true

@@ -4,16 +4,16 @@ import PkSkeletonParagraph from './src/skeleton-paragraph.vue'
 import type { App } from 'vue'
 
 PkSkeleton.install = (app: App) => {
-    app.component(PkSkeleton.name, PkSkeleton)
+    app.component("PkSkeleton", PkSkeleton)
 }
 
 PkSkeletonAvatar.install = (app: App) => {
-    app.component(PkSkeletonAvatar.name, PkSkeletonAvatar)
+    app.component("PkSkeletonAvatar", PkSkeletonAvatar)
 }
 
 
 PkSkeletonParagraph.install = (app: App) => {
-    app.component(PkSkeletonParagraph.name, PkSkeletonParagraph)
+    app.component("PkSkeletonParagraph", PkSkeletonParagraph)
 }
 
 export default PkSkeleton

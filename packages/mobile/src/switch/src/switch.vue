@@ -39,10 +39,6 @@ import { useBem, useVModel } from '@pk-ui/use'
 import './switch.less'
 import Loading from '../../loading/src/loading.vue'
 
-defineOptions({
-    name: 'PkSwitch'
-})
-
 const props = defineProps(switchProps)
 const emits = defineEmits(switchEmits)
 

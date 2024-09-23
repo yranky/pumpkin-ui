@@ -26,14 +26,10 @@
 import { useBem } from '@pk-ui/use'
 import './skeleton.less'
 import { skeletonProps } from './skeleton'
-import { provide, ref, toRefs, watch } from 'vue'
+import { provide, ref, toRefs } from 'vue'
 import { ISkeletonExposeToParent, ISkeletonProvider, skeletonProviderId } from './types'
 import SkeletonAvatar from './skeleton-avatar.vue'
 import SkeletonParagraph from './skeleton-paragraph.vue'
-
-defineOptions({
-    name: 'PkSkeleton'
-})
 
 const bem = useBem('skeleton')
 const props = defineProps(skeletonProps)

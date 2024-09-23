@@ -1,19 +1,17 @@
 <template>
-    <picker ref="pickerRef" v-model="_show" v-model:current="current" :before-update-emits-hooks="true"
-        :items="dateColumns" v-bind="$attrs" @on-change="onChange" @onBeforeUpdateEmits="onBeforeUpdateEmits" />
+    <picker :class="[
+        bem.b()
+    ]" ref="pickerRef" v-model="_show" v-model:current="current" :before-update-emits-hooks="true" :items="dateColumns"
+        v-bind="$attrs" @on-change="onChange" @onBeforeUpdateEmits="onBeforeUpdateEmits" />
 </template>
 <script lang="ts" setup>
 import { useBem } from '@pk-ui/use'
 import { computed, nextTick, ref, useAttrs } from 'vue'
-import { checkValueIsInColumns, DatePickerSimpleType, getColumns, getCurrentSelectDateItemByColumnsAndType, getValueByDate, pickerEmits, pickerProps, sortDateType } from './date-picker'
+import { checkValueIsInColumns, getColumns, getCurrentSelectDateItemByColumnsAndType, getValueByDate, pickerEmits, pickerProps } from './date-picker'
 import picker from '../../picker/src/picker.vue'
 import './date-picker.less'
 import { PickerItem } from '../../picker-view/src/picker-view'
 import { DateUtils } from '@pk-ui/utils'
-
-defineOptions({
-    name: 'PkDatePicker',
-})
 
 const props = defineProps(pickerProps)
 

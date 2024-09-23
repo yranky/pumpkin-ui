@@ -3,11 +3,11 @@ import PkCellGroup from './src/cell-group.vue'
 import type { App } from 'vue'
 
 PkCell.install = (app: App) => {
-    app.component(PkCell.name, PkCell)
+    app.component("PkCell", PkCell)
 }
 
 PkCellGroup.install = (app: App) => {
-    app.component(PkCellGroup.name, PkCellGroup)
+    app.component("PkCellGroup", PkCellGroup)
 }
 
 export default PkCell

@@ -2,7 +2,7 @@ import PkTransition from './src/pk-transition.vue'
 import type { App } from 'vue'
 
 PkTransition.install = (app: App) => {
-    app.component(PkTransition.name, PkTransition)
+    app.component("PkTransition", PkTransition)
 }
 
 export default PkTransition

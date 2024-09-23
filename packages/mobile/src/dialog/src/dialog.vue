@@ -34,7 +34,7 @@
                         ]" v-if="props.showCancelButton" @click="onCancelClick">
                             <pk-button type="link" block :textColor="props.cancelButtonColor">{{
                                 props.cancelButtonText
-                                }}</pk-button>
+                            }}</pk-button>
                         </div>
                         <div :class="[
                             bem.e('action-item')
@@ -65,10 +65,6 @@ import PkTransition from '../../transition/src/pk-transition.vue'
 import './dialog.less'
 import { computed, ref, useSlots } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
-
-defineOptions({
-    name: 'PkDialog',
-})
 
 const bem = useBem('dialog')
 const props = defineProps(dialogProps)

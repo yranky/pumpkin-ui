@@ -2,7 +2,7 @@ import PkForm from './src/form.vue'
 import type { App } from 'vue'
 
 PkForm.install = (app: App) => {
-    app.component(PkForm.name, PkForm)
+    app.component("PkForm", PkForm)
 }
 
 export default PkForm

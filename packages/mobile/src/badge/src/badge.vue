@@ -27,9 +27,6 @@ import './badge.less'
 import { computed, useSlots } from 'vue'
 import { isEmptyValue } from '@pk-ui/utils'
 
-defineOptions({
-    name: 'PkBadge',
-})
 const props = defineProps(badgeProps)
 const bem = useBem('badge')
 const $slots = useSlots()

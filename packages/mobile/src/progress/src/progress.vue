@@ -31,10 +31,6 @@ import { useBem } from "@pk-ui/use"
 import { progressProps } from "./progress"
 import "./progress.less"
 
-defineOptions({
-    name: 'PkPopup',
-})
-
 const props = defineProps(progressProps)
 
 const bem = useBem('progress')

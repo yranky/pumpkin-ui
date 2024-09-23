@@ -43,13 +43,9 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { loadingProps } from './loading';
+import { loadingProps } from './loading'
 import './loading.less'
 import { useBem } from '@pk-ui/use'
-
-defineOptions({
-    name: 'PkLoading',
-})
 
 const props = defineProps(loadingProps)
 

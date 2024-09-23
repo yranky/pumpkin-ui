@@ -1,6 +1,6 @@
 import { extend } from "@pk-ui/utils"
 import { LoadingOptions, ToastOptions, ToastOptionsProps } from "./types"
-import { App, createApp, PropType, reactive, ref, toRefs } from "vue"
+import { App, createApp } from "vue"
 import PkToast from "../toast.vue"
 import { types } from "../toast"
 

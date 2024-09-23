@@ -20,10 +20,6 @@ import PickerToolbar from '../../picker-view/src/picker-toolbar.vue'
 import './picker.less'
 import { PickerItem } from '../../picker-view/src/picker-view'
 
-defineOptions({
-    name: 'PkPicker',
-})
-
 const props = defineProps(pickerProps)
 
 const emits = defineEmits<pickerEmits>()

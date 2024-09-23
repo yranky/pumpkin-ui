@@ -2,7 +2,7 @@ import PkSwitch from './src/switch.vue'
 import type { App } from 'vue'
 
 PkSwitch.install = (app: App) => {
-    app.component(PkSwitch.name, PkSwitch)
+    app.component("PkSwitch", PkSwitch)
 }
 
 export default PkSwitch

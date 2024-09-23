@@ -33,9 +33,7 @@ import { radioProps } from './radio'
 import { computed, inject, onBeforeUnmount, ref, useSlots, watch } from 'vue'
 import { IRadioProvider, radioEmits, radioProvideSymbol } from './types'
 import { isEmptyValue } from '@pk-ui/utils'
-defineOptions({
-    name: 'PkRadio'
-})
+
 const emits = defineEmits<radioEmits>()
 const bem = useBem('radio')
 const props = defineProps(radioProps)

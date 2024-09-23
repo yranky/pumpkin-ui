@@ -62,10 +62,6 @@ import './action-sheet.less'
 import { computed, ref } from 'vue'
 import { actionSheetProps, actionSheetEmits, ActionSheetItem } from './action-sheet'
 
-defineOptions({
-    name: 'PkActionSheet',
-})
-
 const bem = useBem('action-sheet')
 
 const props = defineProps(actionSheetProps)

@@ -16,10 +16,6 @@ import './overlay.less'
 import { overlayEmits, overlayProps } from './overlay'
 import { computed } from 'vue'
 
-defineOptions({
-    name: 'PkOverlay',
-})
-
 const props = defineProps(overlayProps)
 
 const emits = defineEmits(overlayEmits)

@@ -2,7 +2,7 @@ import PkButton from './src/button.vue'
 import type { App } from 'vue'
 
 PkButton.install = (app: App) => {
-    app.component(PkButton.name, PkButton)
+    app.component("PkButton", PkButton)
 }
 
 export default PkButton

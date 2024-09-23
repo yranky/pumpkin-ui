@@ -16,9 +16,6 @@ import { provide, ref } from 'vue'
 import { formFieldValidate, formProvideSymbol, IFieldExposeToForm, IFormProvide } from '@pk-ui/utils'
 import { FieldRuleTrigger, IFormValidateErrorResult, IFormValueItem } from './types'
 
-defineOptions({
-    name: 'PkForm'
-})
 const emits = defineEmits<formEmits>()
 const props = defineProps(formProps)
 
@@ -26,7 +23,7 @@ const bem = useBem('form')
 
 const fieldExpose = ref<IFieldExposeToForm[]>([])
 
-const onSubmit = async (e?: Event) => {
+const onSubmit = async () => {
     emits('onSubmitValidate')
     const errorResult = await checkFields('onSubmit')
     emits('onSubmitValidateComplete', errorResult)
