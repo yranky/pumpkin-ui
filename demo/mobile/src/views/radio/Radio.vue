@@ -73,7 +73,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pk-ui/mobile'
 import { ref } from 'vue'
 
 const onChange = (value) => {
-    Toast.showToast(JSON.stringify(value))
+    Toast.show(JSON.stringify(value))
 }
 </script>
 <style lang="less" scoped>

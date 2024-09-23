@@ -1,8 +1,8 @@
-import { extend } from "@pk-ui/utils";
-import { LoadingOptions, ToastOptions, ToastOptionsProps } from "./types";
-import { App, createApp, PropType, reactive, ref, toRefs } from "vue";
-import PkToast from "../toast.vue";
-import { types } from "../toast";
+import { extend } from "@pk-ui/utils"
+import { LoadingOptions, ToastOptions, ToastOptionsProps } from "./types"
+import { App, createApp, PropType, reactive, ref, toRefs } from "vue"
+import PkToast from "../toast.vue"
+import { types } from "../toast"
 
 interface IQueueItem {
     instance: InstanceType<typeof PkToast>
@@ -90,7 +90,7 @@ const _showToast = function (option: ToastOptions) {
     }
 }
 
-const showToast = function (option: ToastOptions | string) {
+const show = function (option: ToastOptions | string) {
     return _showToast(typeof option === 'string' ? {
         text: option
     } : option)
@@ -117,7 +117,7 @@ const closeToastByType = function (type: typeof types[number], except: boolean =
 }
 
 export const Toast = {
-    showToast,
+    show,
     showLoading,
     closeAllToast,
     setMultiple,

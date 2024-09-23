@@ -48,8 +48,8 @@ const items = [{
 
 const showDefaultPicker = () => {
     Picker.showPicker(items).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -60,8 +60,8 @@ const showChangeToolbar = () => {
         confirmText: '我要确定',
         title: '请选择'
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -69,11 +69,11 @@ const showOnChangeToolbar = () => {
     Picker.showPicker({
         items,
         onChange: (values) => {
-            Toast.showToast(`值变化:${JSON.stringify(values.map(item => item.label))}`)
+            Toast.show(`值变化:${JSON.stringify(values.map(item => item.label))}`)
         }
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -82,8 +82,8 @@ const showDefaultValuePicker = () => {
         items,
         current: ['水果', '橙子', '酸']
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -92,8 +92,8 @@ const showNotCloseOnPressOverlay = () => {
         items,
         closeOnPressOverlay: false
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.label))}`)
+        else Toast.show('取消选择')
     })
 }
 

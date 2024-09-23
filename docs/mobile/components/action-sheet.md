@@ -57,7 +57,7 @@ const showDefaultActionSheet = () => {
         }
     ]).then((res) => {
         if (res.type === 'confirm') {
-            Toast.showToast(res.item.name)
+            Toast.show(res.item.name)
         }
     })
 }
@@ -104,9 +104,9 @@ const showTitleActionSheet = () => {
         ]
     }).then((res) => {
         if (res.type === 'confirm') {
-            Toast.showToast(res.item.name)
+            Toast.show(res.item.name)
         } else if (res.type === 'cancel') {
-            Toast.showToast('取消')
+            Toast.show('取消')
         }
     })
 }
@@ -155,7 +155,7 @@ const showNoCancelActionSheet = () => {
         cancel:false
     }).then((res) => {
         if (res.type === 'confirm') {
-            Toast.showToast(res.item.name)
+            Toast.show(res.item.name)
         }
     })
 }
@@ -207,7 +207,7 @@ const showStatusActionSheet = () => {
         }
     ]).then((res) => {
         if (res.type === 'confirm') {
-            Toast.showToast(res.item.name)
+            Toast.show(res.item.name)
         }
     })
 }

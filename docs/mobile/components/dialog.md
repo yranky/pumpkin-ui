@@ -278,11 +278,11 @@ const openEventDialog = () => {
         },
         onConfirm: () => {
             console.log('点击了确定')
-            Toast.showToast('点击了确定')
+            Toast.show('点击了确定')
         },
         onCancel: () => {
             console.log('点击了取消')
-            Toast.showToast('点击了取消')
+            Toast.show('点击了取消')
         }
     }).then((res => {
         console.log(`promise结果：${JSON.stringify(res)}`)

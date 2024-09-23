@@ -175,7 +175,7 @@ const value = ref(true)
 
 
 const onChange = (val) => {
-    Toast.showToast(`当前状态：${val}`)
+    Toast.show(`当前状态：${val}`)
 }
 ```
 

@@ -1,7 +1,7 @@
 <template>
     <div class="toast-container">
         <pk-cell-group>
-            <pk-cell is-link @click="Toast.showToast('基础用法')">
+            <pk-cell is-link @click="Toast.show('基础用法')">
                 <template #title>基础用法</template>
             </pk-cell>
             <pk-cell is-link @click="showLoading">
@@ -10,28 +10,28 @@
             <pk-cell is-link @click="showLoadingClose">
                 <template #title>加载用法（通过close关闭）</template>
             </pk-cell>
-            <pk-cell is-link @click="Toast.showToast({
+            <pk-cell is-link @click="Toast.show({
                 text: 'top',
                 position: 'top'
             })">
                 <template #title>top</template>
             </pk-cell>
-            <pk-cell is-link @click="Toast.showToast({
+            <pk-cell is-link @click="Toast.show({
                 text: 'bottom',
                 position: 'bottom'
             })">
                 <template #title>bottom</template>
             </pk-cell>
-            <pk-cell is-link @click="Toast.showToast({
+            <pk-cell is-link @click="Toast.show({
                 text: 'center',
                 position: 'center'
             })">
                 <template #title>center</template>
             </pk-cell>
-            <pk-cell is-link @click="Toast.setMultiple(true); Toast.showToast('开启同时显示多个')">
+            <pk-cell is-link @click="Toast.setMultiple(true); Toast.show('开启同时显示多个')">
                 <template #title>开启同时显示多个</template>
             </pk-cell>
-            <pk-cell is-link @click="Toast.setMultiple(false); Toast.showToast('关闭同时显示多个')">
+            <pk-cell is-link @click="Toast.setMultiple(false); Toast.show('关闭同时显示多个')">
                 <template #title>关闭同时显示多个</template>
             </pk-cell>
         </pk-cell-group>

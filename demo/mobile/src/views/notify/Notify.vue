@@ -29,10 +29,10 @@
                 @click="Notify.show('超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本超长文本')">
                 <template #title>超长文本</template>
             </pk-cell>
-            <pk-cell is-link @click="Notify.setMultiple(true); Toast.showToast('开启同时显示多个')">
+            <pk-cell is-link @click="Notify.setMultiple(true); Toast.show('开启同时显示多个')">
                 <template #title>开启同时显示多个</template>
             </pk-cell>
-            <pk-cell is-link @click="Notify.setMultiple(false); Toast.showToast('关闭同时显示多个')">
+            <pk-cell is-link @click="Notify.setMultiple(false); Toast.show('关闭同时显示多个')">
                 <template #title>关闭同时显示多个</template>
             </pk-cell>
         </pk-cell-group>

@@ -15,13 +15,13 @@ aside: false
 ```js [script]
 import { Toast } from "@pk-ui/mobile"
 
-Toast.showToast('toast消息')
+Toast.show('toast消息')
 ```
 :::
 
 ## 代码示例
 ### 基础用法
-通过showToast函数调用，第一个传入需要展示的文本内容即可。第一个参数也支持传入对象，对象中可以传入type、text、overlay等属性。
+通过show函数调用，第一个传入需要展示的文本内容即可。第一个参数也支持传入对象，对象中可以传入type、text、overlay等属性。
 
 ::: code-tabs#default
 @tab template
@@ -29,7 +29,7 @@ Toast.showToast('toast消息')
 ```vue [template]
 <div class="toast-container">
     <pk-cell-group>
-        <pk-cell is-link @click="Toast.showToast('基础用法')">
+        <pk-cell is-link @click="Toast.show('基础用法')">
             <template #title>基础用法</template>
         </pk-cell>
     </pk-cell-group>
@@ -133,19 +133,19 @@ const showLoadingClose = () => {
 ```vue [template]
 <div class="toast-container">
     <pk-cell-group>
-        <pk-cell is-link @click="Toast.showToast({
+        <pk-cell is-link @click="Toast.show({
             text: 'top',
             position: 'top'
         })">
             <template #title>top</template>
         </pk-cell>
-        <pk-cell is-link @click="Toast.showToast({
+        <pk-cell is-link @click="Toast.show({
             text: 'bottom',
             position: 'bottom'
         })">
             <template #title>bottom</template>
         </pk-cell>
-        <pk-cell is-link @click="Toast.showToast({
+        <pk-cell is-link @click="Toast.show({
             text: 'center',
             position: 'center'
         })">
@@ -181,10 +181,10 @@ import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
 ```vue [template]
 <div class="toast-container">
     <pk-cell-group>
-        <pk-cell is-link @click="Toast.setMultiple(true); Toast.showToast('开启同时显示多个')">
+        <pk-cell is-link @click="Toast.setMultiple(true); Toast.show('开启同时显示多个')">
             <template #title>开启同时显示多个</template>
         </pk-cell>
-        <pk-cell is-link @click="Toast.setMultiple(false); Toast.showToast('关闭同时显示多个')">
+        <pk-cell is-link @click="Toast.setMultiple(false); Toast.show('关闭同时显示多个')">
             <template #title>关闭同时显示多个</template>
         </pk-cell>
     </pk-cell-group>
@@ -211,7 +211,7 @@ import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
 #### 方法
 | 方法                | 说明                                          | 类型                                                   |
 | ------------------- | --------------------------------------------- | ------------------------------------------------------ |
-| Toast.showToast     | 显示轻提示                                    | `(option: ToastOptions ｜ string)=>{close:()=>void}`   |
+| Toast.show          | 显示轻提示                                    | `(option: ToastOptions ｜ string)=>{close:()=>void}`   |
 | Toast.closeAllToast | 关闭所有命令式调用的轻提示（不能关闭Loading） | `()=>void`                                             |
 | Toast.showLoading   | 显示Loading                                   | `(option: LoadingOptions ｜ string)=>{close:()=>void}` |
 | Toast.hideLoading   | 隐藏命令式调用的Loading                       | `()=>void`                                             |

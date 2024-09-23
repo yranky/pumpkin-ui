@@ -18,8 +18,8 @@ aside: false
 import { Toast, DatePicker } from "@pk-ui/mobile"
 const showDefaultDatePicker = () => {
     DatePicker.showDatePicker().then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.showTshowoast('取消选择')
     })
 }
 
@@ -49,8 +49,8 @@ import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
 
 const showDefaultDatePicker = () => {
     DatePicker.showDatePicker().then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -88,8 +88,8 @@ const showDatePickerWithDefaultDate = () => {
     DatePicker.showDatePicker({
         current: new Date(2022, 0, 1)
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -135,8 +135,8 @@ const showDatePickerWidthMinMax = () => {
         min: new Date(2022, 0, 1),
         max: new Date(2022, 11, 31)
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -176,8 +176,8 @@ const showDatePickerTime = () => {
     DatePicker.showDatePicker({
         type: ['hour', 'minute', 'second']
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -217,8 +217,8 @@ const showDatePickerWithDefaultTime = () => {
         type: ['hour', 'minute', 'second'],
         current: new Date(2024, 0, 1, 12, 0, 0)
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -260,8 +260,8 @@ const showItemFilterDatePicker = () => {
             return true
         }
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -310,8 +310,8 @@ const showItemFormatterDatePicker = () => {
             }
         }
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 
@@ -350,8 +350,8 @@ const showNotCloseOnPressOverlay = () => {
     DatePicker.showDatePicker({
         closeOnPressOverlay: false
     }).then(result => {
-        if (result.type === 'confirm') Toast.showToast(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
-        else Toast.showToast('取消选择')
+        if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
+        else Toast.show('取消选择')
     })
 }
 

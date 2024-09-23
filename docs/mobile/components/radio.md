@@ -203,7 +203,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
 ```js [script]
 import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pk-ui/mobile'
 const onChange = (value) => {
-    Toast.showToast(JSON.stringify(value))
+    Toast.show(JSON.stringify(value))
 }
 ```
 

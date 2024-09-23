@@ -38,7 +38,7 @@ aside: false
 import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pk-ui/mobile'
 
 const onSubmit = (data) => {
-    Toast.showToast(JSON.stringify(data))
+    Toast.show(JSON.stringify(data))
 }
 ```
 
@@ -82,7 +82,7 @@ const passwordValidator = (rule, value) => {
 }
 
 const onSubmit = (data) => {
-    Toast.showToast(JSON.stringify(data))
+    Toast.show(JSON.stringify(data))
 }
 ```
 
@@ -135,7 +135,7 @@ const passwordValidator = (rule, value) => {
 }
 
 const onSubmit = (data) => {
-    Toast.showToast(JSON.stringify(data))
+    Toast.show(JSON.stringify(data))
 }
 
 ```

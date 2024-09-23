@@ -62,7 +62,7 @@ const passwordValidator = (rule, value) => {
 }
 
 const onSubmit = (data) => {
-    Toast.showToast(JSON.stringify(data))
+    Toast.show(JSON.stringify(data))
 }
 
 </script>

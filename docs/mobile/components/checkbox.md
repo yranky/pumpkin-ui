@@ -236,10 +236,10 @@ import { ref } from 'vue'
 const firstChecked = ref(true)
 
 const onChange = (value) => {
-    Toast.showToast(JSON.stringify(value))
+    Toast.show(JSON.stringify(value))
 }
 const onLimit = (value) => {
-    Toast.showToast('最多只能选择两个')
+    Toast.show('最多只能选择两个')
 }
 
 ```

@@ -43,7 +43,7 @@ const copySelect = (name: string) => {
     input.select();
     document.execCommand("copy");
     document.body.removeChild(input);
-    Toast.showToast(`已复制:${name}`)
+    Toast.show(`已复制:${name}`)
 }
 
 
