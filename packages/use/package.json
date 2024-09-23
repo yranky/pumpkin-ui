@@ -1,9 +1,8 @@
 {
-    "name": "@pk-ui/use",
-    "private": true,
-    "main": "index.ts",
-    "peerDependencies": {
-      "vue": "^3.4.21"
-    }
+  "name": "@pk-ui/use",
+  "private": true,
+  "main": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.0.0"
   }
-  
+}

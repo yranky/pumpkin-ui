@@ -3,7 +3,7 @@
   "private": true,
   "main": "index.ts",
   "peerDependencies": {
-    "vue": "^3.4.21",
+    "vue": "^3.0.0",
     "dayjs": "^1.11.12"
   }
 }
