@@ -35,7 +35,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pk-ui/mobile'
+import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pumpkin-ui/mobile'
 
 const onSubmit = (data) => {
     Toast.show(JSON.stringify(data))
@@ -74,7 +74,7 @@ const onSubmit = (data) => {
 
 @tab script
 ```js [script]
-import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pk-ui/mobile'
+import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pumpkin-ui/mobile'
 
 const passwordValidator = (rule, value) => {
     if (value.length < 6) throw new Error('密码不能少于6位')
@@ -117,7 +117,7 @@ const onSubmit = (data) => {
 
 @tab script
 ```js [script]
-import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pk-ui/mobile'
+import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pumpkin-ui/mobile'
 import { ref } from 'vue'
 
 const usernameValidator = (rule, value) => {

@@ -11,7 +11,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkCell, PkCellGroup, PkDivider } from '@pk-ui/mobile';
+import { PkCell, PkCellGroup, PkDivider } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 

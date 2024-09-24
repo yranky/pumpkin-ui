@@ -16,7 +16,7 @@ aside: false
 ```js [script]
 
 
-import { Toast, Picker } from "@pk-ui/mobile"
+import { Toast, Picker } from "@pumpkin-ui/mobile"
     Picker.showPicker([{
     label: '水果',
     value: '水果',
@@ -54,7 +54,7 @@ import { Toast, Picker } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, Picker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, Picker } from "@pumpkin-ui/mobile"
 const items = [{
     label: '水果',
     value: '水果',
@@ -116,7 +116,7 @@ const showDefaultPicker = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, Picker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, Picker } from "@pumpkin-ui/mobile"
 const items = [{
     label: '水果',
     value: '水果',
@@ -182,7 +182,7 @@ const showChangeToolbar = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, Picker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, Picker } from "@pumpkin-ui/mobile"
 const items = [{
     label: '水果',
     value: '水果',
@@ -247,7 +247,7 @@ const showDefaultValuePicker = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, Picker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, Picker } from "@pumpkin-ui/mobile"
 const items = [{
     label: '水果',
     value: '水果',
@@ -313,7 +313,7 @@ const showOnChangeToolbar = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, Picker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, Picker } from "@pumpkin-ui/mobile"
 const items = [{
     label: '水果',
     value: '水果',

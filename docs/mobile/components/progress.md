@@ -26,7 +26,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -56,7 +56,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -89,7 +89,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -121,7 +121,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -150,7 +150,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -182,7 +182,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -213,7 +213,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -244,7 +244,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);
@@ -302,7 +302,7 @@ const percent = ref(10);
 
 @tab script
 ```js [script]
-import { PkProgress } from '@pk-ui/mobile';
+import { PkProgress } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);

@@ -8,7 +8,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { PkPickerView, PkDivider } from '@pk-ui/mobile'
+import { PkPickerView, PkDivider } from '@pumpkin-ui/mobile'
 
 
 const colItems = ref([

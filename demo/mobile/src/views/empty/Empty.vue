@@ -11,7 +11,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkEmpty, PkDivider } from '@pk-ui/mobile'
+import { PkEmpty, PkDivider } from '@/mobile'
 
 
 </script>

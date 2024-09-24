@@ -26,7 +26,7 @@
     </popup>
 </template>
 <script setup lang="ts">
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import { toastProps, toastEmits } from './toast'
 import { watch } from 'vue'
 import "./toast.less"

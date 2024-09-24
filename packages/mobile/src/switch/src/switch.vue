@@ -35,7 +35,7 @@
 </template>
 <script setup lang="ts">
 import { switchEmits, switchProps } from './switch'
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import './switch.less'
 import Loading from '../../loading/src/loading.vue'
 

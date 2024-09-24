@@ -1,4 +1,4 @@
-import { extend, usePromiseHooks } from "@pk-ui/utils"
+import { extend, usePromiseHooks } from "@pumpkin-ui/utils"
 import { App, createApp } from "vue"
 import PkPicker from "../picker.vue"
 import { PickerOptionsProps, PickerOptions, PickerCallbackParams, PickerPromiseHooks } from "./types"

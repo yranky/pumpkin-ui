@@ -58,7 +58,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkCell, PkDivider, PkCellGroup } from "@pk-ui/mobile";
+import { PkCell, PkDivider, PkCellGroup } from "@pumpkin-ui/mobile";
 
 </script>
 <style lang="less" scoped>

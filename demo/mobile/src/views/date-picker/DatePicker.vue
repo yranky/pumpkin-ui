@@ -29,7 +29,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showDefaultDatePicker = () => {
     DatePicker.showDatePicker().then(result => {

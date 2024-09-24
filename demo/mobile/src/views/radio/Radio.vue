@@ -69,7 +69,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pumpkin-ui/mobile'
 import { ref } from 'vue'
 
 const onChange = (value) => {

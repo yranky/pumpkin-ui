@@ -22,10 +22,10 @@
 </template>
 <script lang="ts" setup>
 import { badgeProps } from './badge'
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import './badge.less'
 import { computed, useSlots } from 'vue'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 const props = defineProps(badgeProps)
 const bem = useBem('badge')

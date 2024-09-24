@@ -1,4 +1,4 @@
-import { extend } from "@pk-ui/utils"
+import { extend } from "@pumpkin-ui/utils"
 import { loadingTypes } from "../../loading/src/loading"
 import { PropType } from "vue"
 

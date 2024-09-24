@@ -1,5 +1,5 @@
 {
-  "name": "@pk-ui/utils",
+  "name": "@pumpkin-ui/utils",
   "private": true,
   "main": "index.ts",
   "dependencies": {

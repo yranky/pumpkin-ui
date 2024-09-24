@@ -34,7 +34,7 @@
                         ]" v-if="props.showCancelButton" @click="onCancelClick">
                             <pk-button type="link" block :textColor="props.cancelButtonColor">{{
                                 props.cancelButtonText
-                            }}</pk-button>
+                                }}</pk-button>
                         </div>
                         <div :class="[
                             bem.e('action-item')
@@ -56,7 +56,7 @@
     </popup>
 </template>
 <script lang="ts" setup>
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import { dialogEmits, dialogProps } from './dialog'
 import PkButton from '../../button/src/button.vue'
 import Popup from '../../popup/src/popup.vue'
@@ -64,7 +64,7 @@ import Icon from '../../icon/src/icon.vue'
 import PkTransition from '../../transition/src/pk-transition.vue'
 import './dialog.less'
 import { computed, ref, useSlots } from 'vue'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 const bem = useBem('dialog')
 const props = defineProps(dialogProps)

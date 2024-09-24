@@ -24,7 +24,7 @@
 import { computed, ref } from 'vue';
 import { pickerColumnEmits, pickerColumnProps } from './picker-column';
 import './picker-column.less'
-import { useBem, useTouch } from '@pk-ui/use'
+import { useBem, useTouch } from '@pumpkin-ui/use'
 
 const props = defineProps(pickerColumnProps)
 

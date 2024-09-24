@@ -25,7 +25,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkPickerView } from '@pk-ui/mobile'
+import { PkPickerView } from '@pumpkin-ui/mobile'
 
 
 const colItems = ref([
@@ -65,7 +65,7 @@ const colItems = ref([
 @tab script
 ```js [script]
 import { ref } from 'vue'
-import { PkPickerView } from '@pk-ui/mobile'
+import { PkPickerView } from '@pumpkin-ui/mobile'
 
 const values = ref(['苹果', '梨', '沙梨', '沙梨2'])
 

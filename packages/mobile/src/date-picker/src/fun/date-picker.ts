@@ -1,4 +1,4 @@
-import { extend, usePromiseHooks } from "@pk-ui/utils"
+import { extend, usePromiseHooks } from "@pumpkin-ui/utils"
 import { App, createApp } from "vue"
 import PkDatePicker from "../date-picker.vue"
 import { DatePickerOptionsProps, DatePickerOptions, DatePickerCallbackParams, DatePickerPromiseHooks } from "./types"

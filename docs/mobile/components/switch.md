@@ -31,7 +31,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)
@@ -69,7 +69,7 @@ const value = ref(true)
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)
@@ -100,7 +100,7 @@ const value = ref(true)
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)
@@ -132,7 +132,7 @@ const value = ref(true)
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)
@@ -168,7 +168,7 @@ const value = ref(true)
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup, Toast } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup, Toast } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)
@@ -207,7 +207,7 @@ const onChange = (val) => {
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)
@@ -249,7 +249,7 @@ const beforeChange = (oldValue, newValue) => {
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)
@@ -316,7 +316,7 @@ const value = ref(true)
 
 @tab script
 ```js [script]
-import { PkSwitch, PkCell, PkCellGroup } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)

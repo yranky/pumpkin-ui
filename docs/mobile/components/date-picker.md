@@ -15,7 +15,7 @@ aside: false
 ```js [script]
 
 
-import { Toast, DatePicker } from "@pk-ui/mobile"
+import { Toast, DatePicker } from "@pumpkin-ui/mobile"
 const showDefaultDatePicker = () => {
     DatePicker.showDatePicker().then(result => {
         if (result.type === 'confirm') Toast.show(`选择了:${JSON.stringify(result.items.map(item => item.value))}`)
@@ -45,7 +45,7 @@ const showDefaultDatePicker = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showDefaultDatePicker = () => {
     DatePicker.showDatePicker().then(result => {
@@ -82,7 +82,7 @@ const showDefaultDatePicker = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showDatePickerWithDefaultDate = () => {
     DatePicker.showDatePicker({
@@ -128,7 +128,7 @@ const showDatePickerWithDefaultDate = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showDatePickerWidthMinMax = () => {
     DatePicker.showDatePicker({
@@ -170,7 +170,7 @@ const showDatePickerWidthMinMax = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showDatePickerTime = () => {
     DatePicker.showDatePicker({
@@ -210,7 +210,7 @@ const showDatePickerTime = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showDatePickerWithDefaultTime = () => {
     DatePicker.showDatePicker({
@@ -250,7 +250,7 @@ const showDatePickerWithDefaultTime = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showItemFilterDatePicker = () => {
     DatePicker.showDatePicker({
@@ -294,7 +294,7 @@ const showItemFilterDatePicker = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showItemFormatterDatePicker = () => {
     DatePicker.showDatePicker({
@@ -344,7 +344,7 @@ const showItemFormatterDatePicker = () => {
 
 @tab script
 ```js [script]
-import { PkCellGroup, Toast, PkCell, DatePicker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, DatePicker } from "@pumpkin-ui/mobile"
 
 const showNotCloseOnPressOverlay = () => {
     DatePicker.showDatePicker({

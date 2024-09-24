@@ -24,7 +24,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -46,7 +46,7 @@ import { PkDivider } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -68,7 +68,7 @@ import { PkDivider } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -94,7 +94,7 @@ import { PkDivider } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -120,7 +120,7 @@ import { PkDivider } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -144,7 +144,7 @@ import { PkDivider } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -194,7 +194,7 @@ import { PkDivider } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 ```
 

@@ -1,4 +1,4 @@
-import { extend } from "@pk-ui/utils"
+import { extend } from "@pumpkin-ui/utils"
 import { FieldRule } from "../../form"
 import { PropType } from "vue"
 

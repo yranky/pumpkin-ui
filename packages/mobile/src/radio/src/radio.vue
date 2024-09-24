@@ -26,13 +26,13 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import PkIcon from '../../icon/src/icon.vue'
 import './radio.less'
 import { radioProps } from './radio'
 import { computed, inject, onBeforeUnmount, ref, useSlots, watch } from 'vue'
 import { IRadioProvider, radioEmits, radioProvideSymbol } from './types'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 const emits = defineEmits<radioEmits>()
 const bem = useBem('radio')

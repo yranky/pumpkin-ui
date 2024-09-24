@@ -13,7 +13,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { Notify } from "@pk-ui/mobile"
+import { Notify } from "@pumpkin-ui/mobile"
 
 Notify.show('Notify消息')
 ```
@@ -39,7 +39,7 @@ Notify.show('Notify消息')
 
 @tab script
 ```js [script]
-import { Notify, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Notify, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -79,7 +79,7 @@ import { Notify, PkCell, PkCellGroup } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { Notify, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Notify, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -116,7 +116,7 @@ import { Notify, PkCell, PkCellGroup } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { Notify, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Notify, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 ```
 

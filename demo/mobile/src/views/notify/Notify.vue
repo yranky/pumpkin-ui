@@ -39,7 +39,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { Notify, Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Notify, Toast, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 </script>
 <style lang="less" scoped>

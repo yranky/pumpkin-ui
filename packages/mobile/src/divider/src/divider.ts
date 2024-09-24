@@ -1,4 +1,4 @@
-import { extend } from "@pk-ui/utils";
+import { extend } from "@pumpkin-ui/utils";
 
 
 export const dividerContentPositions = ['left', 'center', 'right'] as const

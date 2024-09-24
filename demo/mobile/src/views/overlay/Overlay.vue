@@ -24,7 +24,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkOverlay, PkButton, PkDivider } from "@pk-ui/mobile"
+import { PkOverlay, PkButton, PkDivider } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const show = ref<boolean>(false)

@@ -42,7 +42,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkField, PkDivider, PkForm } from "@pk-ui/mobile"
+import { PkField, PkDivider, PkForm } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')

@@ -24,7 +24,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkIcon, PkDivider, Toast } from '@pk-ui/mobile'
+import { PkIcon, PkDivider, Toast } from '@pumpkin-ui/mobile'
 
 const icons = [{
     title: '线框风格',

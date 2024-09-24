@@ -11,7 +11,7 @@
     </transition>
 </template>
 <script setup lang="ts">
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import './overlay.less'
 import { overlayEmits, overlayProps } from './overlay'
 import { computed } from 'vue'

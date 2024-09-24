@@ -26,13 +26,13 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import PkIcon from '../../icon/src/icon.vue'
 import './checkbox.less'
 import { checkboxProps } from './checkbox'
 import { computed, inject, onBeforeUnmount, ref, useSlots } from 'vue'
 import { checkboxEmits, checkboxProvideSymbol, ICheckboxProvider } from './types'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 
 const emits = defineEmits<checkboxEmits>()

@@ -68,7 +68,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkCheckbox, PkCheckboxGroup, PkDivider, Toast, PkIcon } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider, Toast, PkIcon } from '@pumpkin-ui/mobile'
 import { ref } from 'vue'
 
 const firstChecked = ref(true)

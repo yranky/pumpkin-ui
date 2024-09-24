@@ -23,7 +23,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkTag } from '@pk-ui/mobile'
+import { PkTag } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -48,7 +48,7 @@ import { PkTag } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkTag } from '@pk-ui/mobile'
+import { PkTag } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -73,7 +73,7 @@ import { PkTag } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkTag } from '@pk-ui/mobile'
+import { PkTag } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -97,7 +97,7 @@ import { PkTag } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkTag } from '@pk-ui/mobile'
+import { PkTag } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -123,7 +123,7 @@ import { PkTag } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkTag } from '@pk-ui/mobile'
+import { PkTag } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -149,7 +149,7 @@ import { PkTag } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkTag } from '@pk-ui/mobile'
+import { PkTag } from '@pumpkin-ui/mobile'
 
 ```
 

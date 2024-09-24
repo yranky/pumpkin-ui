@@ -1,4 +1,4 @@
-import { FieldRule, FieldRuleTrigger } from "@pk-ui/mobile"
+import { FieldRule, FieldRuleTrigger } from "@pumpkin-ui/mobile"
 
 export interface IFieldExposeToForm {
     getName: () => string,

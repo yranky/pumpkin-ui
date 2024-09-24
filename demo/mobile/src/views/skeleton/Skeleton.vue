@@ -30,7 +30,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkSkeleton, PkSkeletonAvatar, PkSkeletonParagraph, PkDivider } from '@pk-ui/mobile'
+import { PkSkeleton, PkSkeletonAvatar, PkSkeletonParagraph, PkDivider } from '@pumpkin-ui/mobile'
 
 </script>
 <style lang="less" scoped>

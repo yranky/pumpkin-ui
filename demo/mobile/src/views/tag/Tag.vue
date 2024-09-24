@@ -73,7 +73,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkTag, PkDivider } from '@pk-ui/mobile'
+import { PkTag, PkDivider } from '@pumpkin-ui/mobile'
 
 </script>
 <style lang="less" scoped>

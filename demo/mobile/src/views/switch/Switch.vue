@@ -37,7 +37,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkSwitch, PkCell, PkCellGroup, Toast } from "@pk-ui/mobile";
+import { PkSwitch, PkCell, PkCellGroup, Toast } from "@pumpkin-ui/mobile";
 import { ref } from "vue";
 
 const value = ref(true)

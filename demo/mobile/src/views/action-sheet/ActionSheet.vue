@@ -17,7 +17,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pk-ui/mobile"
+import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pumpkin-ui/mobile"
 
 const showDefaultActionSheet = () => {
     ActionSheet.showActionSheet([

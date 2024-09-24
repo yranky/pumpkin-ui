@@ -9,11 +9,11 @@
 </template>
 <script lang="ts" setup>
 import { formEmits, formProps } from './form'
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import cellGroup from '../../cell/src/cell-group.vue'
 import './form.less'
 import { provide, ref } from 'vue'
-import { formFieldValidate, formProvideSymbol, IFieldExposeToForm, IFormProvide } from '@pk-ui/utils'
+import { formFieldValidate, formProvideSymbol, IFieldExposeToForm, IFormProvide } from '@pumpkin-ui/utils'
 import { FieldRuleTrigger, IFormValidateErrorResult, IFormValueItem } from './types'
 
 const emits = defineEmits<formEmits>()

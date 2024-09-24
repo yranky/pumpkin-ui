@@ -7,11 +7,11 @@
     }" v-for="(item, index) in rows" :key="index"></div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import './skeleton-paragraph.less'
 import { skeletonParagraphProps } from './skeleton-paragraph'
 import { computed, inject, onBeforeUnmount, ref, unref } from 'vue'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 import { ISkeletonProvider, skeletonProviderId } from './types'
 
 const bem = useBem('skeleton-paragraph')

@@ -7,8 +7,8 @@ import pkTheme from './theme'
 
 export default defineUserConfig({
   lang: 'zh-Hans',
-  title: 'PK-UI',
-  description: 'PK-UI 组件库 - 移动端',
+  title: 'pumpkin-ui',
+  description: 'pumpkin-ui 组件库 - 移动端',
   theme: pkTheme({
     locales: {
       '/': {
@@ -139,8 +139,8 @@ export default defineUserConfig({
   locales: {
     '/': {
       lang: 'zh-Hans',
-      title: 'PK-UI',
-      description: 'PK-UI 组件库 - 移动端'
+      title: 'pumpkin-ui',
+      description: 'pumpkin-ui 组件库 - 移动端'
     }
   },
   bundler: viteBundler(),

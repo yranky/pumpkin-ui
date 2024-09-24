@@ -7,7 +7,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import './radio-group.less'
 import { provide, ref, toRefs, watch } from 'vue'
 import { radioGroupProps } from './radio-group'

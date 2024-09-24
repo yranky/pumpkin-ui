@@ -47,7 +47,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkDivider, PkBadge } from '@pk-ui/mobile'
+import { PkDivider, PkBadge } from '@pumpkin-ui/mobile'
 import { computed, ref } from 'vue'
 
 

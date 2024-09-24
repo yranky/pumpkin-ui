@@ -65,7 +65,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { Dialog, PkCellGroup, PkCell, Toast } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell, Toast } from '@pumpkin-ui/mobile'
 
 const openEventDialog = () => {
     Dialog.show({

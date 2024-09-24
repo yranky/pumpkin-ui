@@ -1,4 +1,4 @@
-import { DateUtils, extend } from "@pk-ui/utils"
+import { DateUtils, DateUtilsType, extend } from "@pumpkin-ui/utils"
 import { PickerItem } from "../../picker-view/src/picker-view"
 import { PropType } from "vue"
 
@@ -181,7 +181,7 @@ export function getDatePickerItems(options: DatePickerGetterItemsOptions): Picke
     }).filter((item) => filter(options.type, item))
 }
 
-export function getCurrentSelectDateItemByColumnsAndType(columns: PickerItem['value'][], type: TypeMap, forceValid: boolean = true) {
+export function getCurrentSelectDateItemByColumnsAndType(columns: PickerItem['value'][], type: TypeMap, forceValid: boolean = true): DateUtilsType {
     const types = sortDateType(type)
     const currentDate = DateUtils()
     const year = columns[types.indexOf('year')] || currentDate.year()

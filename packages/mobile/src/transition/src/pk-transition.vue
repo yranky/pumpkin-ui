@@ -13,8 +13,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { transitionEmits, transitionProps } from './pk-transition'
-import { useBem } from '@pk-ui/use'
-import { isEmptyValue } from '@pk-ui/utils'
+import { useBem } from '@pumpkin-ui/use'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 import './pk-transition.less'
 
 const emits = defineEmits<transitionEmits>()

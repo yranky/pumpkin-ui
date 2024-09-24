@@ -16,7 +16,7 @@
     </popup>
 </template>
 <script lang="ts" setup>
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import { notifyEmits, notifyProps } from './notify'
 import Popup from '../../popup/src/popup.vue'
 import './notify.less'

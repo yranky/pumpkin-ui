@@ -20,7 +20,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkCellGroup, Toast, PkCell, Picker } from "@pk-ui/mobile"
+import { PkCellGroup, Toast, PkCell, Picker } from "@pumpkin-ui/mobile"
 const items = [{
     label: '水果',
     value: '水果',

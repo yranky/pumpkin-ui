@@ -8,12 +8,12 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import './skeleton-avatar.less'
 import { skeletonAvatarProps } from './skeleton-avatar'
 import { computed, inject, onBeforeUnmount, ref, unref } from 'vue'
 import { ISkeletonProvider, skeletonProviderId } from './types'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 const bem = useBem('skeleton-avatar')
 const props = defineProps(skeletonAvatarProps)

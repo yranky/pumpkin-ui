@@ -25,7 +25,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -48,7 +48,7 @@ import { PkLoading } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -70,7 +70,7 @@ import { PkLoading } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -92,7 +92,7 @@ import { PkLoading } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -113,7 +113,7 @@ import { PkLoading } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -136,7 +136,7 @@ import { PkLoading } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -159,7 +159,7 @@ import { PkLoading } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -209,7 +209,7 @@ import { PkLoading } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkLoading } from "@pk-ui/mobile"
+import { PkLoading } from "@pumpkin-ui/mobile"
 
 ```
 

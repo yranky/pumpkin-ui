@@ -1,4 +1,4 @@
-import { FieldRule, FieldRuleTrigger } from "@pk-ui/mobile"
+import { FieldRule, FieldRuleTrigger } from "@pumpkin-ui/mobile"
 import { isEmptyValue } from "./utils"
 
 export async function formFieldValidate(rules: FieldRule[], value: any, formTrigger: FieldRuleTrigger[], trigger: FieldRuleTrigger | 'force', trim: boolean): Promise<boolean> {

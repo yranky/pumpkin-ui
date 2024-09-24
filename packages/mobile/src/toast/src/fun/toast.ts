@@ -1,4 +1,4 @@
-import { extend } from "@pk-ui/utils"
+import { extend } from "@pumpkin-ui/utils"
 import { LoadingOptions, ToastOptions, ToastOptionsProps } from "./types"
 import { App, createApp } from "vue"
 import PkToast from "../toast.vue"

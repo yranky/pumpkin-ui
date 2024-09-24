@@ -11,7 +11,7 @@
     </popup>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import { computed, ref, useAttrs } from 'vue'
 import { pickerEmits, pickerProps } from './picker'
 import Popup from '../../popup/src/popup.vue'

@@ -34,7 +34,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkDivider } from "@pk-ui/mobile"
+import { PkDivider } from "@pumpkin-ui/mobile"
 
 </script>
 <style lang="less" scoped>

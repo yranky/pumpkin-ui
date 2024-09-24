@@ -32,7 +32,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkPopup, PkCell, PkButton } from "@pk-ui/mobile"
+import { PkPopup, PkCell, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const defaultShow = ref<boolean>(false)
@@ -104,7 +104,7 @@ const defaultShow = ref<boolean>(false)
 
 @tab script
 ```js [script]
-import { PkPopup, PkCell, PkButton } from "@pk-ui/mobile"
+import { PkPopup, PkCell, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const topShow = ref<boolean>(false)
@@ -141,7 +141,7 @@ const centerShow = ref<boolean>(false)
 
 @tab script
 ```js [script]
-import { PkPopup, PkCell, PkButton } from "@pk-ui/mobile"
+import { PkPopup, PkCell, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const roundShow = ref<boolean>(false)
@@ -175,7 +175,7 @@ const roundShow = ref<boolean>(false)
 
 @tab script
 ```js [script]
-import { PkPopup, PkCell, PkButton } from "@pk-ui/mobile"
+import { PkPopup, PkCell, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const backgroundShow = ref<boolean>(false)

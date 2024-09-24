@@ -34,7 +34,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import { pickerViewProps, pickerViewEmits, PickerItem } from './picker-view'
 import PickerColumn from './picker-column.vue'
 import './picker-view.less'

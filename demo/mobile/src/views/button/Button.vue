@@ -99,7 +99,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkButton, PkDivider } from '@pk-ui/mobile'
+import { PkButton, PkDivider } from '@pumpkin-ui/mobile'
 import { computed, ref } from 'vue';
 
 

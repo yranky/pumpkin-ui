@@ -5,13 +5,13 @@
         v-bind="$attrs" @on-change="onChange" @onBeforeUpdateEmits="onBeforeUpdateEmits" />
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import { computed, nextTick, ref, useAttrs } from 'vue'
 import { checkValueIsInColumns, getColumns, getCurrentSelectDateItemByColumnsAndType, getValueByDate, pickerEmits, pickerProps } from './date-picker'
 import picker from '../../picker/src/picker.vue'
 import './date-picker.less'
 import { PickerItem } from '../../picker-view/src/picker-view'
-import { DateUtils } from '@pk-ui/utils'
+import { DateUtils } from '@pumpkin-ui/utils'
 
 const props = defineProps(pickerProps)
 

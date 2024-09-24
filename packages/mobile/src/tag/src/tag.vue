@@ -22,12 +22,12 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import { tagEmits, tagProps } from './tag'
 import Icon from '../../icon/src/icon.vue'
 import './tag.less'
 import { useSlots } from 'vue'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 const bem = useBem('tag')
 const props = defineProps(tagProps)

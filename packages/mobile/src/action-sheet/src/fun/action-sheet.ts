@@ -1,8 +1,8 @@
-import { extend, usePromiseHooks } from "@pk-ui/utils";
-import { App, createApp } from "vue";
-import PkActionSheet from "../action-sheet.vue";
-import { ActionSheetCallbackParams, ActionSheetOptions, ActionSheetOptionsProps, ActionSheetPromiseHooks } from "./types";
-import { ActionSheetItem } from "../action-sheet";
+import { extend, usePromiseHooks } from "@pumpkin-ui/utils"
+import { App, createApp } from "vue"
+import PkActionSheet from "../action-sheet.vue"
+import { ActionSheetCallbackParams, ActionSheetOptions, ActionSheetOptionsProps, ActionSheetPromiseHooks } from "./types"
+import { ActionSheetItem } from "../action-sheet"
 
 interface IQueueItem {
     instance: InstanceType<typeof PkActionSheet>

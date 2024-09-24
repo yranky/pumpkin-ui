@@ -45,7 +45,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pk-ui/mobile'
+import { PkForm, PkField, PkDivider, PkButton, PkCell, Toast } from '@pumpkin-ui/mobile'
 
 const usernameValidator = (rule, value) => {
     return new Promise((resolve, reject) => {

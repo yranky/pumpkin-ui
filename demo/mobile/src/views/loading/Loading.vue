@@ -51,7 +51,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkDivider, PkLoading } from "@pk-ui/mobile"
+import { PkDivider, PkLoading } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 </script>

@@ -45,7 +45,7 @@
 <script lang="ts" setup>
 import { loadingProps } from './loading'
 import './loading.less'
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 
 const props = defineProps(loadingProps)
 

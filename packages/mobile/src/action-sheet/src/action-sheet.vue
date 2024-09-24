@@ -55,7 +55,7 @@
     </popup>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import Popup from '../../popup/src/popup.vue'
 import Loading from '../../loading/src/loading.vue'
 import './action-sheet.less'

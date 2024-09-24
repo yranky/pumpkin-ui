@@ -1,6 +1,6 @@
 import { App, createApp } from "vue"
 import PkDialog from "../dialog.vue"
-import { extend, usePromiseHooks } from "@pk-ui/utils"
+import { extend, usePromiseHooks } from "@pumpkin-ui/utils"
 import { DialogOptionsProps, DialogOptions, DialogPromiseHooks, DialogCallbackParams } from "./types"
 
 interface IQueueItem {

@@ -1,4 +1,4 @@
-import { extend } from "@pk-ui/utils"
+import { extend } from "@pumpkin-ui/utils"
 
 
 export const loadingTypes = ['circular', 'spinner'] as const

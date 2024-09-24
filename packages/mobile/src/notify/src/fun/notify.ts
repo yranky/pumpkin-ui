@@ -1,7 +1,7 @@
 import { App, createApp } from "vue"
 import PkNotify from "../notify.vue"
 import { NotifyOptions, NotifyOptionsProps } from "./types"
-import { extend } from "@pk-ui/utils"
+import { extend } from "@pumpkin-ui/utils"
 import { notifyTypes } from "../notify"
 
 interface IQueueItem {

@@ -1,4 +1,4 @@
-import { extend } from "@pk-ui/utils"
+import { extend } from "@pumpkin-ui/utils"
 import { PropType } from "vue"
 
 export const checkboxProps = extend({}, {

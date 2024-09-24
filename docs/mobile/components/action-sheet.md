@@ -12,7 +12,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { ActionSheet } from "@pk-ui/mobile"
+import { ActionSheet } from "@pumpkin-ui/mobile"
 
 ActionSheet.showActionSheet([
     {
@@ -44,7 +44,7 @@ ActionSheet.showActionSheet([
 
 @tab script
 ```js [script]
-import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pk-ui/mobile"
+import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pumpkin-ui/mobile"
 
 const showDefaultActionSheet = () => {
     ActionSheet.showActionSheet([
@@ -91,7 +91,7 @@ const showDefaultActionSheet = () => {
 
 @tab script
 ```js [script]
-import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pk-ui/mobile"
+import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pumpkin-ui/mobile"
 
 const showTitleActionSheet = () => {
     ActionSheet.showActionSheet({
@@ -140,7 +140,7 @@ const showTitleActionSheet = () => {
 
 @tab script
 ```js [script]
-import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pk-ui/mobile"
+import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pumpkin-ui/mobile"
 
 const showNoCancelActionSheet = () => {
     ActionSheet.showActionSheet({
@@ -189,7 +189,7 @@ const showNoCancelActionSheet = () => {
 
 @tab script
 ```js [script]
-import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pk-ui/mobile"
+import { ActionSheet, PkCellGroup, PkCell, Toast } from "@pumpkin-ui/mobile"
 
 const showStatusActionSheet = () => {
     ActionSheet.showActionSheet([

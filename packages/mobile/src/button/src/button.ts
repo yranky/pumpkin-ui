@@ -1,4 +1,4 @@
-import { definePropType, extend } from '@pk-ui/utils'
+import { definePropType, extend } from '@pumpkin-ui/utils'
 import { Component, computed, ExtractPropTypes } from 'vue'
 import { loadingTypes } from '../../loading/src/loading'
 

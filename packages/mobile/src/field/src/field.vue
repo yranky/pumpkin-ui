@@ -70,11 +70,11 @@
 </template>
 <script setup lang="ts">
 import { fieldEmits, fieldProps } from './field'
-import { useBem, useVModel } from '@pk-ui/use'
+import { useBem, useVModel } from '@pumpkin-ui/use'
 import Cell from '../../cell/src/cell.vue'
 import './field.less'
 import { inject, ref, computed, useSlots, nextTick, watch, onBeforeUnmount } from 'vue'
-import { formProvideSymbol, IFormProvide, useField } from '@pk-ui/utils'
+import { formProvideSymbol, IFormProvide, useField } from '@pumpkin-ui/utils'
 import Icon from '../../icon/src/icon.vue'
 
 const props = defineProps(fieldProps)

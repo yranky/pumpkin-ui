@@ -25,7 +25,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkOverlay, PkButton } from "@pk-ui/mobile"
+import { PkOverlay, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const show = ref<boolean>(false)
@@ -45,7 +45,7 @@ const show = ref<boolean>(false)
 
 @tab script
 ```js [script]
-import { PkOverlay, PkButton } from "@pk-ui/mobile"
+import { PkOverlay, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const showCustomBg = ref<boolean>(false)
@@ -65,7 +65,7 @@ const showCustomBg = ref<boolean>(false)
 
 @tab script
 ```js [script]
-import { PkOverlay, PkButton } from "@pk-ui/mobile"
+import { PkOverlay, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const showNotCloseOnPress = ref<boolean>(false)
@@ -91,7 +91,7 @@ const startShowNotCloseOnPress = () => {
 
 @tab script
 ```js [script]
-import { PkOverlay, PkButton } from "@pk-ui/mobile"
+import { PkOverlay, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const showZIndex = ref<boolean>(false)
@@ -136,7 +136,7 @@ const showZIndex = ref<boolean>(false)
 
 @tab script
 ```js [script]
-import { PkOverlay, PkButton } from "@pk-ui/mobile"
+import { PkOverlay, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const showSlot = ref<boolean>(false)

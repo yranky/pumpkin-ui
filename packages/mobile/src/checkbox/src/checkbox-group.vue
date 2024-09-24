@@ -7,7 +7,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import './checkbox-group.less'
 import { provide, ref, toRefs } from 'vue'
 import { checkboxGroupEmits, checkboxProvideSymbol, ICheckboxExposeToGroup, ICheckboxGroupToggleAll, ICheckboxProvider, ICheckboxValue } from './types'

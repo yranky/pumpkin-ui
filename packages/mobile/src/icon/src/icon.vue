@@ -20,7 +20,7 @@
 import { computed } from 'vue';
 import { iconEmits, iconProps } from './icon'
 import './icon.less'
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import './icons/antd-icon.css'
 
 const props = defineProps(iconProps)

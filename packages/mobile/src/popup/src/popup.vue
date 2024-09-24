@@ -17,7 +17,7 @@
     </teleport>
 </template>
 <script setup lang="ts">
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import Overlay from '../../overlay/src/overlay.vue'
 import PkTransition from '../../transition/src/pk-transition.vue'
 import { transitionNames } from '../../transition/src/types'

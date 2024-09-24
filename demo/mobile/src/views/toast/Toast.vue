@@ -38,7 +38,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { Toast, PkButton, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Toast, PkButton, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 const showLoading = () => {
     Toast.showLoading('加载加载')

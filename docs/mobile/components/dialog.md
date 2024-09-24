@@ -12,7 +12,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { Dialog } from "@pk-ui/mobile"
+import { Dialog } from "@pumpkin-ui/mobile"
 
 Dialog.show('基础用法').then(res=>{
     console.log(res)
@@ -39,7 +39,7 @@ Dialog.show('基础用法').then(res=>{
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -78,7 +78,7 @@ import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -113,7 +113,7 @@ import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -155,7 +155,7 @@ import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -195,7 +195,7 @@ import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -228,7 +228,7 @@ import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -259,7 +259,7 @@ import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 const openEventDialog = () => {
     Dialog.show({
@@ -322,7 +322,7 @@ const openEventDialog = () => {
 
 @tab script
 ```js [script]
-import { Dialog, PkCellGroup, PkCell } from '@pk-ui/mobile'
+import { Dialog, PkCellGroup, PkCell } from '@pumpkin-ui/mobile'
 
 ```
 

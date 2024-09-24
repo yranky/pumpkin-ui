@@ -13,7 +13,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { Toast } from "@pk-ui/mobile"
+import { Toast } from "@pumpkin-ui/mobile"
 
 Toast.show('toast消息')
 ```
@@ -38,7 +38,7 @@ Toast.show('toast消息')
 
 @tab script
 ```js [script]
-import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Toast, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -69,7 +69,7 @@ import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { Toast, PkCell, PkCellGroup} from "@pk-ui/mobile"
+import { Toast, PkCell, PkCellGroup} from "@pumpkin-ui/mobile"
 
 const showLoading = () => {
     Toast.showLoading('加载加载')
@@ -104,7 +104,7 @@ const showLoading = () => {
 
 @tab script
 ```js [script]
-import { Toast, PkCell, PkCellGroup} from "@pk-ui/mobile"
+import { Toast, PkCell, PkCellGroup} from "@pumpkin-ui/mobile"
 
 const showLoadingClose = () => {
     const { close } = Toast.showLoading('加载，close关闭')
@@ -157,7 +157,7 @@ const showLoadingClose = () => {
 
 @tab script
 ```js [script]
-import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Toast, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -193,7 +193,7 @@ import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { Toast, PkCell, PkCellGroup } from "@pk-ui/mobile"
+import { Toast, PkCell, PkCellGroup } from "@pumpkin-ui/mobile"
 
 ```
 

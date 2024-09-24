@@ -37,7 +37,7 @@
 </template>
 <script lang="ts" setup>
 import { buttonProps, buttonEmits, useButtonStyle } from './button'
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import './button.less'
 import Loading from '../../loading/src/loading.vue';
 

@@ -1,5 +1,5 @@
 import { isRef, Ref } from "vue"
-import { FieldRule } from "@pk-ui/mobile"
+import { FieldRule } from "@pumpkin-ui/mobile"
 import { generateRandomId } from "./utils"
 
 export function useField<K extends {

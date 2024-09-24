@@ -25,7 +25,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')
@@ -51,7 +51,7 @@ const textValue = ref('')
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')
@@ -81,7 +81,7 @@ const numberValue = ref('')
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')
@@ -107,7 +107,7 @@ const textValue = ref('')
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')
@@ -133,7 +133,7 @@ const textValue = ref('')
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')
@@ -160,7 +160,7 @@ const textValue = ref('')
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')
@@ -189,7 +189,7 @@ const numberValue = ref(123)
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')
@@ -217,7 +217,7 @@ const textValue = ref('')
 
 @tab script
 ```js [script]
-import { PkField } from "@pk-ui/mobile"
+import { PkField } from "@pumpkin-ui/mobile"
 import { ref } from "vue"
 
 const textValue = ref('')

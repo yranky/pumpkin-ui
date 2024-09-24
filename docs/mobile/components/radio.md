@@ -31,7 +31,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -58,7 +58,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -89,7 +89,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -118,7 +118,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -147,7 +147,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -178,7 +178,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -201,7 +201,7 @@ import { PkRadio, PkRadioGroup, PkIcon, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pumpkin-ui/mobile'
 const onChange = (value) => {
     Toast.show(JSON.stringify(value))
 }
@@ -290,7 +290,7 @@ const onChange = (value) => {
 
 @tab script
 ```js [script]
-import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pk-ui/mobile'
+import { PkRadio, PkRadioGroup, PkIcon, PkDivider, Toast } from '@pumpkin-ui/mobile'
 ```
 
 @tab style

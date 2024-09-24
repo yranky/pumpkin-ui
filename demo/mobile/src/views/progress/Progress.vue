@@ -72,7 +72,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkProgress, PkButton, PkDivider } from '@pk-ui/mobile';
+import { PkProgress, PkButton, PkDivider } from '@pumpkin-ui/mobile';
 import { ref } from 'vue';
 
 const percent = ref(10);

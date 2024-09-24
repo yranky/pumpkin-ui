@@ -30,7 +30,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -59,7 +59,7 @@ import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -88,7 +88,7 @@ import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -116,7 +116,7 @@ import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -144,7 +144,7 @@ import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -173,7 +173,7 @@ import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 
 ```
 
@@ -200,7 +200,7 @@ import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 import { ref } from 'vue';
 
 const firstChecked = ref(true)
@@ -230,7 +230,7 @@ const firstChecked = ref(true)
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkDivider } from '@pumpkin-ui/mobile'
 import { ref } from 'vue'
 
 const firstChecked = ref(true)
@@ -333,7 +333,7 @@ const onLimit = (value) => {
 
 @tab script
 ```js [script]
-import { PkCheckbox, PkCheckboxGroup, PkIcon } from '@pk-ui/mobile'
+import { PkCheckbox, PkCheckboxGroup, PkIcon } from '@pumpkin-ui/mobile'
 ```
 
 @tab style

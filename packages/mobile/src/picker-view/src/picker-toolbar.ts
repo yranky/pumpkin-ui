@@ -1,4 +1,4 @@
-import { extend } from "@pk-ui/utils"
+import { extend } from "@pumpkin-ui/utils"
 
 export const pickerToolbarEmits = ['onCancel', 'onConfirm']
 export const pickerToolbarProps = extend({}, {

@@ -7,7 +7,7 @@ aside: false
 # Icon 图标
 
 ## 介绍
-`pk-ui`组件库的图标来自于[`ant-design-icons`](https://github.com/ant-design/ant-design-icons)。字体图标转换可查看[`yranky/ant-design-icons`](https://github.com/yranky/ant-design-icons)。
+`pumpkin-ui`组件库的图标来自于[`ant-design-icons`](https://github.com/ant-design/ant-design-icons)。字体图标转换可查看[`yranky/ant-design-icons`](https://github.com/yranky/ant-design-icons)。
 
 感谢[`ant-design-icons`](https://github.com/ant-design/ant-design-icons)开源图标库和[`svgtofont`](https://github.com/jaywcjlove/svgtofont)。
 
@@ -31,7 +31,7 @@ aside: false
 
 @tab script
 ```js [script]
-import { PkIcon } from "@pk-ui/mobile"
+import { PkIcon } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -53,7 +53,7 @@ import { PkIcon } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkIcon } from "@pk-ui/mobile"
+import { PkIcon } from "@pumpkin-ui/mobile"
 
 ```
 
@@ -80,7 +80,7 @@ import { PkIcon } from "@pk-ui/mobile"
 
 @tab script
 ```js [script]
-import { PkIcon } from "@pk-ui/mobile"
+import { PkIcon } from "@pumpkin-ui/mobile"
 
 ```
 

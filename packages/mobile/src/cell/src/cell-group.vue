@@ -28,7 +28,7 @@
 </template>
 <script lang="ts" setup>
 import { cellGroupProps } from './cell-group'
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import "./cell-group.less"
 
 const props = defineProps(cellGroupProps)

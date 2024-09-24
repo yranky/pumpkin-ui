@@ -71,7 +71,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { PkPopup, PkCell, PkCellGroup, PkButton } from "@pk-ui/mobile"
+import { PkPopup, PkCell, PkCellGroup, PkButton } from "@pumpkin-ui/mobile"
 import { ref } from 'vue'
 
 const defaultShow = ref<boolean>(false)

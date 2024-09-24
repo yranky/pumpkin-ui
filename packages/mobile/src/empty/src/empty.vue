@@ -17,12 +17,12 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pk-ui/use'
+import { useBem } from '@pumpkin-ui/use'
 import { emptyEmits, emptyProps } from './empty'
 import Icon from '../../icon/src/icon.vue'
 import './empty.less'
 import { useSlots } from 'vue'
-import { isEmptyValue } from '@pk-ui/utils'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 const bem = useBem('empty')
 const emits = defineEmits<emptyEmits>()
