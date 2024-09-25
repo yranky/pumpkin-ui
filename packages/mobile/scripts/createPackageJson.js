@@ -9,12 +9,14 @@ const filePath = path.resolve(__dirname, '../dist')
 
 const basePackageJson = JSON.parse(fs.readFileSync(basePackageJsonPath, 'utf-8'))
 
+basePackageJson['typings'] = 'index.d.ts'
 basePackageJson['main'] = 'lib/index.js'
 basePackageJson['module'] = 'es/index.mjs'
 basePackageJson['style'] = 'lib/style.css'
 basePackageJson['files'] = [
     "es",
-    "lib"
+    "lib",
+    "index.d.ts"
 ]
 
 fs.writeFileSync(path.resolve(filePath, 'package.json'), JSON.stringify(basePackageJson, null, 4), "utf-8")

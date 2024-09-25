@@ -35,9 +35,8 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      entryRoot: './src',
-      outDir: ['./dist/es/src', './dist/lib/src'],
-      tsconfigPath: './tsconfig.json'
+      tsconfigPath: './tsconfig.json',
+      rollupTypes: true
     })
   ],
 })

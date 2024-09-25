@@ -1,6 +1,6 @@
 {
   "name": "pumpkin-ui",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "组件库",
   "private": true,
   "scripts": {
@@ -8,8 +8,8 @@
     "dev:mobile_docs": "pnpm -C docs run mobile:dev",
     "build:demo_mobile": "pnpm -C demo/mobile run build",
     "dev:demo_mobile": "pnpm -C demo/mobile run dev",
-    "build:pumpkin-ui_mobile": "pnpm -C packages/mobile run build",
-    "publish:pumpkin-ui_mobile": "pnpm -C packages/mobile run publish"
+    "build:release": "pnpm -C packages/mobile run build:release",
+    "publish:release": "cd packages/mobile/dist && npm publish --access public"
   },
   "keywords": [],
   "author": "yranky",

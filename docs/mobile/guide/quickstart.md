@@ -24,7 +24,7 @@ pumpkin-ui是一个移动端组件库。目前包含vue3移动端版本。
 ### 引入样式文件
 使用组件前，需要在项目的main.js中引入全局样式文件
 ```
-import "@pumpkin-ui/mobile/theme/index.less"
+import "@pumpkin-ui/mobile/lib/style.css"
 ```
 ### 引入组件
 我们推荐使用局部引入组件，通过import引入组件，即可使用组件。
