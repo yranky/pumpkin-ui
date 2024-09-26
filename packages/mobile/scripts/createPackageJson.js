@@ -21,4 +21,7 @@ basePackageJson['files'] = [
 
 fs.writeFileSync(path.resolve(filePath, 'package.json'), JSON.stringify(basePackageJson, null, 4), "utf-8")
 
+fs.copyFileSync(path.resolve(__dirname, '../../../README.md'), path.resolve(filePath, 'README.md'))
+fs.copyFileSync(path.resolve(__dirname, '../../../LICENSE'), path.resolve(filePath, 'LICENSE'))
+
 
