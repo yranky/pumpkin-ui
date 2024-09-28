@@ -14,14 +14,16 @@
 .@{namespace} {
     display: flex;
     align-items: center;
-    padding: var(--pk-picker-toolbar-padding);
+    // padding: var(--pk-picker-toolbar-padding);
     font-size: var(--pk-picker-toolbar-item-font-size);
 
     .@{namespace}__left {
         margin: var(--pk-picker-toolbar-item-margin);
         color: var(--pk-picker-toolbar-item-info-color);
+        padding: var(--pk-picker-toolbar-padding);
         cursor: pointer;
         user-select: none;
+        -webkit-tap-highlight-color: transparent;
 
         &:active {
             opacity: .3;
@@ -35,13 +37,16 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         font-weight: bolder;
+        padding: var(--pk-picker-toolbar-padding);
     }
 
     .@{namespace}__right {
         margin: var(--pk-picker-toolbar-item-margin);
         color: var(--pk-picker-toolbar-item-confirm-color);
+        padding: var(--pk-picker-toolbar-padding);
         cursor: pointer;
         user-select: none;
+        -webkit-tap-highlight-color: transparent;
 
         &:active {
             opacity: .3;
