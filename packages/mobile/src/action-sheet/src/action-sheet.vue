@@ -30,7 +30,7 @@
                     bem.eqm('disabled', !!item.disabled)
                 ]" v-for="(item, index) in props.actions" :key="item.name" @click="itemClick(item, index)" :style="{
                     '--pk-action-sheet-color': item.color
-                }">
+                }" @touchstart="">
                     <loading :class="[
                         bem.e('item-icon')
                     ]" color="currentColor" v-if="item.loading" />
@@ -44,7 +44,7 @@
 
             <div :class="[
                 bem.e('footer')
-            ]" v-if="props.cancel">
+            ]" v-if="props.cancel" @touchstart="">
                 <div :class="[
                     bem.e('item')
                 ]" @click="onCancel">

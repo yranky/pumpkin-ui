@@ -4,7 +4,7 @@
     ]">
         <div :class="[
             bem.e('left')
-        ]" @click="emits('onCancel')">
+        ]" @click="emits('onCancel')" @touchstart="">
             {{ props.cancelText }}
         </div>
         <div :class="[
@@ -14,7 +14,7 @@
         </div>
         <div :class="[
             bem.e('right')
-        ]" @click="emits('onConfirm')">
+        ]" @click="emits('onConfirm')" @touchstart="">
             {{ props.confirmText }}
         </div>
     </div>
