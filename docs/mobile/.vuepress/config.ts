@@ -128,6 +128,10 @@ export default defineUserConfig({
                 {
                   text: 'Tag 标签',
                   link: '/components/tag'
+                },
+                {
+                  text: 'Tab 标签页',
+                  link: '/components/tab'
                 }
               ]
             }

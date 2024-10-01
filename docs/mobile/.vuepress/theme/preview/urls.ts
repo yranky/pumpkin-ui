@@ -75,5 +75,8 @@ export default [
     }, {
         activeMatch: '/components/dialog',
         url: BASE_URL + '#/dialog'
+    }, {
+        activeMatch: '/components/tab',
+        url: BASE_URL + '#/tab'
     }
 ];

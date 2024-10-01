@@ -25,7 +25,8 @@ const routes = [
     { path: '/empty', component: () => import('../views/empty/Empty.vue') },
     { path: '/tag', component: () => import('../views/tag/Tag.vue') },
     { path: '/skeleton', component: () => import('../views/skeleton/Skeleton.vue') },
-    { path: '/dialog', component: () => import('../views/dialog/Dialog.vue') }
+    { path: '/dialog', component: () => import('../views/dialog/Dialog.vue') },
+    { path: '/tab', component: () => import('../views/tab/Tab.vue') }
 ]
 
 
