@@ -78,5 +78,8 @@ export default [
     }, {
         activeMatch: '/components/tab',
         url: BASE_URL + '#/tab'
+    }, {
+        activeMatch: '/components/search',
+        url: BASE_URL + '#/search'
     }
 ];

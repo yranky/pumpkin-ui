@@ -6,7 +6,9 @@
         bem.eqm('required', props.required),
         bem.eqm('vertical', props.vertical),
         bem.eqm('disabled', props.disabled)
-    ]" @click="onClick" @touchstart="">
+    ]" :style="{
+        '--pk-cell-background': isEmptyValue(props.background) ? '' : props.background
+    }" @click="onClick" @touchstart="">
         <div :class="[
             bem.e('top')
         ]">
@@ -58,6 +60,7 @@ import { useBem } from '@pumpkin-ui/use'
 import icon from '../../icon/src/icon.vue'
 import "./cell.less"
 import { useSlots } from 'vue'
+import { isEmptyValue } from '@pumpkin-ui/utils'
 
 const props = defineProps(cellProps)
 const emit = defineEmits(cellEmits)

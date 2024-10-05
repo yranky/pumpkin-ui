@@ -30,5 +30,9 @@ export const cellProps = extend({}, {
     disabled: {
         type: Boolean,
         default: false
+    },
+    background: {
+        type: String,
+        default: ''
     }
 })

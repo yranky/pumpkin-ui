@@ -79,6 +79,9 @@ export default defineUserConfig({
                 }, {
                   text: 'Radio 单选框',
                   link: '/components/radio'
+                }, {
+                  text: 'Search 搜索',
+                  link: '/components/search'
                 }
               ]
             },

@@ -97,14 +97,15 @@ aside: false
 
 ### Cell Props
 
-| 属性名   | 说明                                  | 类型      | 默认值  | 可选值 |
-| -------- | ------------------------------------- | --------- | ------- | ------ |
-| title    | 左侧标题                              | `string`  |         |        |
-| value    | 右侧内容                              | `string`  |         |        |
-| is-link  | 显示右箭头                            | `boolean` | `false` |        |
-| border   | 显示分割线                            | `boolean` | `true`  |        |
-| required | 显示星号                              | `boolean` | `false` |        |
-| disabled | 禁用，不显示点击效果且不触发click事件 | `boolean` | `false` |        |
+| 属性名     | 说明                                  | 类型      | 默认值  | 可选值 |
+| ---------- | ------------------------------------- | --------- | ------- | ------ |
+| title      | 左侧标题                              | `string`  |         |        |
+| value      | 右侧内容                              | `string`  |         |        |
+| is-link    | 显示右箭头                            | `boolean` | `false` |        |
+| border     | 显示分割线                            | `boolean` | `true`  |        |
+| required   | 显示星号                              | `boolean` | `false` |        |
+| disabled   | 禁用，不显示点击效果且不触发click事件 | `boolean` | `false` |        |
+| background | 单元格背景                            | `string`  |         |        |
 
 
 ### Events

@@ -68,6 +68,9 @@ const modules = ref([
             }, {
                 text: 'Radio 单选框',
                 link: '/radio'
+            }, {
+                text: 'Search 搜索',
+                link: '/search'
             }
         ]
     },

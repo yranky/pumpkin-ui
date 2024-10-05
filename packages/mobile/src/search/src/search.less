@@ -1,0 +1,35 @@
+:root,
+:host {
+    --pk-search-padding: 4px 16px;
+    --pk-search-background: var(--pk-bg-color);
+    --pk-search-content-background: var(--pk-inactive-bg-color);
+    --pk-search-padding-content: 8px 4px;
+    --pk-search-padding-icon: 4px;
+}
+
+@namespace: pk-search;
+
+.@{namespace} {
+    padding: var(--pk-search-padding);
+    background: var(--pk-search-background);
+
+    .@{namespace}__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: var(--pk-search-content-background);
+        padding: var(--pk-search-padding-content);
+
+        .@{namespace}__left {
+            display: flex;
+            align-items: center;
+            padding-left: var(--pk-search-padding-icon);
+            padding-right: var(--pk-search-padding-icon);
+        }
+
+        .@{namespace}__input {
+            flex: 1;
+            padding-right: var(--pk-search-padding-icon);
+        }
+    }
+}
