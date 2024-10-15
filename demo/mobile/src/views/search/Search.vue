@@ -1,6 +1,9 @@
 <template>
     <div class="search-container">
-        <pk-search></pk-search>
+        <pk-search>
+            <template #left>left</template>
+            <template #right>right</template>
+        </pk-search>
     </div>
 </template>
 <script lang="ts" setup>

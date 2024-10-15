@@ -2,9 +2,11 @@
 :host {
     --pk-search-padding: 4px 16px;
     --pk-search-background: var(--pk-bg-color);
-    --pk-search-content-background: var(--pk-inactive-bg-color);
+    --pk-search-content-background: var(--pk-bg-color-light);
     --pk-search-padding-content: 8px 4px;
     --pk-search-padding-icon: 4px;
+    --pk-search-border-radius: var(--pk-radius-m);
+    --pk-search-text-color-secondary: var(--pk-text-color-secondary);
 }
 
 @namespace: pk-search;
@@ -12,24 +14,48 @@
 .@{namespace} {
     padding: var(--pk-search-padding);
     background: var(--pk-search-background);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    .@{namespace}__content {
+    &--has-left {
+        padding-left: 0;
+    }
+
+    &__left {}
+
+    &__content {
         display: flex;
         flex-direction: row;
         align-items: center;
         background: var(--pk-search-content-background);
         padding: var(--pk-search-padding-content);
+        border-radius: var(--pk-search-border-radius);
+        flex: 1;
 
-        .@{namespace}__left {
+        .@{namespace}__left-icon {
             display: flex;
             align-items: center;
             padding-left: var(--pk-search-padding-icon);
             padding-right: var(--pk-search-padding-icon);
+            color: var(--pk-search-text-color-secondary);
         }
 
         .@{namespace}__input {
             flex: 1;
             padding-right: var(--pk-search-padding-icon);
         }
+
+        .@{namespace}__right-icon {}
+    }
+
+
+    &--has-right {
+        padding-right: 0;
+    }
+
+    &__right {
+        align-self: stretch;
+        padding-left: var(--pk-search-padding-icon);
     }
 }
