@@ -1,5 +1,5 @@
 <template>
-    <pk-form @onSubmit="onSubmit">
+    <form @submit="emits('onSearch', value)">
         <div :class="[
             bem.b(),
             bem.eqm('has-left', !!$slots.left),
@@ -17,14 +17,19 @@
                     bem.e('left-icon')
                 ]">
                     <slot name="left-icon"></slot>
-                    <pk-icon name="search-outlined" />
+                    <pk-icon name="search-outlined" @click="(e) => emits('onClickLeftSearchIcon', e)" />
                 </div>
                 <div :class="[
                     bem.e('input')
                 ]">
                     <pk-field background="transparent" :style="{
                         padding: 0
-                    }" />
+                    }" v-model="value" @onFocus="(e) => emits('onFocus', e)" @onBlur="(e) => emits('onBlur', e)"
+                        @onChange="emits('onChange', value)" @onClear="() => emits('onClear')" :border="false"
+                        :placeholder="props.placeholder" :name="props.name" :readonly="props.readonly"
+                        :disabled="props.disabled" :clear-trigger="props.clearTrigger" :clearable="props.clearable"
+                        :maxlength="props.maxlength" :minlength="props.minlength" :autocomplete="props.autocomplete"
+                        @click="(e) => emits('click', e)" />
                 </div>
                 <div :class="[
                     bem.e('right-icon')
@@ -37,30 +42,29 @@
             ]">
                 <pk-button size="s" :style="{
                     height: '100%'
-                }">搜索</pk-button>
+                }" nativeType="submit">搜索</pk-button>
                 <slot name="right"></slot>
             </div>
         </div>
-    </pk-form>
+    </form>
 </template>
 <script lang="ts" setup>
-import { useBem } from '@pumpkin-ui/use'
-import { searchProps } from './search'
-import PkForm from '../../form'
+import { useBem, useVModel } from '@pumpkin-ui/use'
+import { searchEmits, searchProps } from './search'
 import PkField from '../../field'
 import PkIcon from '../../icon'
 import PkButton from '../../button'
 import './search.less'
-import { useSlots } from 'vue'
+import { useAttrs, useSlots } from 'vue'
 
 const props = defineProps(searchProps)
 const bem = useBem('search')
+const emits = defineEmits<searchEmits>()
+
+const value = useVModel(props, 'modelValue', emits)
 
 const $slots = useSlots()
-
-const onSubmit = (values) => {
-    console.log(values)
-}
+const $attrs = useAttrs()
 
 
 </script>

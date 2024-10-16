@@ -1,6 +1,6 @@
 <template>
     <div class="search-container">
-        <pk-search>
+        <pk-search placeholder="请输入关键词">
             <template #left>left</template>
             <template #right>right</template>
         </pk-search>

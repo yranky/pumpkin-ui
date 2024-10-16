@@ -12,9 +12,9 @@ export type fieldEmits = {
 }
 // const fieldTypes = ['text', 'color', 'date', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'tel', 'time', 'url', 'week', 'button', 'checkbox', 'file', 'image', 'radio', 'range', 'reset', 'search', 'submit'] as const
 const fieldTypes = ['text', 'color', 'date', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'tel', 'time', 'url', 'week'] as const
-const fieldInputAlign = ['left', 'center', 'right'] as const
+export const fieldInputAlign = ['left', 'center', 'right'] as const
 const fieldLabelAlign = ['left', 'center', 'right'] as const
-const fieldClearTrigger = ['always', 'auto'] as const
+export const fieldClearTrigger = ['always', 'auto'] as const
 export const fieldProps = extend({}, {
     modelValue: {
         type: [String, Number],
