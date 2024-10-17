@@ -28,7 +28,8 @@
                         @onChange="emits('onChange', value)" @onClear="() => emits('onClear')" :border="false"
                         :placeholder="props.placeholder" :name="props.name" :readonly="props.readonly"
                         :disabled="props.disabled" :clear-trigger="props.clearTrigger" :clearable="props.clearable"
-                        :maxlength="props.maxlength" :minlength="props.minlength" :autocomplete="props.autocomplete"
+                        :maxlength="props.maxlength" :minlength="props.minlength"
+                        :input-text-align="props.inputTextAlign" :autocomplete="props.autocomplete"
                         @click="(e) => emits('click', e)" />
                 </div>
                 <div :class="[
@@ -42,7 +43,7 @@
             ]">
                 <pk-button size="s" :style="{
                     height: '100%'
-                }" nativeType="submit">搜索</pk-button>
+                }" nativeType="submit" v-if="props.showSearchButton">搜索</pk-button>
                 <slot name="right"></slot>
             </div>
         </div>

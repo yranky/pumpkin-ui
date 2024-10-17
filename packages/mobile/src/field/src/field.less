@@ -55,6 +55,7 @@
                     outline: none;
                     color: var(--pk-text-color);
                     background: transparent;
+                    width: 0;
 
                     &::placeholder {
                         color: var(--pk-filed-text-color-secondary);
@@ -64,6 +65,19 @@
 
                     &:disabled {
                         background: transparent;
+                    }
+
+                    &.@{namespace}--left {
+                        text-align: left;
+                    }
+
+                    &.@{namespace}--center {
+                        text-align: center;
+
+                    }
+
+                    &.@{namespace}--right {
+                        text-align: right;
                     }
 
                 }

@@ -1,6 +1,6 @@
 import { extend } from "@pumpkin-ui/utils"
 import { PropType } from "vue"
-import { fieldClearTrigger, fieldInputAlign } from "../../field/src/field"
+import { fieldClearTrigger, fieldInputAlign, fieldInputTextAlign } from "../../field/src/field"
 
 
 export type searchEmits = {
@@ -21,7 +21,7 @@ export const searchProps = extend({}, {
     },
     placeholder: {
         type: String,
-        default: ""
+        default: "请输入关键词"
     },
     name: {
         type: String,
@@ -35,8 +35,8 @@ export const searchProps = extend({}, {
         type: Boolean,
         default: false
     },
-    inputAlign: {
-        type: String as PropType<typeof fieldInputAlign[number]>,
+    inputTextAlign: {
+        type: String as PropType<typeof fieldInputTextAlign[number]>,
     },
     clearable: {
         type: Boolean,
@@ -56,5 +56,9 @@ export const searchProps = extend({}, {
     autocomplete: {
         type: String,
         default: ''
+    },
+    showSearchButton: {
+        type: Boolean,
+        default: true
     }
 })

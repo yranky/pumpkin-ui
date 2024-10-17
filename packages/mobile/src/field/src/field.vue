@@ -30,13 +30,15 @@
                         <textarea v-if="(props.rows > 1 || props.autosize) && props.type === 'text'" :id="fieldId"
                             :rows="props.rows" :placeholder="props.placeholder" :class="[
                                 bem.e('input'),
-                                bem.e('textarea')
+                                bem.e('textarea'),
+                                bem.m(props.inputTextAlign)
                             ]" v-model="value" ref="textareaRef" @blur="onBlur" @input="onInput" @focus="onFocus"
                             :readonly="props.readonly" :disabled="props.disabled" :maxlength="props.maxlength"
                             :minlength="props.minlength" :autocomplete="props.autocomplete"
                             @compositionstart="onCompositionStart" @compositionend="onCompositionEnd"></textarea>
                         <input v-else :id="fieldId" ref="inputRef" :placeholder="props.placeholder" :class="[
-                            bem.e('input')
+                            bem.e('input'),
+                            bem.m(props.inputTextAlign)
                         ]" v-model="value" :type="props.type" @blur="onBlur" @focus="onFocus"
                             @compositionstart="onCompositionStart" @compositionend="onCompositionEnd" @input="onInput"
                             :readonly="props.readonly" :disabled="props.disabled" :min="props.min" :max="props.max"
