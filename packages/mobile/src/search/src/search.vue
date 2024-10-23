@@ -43,7 +43,7 @@
             ]">
                 <pk-button size="s" :style="{
                     height: '100%'
-                }" nativeType="submit" v-if="props.showSearchButton">搜索</pk-button>
+                }" nativeType="submit" v-if="props.showSearchButton">{{ props.searchButtonText }}</pk-button>
                 <slot name="right"></slot>
             </div>
         </div>

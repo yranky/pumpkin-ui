@@ -60,5 +60,9 @@ export const searchProps = extend({}, {
     showSearchButton: {
         type: Boolean,
         default: true
+    },
+    searchButtonText: {
+        type: String,
+        default: '搜索'
     }
 })
