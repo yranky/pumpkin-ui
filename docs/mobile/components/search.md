@@ -11,8 +11,88 @@ aside: false
 <pk-search></pk-search>
 ```
 
+## 代码示例
+### 基础用法
+创建一个搜索组件。
+::: code-tabs#default
+@tab template
+
+```vue [template]
+    <pk-search />
+```
+
+@tab script
+```js [script]
+import { PkSearch } from '@pumpkin-ui/mobile'
+```
+:::
+
+### 事件监听
+监听搜索事件。
+::: code-tabs#onSearch
+@tab template
+
+```vue [template]
+    <pk-search @on-search="onSearch" />
+```
+
+@tab script
+```js [script]
+import { PkSearch,Toast } from '@pumpkin-ui/mobile'
+
+const onSearch = (value) => {
+    Toast.show(`搜索内容：${value}`);
+}
+```
+:::
 
 
+### 隐藏搜索按钮
+可使用`show-search-button` 属性来隐藏搜索按钮。
+::: code-tabs#show-search-button
+@tab template
+
+```vue [template]
+    <pk-search :show-search-button="false" />
+```
+
+@tab script
+```js [script]
+import { PkSearch } from '@pumpkin-ui/mobile'
+```
+:::
+
+
+### 禁用
+可使用`disabled`属性来禁用搜索框。（禁用只会禁用输入框输入，各个事件仍可以正常触发）
+::: code-tabs#disabled
+@tab template
+
+```vue [template]
+    <pk-search disabled :show-search-button="false" />
+```
+
+@tab script
+```js [script]
+import { PkSearch } from '@pumpkin-ui/mobile'
+```
+:::
+
+
+### 输入框对齐方式
+可使用`input-text-align`属性来设置输入框对齐方式，可选值有`left`、`center`、`right`。
+::: code-tabs#input-text-align
+@tab template
+
+```vue [template]
+    <pk-search input-text-align="center" />
+```
+
+@tab script
+```js [script]
+import { PkSearch } from '@pumpkin-ui/mobile'
+```
+:::
 
 ## API
 
@@ -58,7 +138,24 @@ aside: false
 | right-icon | 搜索框内部右侧                 |        |
 | right      | 搜索框外部右侧                 |        |
 
+#### 代码示例
+::: code-tabs#slot
+@tab template
 
+```vue [template]
+    <pk-search>
+        <template #left-icon>icon</template>
+        <template #left>left</template>
+        <template #right-icon>icon</template>
+        <template #right>right</template>
+    </pk-search>
+```
+
+@tab script
+```js [script]
+import { PkSearch } from '@pumpkin-ui/mobile'
+```
+:::
 
 
 ### Exposes
