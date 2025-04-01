@@ -19,7 +19,7 @@
                 </div>
             </div>
         </slot>
-        <slot></slot>
+        <slot v-else></slot>
     </div>
 </template>
 <script lang="ts" setup>
