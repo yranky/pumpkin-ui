@@ -27,7 +27,8 @@ const routes = [
     { path: '/skeleton', component: () => import('../views/skeleton/Skeleton.vue') },
     { path: '/dialog', component: () => import('../views/dialog/Dialog.vue') },
     { path: '/tab', component: () => import('../views/tab/Tab.vue') },
-    { path: '/search', component: () => import('../views/search/Search.vue') }
+    { path: '/search', component: () => import('../views/search/Search.vue') },
+    { path: '/navbar', component: () => import('../views/navbar/Navbar.vue') }
 ]
 
 

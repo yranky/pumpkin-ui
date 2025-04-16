@@ -1,0 +1,59 @@
+:root,
+:host {
+    --pk-navbar-padding-horizontal: var(--pk-padding-m);
+    --pk-navbar-height: 44px;
+    --pk-navbar-title-font-size: var(--pk-font-size-m);
+    --pk-navbar-icon-font-size: var(--pk-font-size-s);
+    --pk-navbar-title-color: var(--pk-text-color);
+    --pk-navbar-icon-color: var(--pk-text-color);
+    --pk-navbar-background: var(--pk-bg-color);
+}
+
+@namespace: pk-navbar;
+
+.@{namespace} {
+    padding: 0 var(--pk-navbar-padding-horizontal);
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: var(--pk-navbar-height);
+    width: 100%;
+    background: var(--pk-navbar-background);
+    box-sizing: border-box;
+
+    &__left {
+        padding: 0 var(--pk-navbar-padding-horizontal);
+        position: absolute;
+        left: var(--pk-navbar-padding-horizontal);
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: var(--pk-navbar-icon-font-size);
+        display: flex;
+        align-items: center;
+        color: var(--pk-navbar-icon-color);
+    }
+
+    &__center {
+        max-width: 60%;
+        font-size: var(--pk-navbar-title-font-size);
+        font-weight: bold;
+        color: var(--pk-navbar-title-color);
+        word-break: break-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__right {
+        padding: 0 var(--pk-navbar-padding-horizontal);
+        position: absolute;
+        right: var(--pk-navbar-padding-horizontal);
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: var(--pk-navbar-icon-font-size);
+        display: flex;
+        align-items: center;
+        color: var(--pk-navbar-icon-color);
+    }
+}
