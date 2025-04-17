@@ -13,5 +13,16 @@ export const navbarProps = extend({}, {
     showBackArrow: {
         type: Boolean,
         default: true
+    },
+    fixed: {
+        type: Boolean,
+        default: false
+    },
+    placeholder: {
+        type: Boolean,
+        default: true
+    },
+    zIndex: {
+        type: Number
     }
 })

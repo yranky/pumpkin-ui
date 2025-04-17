@@ -1,5 +1,7 @@
 <template>
     <div class="navbar-container">
+        <pk-navbar title="固定在顶部" fixed />
+        <pk-divider>一般使用</pk-divider>
         <pk-navbar title="一般使用" />
         <pk-divider>隐藏返回按钮</pk-divider>
         <pk-navbar title="隐藏返回按钮" :show-back-arrow="false" />
@@ -19,7 +21,7 @@ import { PkNavbar, PkDivider } from '@pumpkin-ui/mobile'
 </script>
 <style lang="less" scoped>
 .navbar-container {
-    min-height: 100vh;
+    min-height: 200vh;
     background: var(--pk-bg-color-light);
 }
 </style>
