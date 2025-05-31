@@ -6,6 +6,8 @@ aside: false
 
 # Empty 空元素
 
+插画部分来自于：`https://js.design/community?category=detail&type=resource&id=61dd4c785501f26675d81b10`
+
 ## 基本使用
 ```vue
 <pk-empty></pk-empty>

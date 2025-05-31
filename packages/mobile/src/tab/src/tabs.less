@@ -1,6 +1,22 @@
 :root,
-:host {}
+:host {
+    --pk-tab-font-size: var(--pk-font-size-s);
+    --pk-tab-padding-horizontal: 5px;
+    --pk-tab-padding-vertical: 8px;
+}
 
 @namespace: pk-tabs;
 
-.@{namespace} {}
+.@{namespace} {
+    &__nav {
+        display: flex;
+
+        &-item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            font-size: var(--pk-tab-font-size);
+            padding: var(--pk-tab-padding-vertical) var(--pk-tab-padding-horizontal);
+        }
+    }
+}
