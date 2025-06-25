@@ -13,7 +13,7 @@
             <div :class="[
                 bem.e('left')
             ]">
-                <icon v-if="showBackArrow" name="left-outlined" @click="(e: MouseEvent) => emits('click', e)" />
+                <icon v-if="showBackArrow" name="left-outlined" @click="(e: MouseEvent) => emits('leftClick', e)" />
                 <slot name="left"></slot>
             </div>
             <div :class="[

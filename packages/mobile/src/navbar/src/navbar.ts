@@ -2,7 +2,7 @@ import { extend } from "@pumpkin-ui/utils"
 
 
 export type navbarEmits = {
-    click: [MouseEvent]
+    leftClick: [MouseEvent]
 }
 
 export const navbarProps = extend({}, {
