@@ -14,6 +14,10 @@ export const navbarProps = extend({}, {
         type: Boolean,
         default: true
     },
+    autoBack: {
+        type: Boolean,
+        default: true
+    },
     fixed: {
         type: Boolean,
         default: false

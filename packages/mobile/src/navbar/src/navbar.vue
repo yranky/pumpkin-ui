@@ -13,7 +13,7 @@
             <div :class="[
                 bem.e('left')
             ]">
-                <icon v-if="showBackArrow" name="left-outlined" @click="(e: MouseEvent) => emits('leftClick', e)" />
+                <icon v-if="showBackArrow" name="left-outlined" @click="onLeftClick" />
                 <slot name="left"></slot>
             </div>
             <div :class="[
@@ -46,5 +46,13 @@ const props = defineProps(navbarProps)
 const emits = defineEmits<navbarEmits>()
 
 const bem = useBem('navbar')
+
+const onLeftClick = (e: MouseEvent) => {
+    if (props.autoBack) {
+        window.history.back()
+    } else {
+        emits('leftClick', e)
+    }
+}
 
 </script>
