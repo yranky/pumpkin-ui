@@ -131,6 +131,15 @@ export default defineUserConfig({
                 {
                   text: 'Tag 标签',
                   link: '/components/tag'
+                }
+              ]
+            },
+            {
+              text: '导航组件',
+              children: [
+                {
+                  text: 'Navbar 导航栏',
+                  link: '/components/navbar'
                 },
                 {
                   text: 'Tab 标签页',

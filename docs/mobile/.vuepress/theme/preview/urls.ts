@@ -81,5 +81,8 @@ export default [
     }, {
         activeMatch: '/components/search',
         url: BASE_URL + '#/search'
+    }, {
+        activeMatch: '/components/navbar',
+        url: BASE_URL + '#/navbar'
     }
 ];

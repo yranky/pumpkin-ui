@@ -119,6 +119,15 @@ const modules = ref([
                 link: '/tag'
             }
         ]
+    },
+    {
+        text: '导航组件',
+        children: [
+            {
+                text: 'Navbar 导航栏',
+                link: '/navbar'
+            }
+        ]
     }
 ])
 
