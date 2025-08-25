@@ -1,13 +1,16 @@
 <template>
     <div :class="[
         bem.b()
-    ]"></div>
+    ]">
+        <slot></slot>
+    </div>
 </template>
 <script lang="ts" setup>
 import { useBem } from '@pumpkin-ui/use'
 import { tabProps } from './tab'
-import { getCurrentInstance } from 'vue'
+import { getCurrentInstance, inject, onBeforeUnmount } from 'vue'
 import './tab.less'
+import { ITabProvide, tabProvideSymbol, useTab } from '@pumpkin-ui/utils'
 
 defineOptions({
     name: 'PkTab'
@@ -16,6 +19,18 @@ defineOptions({
 const props = defineProps(tabProps)
 const bem = useBem('tab')
 
-console.log(getCurrentInstance()?.uid)
+
+const tabProvide = inject<ITabProvide>(tabProvideSymbol, {})
+const { getTitle, tabId } = useTab(props)
+
+tabProvide.addTab && tabProvide.addTab({
+    tabId,
+    getTitle,
+    getVNode: () => getCurrentInstance()?.vnode || null
+})
+
+onBeforeUnmount(() => {
+    tabProvide.removeTab && tabProvide.removeTab(tabId)
+})
 
 </script>
