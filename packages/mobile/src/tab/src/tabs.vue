@@ -7,7 +7,8 @@
         ]" ref="tabsRef">
             <div :class="[
                 bem.e('nav-item'),
-                index === tabIndex ? bem.m('active') : ''
+                index === tabIndex ? bem.m('active') : '',
+                props.scrollable ? bem.m('scrollable') : ''
             ]" v-for="(item, index) in tabExpose" :key="item.tabId" @click="handleTabClick(item)">
                 {{ item.getTitle() }}
             </div>
@@ -59,6 +60,8 @@ watch(() => tabIndex.value, () => {
             tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
         }
     })
+}, {
+    immediate: true
 })
 
 const tabInfo = computed(() => {
@@ -81,6 +84,8 @@ const tabInfo = computed(() => {
 
 const handleTabClick = (item: ITabExposeToTabs) => {
     value.value = item.getName() || item.tabId
+
+    emits('onChange', value.value, item.getTitle())
 }
 
 const slots = useSlots()
