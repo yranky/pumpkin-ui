@@ -8,7 +8,7 @@
             <div :class="[
                 bem.e('nav-item'),
                 index === tabIndex ? bem.m('active') : ''
-            ]" v-for="(item, index) in tabExpose" :key="item.tabId" ref="tabRefs" @click="handleTabClick(item)">
+            ]" v-for="(item, index) in tabExpose" :key="item.tabId" @click="handleTabClick(item)">
                 {{ item.getTitle() }}
             </div>
 
@@ -31,7 +31,7 @@ import { useBem, useVModel } from '@pumpkin-ui/use'
 import { tabsProps, type tabsEmits } from './tabs'
 import './tabs.less'
 import { ITabExposeToTabs, ITabProvide, tabProvideSymbol } from '@pumpkin-ui/utils'
-import { computed, provide, ref, useSlots, watch } from 'vue'
+import { computed, nextTick, provide, ref, useSlots, watch } from 'vue'
 defineOptions({
     name: 'PkTabs'
 })
@@ -41,7 +41,6 @@ const props = defineProps(tabsProps)
 const bem = useBem('tabs')
 const value = useVModel(props, 'modelValue', emits)
 const tabExpose = ref<ITabExposeToTabs[]>([])
-const tabRefs = ref<HTMLElement[]>([])
 const tabsRef = ref<HTMLElement>()
 
 const tabIndex = computed(() => {
@@ -53,26 +52,24 @@ const tabIndex = computed(() => {
 })
 
 watch(() => tabIndex.value, () => {
-    if (tabsRef.value) {
-        const tab = tabRefs.value[tabIndex.value]
-        if (tab) {
+    nextTick(() => {
+        if (tabsRef.value) {
+            const children = tabsRef.value.children
+            const tab = children[tabIndex.value] as HTMLElement
             tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
         }
-    }
+    })
 })
 
 const tabInfo = computed(() => {
-    const tab = tabRefs.value[tabIndex.value]
     let currentLeft = 0
     let currentLineWeight = 0
-    if (tab) {
+    if (tabsRef.value) {
+        const children = tabsRef.value.children
+        const tab = children[tabIndex.value] as HTMLElement
         const tabWidth = tab ? tab.offsetWidth : 0
-        //计算
-        const preTabs = tabRefs.value.slice(0, tabIndex.value)
-        preTabs.forEach((item) => {
-            currentLeft += (item.offsetWidth || 0)
-        })
-        currentLeft += tabWidth / 4
+        const tabLeft = tab ? tab.offsetLeft : 0
+        currentLeft += (tabLeft + (tabWidth / 4))
         currentLineWeight = tabWidth / 2
     }
 
