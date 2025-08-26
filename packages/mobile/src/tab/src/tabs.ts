@@ -1,5 +1,12 @@
 import { extend } from "@pumpkin-ui/utils"
 
-export const tabsProps = extend({}, {
 
+export type tabsEmits = {
+    (event: 'update:modelValue', value: string | number): void
+}
+
+export const tabsProps = extend({}, {
+    modelValue: {
+        type: [String, Number]
+    }
 })

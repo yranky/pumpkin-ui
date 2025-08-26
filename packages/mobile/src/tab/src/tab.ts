@@ -5,4 +5,7 @@ export const tabProps = extend({}, {
         type: String,
         default: ''
     },
+    name: {
+        type: [String, Number]
+    }
 })

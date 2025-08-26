@@ -3,6 +3,12 @@
     --pk-tab-font-size: var(--pk-font-size-s);
     --pk-tab-padding-horizontal: 5px;
     --pk-tab-padding-vertical: 8px;
+    --pk-tab-line-weight: 3px;
+    --pk-tab-line-color: var(--pk-primary-color);
+    --pk-tab-transition-duration: var(--pk-transition-duration);
+    --pk-tab-transition-fn: linear;
+    --pk-tab-active-color: var(--pk-primary-color);
+    --pk-tab-inactive-color: var(--pk-text-color);
 }
 
 @namespace: pk-tabs;
@@ -10,13 +16,39 @@
 .@{namespace} {
     &__nav {
         display: flex;
+        position: relative;
+        overflow-x: auto;
 
         &-item {
-            flex: 1;
+            flex-grow: 1;
+            flex-shrink: 1;
             display: flex;
             justify-content: center;
             font-size: var(--pk-tab-font-size);
             padding: var(--pk-tab-padding-vertical) var(--pk-tab-padding-horizontal);
+            cursor: pointer;
+            white-space: nowrap;
+            color: var(--pk-tab-inactive-color);
+
+            &.@{namespace}--active {
+                color: var(--pk-tab-active-color)
+            }
         }
+
+        &-line {
+            position: absolute;
+            bottom: 0;
+            height: var(--pk-tab-line-weight);
+            background: var(--pk-tab-line-color);
+            left: 0;
+            transition: left var(--pk-tab-transition-duration) var(--pk-tab-transition-fn), width var(--pk-tab-transition-duration) var(--pk-tab-transition-fn);
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 }
