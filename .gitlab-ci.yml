@@ -1,6 +1,8 @@
 variables: 
     BUILD_DOCS: 'pnpm run build:mobile_docs -c mobile/.vuepress/config/gitlab.ts'
     BUILD_DEMO: 'pnpm run build:demo_mobile --mode=gitlab'
+    BUILD_DOCS_EDGEONE: 'pnpm run build:mobile_docs -c mobile/.vuepress/config/edgeone.ts'
+    BUILD_DEMO_EDGEONE: 'pnpm run build:demo_mobile --mode=edgeone'
 cache: 
     paths: 
         - node_modules/
@@ -16,6 +18,7 @@ stages:
     - install
     - build
     - deploy
+    - build_edgeone
 install: 
     stage: install
     script: 
@@ -38,8 +41,24 @@ pages:
         - ls
         - mv demo/mobile/dist/* public/demo
         - mv docs/mobile/.vuepress/dist/* public/
+        - edgeone pages deploy public -n pumpkin-ui -t $EDGEONE_TOKEN
     artifacts: 
         paths: 
             - public
+    only:
+        - tags
+
+build: 
+    stage: build_edgeone
+    script: 
+        - $BUILD_DOCS_EDGEONE
+        - $BUILD_DEMO_EDGEONE
+        - ls
+        - rm -rf edgeone/*
+        - mkdir -p edgeone/demo
+        - ls
+        - mv demo/mobile/dist/* edgeone/demo
+        - mv docs/mobile/.vuepress/dist/* edgeone/
+        - edgeone pages deploy edgeone -n pumpkin-ui -t $EDGEONE_TOKEN
     only:
         - tags
