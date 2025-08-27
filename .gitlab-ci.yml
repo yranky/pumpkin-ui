@@ -33,6 +33,20 @@ build:
         - ls
     only:
         - tags
+build_edgeone: 
+    stage: build_edgeone
+    script: 
+        - $BUILD_DOCS_EDGEONE
+        - $BUILD_DEMO_EDGEONE
+        - ls
+        - rm -rf edgeone/*
+        - mkdir -p edgeone/demo
+        - ls
+        - mv demo/mobile/dist/* edgeone/demo
+        - mv docs/mobile/.vuepress/dist/* edgeone/
+        - edgeone pages deploy edgeone -n pumpkin-ui -t $EDGEONE_TOKEN
+    only:
+        - tags
 pages: 
     stage: deploy
     script: 
@@ -45,20 +59,5 @@ pages:
     artifacts: 
         paths: 
             - public
-    only:
-        - tags
-
-build: 
-    stage: build_edgeone
-    script: 
-        - $BUILD_DOCS_EDGEONE
-        - $BUILD_DEMO_EDGEONE
-        - ls
-        - rm -rf edgeone/*
-        - mkdir -p edgeone/demo
-        - ls
-        - mv demo/mobile/dist/* edgeone/demo
-        - mv docs/mobile/.vuepress/dist/* edgeone/
-        - edgeone pages deploy edgeone -n pumpkin-ui -t $EDGEONE_TOKEN
     only:
         - tags
