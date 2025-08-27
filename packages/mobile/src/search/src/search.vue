@@ -56,7 +56,7 @@ import PkField from '../../field'
 import PkIcon from '../../icon'
 import PkButton from '../../button'
 import './search.less'
-import { useAttrs, useSlots } from 'vue'
+import { useSlots } from 'vue'
 
 const props = defineProps(searchProps)
 const bem = useBem('search')
@@ -65,7 +65,6 @@ const emits = defineEmits<searchEmits>()
 const value = useVModel(props, 'modelValue', emits)
 
 const $slots = useSlots()
-const $attrs = useAttrs()
 
 
 </script>

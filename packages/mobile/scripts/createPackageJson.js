@@ -23,5 +23,6 @@ fs.writeFileSync(path.resolve(filePath, 'package.json'), JSON.stringify(basePack
 
 fs.copyFileSync(path.resolve(__dirname, '../../../README.md'), path.resolve(filePath, 'README.md'))
 fs.copyFileSync(path.resolve(__dirname, '../../../LICENSE'), path.resolve(filePath, 'LICENSE'))
+fs.copyFileSync(path.resolve(__dirname, '../../../.npmrc'), path.resolve(filePath, '.npmrc'))
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@pumpkin-ui/mobile_demo",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.10",
   "type": "module",
   "scripts": {
     "dev": "vite --host",

@@ -19,6 +19,7 @@ stages:
     - build
     - deploy
     - build_edgeone
+    - publish
 install: 
     stage: install
     script: 
@@ -55,9 +56,17 @@ pages:
         - ls
         - mv demo/mobile/dist/* public/demo
         - mv docs/mobile/.vuepress/dist/* public/
-        - edgeone pages deploy public -n pumpkin-ui -t $EDGEONE_TOKEN
     artifacts: 
         paths: 
             - public
     only:
         - tags
+publish:
+    stage: publish
+    script: 
+        - npm run build:release
+        - npm run publish:release
+        - ls
+    only:
+        - tags
+    

@@ -1,6 +1,6 @@
 import { extend } from "@pumpkin-ui/utils"
 import { PropType } from "vue"
-import { fieldClearTrigger, fieldInputAlign, fieldInputTextAlign } from "../../field/src/field"
+import { fieldClearTrigger, fieldInputTextAlign } from "../../field/src/field"
 
 
 export type searchEmits = {
