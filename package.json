@@ -9,7 +9,8 @@
     "build:demo_mobile": "pnpm -C demo/mobile run build",
     "dev:demo_mobile": "pnpm -C demo/mobile run dev",
     "build:release": "pnpm -C packages/mobile run build:release",
-    "publish:release": "cd packages/mobile/dist && npm publish --access public --registry https://registry.npmjs.org"
+    "publish:release": "cd packages/mobile/dist && npm publish --access public --registry https://registry.npmjs.org",
+    "test": "pnpm -C packages/mobile run test"
   },
   "keywords": [],
   "author": "yranky",
