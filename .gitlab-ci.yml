@@ -17,8 +17,8 @@ cache:
         - docs/mobile/.vuepress/dist
 stages: 
     - install
-    - build
     - test
+    - build
     - deploy
     - build_edgeone
     - publish
