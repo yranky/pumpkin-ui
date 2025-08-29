@@ -3,6 +3,7 @@ variables:
     BUILD_DEMO: 'pnpm run build:demo_mobile --mode=gitlab'
     BUILD_DOCS_EDGEONE: 'pnpm run build:mobile_docs -c mobile/.vuepress/config/edgeone.ts'
     BUILD_DEMO_EDGEONE: 'pnpm run build:demo_mobile --mode=edgeone'
+    TEST: 'pnpm run test'
 cache: 
     paths: 
         - node_modules/
@@ -17,6 +18,7 @@ cache:
 stages: 
     - install
     - build
+    - test
     - deploy
     - build_edgeone
     - publish
@@ -59,6 +61,12 @@ pages:
     artifacts: 
         paths: 
             - public
+    only:
+        - tags
+test: 
+    stage: test
+    script: 
+        - $TEST
     only:
         - tags
 publish:

@@ -3,7 +3,7 @@
   "description": "A mobile UI library based on Vue3",
   "private": false,
   "license": "MIT",
-  "version": "0.0.10",
+  "version": "",
   "type": "module",
   "author": {
     "name": "yranky",
@@ -30,7 +30,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "build:release": "npm run build && node scripts/createPackageJson.js",
-    "test": "npm run build:release && jest"
+    "test": "npm run build:release && jest",
+    "jest": "jest"
   },
   "dependencies": {
     "dayjs": "^1.11.12",

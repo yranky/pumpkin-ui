@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const basePackageJsonPath = path.resolve(__dirname, '../package.json')
+const mainPackageJsonPath = path.resolve(__dirname, '../../../package.json')
 const filePath = path.resolve(__dirname, '../dist')
 
 const basePackageJson = JSON.parse(fs.readFileSync(basePackageJsonPath, 'utf-8'))
@@ -18,6 +19,9 @@ basePackageJson['files'] = [
     "lib",
     "index.d.ts"
 ]
+
+const mainPackageJson = JSON.parse(fs.readFileSync(mainPackageJsonPath, 'utf-8'))
+basePackageJson['version'] = mainPackageJson['version']
 
 fs.writeFileSync(path.resolve(filePath, 'package.json'), JSON.stringify(basePackageJson, null, 4), "utf-8")
 
