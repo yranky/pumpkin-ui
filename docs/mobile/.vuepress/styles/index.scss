@@ -1,10 +1,22 @@
 :root {
     // brand colors
     --c-brand: rgb(255, 111, 0);
+    --vp-c-accent: rgb(255, 111, 0);
+    --vp-c-accent-bg: rgb(255, 111, 0);
     --c-brand-light: rgba(255, 111, 0, 0.6);
+    --tip-c-accent: rgba(255, 111, 0, 0.6);
+    --tip-c-text: rgb(255, 111, 0);
+    --tip-c-soft: rgba(255, 111, 0, 0.1);
+    --vp-c-accent-hover: rgba(255, 111, 0, 0.6);
 }
 
 html.dark {
     --c-brand: rgb(255, 111, 0);
+    --vp-c-accent: rgb(255, 111, 0);
+    --vp-c-accent-bg: rgb(255, 111, 0);
     --c-brand-light: rgba(255, 111, 0, 0.6);
+    --tip-c-accent: rgba(255, 111, 0, 0.6);
+    --tip-c-text: rgb(255, 111, 0);
+    --tip-c-soft: rgba(255, 111, 0, 0.1);
+    --vp-c-accent-hover: rgba(255, 111, 0, 0.6);
 }

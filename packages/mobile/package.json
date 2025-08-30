@@ -3,7 +3,7 @@
   "description": "A mobile UI library based on Vue3",
   "private": false,
   "license": "MIT",
-  "version": "",
+  "version": "0.0.1",
   "type": "module",
   "author": {
     "name": "yranky",
