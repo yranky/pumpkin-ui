@@ -26,7 +26,7 @@
                 </div>
                 <div :class="[
                     bem.be('sub', 'text')
-                ]" v-if="subText">
+                ]" v-if="subText || $slots.sub">
                     <slot name="sub">
                         {{ props.subText }}
                     </slot>
@@ -40,10 +40,12 @@ import { buttonProps, buttonEmits, useButtonStyle } from './button'
 import { useBem } from '@pumpkin-ui/use'
 import './button.less'
 import Loading from '../../loading/src/loading.vue';
+import { useSlots } from 'vue'
 
 const props = defineProps(buttonProps)
 
 const bem = useBem('button')
+const $slots = useSlots()
 
 const emits = defineEmits(buttonEmits)
 
